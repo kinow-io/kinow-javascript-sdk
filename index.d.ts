@@ -835,6 +835,7 @@ declare module 'kinow-javascript-sdk' {
     getWidgetTopMenu(opts?: any, callback?: Function): any
     getWidgetFooterMenu(opts?: any, callback?: Function): any
     getWidgetSlider(opts?: any, callback?: Function): any
+    getWidgetSliderItem(sliderId: number, callback?: Function): Promise<WidgetSlider>
   }
   export class LanguagesApi {
     constructor(config?: ApiClient)

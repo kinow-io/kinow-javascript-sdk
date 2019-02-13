@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getSliderImages**](WidgetsApi.md#getSliderImages) | **GET** /widgets/slider/images | 
 [**getWidgetFooterMenu**](WidgetsApi.md#getWidgetFooterMenu) | **GET** /widgets/footer-menu | 
 [**getWidgetSlider**](WidgetsApi.md#getWidgetSlider) | **GET** /widgets/slider | 
+[**getWidgetSliderItem**](WidgetsApi.md#getWidgetSliderItem) | **GET** /widgets/slider/{slider_id} | 
 [**getWidgetTopMenu**](WidgetsApi.md#getWidgetTopMenu) | **GET** /widgets/top-menu | 
 
 
@@ -167,6 +168,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WidgetSliders**](WidgetSliders.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getWidgetSliderItem"></a>
+# **getWidgetSliderItem**
+> WidgetSlider getWidgetSliderItem(sliderId)
+
+
+
+Get slider item
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.WidgetsApi();
+
+var sliderId = 789; // Integer | ID of the slider to fetch
+
+apiInstance.getWidgetSliderItem(sliderId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sliderId** | **Integer**| ID of the slider to fetch | 
+
+### Return type
+
+[**WidgetSlider**](WidgetSlider.md)
 
 ### Authorization
 
