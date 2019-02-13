@@ -1,0 +1,326 @@
+# KinowJavascriptSdk.GeolocationsApi
+
+All URIs are relative to *https://api.kinow.com/api*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**geolocations**](GeolocationsApi.md#geolocations) | **POST** /geolocations | 
+[**getProductGeolocations**](GeolocationsApi.md#getProductGeolocations) | **GET** /products/{product_id}/geolocations | 
+[**getProductGeolocationsByIp**](GeolocationsApi.md#getProductGeolocationsByIp) | **POST** /products/{product_id}/geolocations | 
+[**getVideoGeolocation**](GeolocationsApi.md#getVideoGeolocation) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
+[**setProductGeolocation**](GeolocationsApi.md#setProductGeolocation) | **PUT** /products/{product_id}/geolocations | 
+[**setVideoGeolocation**](GeolocationsApi.md#setVideoGeolocation) | **PUT** /videos/{video_id}/geolocations | 
+
+
+<a name="geolocations"></a>
+# **geolocations**
+> geolocations(ipAddress)
+
+
+
+Check access to platform by ip
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var ipAddress = "ipAddress_example"; // String | address ip
+
+apiInstance.geolocations(ipAddress).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipAddress** | **String**| address ip | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getProductGeolocations"></a>
+# **getProductGeolocations**
+> Geolocs getProductGeolocations(productId, opts)
+
+
+
+Get videos attached to product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var productId = 789; // Integer | ID of the product to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getProductGeolocations(productId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| ID of the product to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Geolocs**](Geolocs.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getProductGeolocationsByIp"></a>
+# **getProductGeolocationsByIp**
+> getProductGeolocationsByIp(productId, ipAddress, opts)
+
+
+
+check access to a product by geolocation
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var productId = 789; // Integer | ID of the product to fetch
+
+var ipAddress = "ipAddress_example"; // String | address ip
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getProductGeolocationsByIp(productId, ipAddress, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| ID of the product to fetch | 
+ **ipAddress** | **String**| address ip | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getVideoGeolocation"></a>
+# **getVideoGeolocation**
+> getVideoGeolocation(videoId, ipAddress, opts)
+
+
+
+Check access to a product by geolocation
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var videoId = 789; // Integer | ID of the video to fetch
+
+var ipAddress = "ipAddress_example"; // String | address ip
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getVideoGeolocation(videoId, ipAddress, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| ID of the video to fetch | 
+ **ipAddress** | **String**| address ip | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="setProductGeolocation"></a>
+# **setProductGeolocation**
+> setProductGeolocation(productId, enabled, behaviorDetectedCountries, behaviorNonDetectedCountries, opts)
+
+
+
+Handle geolocation for products by countries
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var productId = 789; // Integer | ID of the product to fetch
+
+var enabled = 56; // Integer | Enabled
+
+var behaviorDetectedCountries = "behaviorDetectedCountries_example"; // String | Behavior for detected countries
+
+var behaviorNonDetectedCountries = "behaviorNonDetectedCountries_example"; // String | Behavior for non-detected countries
+
+var opts = { 
+  'countries': "countries_example", // String | IDs of the non-detected countries separated by comma
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.setProductGeolocation(productId, enabled, behaviorDetectedCountries, behaviorNonDetectedCountries, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| ID of the product to fetch | 
+ **enabled** | **Integer**| Enabled | 
+ **behaviorDetectedCountries** | **String**| Behavior for detected countries | 
+ **behaviorNonDetectedCountries** | **String**| Behavior for non-detected countries | 
+ **countries** | **String**| IDs of the non-detected countries separated by comma | [optional] 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="setVideoGeolocation"></a>
+# **setVideoGeolocation**
+> setVideoGeolocation(videoId, enabled, behaviorDetectedCountries, behaviorNonDetectedCountries, opts)
+
+
+
+Handle geolocation for videos by countries
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var videoId = 789; // Integer | ID of the video to fetch
+
+var enabled = 56; // Integer | Enabled
+
+var behaviorDetectedCountries = "behaviorDetectedCountries_example"; // String | Behavior for detected countries
+
+var behaviorNonDetectedCountries = "behaviorNonDetectedCountries_example"; // String | Behavior for non-detected countries
+
+var opts = { 
+  'countries': "countries_example" // String | IDs of the non-detected countries separated by comma
+};
+apiInstance.setVideoGeolocation(videoId, enabled, behaviorDetectedCountries, behaviorNonDetectedCountries, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| ID of the video to fetch | 
+ **enabled** | **Integer**| Enabled | 
+ **behaviorDetectedCountries** | **String**| Behavior for detected countries | 
+ **behaviorNonDetectedCountries** | **String**| Behavior for non-detected countries | 
+ **countries** | **String**| IDs of the non-detected countries separated by comma | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
