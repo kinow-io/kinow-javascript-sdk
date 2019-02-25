@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**idMediaSubtitle** | **Integer** |  | [optional] 
+**id** | **Integer** |  | [optional] 
 **filename** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **font** | **String** |  | [optional] 

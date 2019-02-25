@@ -415,7 +415,7 @@ declare module 'kinow-javascript-sdk' {
     recurring_payment: number
   }
   interface Subtitle {
-    id_media_subtitle: number
+    id: number
     filename: string
     name: string
     font: string
