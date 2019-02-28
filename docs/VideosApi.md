@@ -873,7 +873,7 @@ No authorization required
 
 
 
-Get video subtitles
+Get subtitles of a video
 
 ### Example
 ```javascript
