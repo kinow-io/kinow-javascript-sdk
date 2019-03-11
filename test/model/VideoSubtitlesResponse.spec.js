@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KinowJavascriptSdk.MediaSource();
+    instance = new KinowJavascriptSdk.VideoSubtitlesResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,34 +49,16 @@
       object[property] = value;
   }
 
-  describe('MediaSource', function() {
-    it('should create an instance of MediaSource', function() {
-      // uncomment below and update the code to test MediaSource
-      //var instance = new KinowJavascriptSdk.MediaSource();
-      //expect(instance).to.be.a(KinowJavascriptSdk.MediaSource);
+  describe('VideoSubtitlesResponse', function() {
+    it('should create an instance of VideoSubtitlesResponse', function() {
+      // uncomment below and update the code to test VideoSubtitlesResponse
+      //var instance = new KinowJavascriptSdk.VideoSubtitlesResponse();
+      //expect(instance).to.be.a(KinowJavascriptSdk.VideoSubtitlesResponse);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new KinowJavascriptSdk.MediaSource();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new KinowJavascriptSdk.MediaSource();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property active (base name: "active")', function() {
-      // uncomment below and update the code to test the property active
-      //var instance = new KinowJavascriptSdk.MediaSource();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property externalPlayer (base name: "external_player")', function() {
-      // uncomment below and update the code to test the property externalPlayer
-      //var instance = new KinowJavascriptSdk.MediaSource();
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
+      //var instance = new KinowJavascriptSdk.VideoSubtitlesResponse();
       //expect(instance).to.be();
     });
 

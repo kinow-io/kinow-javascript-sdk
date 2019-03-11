@@ -16,68 +16,60 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Image', 'model/Pagination'], factory);
+    define(['ApiClient', 'model/Subtitle'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Image'), require('./Pagination'));
+    module.exports = factory(require('../ApiClient'), require('./Subtitle'));
   } else {
     // Browser globals (root is window)
     if (!root.KinowJavascriptSdk) {
       root.KinowJavascriptSdk = {};
     }
-    root.KinowJavascriptSdk.ProductImagesResponse = factory(root.KinowJavascriptSdk.ApiClient, root.KinowJavascriptSdk.Image, root.KinowJavascriptSdk.Pagination);
+    root.KinowJavascriptSdk.VideoSubtitlesResponse = factory(root.KinowJavascriptSdk.ApiClient, root.KinowJavascriptSdk.Subtitle);
   }
-}(this, function(ApiClient, Image, Pagination) {
+}(this, function(ApiClient, Subtitle) {
   'use strict';
 
 
 
 
   /**
-   * The ProductImagesResponse model module.
-   * @module model/ProductImagesResponse
+   * The VideoSubtitlesResponse model module.
+   * @module model/VideoSubtitlesResponse
    * @version 1.0.75
    */
 
   /**
-   * Constructs a new <code>ProductImagesResponse</code>.
-   * @alias module:model/ProductImagesResponse
+   * Constructs a new <code>VideoSubtitlesResponse</code>.
+   * @alias module:model/VideoSubtitlesResponse
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
   };
 
   /**
-   * Constructs a <code>ProductImagesResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>VideoSubtitlesResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ProductImagesResponse} obj Optional instance to populate.
-   * @return {module:model/ProductImagesResponse} The populated <code>ProductImagesResponse</code> instance.
+   * @param {module:model/VideoSubtitlesResponse} obj Optional instance to populate.
+   * @return {module:model/VideoSubtitlesResponse} The populated <code>VideoSubtitlesResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('pagination')) {
-        obj['pagination'] = Pagination.constructFromObject(data['pagination']);
-      }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [Image]);
+        obj['data'] = ApiClient.convertToType(data['data'], [Subtitle]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Pagination} pagination
-   */
-  exports.prototype['pagination'] = undefined;
-  /**
-   * @member {Array.<module:model/Image>} data
+   * @member {Array.<module:model/Subtitle>} data
    */
   exports.prototype['data'] = undefined;
 

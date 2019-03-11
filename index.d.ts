@@ -416,12 +416,15 @@ declare module 'kinow-javascript-sdk' {
   }
   interface Subtitle {
     id: number
-    filename: string
+    src: string
+    srclang: string
+    label: string
     name: string
     font: string
     size: number
     color: string
     text_shadow: string
+    italic_color: boolean
   }
   interface Tag {
     id: number
@@ -868,15 +871,13 @@ declare module 'kinow-javascript-sdk' {
     getVideoStatsByCustomers(opts?: any, callback?: Function): any
     getVideoStatsByVideo(opts?: any, callback?: Function): any
   }
-  export class SubtitlesApi {
-    constructor(config?: ApiClient)
-    getSubtitles(opts?: any, callback?: Function): any
-    getSubtitle(subtitleId: number, callback?: Function): Promise<Subtitle>
-    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
-  }
   export class TasksApi {
     constructor(config?: ApiClient)
     createTask(body: any, callback?: Function): Promise<Task>
+  }
+  export class SubtitlesApi {
+    constructor(config?: ApiClient)
+    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
   }
   export class OAuthApi {
     constructor(config?: ApiClient)

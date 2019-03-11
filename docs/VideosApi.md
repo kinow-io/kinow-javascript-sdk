@@ -869,7 +869,7 @@ No authorization required
 
 <a name="getVideoSubtitles"></a>
 # **getVideoSubtitles**
-> Subtitles getVideoSubtitles(videoId, opts)
+> VideoSubtitlesResponse getVideoSubtitles(videoId, opts)
 
 
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitles**](Subtitles.md)
+[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
 
 ### Authorization
 
