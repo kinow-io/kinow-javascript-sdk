@@ -613,6 +613,7 @@ declare module 'kinow-javascript-sdk' {
     getCategory(categoryId: number, callback?: Function): Promise<Category>
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
+    getAvailableCategories(opts?: any, callback?: Function): any
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
@@ -665,6 +666,13 @@ declare module 'kinow-javascript-sdk' {
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
+  export class AccessesApi {
+    constructor(config?: ApiClient)
+    getAvailableCategories(opts?: any, callback?: Function): any
+    getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
+    getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
+    getProductAvailability(productId: number, callback?: Function): any
+  }
   export class CountriesApi {
     constructor(config?: ApiClient)
     getCountries(opts?: any, callback?: Function): any
@@ -691,12 +699,6 @@ declare module 'kinow-javascript-sdk' {
     updateProductAccess(productAccessId: number, body: any, callback?: Function): Promise<ProductAccess>
     deleteProductAccess(productAccessId: number, callback?: Function): any
     stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
-  }
-  export class AccessesApi {
-    constructor(config?: ApiClient)
-    getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
-    getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
-    getProductAvailability(productId: number, callback?: Function): any
   }
   export class VideosApi {
     constructor(config?: ApiClient)

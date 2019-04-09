@@ -4,10 +4,59 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getAvailableCategories**](AccessesApi.md#getAvailableCategories) | **GET** /categories-accesses | 
 [**getCustomerHasAccessToProduct**](AccessesApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**getCustomerHasAccessToVideo**](AccessesApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getProductAvailability**](AccessesApi.md#getProductAvailability) | **GET** /products/{product_id}/access | 
 
+
+<a name="getAvailableCategories"></a>
+# **getAvailableCategories**
+> Categories getAvailableCategories(opts)
+
+
+
+Get available categories
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.AccessesApi();
+
+var opts = { 
+  'customerId': 789, // Integer | ID of the customer to fetch
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getAvailableCategories(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| ID of the customer to fetch | [optional] 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Categories**](Categories.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getCustomerHasAccessToProduct"></a>
 # **getCustomerHasAccessToProduct**

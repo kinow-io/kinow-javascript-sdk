@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCategory**](CategoriesApi.md#createCategory) | **POST** /categories | 
+[**getAvailableCategories**](CategoriesApi.md#getAvailableCategories) | **GET** /categories-accesses | 
 [**getCategories**](CategoriesApi.md#getCategories) | **GET** /categories | 
 [**getCategoriesFromCategory**](CategoriesApi.md#getCategoriesFromCategory) | **GET** /categories/{category_id}/categories | 
 [**getCategory**](CategoriesApi.md#getCategory) | **GET** /categories/{category_id} | 
@@ -48,6 +49,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Category**](Category.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getAvailableCategories"></a>
+# **getAvailableCategories**
+> Categories getAvailableCategories(opts)
+
+
+
+Get available categories
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var opts = { 
+  'customerId': 789, // Integer | ID of the customer to fetch
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getAvailableCategories(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| ID of the customer to fetch | [optional] 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Categories**](Categories.md)
 
 ### Authorization
 
