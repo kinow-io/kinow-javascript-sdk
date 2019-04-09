@@ -613,7 +613,7 @@ declare module 'kinow-javascript-sdk' {
     getCategory(categoryId: number, callback?: Function): Promise<Category>
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
-    getAvailableCategories(opts?: any, callback?: Function): any
+    getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
@@ -668,7 +668,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class AccessesApi {
     constructor(config?: ApiClient)
-    getAvailableCategories(opts?: any, callback?: Function): any
+    getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
     getProductAvailability(productId: number, callback?: Function): any
