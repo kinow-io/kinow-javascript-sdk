@@ -21,10 +21,7 @@ Method | HTTP request | Description
 [**getCustomerHasAccessToVideo**](CustomersApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getCustomerOrders**](CustomersApi.md#getCustomerOrders) | **GET** /customers/{customer_id}/orders | 
 [**getCustomers**](CustomersApi.md#getCustomers) | **GET** /customers | 
-[**getDownloadUrl**](CustomersApi.md#getDownloadUrl) | **GET** /customers/{customer_id}/videos/{video_id}/download | 
-[**getMarlinToken**](CustomersApi.md#getMarlinToken) | **GET** /customers/{customer_id}/videos/{video_id}/marlin | 
 [**getPaymentCustomerId**](CustomersApi.md#getPaymentCustomerId) | **GET** /customers/{customer_id}/payments/{payment_name}/customer | 
-[**getPlayerUrl**](CustomersApi.md#getPlayerUrl) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**updateCustomer**](CustomersApi.md#updateCustomer) | **PUT** /customers/{customer_id} | 
 
 
@@ -812,98 +809,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getDownloadUrl"></a>
-# **getDownloadUrl**
-> DownloadUrl getDownloadUrl(customerId, videoId)
-
-
-
-Get video download url
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.CustomersApi();
-
-var customerId = 789; // Integer | Id of the customer to fetch
-
-var videoId = 789; // Integer | Id of the video to fetch
-
-apiInstance.getDownloadUrl(customerId, videoId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Id of the customer to fetch | 
- **videoId** | **Integer**| Id of the video to fetch | 
-
-### Return type
-
-[**DownloadUrl**](DownloadUrl.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getMarlinToken"></a>
-# **getMarlinToken**
-> MarlinToken getMarlinToken(customerId, videoId)
-
-
-
-Get Marlin access token for a video
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.CustomersApi();
-
-var customerId = 789; // Integer | Id of the customer to fetch
-
-var videoId = 789; // Integer | Id of the video to fetch
-
-apiInstance.getMarlinToken(customerId, videoId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Id of the customer to fetch | 
- **videoId** | **Integer**| Id of the video to fetch | 
-
-### Return type
-
-[**MarlinToken**](MarlinToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="getPaymentCustomerId"></a>
 # **getPaymentCustomerId**
 > &#39;String&#39; getPaymentCustomerId(customerId, paymentName)
@@ -940,52 +845,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **&#39;String&#39;**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getPlayerUrl"></a>
-# **getPlayerUrl**
-> VideoUrl getPlayerUrl(customerId, videoId)
-
-
-
-Get video player url
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.CustomersApi();
-
-var customerId = 789; // Integer | Id of the customer to fetch
-
-var videoId = 789; // Integer | Id of the video to fetch
-
-apiInstance.getPlayerUrl(customerId, videoId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Id of the customer to fetch | 
- **videoId** | **Integer**| Id of the video to fetch | 
-
-### Return type
-
-[**VideoUrl**](VideoUrl.md)
 
 ### Authorization
 

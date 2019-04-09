@@ -21,7 +21,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.SubtitlesApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -39,7 +39,7 @@ apiInstance.getVideoSubtitles(videoId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

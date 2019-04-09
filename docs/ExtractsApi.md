@@ -115,7 +115,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
-var extractId = 789; // Integer | ID of the video to update
+var extractId = 789; // Integer | Extract ID to update
 
 apiInstance.deleteExtract(extractId).then(function() {
   console.log('API called successfully.');
@@ -129,7 +129,7 @@ apiInstance.deleteExtract(extractId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extractId** | **Integer**| ID of the video to update | 
+ **extractId** | **Integer**| Extract ID to update | 
 
 ### Return type
 
@@ -158,7 +158,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
-var extractId = 789; // Integer | ID of the extract to fetch
+var extractId = 789; // Integer | Extract ID to fetch
 
 apiInstance.getExtractPlayer(extractId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -172,7 +172,7 @@ apiInstance.getExtractPlayer(extractId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extractId** | **Integer**| ID of the extract to fetch | 
+ **extractId** | **Integer**| Extract ID to fetch | 
 
 ### Return type
 
@@ -250,7 +250,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
-var extractId = 789; // Integer | ID of the video to update
+var extractId = 789; // Integer | Extract ID to fetch
 
 var body = new KinowJavascriptSdk.Extract(); // Extract | 
 
@@ -266,7 +266,7 @@ apiInstance.updateExtract(extractId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extractId** | **Integer**| ID of the video to update | 
+ **extractId** | **Integer**| Extract ID to fetch | 
  **body** | [**Extract**](Extract.md)|  | 
 
 ### Return type

@@ -170,7 +170,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var ipAddress = "ipAddress_example"; // String | address ip
 
@@ -190,7 +190,7 @@ apiInstance.getVideoGeolocation(videoId, ipAddress, opts).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **ipAddress** | **String**| address ip | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
@@ -282,7 +282,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var enabled = 56; // Integer | Enabled
 
@@ -305,7 +305,7 @@ apiInstance.setVideoGeolocation(videoId, enabled, behaviorDetectedCountries, beh
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **enabled** | **Integer**| Enabled | 
  **behaviorDetectedCountries** | **String**| Behavior for detected countries | 
  **behaviorNonDetectedCountries** | **String**| Behavior for non-detected countries | 

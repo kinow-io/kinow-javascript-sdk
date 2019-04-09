@@ -605,9 +605,6 @@ declare module 'kinow-javascript-sdk' {
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     getPaymentCustomerId(customerId: number, paymentName: string, callback?: Function): any
-    getPlayerUrl(customerId: number, videoId: number, callback?: Function): any
-    getDownloadUrl(customerId: number, videoId: number, callback?: Function): any
-    getMarlinToken(customerId: number, videoId: number, callback?: Function): any
   }
   export class CategoriesApi {
     constructor(config?: ApiClient)
@@ -616,8 +613,6 @@ declare module 'kinow-javascript-sdk' {
     getCategory(categoryId: number, callback?: Function): Promise<Category>
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
-    getAvailableCategories(opts?: any, callback?: Function): any
-    getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
@@ -670,14 +665,6 @@ declare module 'kinow-javascript-sdk' {
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
-  export class AccessesApi {
-    constructor(config?: ApiClient)
-    getAvailableCategories(opts?: any, callback?: Function): any
-    getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
-    getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
-    getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
-    getProductAvailability(productId: number, callback?: Function): any
-  }
   export class CountriesApi {
     constructor(config?: ApiClient)
     getCountries(opts?: any, callback?: Function): any
@@ -705,6 +692,12 @@ declare module 'kinow-javascript-sdk' {
     deleteProductAccess(productAccessId: number, callback?: Function): any
     stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
   }
+  export class AccessesApi {
+    constructor(config?: ApiClient)
+    getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
+    getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
+    getProductAvailability(productId: number, callback?: Function): any
+  }
   export class VideosApi {
     constructor(config?: ApiClient)
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
@@ -718,19 +711,15 @@ declare module 'kinow-javascript-sdk' {
     deleteVideo(videoId: number, callback?: Function): any
     getDisabledSubscriptions(videoId: number, opts?: any, callback?: Function): any
     getVideoViews(videoId: number, callback?: Function): any
-    getVideoPlayerUrl(videoId: number, opts?: any, callback?: Function): any
-    getPlayerUrl(customerId: number, videoId: number, callback?: Function): any
-    getPlayerIframe(videoId: number, opts?: any, callback?: Function): any
-    getDownloadUrl(customerId: number, videoId: number, callback?: Function): any
+    getVideoAccess(videoId: number, customerId: number, callback?: Function): any
+    getVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getVideoDownloadUrl(videoId: number, opts?: any, callback?: Function): any
-    getMarlinToken(customerId: number, videoId: number, callback?: Function): any
+    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getVideoGeolocation(videoId: number, opts?: any, callback?: Function): any
     getVideoGeolocation(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
-    getVideoAccess(videoId: number, customerId: number, callback?: Function): any
+    setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
-    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
-    setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
   }
   export class CustomerThreadsApi {
     constructor(config?: ApiClient)
@@ -754,10 +743,6 @@ declare module 'kinow-javascript-sdk' {
     getExtractPlayer(extractId: number, callback?: Function): any
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): any
-  }
-  export class PlayerApi {
-    constructor(config?: ApiClient)
-    getExtractPlayer(extractId: number, callback?: Function): any
   }
   export class FacebookApi {
     constructor(config?: ApiClient)
@@ -798,15 +783,12 @@ declare module 'kinow-javascript-sdk' {
     uploadSubscriptionCover(subscriptionId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getProductCoverImage(productId: number, callback?: Function): Promise<Image>
     uploadProductCover(productId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    getManufacturerCoverImage(manufacturerId: number, callback?: Function): Promise<Image>
     getDirectorCoverImage(directorId: number, callback?: Function): Promise<Image>
     uploadDirectorCover(directorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    getSupplierCoverImage(supplierId: number, callback?: Function): Promise<Image>
     getActorCoverImage(toId: number, callback?: Function): Promise<Image>
     uploadActorCover(actorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getIntroImage(): any
-    getSliderImages(): any
     getVideoCover(video: number, callback?: Function): Promise<Image>
     getProductScreenshots(productId: number, callback?: Function): any
     uploadProductScreenshots(productId: number, file: File, hash: string, opts?: any, callback?: Function): any
@@ -823,18 +805,9 @@ declare module 'kinow-javascript-sdk' {
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any
     getDisabledSubscriptions(videoId: number, opts?: any, callback?: Function): any
   }
-  export class ManufacturersApi {
-    constructor(config?: ApiClient)
-    getManufacturerCoverImage(manufacturerId: number, callback?: Function): Promise<Image>
-  }
-  export class SuppliersApi {
-    constructor(config?: ApiClient)
-    getSupplierCoverImage(supplierId: number, callback?: Function): Promise<Image>
-  }
   export class WidgetsApi {
     constructor(config?: ApiClient)
     getIntroImage(): any
-    getSliderImages(): any
     getWidgetTopMenu(opts?: any, callback?: Function): any
     getWidgetFooterMenu(opts?: any, callback?: Function): any
     getWidgetSlider(opts?: any, callback?: Function): any

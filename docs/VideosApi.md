@@ -11,17 +11,13 @@ Method | HTTP request | Description
 [**deleteVideo**](VideosApi.md#deleteVideo) | **DELETE** /videos/{video_id} | 
 [**getCustomerHasAccessToVideo**](VideosApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getDisabledSubscriptions**](VideosApi.md#getDisabledSubscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
-[**getDownloadUrl**](VideosApi.md#getDownloadUrl) | **GET** /customers/{customer_id}/videos/{video_id}/download | 
-[**getMarlinToken**](VideosApi.md#getMarlinToken) | **GET** /customers/{customer_id}/videos/{video_id}/marlin | 
-[**getPlayerIframe**](VideosApi.md#getPlayerIframe) | **GET** /videos/{video_id}/player-iframe | 
-[**getPlayerUrl**](VideosApi.md#getPlayerUrl) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**getVideo**](VideosApi.md#getVideo) | **GET** /videos/{video_id} | 
 [**getVideoAccess**](VideosApi.md#getVideoAccess) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
 [**getVideoDownloadUrl**](VideosApi.md#getVideoDownloadUrl) | **GET** /videos/{video_id}/download-url | 
 [**getVideoFeatures**](VideosApi.md#getVideoFeatures) | **GET** /videos/{video_id}/features | 
 [**getVideoGeolocation**](VideosApi.md#getVideoGeolocation) | **GET** /videos/{video_id}/geolocation | 
 [**getVideoGeolocation_0**](VideosApi.md#getVideoGeolocation_0) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
-[**getVideoPlayerUrl**](VideosApi.md#getVideoPlayerUrl) | **GET** /videos/{video_id}/player | 
+[**getVideoPlayer**](VideosApi.md#getVideoPlayer) | **GET** /videos/{video_id}/player | 
 [**getVideoSubtitles**](VideosApi.md#getVideoSubtitles) | **GET** /videos/{video_id}/subtitles | 
 [**getVideoViews**](VideosApi.md#getVideoViews) | **GET** /videos/{video_id}/views | 
 [**getVideos**](VideosApi.md#getVideos) | **GET** /videos | 
@@ -44,9 +40,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
-var idImage = 789; // Integer | ID of the image to attach
+var idImage = 789; // Integer | Image ID to attach
 
 apiInstance.attachCoverToVideo(videoId, idImage).then(function() {
   console.log('API called successfully.');
@@ -60,8 +56,8 @@ apiInstance.attachCoverToVideo(videoId, idImage).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
- **idImage** | **Integer**| ID of the image to attach | 
+ **videoId** | **Integer**| Video ID to fetch | 
+ **idImage** | **Integer**| Image ID to attach | 
 
 ### Return type
 
@@ -225,7 +221,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to delete
+var videoId = 789; // Integer | Video ID to fetch
 
 apiInstance.deleteVideo(videoId).then(function() {
   console.log('API called successfully.');
@@ -239,7 +235,7 @@ apiInstance.deleteVideo(videoId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to delete | 
+ **videoId** | **Integer**| Video ID to fetch | 
 
 ### Return type
 
@@ -314,7 +310,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -332,198 +328,13 @@ apiInstance.getDisabledSubscriptions(videoId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
 ### Return type
 
 [**Subscriptions**](Subscriptions.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getDownloadUrl"></a>
-# **getDownloadUrl**
-> DownloadUrl getDownloadUrl(customerId, videoId)
-
-
-
-Get video download url
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.VideosApi();
-
-var customerId = 789; // Integer | Id of the customer to fetch
-
-var videoId = 789; // Integer | Id of the video to fetch
-
-apiInstance.getDownloadUrl(customerId, videoId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Id of the customer to fetch | 
- **videoId** | **Integer**| Id of the video to fetch | 
-
-### Return type
-
-[**DownloadUrl**](DownloadUrl.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getMarlinToken"></a>
-# **getMarlinToken**
-> MarlinToken getMarlinToken(customerId, videoId)
-
-
-
-Get Marlin access token for a video
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.VideosApi();
-
-var customerId = 789; // Integer | Id of the customer to fetch
-
-var videoId = 789; // Integer | Id of the video to fetch
-
-apiInstance.getMarlinToken(customerId, videoId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Id of the customer to fetch | 
- **videoId** | **Integer**| Id of the video to fetch | 
-
-### Return type
-
-[**MarlinToken**](MarlinToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getPlayerIframe"></a>
-# **getPlayerIframe**
-> VideoUrl getPlayerIframe(videoId, opts)
-
-
-
-Get video player url
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.VideosApi();
-
-var videoId = 789; // Integer | Id of the video to fetch
-
-var opts = { 
-  'customerId': 789 // Integer | Id of the customer to fetch
-};
-apiInstance.getPlayerIframe(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| Id of the video to fetch | 
- **customerId** | **Integer**| Id of the customer to fetch | [optional] 
-
-### Return type
-
-[**VideoUrl**](VideoUrl.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getPlayerUrl"></a>
-# **getPlayerUrl**
-> VideoUrl getPlayerUrl(customerId, videoId)
-
-
-
-Get video player url
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.VideosApi();
-
-var customerId = 789; // Integer | Id of the customer to fetch
-
-var videoId = 789; // Integer | Id of the video to fetch
-
-apiInstance.getPlayerUrl(customerId, videoId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Id of the customer to fetch | 
- **videoId** | **Integer**| Id of the video to fetch | 
-
-### Return type
-
-[**VideoUrl**](VideoUrl.md)
 
 ### Authorization
 
@@ -548,7 +359,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 apiInstance.getVideo(videoId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -562,7 +373,7 @@ apiInstance.getVideo(videoId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
 
 ### Return type
 
@@ -591,9 +402,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 apiInstance.getVideoAccess(videoId, customerId).then(function() {
   console.log('API called successfully.');
@@ -607,8 +418,8 @@ apiInstance.getVideoAccess(videoId, customerId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
 
 ### Return type
 
@@ -637,10 +448,10 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | Id of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
-  'customerId': 789 // Integer | Id of the customer to fetch
+  'customerId': 789 // Integer | Customer ID to fetch
 };
 apiInstance.getVideoDownloadUrl(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -654,8 +465,8 @@ apiInstance.getVideoDownloadUrl(videoId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| Id of the video to fetch | 
- **customerId** | **Integer**| Id of the customer to fetch | [optional] 
+ **videoId** | **Integer**| Video ID to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | [optional] 
 
 ### Return type
 
@@ -684,7 +495,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -702,7 +513,7 @@ apiInstance.getVideoFeatures(videoId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -733,7 +544,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -751,7 +562,7 @@ apiInstance.getVideoGeolocation(videoId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -782,7 +593,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var ipAddress = "ipAddress_example"; // String | address ip
 
@@ -802,7 +613,7 @@ apiInstance.getVideoGeolocation_0(videoId, ipAddress, opts).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **ipAddress** | **String**| address ip | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
@@ -820,13 +631,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getVideoPlayerUrl"></a>
-# **getVideoPlayerUrl**
-> PlayerConfiguration getVideoPlayerUrl(videoId, opts)
+<a name="getVideoPlayer"></a>
+# **getVideoPlayer**
+> PlayerConfiguration getVideoPlayer(videoId, opts)
 
 
 
-Get video player url
+Get video player
 
 ### Example
 ```javascript
@@ -834,12 +645,13 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | Id of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
-  'customerId': 789 // Integer | 
+  'customerId': 789, // Integer | Customer ID to fetch
+  'countryId': 789 // Integer | Country ID to use in video analytics
 };
-apiInstance.getVideoPlayerUrl(videoId, opts).then(function(data) {
+apiInstance.getVideoPlayer(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -851,8 +663,9 @@ apiInstance.getVideoPlayerUrl(videoId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| Id of the video to fetch | 
- **customerId** | **Integer**|  | [optional] 
+ **videoId** | **Integer**| Video ID to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | [optional] 
+ **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
 
 ### Return type
 
@@ -881,7 +694,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -899,7 +712,7 @@ apiInstance.getVideoSubtitles(videoId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -930,7 +743,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 apiInstance.getVideoViews(videoId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -944,7 +757,7 @@ apiInstance.getVideoViews(videoId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
 
 ### Return type
 
@@ -1082,7 +895,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 var enabled = 56; // Integer | Enabled
 
@@ -1105,7 +918,7 @@ apiInstance.setVideoGeolocation(videoId, enabled, behaviorDetectedCountries, beh
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
  **enabled** | **Integer**| Enabled | 
  **behaviorDetectedCountries** | **String**| Behavior for detected countries | 
  **behaviorNonDetectedCountries** | **String**| Behavior for non-detected countries | 
@@ -1138,7 +951,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var videoId = 789; // Integer | ID of the video to update
+var videoId = 789; // Integer | Video ID to update
 
 var body = new KinowJavascriptSdk.Video(); // Video | 
 
@@ -1154,7 +967,7 @@ apiInstance.updateVideo(videoId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to update | 
+ **videoId** | **Integer**| Video ID to update | 
  **body** | [**Video**](Video.md)|  | 
 
 ### Return type

@@ -8,13 +8,10 @@ Method | HTTP request | Description
 [**getCategoryBanner**](ImagesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
 [**getDirectorCoverImage**](ImagesApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
 [**getIntroImage**](ImagesApi.md#getIntroImage) | **GET** /widgets/intro/images | 
-[**getManufacturerCoverImage**](ImagesApi.md#getManufacturerCoverImage) | **GET** /manufacturers/{manufacturer_id}/cover | 
 [**getProductCoverImage**](ImagesApi.md#getProductCoverImage) | **GET** /products/{product_id}/cover | 
 [**getProductImages**](ImagesApi.md#getProductImages) | **GET** /products/{product_id}/images | 
 [**getProductScreenshots**](ImagesApi.md#getProductScreenshots) | **GET** /products/{product_id}/screenshots | 
-[**getSliderImages**](ImagesApi.md#getSliderImages) | **GET** /widgets/slider/images | 
 [**getSubscriptionCoverImage**](ImagesApi.md#getSubscriptionCoverImage) | **GET** /subscriptions/{subscription_id}/cover | 
-[**getSupplierCoverImage**](ImagesApi.md#getSupplierCoverImage) | **GET** /suppliers/{supplier_id}/cover | 
 [**getVideoCover**](ImagesApi.md#getVideoCover) | **GET** /videos/{video_id}/cover | 
 [**uploadActorCover**](ImagesApi.md#uploadActorCover) | **POST** /actors/{actor_id}/cover | 
 [**uploadCategoryBanner**](ImagesApi.md#uploadCategoryBanner) | **POST** /category/{category_id}/banner | 
@@ -192,49 +189,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getManufacturerCoverImage"></a>
-# **getManufacturerCoverImage**
-> Image getManufacturerCoverImage(manufacturerId)
-
-
-
-Please, use __/directors/{actor_id}/cover__
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ImagesApi();
-
-var manufacturerId = 789; // Integer | ID of the manufacturer to fetch
-
-apiInstance.getManufacturerCoverImage(manufacturerId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manufacturerId** | **Integer**| ID of the manufacturer to fetch | 
-
-### Return type
-
-[**Image**](Image.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="getProductCoverImage"></a>
 # **getProductCoverImage**
 > Image getProductCoverImage(productId)
@@ -372,43 +326,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getSliderImages"></a>
-# **getSliderImages**
-> [Image] getSliderImages()
-
-
-
-Get introduction image
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ImagesApi();
-apiInstance.getSliderImages().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**[Image]**](Image.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="getSubscriptionCoverImage"></a>
 # **getSubscriptionCoverImage**
 > Image getSubscriptionCoverImage(subscriptionId)
@@ -438,49 +355,6 @@ apiInstance.getSubscriptionCoverImage(subscriptionId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionId** | **Integer**| ID of the subscription to fetch | 
-
-### Return type
-
-[**Image**](Image.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getSupplierCoverImage"></a>
-# **getSupplierCoverImage**
-> Image getSupplierCoverImage(supplierId)
-
-
-
-Please, use __/actors/{actor_id}/cover__
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ImagesApi();
-
-var supplierId = 789; // Integer | ID of the supplier to fetch
-
-apiInstance.getSupplierCoverImage(supplierId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **supplierId** | **Integer**| ID of the supplier to fetch | 
 
 ### Return type
 
