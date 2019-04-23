@@ -415,7 +415,6 @@ declare module 'kinow-javascript-sdk' {
     recurring_payment: number
   }
   interface Subtitle {
-    id: number
     src: string
     srclang: string
     label: string
@@ -716,10 +715,10 @@ declare module 'kinow-javascript-sdk' {
     getVideoAccess(videoId: number, customerId: number, callback?: Function): any
     getVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getVideoDownloadUrl(videoId: number, opts?: any, callback?: Function): any
-    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getVideoGeolocation(videoId: number, opts?: any, callback?: Function): any
     getVideoGeolocation(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
     setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
+    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
@@ -849,10 +848,6 @@ declare module 'kinow-javascript-sdk' {
   export class TasksApi {
     constructor(config?: ApiClient)
     createTask(body: any, callback?: Function): Promise<Task>
-  }
-  export class SubtitlesApi {
-    constructor(config?: ApiClient)
-    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
   }
   export class OAuthApi {
     constructor(config?: ApiClient)
