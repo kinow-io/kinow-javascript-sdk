@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**idCurrency** | **Integer** |  | [optional] 
-**idLang** | **Integer** |  | [optional] 
+**idCurrency** | **Integer** |  | 
+**idLang** | **Integer** |  | 
 **idCustomer** | **Integer** |  | [optional] 
 
 

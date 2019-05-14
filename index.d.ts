@@ -180,6 +180,13 @@ declare module 'kinow-javascript-sdk' {
     password: string
     id_country: number
   }
+  interface CustomerGroupVideoStats {
+    group_id: number
+    video_id: number
+    played: number
+    duration: number
+    views: number
+  }
   interface CustomerThread {
     id: number
     id_land: number
@@ -193,7 +200,7 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_upd: string
   }
-  interface CustomerVideoStat {
+  interface CustomerVideoStats {
     customer_id: number
     played: number
     duration: number
@@ -556,7 +563,7 @@ declare module 'kinow-javascript-sdk' {
     getCart(cartId: number, callback?: Function): Promise<Cart>
     updateCart(cartId: number, body: any, callback?: Function): Promise<Cart>
     deleteCart(cartId: number, callback?: Function): any
-    createCart(body: any, callback?: Function): Promise<Cart>
+    createCart(opts?: any, callback?: Function): Promise<Cart>
     attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
     addProductToCart(cartId: number, productId: number, opts?: any, callback?: Function): Promise<Cart>
     deleteProductFromCart(cartId: number, productId: number, opts?: any, callback?: Function): any
@@ -839,15 +846,16 @@ declare module 'kinow-javascript-sdk' {
     getOrderStates(opts?: any, callback?: Function): any
     getOrderState(orderStateId: number, callback?: Function): Promise<OrderState>
   }
-  export class StatsApi {
-    constructor(config?: ApiClient)
-    getVideoStatsSessions(opts?: any, callback?: Function): any
-    getVideoStatsByCustomers(opts?: any, callback?: Function): any
-    getVideoStatsByVideo(opts?: any, callback?: Function): any
-  }
   export class TasksApi {
     constructor(config?: ApiClient)
     createTask(body: any, callback?: Function): Promise<Task>
+  }
+  export class StatsApi {
+    constructor(config?: ApiClient)
+    getCustomerSessions(opts?: any, callback?: Function): any
+    getCustomerVideoStats(customerId: number, opts?: any, callback?: Function): any
+    getCustomerGroupTotalWatched(groupId: number, videoId: number, opts?: any, callback?: Function): any
+    getVideoStats(opts?: any, callback?: Function): any
   }
   export class OAuthApi {
     constructor(config?: ApiClient)

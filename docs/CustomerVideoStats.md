@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**[CustomerVideoStat]**](CustomerVideoStat.md) |  | [optional] 
+**customerId** | **Integer** |  | [optional] 
+**played** | **Integer** |  | [optional] 
+**duration** | **Number** |  | [optional] 
+**views** | **Integer** |  | [optional] 
 
 

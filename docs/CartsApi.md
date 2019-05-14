@@ -165,7 +165,7 @@ No authorization required
 
 <a name="createCart"></a>
 # **createCart**
-> Cart createCart(body)
+> Cart createCart(opts)
 
 
 
@@ -177,9 +177,10 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var body = new KinowJavascriptSdk.CartBody(); // CartBody | Create cart object
-
-apiInstance.createCart(body).then(function(data) {
+var opts = { 
+  'body': new KinowJavascriptSdk.CartBody() // CartBody | Create cart object
+};
+apiInstance.createCart(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -191,7 +192,7 @@ apiInstance.createCart(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CartBody**](CartBody.md)| Create cart object | 
+ **body** | [**CartBody**](CartBody.md)| Create cart object | [optional] 
 
 ### Return type
 
