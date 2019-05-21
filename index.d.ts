@@ -609,6 +609,7 @@ declare module 'kinow-javascript-sdk' {
     generateAuthenticationToken(customerId: number, callback?: Function): any
     getCustomerCurrentViews(customerId: number, callback?: Function): any
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
+    getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     getPaymentCustomerId(customerId: number, paymentName: string, callback?: Function): any
   }
@@ -751,11 +752,6 @@ declare module 'kinow-javascript-sdk' {
     getExtractPlayer(extractId: number, callback?: Function): any
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): any
-  }
-  export class FacebookApi {
-    constructor(config?: ApiClient)
-    getFacebookCustomer(facebookId: number, callback?: Function): any
-    createFacebookId(customerId: number, facebookId: string, callback?: Function): any
   }
   export class FeatureValuesApi {
     constructor(config?: ApiClient)

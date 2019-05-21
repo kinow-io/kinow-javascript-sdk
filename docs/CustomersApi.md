@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**attachCartToCustomer**](CustomersApi.md#attachCartToCustomer) | **POST** /customers/{customer_id}/carts | 
 [**checkCustomerCredentials**](CustomersApi.md#checkCustomerCredentials) | **POST** /customers/check-credentials | 
 [**createCustomer**](CustomersApi.md#createCustomer) | **POST** /customers | 
-[**createFacebookId**](CustomersApi.md#createFacebookId) | **POST** /facebook/customers | 
+[**createFacebookId**](CustomersApi.md#createFacebookId) | **POST** /customers/facebook | 
 [**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /customers/{customer_id} | 
 [**generateAuthenticationToken**](CustomersApi.md#generateAuthenticationToken) | **GET** /customers/{customer_id}/authentication-token | 
 [**getCustomer**](CustomersApi.md#getCustomer) | **GET** /customers/{customer_id} | 
@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**getCustomerHasAccessToVideo**](CustomersApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getCustomerOrders**](CustomersApi.md#getCustomerOrders) | **GET** /customers/{customer_id}/orders | 
 [**getCustomers**](CustomersApi.md#getCustomers) | **GET** /customers | 
+[**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
 [**getPaymentCustomerId**](CustomersApi.md#getPaymentCustomerId) | **GET** /customers/{customer_id}/payments/{payment_name}/customer | 
 [**updateCustomer**](CustomersApi.md#updateCustomer) | **PUT** /customers/{customer_id} | 
 
@@ -799,6 +800,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Customers**](Customers.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getFacebookCustomer"></a>
+# **getFacebookCustomer**
+> CustomerId getFacebookCustomer(facebookId)
+
+
+
+Get customer ID by Facebook ID
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var facebookId = 789; // Integer | Facebook ID to fetch
+
+apiInstance.getFacebookCustomer(facebookId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **facebookId** | **Integer**| Facebook ID to fetch | 
+
+### Return type
+
+[**CustomerId**](CustomerId.md)
 
 ### Authorization
 
