@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**geolocations**](GeolocationsApi.md#geolocations) | **POST** /geolocations | 
 [**getProductGeolocations**](GeolocationsApi.md#getProductGeolocations) | **GET** /products/{product_id}/geolocations | 
 [**getProductGeolocationsByIp**](GeolocationsApi.md#getProductGeolocationsByIp) | **POST** /products/{product_id}/geolocations | 
-[**getVideoGeolocation**](GeolocationsApi.md#getVideoGeolocation) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
+[**getVideoGeolocationByIp**](GeolocationsApi.md#getVideoGeolocationByIp) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 [**setProductGeolocation**](GeolocationsApi.md#setProductGeolocation) | **PUT** /products/{product_id}/geolocations | 
 [**setVideoGeolocation**](GeolocationsApi.md#setVideoGeolocation) | **PUT** /videos/{video_id}/geolocations | 
 
@@ -61,7 +61,7 @@ No authorization required
 
 
 
-Get videos attached to product
+Get product geolocation restrictions
 
 ### Example
 ```javascript
@@ -110,7 +110,7 @@ No authorization required
 
 
 
-check access to a product by geolocation
+Check product access using geolocation
 
 ### Example
 ```javascript
@@ -156,9 +156,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getVideoGeolocation"></a>
-# **getVideoGeolocation**
-> getVideoGeolocation(videoId, ipAddress, opts)
+<a name="getVideoGeolocationByIp"></a>
+# **getVideoGeolocationByIp**
+> getVideoGeolocationByIp(videoId, ipAddress, opts)
 
 
 
@@ -172,13 +172,13 @@ var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
 var videoId = 789; // Integer | Video ID to fetch
 
-var ipAddress = "ipAddress_example"; // String | address ip
+var ipAddress = "ipAddress_example"; // String | IP address
 
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
-apiInstance.getVideoGeolocation(videoId, ipAddress, opts).then(function() {
+apiInstance.getVideoGeolocationByIp(videoId, ipAddress, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -191,7 +191,7 @@ apiInstance.getVideoGeolocation(videoId, ipAddress, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **Integer**| Video ID to fetch | 
- **ipAddress** | **String**| address ip | 
+ **ipAddress** | **String**| IP address | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

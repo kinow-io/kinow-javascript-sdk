@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attachFeaturesToProduct**](FeaturesApi.md#attachFeaturesToProduct) | **POST** /products/{product_id}/features | 
 [**attachFeaturesToVideo**](FeaturesApi.md#attachFeaturesToVideo) | **POST** /videos/{video_id}/features | 
-[**detachFeatureToProduct**](FeaturesApi.md#detachFeatureToProduct) | **DELETE** products/{product_id}/features/{feature_id} | 
+[**detachFeatureToProduct**](FeaturesApi.md#detachFeatureToProduct) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**getCategoryFeatures**](FeaturesApi.md#getCategoryFeatures) | **GET** /categories/{category_id}/features | 
 [**getFeatureValues**](FeaturesApi.md#getFeatureValues) | **GET** /feature-values | 
 [**getFeatures**](FeaturesApi.md#getFeatures) | **GET** /features | 
@@ -299,7 +299,7 @@ No authorization required
 
 
 
-Get videos attached to product
+Get product features
 
 ### Example
 ```javascript

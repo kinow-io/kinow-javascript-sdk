@@ -659,7 +659,7 @@ declare module 'kinow-javascript-sdk' {
     attachProductToCategory(productId: number, categoryId: number, callback?: Function): any
     detachProductFromCategory(productId: number, categoryId: number, callback?: Function): any
     getProductsFromProduct(productId: number, opts?: any, callback?: Function): any
-    attachProductToDirector(productId: number, groupId: number, callback?: Function): any
+    attachProductToGroup(productId: number, groupId: number, callback?: Function): any
     detachProductFromGroup(productId: number, groupId: number, callback?: Function): any
   }
   export class FeaturesApi {
@@ -724,7 +724,7 @@ declare module 'kinow-javascript-sdk' {
     getVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getVideoDownloadUrl(videoId: number, opts?: any, callback?: Function): any
     getVideoGeolocation(videoId: number, opts?: any, callback?: Function): any
-    getVideoGeolocation(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
+    getVideoGeolocationByIp(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
     setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
     getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
@@ -770,7 +770,7 @@ declare module 'kinow-javascript-sdk' {
     getProductGeolocations(productId: number, opts?: any, callback?: Function): any
     setProductGeolocation(productId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
     getProductGeolocationsByIp(productId: number, ipAddress: string, opts?: any, callback?: Function): any
-    getVideoGeolocation(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
+    getVideoGeolocationByIp(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
     setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
   }
   export class GroupsApi {
@@ -789,17 +789,17 @@ declare module 'kinow-javascript-sdk' {
     uploadProductCover(productId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getDirectorCoverImage(directorId: number, callback?: Function): Promise<Image>
     uploadDirectorCover(directorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    getActorCoverImage(toId: number, callback?: Function): Promise<Image>
+    getActorCoverImage(actorId: number, callback?: Function): Promise<Image>
     uploadActorCover(actorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getIntroImage(): any
-    getVideoCover(video: number, callback?: Function): Promise<Image>
+    getVideoCover(videoId: number, callback?: Function): Promise<Image>
     getProductScreenshots(productId: number, callback?: Function): any
     uploadProductScreenshots(productId: number, file: File, hash: string, opts?: any, callback?: Function): any
     getProductImages(productId: number, opts?: any, callback?: Function): any
     uploadCategoryBanner(categoryId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     uploadProductScreenshot(productId: number, imageId: number, opts?: any, callback?: Function): Promise<Screenshot>
-    uploadProductScreenshot(productId: number, imageId: number, callback?: Function): any
+    deleteProductScreenshot(productId: number, imageId: number, callback?: Function): any
   }
   export class SubscriptionsApi {
     constructor(config?: ApiClient)

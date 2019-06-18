@@ -8,11 +8,11 @@ Method | HTTP request | Description
 [**attachProductToActor**](ProductsApi.md#attachProductToActor) | **POST** /products/{product_id}/actors | 
 [**attachProductToCategory**](ProductsApi.md#attachProductToCategory) | **POST** /products/{product_id}/categories | 
 [**attachProductToDirector**](ProductsApi.md#attachProductToDirector) | **POST** /products/{product_id}/directors | 
-[**attachProductToDirector_0**](ProductsApi.md#attachProductToDirector_0) | **POST** /products/{product_id}/groups | 
+[**attachProductToGroup**](ProductsApi.md#attachProductToGroup) | **POST** /products/{product_id}/groups | 
 [**attachVideoToProduct**](ProductsApi.md#attachVideoToProduct) | **POST** /products/{product_id}/videos | 
 [**createProduct**](ProductsApi.md#createProduct) | **POST** /products | 
 [**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /products/{product_id} | 
-[**detachFeatureToProduct**](ProductsApi.md#detachFeatureToProduct) | **DELETE** products/{product_id}/features/{feature_id} | 
+[**detachFeatureToProduct**](ProductsApi.md#detachFeatureToProduct) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**detachProductFromActor**](ProductsApi.md#detachProductFromActor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**detachProductFromCategory**](ProductsApi.md#detachProductFromCategory) | **DELETE** /products/{product_id}/categories/{category_id} | 
 [**detachProductFromDirector**](ProductsApi.md#detachProductFromDirector) | **DELETE** /products/{product_id}/directors/{director_id} | 
@@ -223,9 +223,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="attachProductToDirector_0"></a>
-# **attachProductToDirector_0**
-> attachProductToDirector_0(productId, groupId)
+<a name="attachProductToGroup"></a>
+# **attachProductToGroup**
+> attachProductToGroup(productId, groupId)
 
 
 
@@ -241,7 +241,7 @@ var productId = 789; // Integer | ID of the product
 
 var groupId = 789; // Integer | ID of the group to attach
 
-apiInstance.attachProductToDirector_0(productId, groupId).then(function() {
+apiInstance.attachProductToGroup(productId, groupId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -836,7 +836,7 @@ No authorization required
 
 
 
-Get product attributes. Important to add product to a cart. Allow to select if the customer will buy the product for download, streaming or both
+Get product attributes. Mandatory to add product in cart: allows to buy product for download, streaming or both
 
 ### Example
 ```javascript
@@ -1126,7 +1126,7 @@ No authorization required
 
 
 
-Get videos attached to product
+Get product features
 
 ### Example
 ```javascript
@@ -1175,7 +1175,7 @@ No authorization required
 
 
 
-Get videos attached to product
+Get product geolocation restrictions
 
 ### Example
 ```javascript
@@ -1224,7 +1224,7 @@ No authorization required
 
 
 
-check access to a product by geolocation
+Check product access using geolocation
 
 ### Example
 ```javascript
@@ -1338,7 +1338,7 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789, // Integer | 
-  'features': "features_example", // String |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId.
+  'features': "features_example", // String |      ```     featureId[value]=string&featureId[operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId.
   'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt.
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example", // String | Sorting direction (asc by default)
@@ -1359,7 +1359,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **features** | **String**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
+ **features** | **String**|      &#x60;&#x60;&#x60;     featureId[value]&#x3D;string&amp;featureId[operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
@@ -1398,7 +1398,7 @@ var productId = 789; // Integer |
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789, // Integer | 
-  'features': "features_example", // String |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId.
+  'features': "features_example", // String |      ```     featureId[value]=string&featureId[operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId.
   'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt.
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example", // String | Sorting direction (asc by default)
@@ -1419,7 +1419,7 @@ Name | Type | Description  | Notes
  **productId** | **Integer**|  | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **features** | **String**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
+ **features** | **String**|      &#x60;&#x60;&#x60;     featureId[value]&#x3D;string&amp;featureId[operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 

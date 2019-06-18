@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attachFeaturesToProduct**](FeatureValuesApi.md#attachFeaturesToProduct) | **POST** /products/{product_id}/features | 
 [**attachFeaturesToVideo**](FeatureValuesApi.md#attachFeaturesToVideo) | **POST** /videos/{video_id}/features | 
-[**detachFeatureToProduct**](FeatureValuesApi.md#detachFeatureToProduct) | **DELETE** products/{product_id}/features/{feature_id} | 
+[**detachFeatureToProduct**](FeatureValuesApi.md#detachFeatureToProduct) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**getFeatureValues**](FeatureValuesApi.md#getFeatureValues) | **GET** /feature-values | 
 
 
