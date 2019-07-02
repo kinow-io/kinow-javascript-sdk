@@ -166,7 +166,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.FeaturesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -184,7 +184,7 @@ apiInstance.getCategoryFeatures(categoryId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -307,7 +307,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.FeaturesApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -325,7 +325,7 @@ apiInstance.getProductFeatures(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

@@ -71,7 +71,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var productAccessId = 789; // Integer | ID of the product access to fetch
+var productAccessId = 789; // Integer | Product access ID to fetch
 
 apiInstance.deleteProductAccess(productAccessId).then(function() {
   console.log('API called successfully.');
@@ -85,7 +85,7 @@ apiInstance.deleteProductAccess(productAccessId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productAccessId** | **Integer**| ID of the product access to fetch | 
+ **productAccessId** | **Integer**| Product access ID to fetch | 
 
 ### Return type
 
@@ -114,7 +114,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -133,7 +133,7 @@ apiInstance.getCustomerAccessesSubscriptions(customerId, opts).then(function(dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
@@ -165,7 +165,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -183,7 +183,7 @@ apiInstance.getCustomerAccessesVideos(customerId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -214,7 +214,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var productAccessId = 789; // Integer | ID of the product access to fetch
+var productAccessId = 789; // Integer | Product access ID to fetch
 
 apiInstance.getProductAccess(productAccessId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -228,7 +228,7 @@ apiInstance.getProductAccess(productAccessId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productAccessId** | **Integer**| ID of the product access to fetch | 
+ **productAccessId** | **Integer**| Product access ID to fetch | 
 
 ### Return type
 
@@ -313,9 +313,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var customerId = 789; // Integer | ID of the user to unsubscribe
+var customerId = 789; // Integer | Customer ID to unsubscribe
 
-var productAccessId = "productAccessId_example"; // String | ID of the product access to unsubscribe from
+var productAccessId = "productAccessId_example"; // String | Product access ID to unsubscribe from
 
 apiInstance.stopSubscription(customerId, productAccessId).then(function() {
   console.log('API called successfully.');
@@ -329,8 +329,8 @@ apiInstance.stopSubscription(customerId, productAccessId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the user to unsubscribe | 
- **productAccessId** | **String**| ID of the product access to unsubscribe from | 
+ **customerId** | **Integer**| Customer ID to unsubscribe | 
+ **productAccessId** | **String**| Product access ID to unsubscribe from | 
 
 ### Return type
 
@@ -359,7 +359,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var productAccessId = 789; // Integer | ID of the product access to update
+var productAccessId = 789; // Integer | Product access ID to update
 
 var body = new KinowJavascriptSdk.ProductAccess(); // ProductAccess | 
 
@@ -375,7 +375,7 @@ apiInstance.updateProductAccess(productAccessId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productAccessId** | **Integer**| ID of the product access to update | 
+ **productAccessId** | **Integer**| Product access ID to update | 
  **body** | [**ProductAccess**](ProductAccess.md)|  | 
 
 ### Return type

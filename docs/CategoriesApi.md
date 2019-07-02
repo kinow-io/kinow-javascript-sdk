@@ -73,7 +73,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'customerId': 789 // Integer | 
@@ -90,7 +90,7 @@ apiInstance.getAvailableCategory(categoryId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
  **customerId** | **Integer**|  | [optional] 
 
 ### Return type
@@ -227,7 +227,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 apiInstance.getCategory(categoryId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -241,7 +241,7 @@ apiInstance.getCategory(categoryId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
 
 ### Return type
 
@@ -270,7 +270,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 apiInstance.getCategoryBanner(categoryId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -284,7 +284,7 @@ apiInstance.getCategoryBanner(categoryId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
 
 ### Return type
 
@@ -313,7 +313,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -331,7 +331,7 @@ apiInstance.getCategoryFeatures(categoryId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -362,7 +362,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -385,7 +385,7 @@ apiInstance.getCategoryProducts(categoryId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
@@ -421,7 +421,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -442,7 +442,7 @@ apiInstance.getProductCategories(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 

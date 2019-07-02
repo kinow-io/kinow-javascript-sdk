@@ -112,7 +112,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ActorsApi();
 
-var actorId = 789; // Integer | ID of the actor to fetch
+var actorId = 789; // Integer | Actor ID to fetch
 
 var opts = { 
   'imageType': "imageType_example" // String | 
@@ -129,7 +129,7 @@ apiInstance.getActor(actorId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actorId** | **Integer**| ID of the actor to fetch | 
+ **actorId** | **Integer**| Actor ID to fetch | 
  **imageType** | **String**|  | [optional] 
 
 ### Return type
@@ -207,7 +207,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ActorsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -226,7 +226,7 @@ apiInstance.getProductActors(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **imageType** | **String**|  | [optional] 

@@ -154,7 +154,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.WidgetsApi();
 
-var sliderId = 789; // Integer | ID of the slider to fetch
+var sliderId = 789; // Integer | Slider ID to fetch
 
 apiInstance.getWidgetSliderItem(sliderId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -168,7 +168,7 @@ apiInstance.getWidgetSliderItem(sliderId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sliderId** | **Integer**| ID of the slider to fetch | 
+ **sliderId** | **Integer**| Slider ID to fetch | 
 
 ### Return type
 

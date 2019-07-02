@@ -24,7 +24,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AccessesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'customerId': 789 // Integer | 
@@ -41,7 +41,7 @@ apiInstance.getAvailableCategory(categoryId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
  **customerId** | **Integer**|  | [optional] 
 
 ### Return type
@@ -71,9 +71,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AccessesApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getCustomerHasAccessToProduct(customerId, productId).then(function() {
   console.log('API called successfully.');
@@ -87,8 +87,8 @@ apiInstance.getCustomerHasAccessToProduct(customerId, productId).then(function()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **productId** | **Integer**| ID of the product to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -117,9 +117,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AccessesApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 apiInstance.getCustomerHasAccessToVideo(customerId, videoId).then(function() {
   console.log('API called successfully.');
@@ -133,8 +133,8 @@ apiInstance.getCustomerHasAccessToVideo(customerId, videoId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **videoId** | **Integer**| ID of the video to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
 
 ### Return type
 
@@ -163,7 +163,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AccessesApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getProductAvailability(productId).then(function() {
   console.log('API called successfully.');
@@ -177,7 +177,7 @@ apiInstance.getProductAvailability(productId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 

@@ -74,7 +74,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
 
-var subscriptionId = 789; // Integer | ID of the product to fetch
+var subscriptionId = 789; // Integer | Product ID to fetch
 
 apiInstance.getSubscription(subscriptionId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -88,7 +88,7 @@ apiInstance.getSubscription(subscriptionId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **Integer**| ID of the product to fetch | 
+ **subscriptionId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -170,7 +170,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
 
-var subscriptionId = 789; // Integer | ID of the subscription to fetch
+var subscriptionId = 789; // Integer | Subscription ID to fetch
 
 apiInstance.getSubscriptionCoverImage(subscriptionId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -184,7 +184,7 @@ apiInstance.getSubscriptionCoverImage(subscriptionId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **Integer**| ID of the subscription to fetch | 
+ **subscriptionId** | **Integer**| Subscription ID to fetch | 
 
 ### Return type
 

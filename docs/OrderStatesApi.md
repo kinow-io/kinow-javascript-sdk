@@ -22,7 +22,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.OrderStatesApi();
 
-var orderStateId = 789; // Integer | ID of the order state to fetch
+var orderStateId = 789; // Integer | Order state ID to fetch
 
 apiInstance.getOrderState(orderStateId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -36,7 +36,7 @@ apiInstance.getOrderState(orderStateId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderStateId** | **Integer**| ID of the order state to fetch | 
+ **orderStateId** | **Integer**| Order state ID to fetch | 
 
 ### Return type
 

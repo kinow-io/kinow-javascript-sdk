@@ -66,7 +66,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AttributesApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -84,7 +84,7 @@ apiInstance.getProductAttributes(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -115,7 +115,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AttributesApi();
 
-var attributeId = 789; // Integer | Id of the attribute 
+var attributeId = 789; // Integer | Attribute ID to update
 
 var body = new KinowJavascriptSdk.ProductAttributeUpdateRequest(); // ProductAttributeUpdateRequest | 
 
@@ -131,7 +131,7 @@ apiInstance.updateProductAttribute(attributeId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attributeId** | **Integer**| Id of the attribute  | 
+ **attributeId** | **Integer**| Attribute ID to update | 
  **body** | [**ProductAttributeUpdateRequest**](ProductAttributeUpdateRequest.md)|  | 
 
 ### Return type

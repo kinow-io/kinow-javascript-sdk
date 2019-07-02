@@ -112,7 +112,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.DirectorsApi();
 
-var directorId = 789; // Integer | ID of the director to fetch
+var directorId = 789; // Integer | Director ID to fetch
 
 var opts = { 
   'imageType': "imageType_example" // String | 
@@ -129,7 +129,7 @@ apiInstance.getDirector(directorId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **directorId** | **Integer**| ID of the director to fetch | 
+ **directorId** | **Integer**| Director ID to fetch | 
  **imageType** | **String**|  | [optional] 
 
 ### Return type
@@ -207,7 +207,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.DirectorsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -226,7 +226,7 @@ apiInstance.getProductDirectors(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **imageType** | **String**|  | [optional] 

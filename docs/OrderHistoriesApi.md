@@ -21,7 +21,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.OrderHistoriesApi();
 
-var orderId = 789; // Integer | ID of the order to fetch
+var orderId = 789; // Integer | Order ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -39,7 +39,7 @@ apiInstance.getOrderHistories(orderId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **Integer**| ID of the order to fetch | 
+ **orderId** | **Integer**| Order ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

@@ -99,9 +99,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var actorId = 789; // Integer | ID of the actor to attach
+var actorId = 789; // Integer | Actor ID to attach
 
 apiInstance.attachProductToActor(productId, actorId).then(function() {
   console.log('API called successfully.');
@@ -115,8 +115,8 @@ apiInstance.attachProductToActor(productId, actorId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product | 
- **actorId** | **Integer**| ID of the actor to attach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **actorId** | **Integer**| Actor ID to attach | 
 
 ### Return type
 
@@ -145,9 +145,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | Id of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var categoryId = 789; // Integer | ID of the category to attach
+var categoryId = 789; // Integer | Category ID to attach
 
 apiInstance.attachProductToCategory(productId, categoryId).then(function() {
   console.log('API called successfully.');
@@ -161,8 +161,8 @@ apiInstance.attachProductToCategory(productId, categoryId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Id of the product | 
- **categoryId** | **Integer**| ID of the category to attach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **categoryId** | **Integer**| Category ID to attach | 
 
 ### Return type
 
@@ -191,9 +191,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var directorId = 789; // Integer | ID of the director to attach
+var directorId = 789; // Integer | Director ID to attach
 
 apiInstance.attachProductToDirector(productId, directorId).then(function() {
   console.log('API called successfully.');
@@ -207,8 +207,8 @@ apiInstance.attachProductToDirector(productId, directorId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product | 
- **directorId** | **Integer**| ID of the director to attach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **directorId** | **Integer**| Director ID to attach | 
 
 ### Return type
 
@@ -237,9 +237,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var groupId = 789; // Integer | ID of the group to attach
+var groupId = 789; // Integer | Group ID to attach
 
 apiInstance.attachProductToGroup(productId, groupId).then(function() {
   console.log('API called successfully.');
@@ -253,8 +253,8 @@ apiInstance.attachProductToGroup(productId, groupId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product | 
- **groupId** | **Integer**| ID of the group to attach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **groupId** | **Integer**| Group ID to attach | 
 
 ### Return type
 
@@ -283,9 +283,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
-var videoId = 789; // Integer | ID of the video to attach
+var videoId = 789; // Integer | Video ID to attach
 
 apiInstance.attachVideoToProduct(productId, videoId).then(function() {
   console.log('API called successfully.');
@@ -299,8 +299,8 @@ apiInstance.attachVideoToProduct(productId, videoId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
- **videoId** | **Integer**| ID of the video to attach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **videoId** | **Integer**| Video ID to attach | 
 
 ### Return type
 
@@ -372,7 +372,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.deleteProduct(productId).then(function() {
   console.log('API called successfully.');
@@ -386,7 +386,7 @@ apiInstance.deleteProduct(productId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -461,9 +461,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var actorId = 789; // Integer | ID of the actor to detach
+var actorId = 789; // Integer | Actor ID to detach
 
 apiInstance.detachProductFromActor(productId, actorId).then(function() {
   console.log('API called successfully.');
@@ -477,8 +477,8 @@ apiInstance.detachProductFromActor(productId, actorId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product | 
- **actorId** | **Integer**| ID of the actor to detach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **actorId** | **Integer**| Actor ID to detach | 
 
 ### Return type
 
@@ -507,9 +507,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | Id of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var categoryId = 789; // Integer | ID of the category to detach
+var categoryId = 789; // Integer | Category ID to detach
 
 apiInstance.detachProductFromCategory(productId, categoryId).then(function() {
   console.log('API called successfully.');
@@ -523,8 +523,8 @@ apiInstance.detachProductFromCategory(productId, categoryId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Id of the product | 
- **categoryId** | **Integer**| ID of the category to detach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **categoryId** | **Integer**| Category ID to detach | 
 
 ### Return type
 
@@ -553,9 +553,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var directorId = 789; // Integer | ID of the director to detach
+var directorId = 789; // Integer | Director ID to detach
 
 apiInstance.detachProductFromDirector(productId, directorId).then(function() {
   console.log('API called successfully.');
@@ -569,8 +569,8 @@ apiInstance.detachProductFromDirector(productId, directorId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product | 
- **directorId** | **Integer**| ID of the director to detach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **directorId** | **Integer**| Director ID to detach | 
 
 ### Return type
 
@@ -599,9 +599,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product
+var productId = 789; // Integer | Product ID to fetch
 
-var groupId = 789; // Integer | ID of the group to detach
+var groupId = 789; // Integer | Group ID to detach
 
 apiInstance.detachProductFromGroup(productId, groupId).then(function() {
   console.log('API called successfully.');
@@ -615,8 +615,8 @@ apiInstance.detachProductFromGroup(productId, groupId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product | 
- **groupId** | **Integer**| ID of the group to detach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **groupId** | **Integer**| Group ID to detach | 
 
 ### Return type
 
@@ -645,7 +645,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -668,7 +668,7 @@ apiInstance.getCategoryProducts(categoryId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
@@ -704,9 +704,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getCustomerHasAccessToProduct(customerId, productId).then(function() {
   console.log('API called successfully.');
@@ -720,8 +720,8 @@ apiInstance.getCustomerHasAccessToProduct(customerId, productId).then(function()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **productId** | **Integer**| ID of the product to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -750,7 +750,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getProduct(productId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -764,7 +764,7 @@ apiInstance.getProduct(productId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -793,7 +793,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -812,7 +812,7 @@ apiInstance.getProductActors(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **imageType** | **String**|  | [optional] 
@@ -844,7 +844,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -862,7 +862,7 @@ apiInstance.getProductAttributes(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -893,7 +893,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getProductAvailability(productId).then(function() {
   console.log('API called successfully.');
@@ -907,7 +907,7 @@ apiInstance.getProductAvailability(productId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -936,7 +936,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -957,7 +957,7 @@ apiInstance.getProductCategories(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
@@ -991,7 +991,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getProductCoverImage(productId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1005,7 +1005,7 @@ apiInstance.getProductCoverImage(productId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -1034,7 +1034,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -1053,7 +1053,7 @@ apiInstance.getProductDirectors(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **imageType** | **String**|  | [optional] 
@@ -1085,7 +1085,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -1103,7 +1103,7 @@ apiInstance.getProductExtracts(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -1134,7 +1134,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -1152,7 +1152,7 @@ apiInstance.getProductFeatures(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -1183,7 +1183,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -1201,7 +1201,7 @@ apiInstance.getProductGeolocations(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -1232,7 +1232,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var ipAddress = "ipAddress_example"; // String | address ip
 
@@ -1252,7 +1252,7 @@ apiInstance.getProductGeolocationsByIp(productId, ipAddress, opts).then(function
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **ipAddress** | **String**| address ip | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
@@ -1284,7 +1284,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'type': "type_example", // String | type as screen_small or screen_large
@@ -1303,7 +1303,7 @@ apiInstance.getProductImages(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **type** | **String**| type as screen_small or screen_large | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
@@ -1452,7 +1452,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -1474,7 +1474,7 @@ apiInstance.getVideosFromProduct(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **perPage** | **Integer**|  | [optional] 
@@ -1568,7 +1568,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var enabled = 56; // Integer | Enabled
 
@@ -1593,7 +1593,7 @@ apiInstance.setProductGeolocation(productId, enabled, behaviorDetectedCountries,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **enabled** | **Integer**| Enabled | 
  **behaviorDetectedCountries** | **String**| Behavior for detected countries | 
  **behaviorNonDetectedCountries** | **String**| Behavior for non-detected countries | 
@@ -1628,7 +1628,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var body = new KinowJavascriptSdk.Product(); // Product | 
 
@@ -1644,7 +1644,7 @@ apiInstance.updateProduct(productId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **body** | [**Product**](Product.md)|  | 
 
 ### Return type

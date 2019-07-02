@@ -22,7 +22,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.MediaFilesApi();
 
-var sourceId = 789; // Integer | ID of the media source to fetch
+var sourceId = 789; // Integer | Media source ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -41,7 +41,7 @@ apiInstance.getMediaSourceFiles(sourceId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceId** | **Integer**| ID of the media source to fetch | 
+ **sourceId** | **Integer**| Media source ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
@@ -73,7 +73,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.MediaFilesApi();
 
-var sourceId = 789; // Integer | ID of the media source to fetch
+var sourceId = 789; // Integer | Media source ID to fetch
 
 var body = new KinowJavascriptSdk.MediaFile(); // MediaFile | Create MediaFile object
 
@@ -89,7 +89,7 @@ apiInstance.postMediaSourceFiles(sourceId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceId** | **Integer**| ID of the media source to fetch | 
+ **sourceId** | **Integer**| Media source ID to fetch | 
  **body** | [**MediaFile**](MediaFile.md)| Create MediaFile object | 
 
 ### Return type

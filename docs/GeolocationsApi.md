@@ -69,7 +69,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -87,7 +87,7 @@ apiInstance.getProductGeolocations(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -118,7 +118,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var ipAddress = "ipAddress_example"; // String | address ip
 
@@ -138,7 +138,7 @@ apiInstance.getProductGeolocationsByIp(productId, ipAddress, opts).then(function
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **ipAddress** | **String**| address ip | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
@@ -222,7 +222,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var enabled = 56; // Integer | Enabled
 
@@ -247,7 +247,7 @@ apiInstance.setProductGeolocation(productId, enabled, behaviorDetectedCountries,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **enabled** | **Integer**| Enabled | 
  **behaviorDetectedCountries** | **String**| Behavior for detected countries | 
  **behaviorNonDetectedCountries** | **String**| Behavior for non-detected countries | 

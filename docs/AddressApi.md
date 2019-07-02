@@ -22,7 +22,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AddressApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 apiInstance.getCustomerAddress(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -36,7 +36,7 @@ apiInstance.getCustomerAddress(customerId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
 
 ### Return type
 
@@ -65,7 +65,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.AddressApi();
 
-var addressId = 789; // Integer | ID of the address to update
+var addressId = 789; // Integer | Address ID to update
 
 var body = new KinowJavascriptSdk.Address(); // Address | 
 
@@ -81,7 +81,7 @@ apiInstance.updateAddress(addressId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addressId** | **Integer**| ID of the address to update | 
+ **addressId** | **Integer**| Address ID to update | 
  **body** | [**Address**](Address.md)|  | 
 
 ### Return type

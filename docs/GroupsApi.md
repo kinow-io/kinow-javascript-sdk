@@ -25,9 +25,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GroupsApi();
 
-var groupId = 789; // Integer | ID of the group
+var groupId = 789; // Integer | Group ID to fetch
 
-var customerId = 789; // Integer | ID of the customer to attach
+var customerId = 789; // Integer | Customer ID to attach
 
 apiInstance.attachCustomerToGroup(groupId, customerId).then(function() {
   console.log('API called successfully.');
@@ -41,8 +41,8 @@ apiInstance.attachCustomerToGroup(groupId, customerId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Integer**| ID of the group | 
- **customerId** | **Integer**| ID of the customer to attach | 
+ **groupId** | **Integer**| Group ID to fetch | 
+ **customerId** | **Integer**| Customer ID to attach | 
 
 ### Return type
 
@@ -71,9 +71,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GroupsApi();
 
-var groupId = 789; // Integer | Id of the group
+var groupId = 789; // Integer | Group ID to fetch
 
-var customerId = 789; // Integer | ID of the customer to attach
+var customerId = 789; // Integer | Customer ID to attach
 
 apiInstance.detachCustomerFromGroup(groupId, customerId).then(function() {
   console.log('API called successfully.');
@@ -87,8 +87,8 @@ apiInstance.detachCustomerFromGroup(groupId, customerId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Integer**| Id of the group | 
- **customerId** | **Integer**| ID of the customer to attach | 
+ **groupId** | **Integer**| Group ID to fetch | 
+ **customerId** | **Integer**| Customer ID to attach | 
 
 ### Return type
 
@@ -117,7 +117,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GroupsApi();
 
-var groupId = 789; // Integer | ID of the group to fetch
+var groupId = 789; // Integer | Group ID to fetch
 
 apiInstance.getGroup(groupId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -131,7 +131,7 @@ apiInstance.getGroup(groupId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **Integer**| ID of the group to fetch | 
+ **groupId** | **Integer**| Group ID to fetch | 
 
 ### Return type
 
@@ -212,7 +212,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GroupsApi();
 
-var productId = 789; // Integer | Id of the product
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -230,7 +230,7 @@ apiInstance.getProductGroups(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Id of the product | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

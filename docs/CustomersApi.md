@@ -40,9 +40,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var cartId = 789; // Integer | ID of the cart to attach
+var cartId = 789; // Integer | Cart ID to attach
 
 apiInstance.attachCartToCustomer(customerId, cartId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -56,8 +56,8 @@ apiInstance.attachCartToCustomer(customerId, cartId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **cartId** | **Integer**| ID of the cart to attach | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **cartId** | **Integer**| Cart ID to attach | 
 
 ### Return type
 
@@ -221,7 +221,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to delete
+var customerId = 789; // Integer | Customer ID to delete
 
 apiInstance.deleteCustomer(customerId).then(function() {
   console.log('API called successfully.');
@@ -235,7 +235,7 @@ apiInstance.deleteCustomer(customerId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to delete | 
+ **customerId** | **Integer**| Customer ID to delete | 
 
 ### Return type
 
@@ -264,7 +264,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to authenticate
+var customerId = 789; // Integer | Customer ID to authenticate
 
 apiInstance.generateAuthenticationToken(customerId).then(function() {
   console.log('API called successfully.');
@@ -278,7 +278,7 @@ apiInstance.generateAuthenticationToken(customerId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to authenticate | 
+ **customerId** | **Integer**| Customer ID to authenticate | 
 
 ### Return type
 
@@ -307,7 +307,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 apiInstance.getCustomer(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -321,7 +321,7 @@ apiInstance.getCustomer(customerId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
 
 ### Return type
 
@@ -350,7 +350,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -369,7 +369,7 @@ apiInstance.getCustomerAccessesSubscriptions(customerId, opts).then(function(dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
@@ -401,7 +401,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -419,7 +419,7 @@ apiInstance.getCustomerAccessesVideos(customerId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -450,7 +450,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 apiInstance.getCustomerAddress(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -464,7 +464,7 @@ apiInstance.getCustomerAddress(customerId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
 
 ### Return type
 
@@ -493,9 +493,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getCustomerCanSeeProduct(customerId, productId).then(function() {
   console.log('API called successfully.');
@@ -509,8 +509,8 @@ apiInstance.getCustomerCanSeeProduct(customerId, productId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **productId** | **Integer**| ID of the product to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -539,7 +539,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 apiInstance.getCustomerCurrentViews(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -553,7 +553,7 @@ apiInstance.getCustomerCurrentViews(customerId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
 
 ### Return type
 
@@ -582,7 +582,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | Id of the customer
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -600,7 +600,7 @@ apiInstance.getCustomerGroups(customerId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Id of the customer | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -631,9 +631,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getCustomerHasAccessToProduct(customerId, productId).then(function() {
   console.log('API called successfully.');
@@ -647,8 +647,8 @@ apiInstance.getCustomerHasAccessToProduct(customerId, productId).then(function()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **productId** | **Integer**| ID of the product to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -677,9 +677,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 apiInstance.getCustomerHasAccessToVideo(customerId, videoId).then(function() {
   console.log('API called successfully.');
@@ -693,8 +693,8 @@ apiInstance.getCustomerHasAccessToVideo(customerId, videoId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **videoId** | **Integer**| ID of the video to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
 
 ### Return type
 
@@ -723,7 +723,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -741,7 +741,7 @@ apiInstance.getCustomerOrders(customerId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -913,7 +913,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var body = new KinowJavascriptSdk.Customer(); // Customer | Body of the customer
 
@@ -929,7 +929,7 @@ apiInstance.updateCustomer(customerId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **body** | [**Customer**](Customer.md)| Body of the customer | 
 
 ### Return type

@@ -132,9 +132,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
-var videoId = 789; // Integer | ID of the video to attach
+var videoId = 789; // Integer | Video ID to attach
 
 apiInstance.attachVideoToProduct(productId, videoId).then(function() {
   console.log('API called successfully.');
@@ -148,8 +148,8 @@ apiInstance.attachVideoToProduct(productId, videoId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
- **videoId** | **Integer**| ID of the video to attach | 
+ **productId** | **Integer**| Product ID to fetch | 
+ **videoId** | **Integer**| Video ID to attach | 
 
 ### Return type
 
@@ -264,9 +264,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 apiInstance.getCustomerHasAccessToVideo(customerId, videoId).then(function() {
   console.log('API called successfully.');
@@ -280,8 +280,8 @@ apiInstance.getCustomerHasAccessToVideo(customerId, videoId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **videoId** | **Integer**| ID of the video to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
 
 ### Return type
 
@@ -838,7 +838,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -860,7 +860,7 @@ apiInstance.getVideosFromProduct(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **perPage** | **Integer**|  | [optional] 

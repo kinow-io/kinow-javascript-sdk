@@ -26,9 +26,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
-var extractId = 789; // Integer | ID of the extract to fetch
+var extractId = 789; // Integer | Extract ID to fetch
 
-var idImage = 789; // Integer | ID of the image to attach
+var idImage = 789; // Integer | Image ID to attach
 
 apiInstance.attachCoverToExtract(extractId, idImage).then(function() {
   console.log('API called successfully.');
@@ -42,8 +42,8 @@ apiInstance.attachCoverToExtract(extractId, idImage).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extractId** | **Integer**| ID of the extract to fetch | 
- **idImage** | **Integer**| ID of the image to attach | 
+ **extractId** | **Integer**| Extract ID to fetch | 
+ **idImage** | **Integer**| Image ID to attach | 
 
 ### Return type
 
@@ -201,7 +201,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -219,7 +219,7 @@ apiInstance.getProductExtracts(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

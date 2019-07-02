@@ -118,7 +118,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CMSPagesApi();
 
-var cmsPageId = 789; // Integer | ID of the page to update
+var cmsPageId = 789; // Integer | CMS page ID to update
 
 var body = new KinowJavascriptSdk.CMSPage(); // CMSPage | 
 
@@ -134,7 +134,7 @@ apiInstance.updateCMSPage(cmsPageId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cmsPageId** | **Integer**| ID of the page to update | 
+ **cmsPageId** | **Integer**| CMS page ID to update | 
  **body** | [**CMSPage**](CMSPage.md)|  | 
 
 ### Return type

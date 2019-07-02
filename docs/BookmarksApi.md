@@ -23,7 +23,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.BookmarksApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var productId = 789; // Integer | 
 
@@ -39,7 +39,7 @@ apiInstance.attachBookmarkToCustomer(customerId, productId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **productId** | **Integer**|  | 
 
 ### Return type
@@ -69,7 +69,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.BookmarksApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var productId = 789; // Integer | 
 
@@ -85,7 +85,7 @@ apiInstance.detachBookmarkFromCustomer(customerId, productId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **productId** | **Integer**|  | 
 
 ### Return type

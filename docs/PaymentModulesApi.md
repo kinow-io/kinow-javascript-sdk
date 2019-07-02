@@ -70,7 +70,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.PaymentModulesApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 var paymentName = "paymentName_example"; // String | Payment module name
 
@@ -86,7 +86,7 @@ apiInstance.getPaymentUrl(cartId, paymentName).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment module name | 
 
 ### Return type
@@ -116,7 +116,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.PaymentModulesApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 var paymentName = "paymentName_example"; // String | Payment module name
 
@@ -134,7 +134,7 @@ apiInstance.validateCart(cartId, paymentName, paymentArguments).then(function() 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment module name | 
  **paymentArguments** | [**PaymentArguments**](PaymentArguments.md)| payment arguments, token and tokenType | 
 
@@ -165,7 +165,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.PaymentModulesApi();
 
-var cartId = 789; // Integer | Id of the cart to validate
+var cartId = 789; // Integer | Cart ID to validate
 
 apiInstance.validateFreeOrder(cartId).then(function() {
   console.log('API called successfully.');
@@ -179,7 +179,7 @@ apiInstance.validateFreeOrder(cartId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to validate | 
+ **cartId** | **Integer**| Cart ID to validate | 
 
 ### Return type
 

@@ -26,7 +26,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartRulesApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 var code = "code_example"; // String | Code of the cart rule to attach
 
@@ -42,7 +42,7 @@ apiInstance.attachCartRuleToCart(cartId, code).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
  **code** | **String**| Code of the cart rule to attach | 
 
 ### Return type
@@ -158,7 +158,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartRulesApi();
 
-var cartRuleId = 789; // Integer | ID of the cart rule to fetch
+var cartRuleId = 789; // Integer | Cart rule ID to fetch
 
 apiInstance.getCartRule(cartRuleId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -172,7 +172,7 @@ apiInstance.getCartRule(cartRuleId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartRuleId** | **Integer**| ID of the cart rule to fetch | 
+ **cartRuleId** | **Integer**| Cart rule ID to fetch | 
 
 ### Return type
 

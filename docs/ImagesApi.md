@@ -37,9 +37,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 3.4; // Number | Id of the product
+var productId = 3.4; // Number | Product ID to fetch
 
-var imageId = 3.4; // Number | Id of the image to delete
+var imageId = 3.4; // Number | Image ID to delete
 
 apiInstance.deleteProductScreenshot(productId, imageId).then(function() {
   console.log('API called successfully.');
@@ -53,8 +53,8 @@ apiInstance.deleteProductScreenshot(productId, imageId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product | 
- **imageId** | **Number**| Id of the image to delete | 
+ **productId** | **Number**| Product ID to fetch | 
+ **imageId** | **Number**| Image ID to delete | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var actorId = 789; // Integer | ID of the actor to fetch
+var actorId = 789; // Integer | Actor ID to fetch
 
 apiInstance.getActorCoverImage(actorId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -97,7 +97,7 @@ apiInstance.getActorCoverImage(actorId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actorId** | **Integer**| ID of the actor to fetch | 
+ **actorId** | **Integer**| Actor ID to fetch | 
 
 ### Return type
 
@@ -126,7 +126,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var categoryId = 789; // Integer | ID of the category to fetch
+var categoryId = 789; // Integer | Category ID to fetch
 
 apiInstance.getCategoryBanner(categoryId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -140,7 +140,7 @@ apiInstance.getCategoryBanner(categoryId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| ID of the category to fetch | 
+ **categoryId** | **Integer**| Category ID to fetch | 
 
 ### Return type
 
@@ -169,7 +169,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var directorId = 789; // Integer | ID of the director to fetch
+var directorId = 789; // Integer | Director ID to fetch
 
 apiInstance.getDirectorCoverImage(directorId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -183,7 +183,7 @@ apiInstance.getDirectorCoverImage(directorId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **directorId** | **Integer**| ID of the director to fetch | 
+ **directorId** | **Integer**| Director ID to fetch | 
 
 ### Return type
 
@@ -249,7 +249,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getProductCoverImage(productId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -263,7 +263,7 @@ apiInstance.getProductCoverImage(productId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -292,7 +292,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'type': "type_example", // String | type as screen_small or screen_large
@@ -311,7 +311,7 @@ apiInstance.getProductImages(productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
  **type** | **String**| type as screen_small or screen_large | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
@@ -343,7 +343,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 789; // Integer | ID of the product to fetch
+var productId = 789; // Integer | Product ID to fetch
 
 apiInstance.getProductScreenshots(productId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -357,7 +357,7 @@ apiInstance.getProductScreenshots(productId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| ID of the product to fetch | 
+ **productId** | **Integer**| Product ID to fetch | 
 
 ### Return type
 
@@ -386,7 +386,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var subscriptionId = 789; // Integer | ID of the subscription to fetch
+var subscriptionId = 789; // Integer | Subscription ID to fetch
 
 apiInstance.getSubscriptionCoverImage(subscriptionId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -400,7 +400,7 @@ apiInstance.getSubscriptionCoverImage(subscriptionId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **Integer**| ID of the subscription to fetch | 
+ **subscriptionId** | **Integer**| Subscription ID to fetch | 
 
 ### Return type
 
@@ -429,7 +429,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var videoId = 789; // Integer | ID of the video to fetch
+var videoId = 789; // Integer | Video ID to fetch
 
 apiInstance.getVideoCover(videoId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -443,7 +443,7 @@ apiInstance.getVideoCover(videoId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| ID of the video to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
 
 ### Return type
 
@@ -472,7 +472,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var actorId = 3.4; // Number | Id of the actor
+var actorId = 3.4; // Number | Actor ID to fetch
 
 var file = "/path/to/file.txt"; // File | 
 
@@ -493,7 +493,7 @@ apiInstance.uploadActorCover(actorId, file, hash, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actorId** | **Number**| Id of the actor | 
+ **actorId** | **Number**| Actor ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -525,7 +525,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var categoryId = 3.4; // Number | Id of the category
+var categoryId = 3.4; // Number | Category ID to fetch
 
 var file = "/path/to/file.txt"; // File | 
 
@@ -546,7 +546,7 @@ apiInstance.uploadCategoryBanner(categoryId, file, hash, opts).then(function(dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Number**| Id of the category | 
+ **categoryId** | **Number**| Category ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -578,7 +578,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var directorId = 3.4; // Number | Id of the director
+var directorId = 3.4; // Number | Director ID to fetch
 
 var file = "/path/to/file.txt"; // File | 
 
@@ -599,7 +599,7 @@ apiInstance.uploadDirectorCover(directorId, file, hash, opts).then(function(data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **directorId** | **Number**| Id of the director | 
+ **directorId** | **Number**| Director ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -631,7 +631,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 3.4; // Number | Id of the product
+var productId = 3.4; // Number | Product ID to fetch
 
 var file = "/path/to/file.txt"; // File | 
 
@@ -652,7 +652,7 @@ apiInstance.uploadProductCover(productId, file, hash, opts).then(function(data) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product | 
+ **productId** | **Number**| Product ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -684,9 +684,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 3.4; // Number | Id of the product
+var productId = 3.4; // Number | Product ID to fetch
 
-var imageId = 3.4; // Number | Id of the product
+var imageId = 3.4; // Number | Image ID to fetch
 
 var opts = { 
   'position': 3.4 // Number | 
@@ -703,8 +703,8 @@ apiInstance.uploadProductScreenshot(productId, imageId, opts).then(function(data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product | 
- **imageId** | **Number**| Id of the product | 
+ **productId** | **Number**| Product ID to fetch | 
+ **imageId** | **Number**| Image ID to fetch | 
  **position** | **Number**|  | [optional] 
 
 ### Return type
@@ -734,7 +734,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 3.4; // Number | Id of the product
+var productId = 3.4; // Number | Product ID to fetch
 
 var file = "/path/to/file.txt"; // File | 
 
@@ -756,7 +756,7 @@ apiInstance.uploadProductScreenshots(productId, file, hash, opts).then(function(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Id of the product | 
+ **productId** | **Number**| Product ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -789,7 +789,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var subscriptionId = 3.4; // Number | Id of the subscription
+var subscriptionId = 3.4; // Number | Subscription ID to fetch
 
 var file = "/path/to/file.txt"; // File | 
 
@@ -810,7 +810,7 @@ apiInstance.uploadSubscriptionCover(subscriptionId, file, hash, opts).then(funct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **Number**| Id of the subscription | 
+ **subscriptionId** | **Number**| Subscription ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 

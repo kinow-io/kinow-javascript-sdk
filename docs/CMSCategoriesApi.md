@@ -118,7 +118,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CMSCategoriesApi();
 
-var cmsCategoryId = 789; // Integer | ID of the CMS category to update
+var cmsCategoryId = 789; // Integer | CMS category ID to update
 
 var body = new KinowJavascriptSdk.CMSCategory(); // CMSCategory | 
 
@@ -134,7 +134,7 @@ apiInstance.updateCMSCategory(cmsCategoryId, body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cmsCategoryId** | **Integer**| ID of the CMS category to update | 
+ **cmsCategoryId** | **Integer**| CMS category ID to update | 
  **body** | [**CMSCategory**](CMSCategory.md)|  | 
 
 ### Return type

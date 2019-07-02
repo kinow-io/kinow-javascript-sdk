@@ -33,13 +33,13 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
-var productId = 789; // Integer | Id of the product to attach to the cart
+var productId = 789; // Integer | Product ID to add to cart
 
 var opts = { 
-  'productAttributeId': 789, // Integer | Id of the product attribute, required to add product to cart if product is not a subscription
-  'switchSubscriptionId': 789 // Integer | When customer want to switch subscription, switch_subscription_id is the id of the product access that match with the subscription to cancel.
+  'productAttributeId': 789, // Integer | Product attribute ID, required to add product to cart if product is not a subscription
+  'switchSubscriptionId': 789 // Integer | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel
 };
 apiInstance.addProductToCart(cartId, productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -53,10 +53,10 @@ apiInstance.addProductToCart(cartId, productId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
- **productId** | **Integer**| Id of the product to attach to the cart | 
- **productAttributeId** | **Integer**| Id of the product attribute, required to add product to cart if product is not a subscription | [optional] 
- **switchSubscriptionId** | **Integer**| When customer want to switch subscription, switch_subscription_id is the id of the product access that match with the subscription to cancel. | [optional] 
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **productId** | **Integer**| Product ID to add to cart | 
+ **productAttributeId** | **Integer**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+ **switchSubscriptionId** | **Integer**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
 
 ### Return type
 
@@ -85,7 +85,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 var code = "code_example"; // String | Code of the cart rule to attach
 
@@ -101,7 +101,7 @@ apiInstance.attachCartRuleToCart(cartId, code).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
  **code** | **String**| Code of the cart rule to attach | 
 
 ### Return type
@@ -131,9 +131,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
-var cartId = 789; // Integer | ID of the cart to attach
+var cartId = 789; // Integer | Cart ID to attach
 
 apiInstance.attachCartToCustomer(customerId, cartId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -147,8 +147,8 @@ apiInstance.attachCartToCustomer(customerId, cartId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
- **cartId** | **Integer**| ID of the cart to attach | 
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **cartId** | **Integer**| Cart ID to attach | 
 
 ### Return type
 
@@ -221,7 +221,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 apiInstance.deleteCart(cartId).then(function() {
   console.log('API called successfully.');
@@ -235,7 +235,7 @@ apiInstance.deleteCart(cartId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
 
 ### Return type
 
@@ -264,12 +264,12 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
-var productId = 789; // Integer | Id of the product to delete from cart
+var productId = 789; // Integer | Product ID to delete from cart
 
 var opts = { 
-  'productAttributeId': 789 // Integer | Id of the product attribute, required to add product to cart if product is not a subscription
+  'productAttributeId': 789 // Integer | Product attribute ID, required to add product to cart if product is not a subscription
 };
 apiInstance.deleteProductFromCart(cartId, productId, opts).then(function() {
   console.log('API called successfully.');
@@ -283,9 +283,9 @@ apiInstance.deleteProductFromCart(cartId, productId, opts).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
- **productId** | **Integer**| Id of the product to delete from cart | 
- **productAttributeId** | **Integer**| Id of the product attribute, required to add product to cart if product is not a subscription | [optional] 
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **productId** | **Integer**| Product ID to delete from cart | 
+ **productAttributeId** | **Integer**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
 
 ### Return type
 
@@ -314,7 +314,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 apiInstance.getCart(cartId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -328,7 +328,7 @@ apiInstance.getCart(cartId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
 
 ### Return type
 
@@ -357,7 +357,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -378,7 +378,7 @@ apiInstance.getCustomerCarts(customerId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **filters** | **String**|      &#x60;&#x60;&#x60;     date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
@@ -412,7 +412,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 apiInstance.getLastCart(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -426,7 +426,7 @@ apiInstance.getLastCart(customerId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
 
 ### Return type
 
@@ -455,7 +455,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 var paymentName = "paymentName_example"; // String | Payment module name
 
@@ -471,7 +471,7 @@ apiInstance.getPaymentUrl(cartId, paymentName).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment module name | 
 
 ### Return type
@@ -547,7 +547,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to fetch
+var cartId = 789; // Integer | Cart ID to fetch
 
 var paymentName = "paymentName_example"; // String | Payment module name
 
@@ -565,7 +565,7 @@ apiInstance.validateCart(cartId, paymentName, paymentArguments).then(function() 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to fetch | 
+ **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment module name | 
  **paymentArguments** | [**PaymentArguments**](PaymentArguments.md)| payment arguments, token and tokenType | 
 
@@ -596,7 +596,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var cartId = 789; // Integer | Id of the cart to validate
+var cartId = 789; // Integer | Cart ID to validate
 
 apiInstance.validateFreeOrder(cartId).then(function() {
   console.log('API called successfully.');
@@ -610,7 +610,7 @@ apiInstance.validateFreeOrder(cartId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Id of the cart to validate | 
+ **cartId** | **Integer**| Cart ID to validate | 
 
 ### Return type
 

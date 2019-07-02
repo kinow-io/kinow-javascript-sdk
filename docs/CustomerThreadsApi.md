@@ -22,7 +22,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomerThreadsApi();
 
-var customerThreadId = 789; // Integer | ID of the customer thread to fetch
+var customerThreadId = 789; // Integer | Customer thread ID to fetch
 
 apiInstance.getCustomerThread(customerThreadId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -36,7 +36,7 @@ apiInstance.getCustomerThread(customerThreadId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerThreadId** | **Integer**| ID of the customer thread to fetch | 
+ **customerThreadId** | **Integer**| Customer thread ID to fetch | 
 
 ### Return type
 

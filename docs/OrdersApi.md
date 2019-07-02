@@ -25,7 +25,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.OrdersApi();
 
-var customerId = 789; // Integer | ID of the customer to fetch
+var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -43,7 +43,7 @@ apiInstance.getCustomerOrders(customerId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| ID of the customer to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -74,7 +74,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.OrdersApi();
 
-var orderId = 789; // Integer | ID of the order to fetch
+var orderId = 789; // Integer | Order ID to fetch
 
 apiInstance.getOrder(orderId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -88,7 +88,7 @@ apiInstance.getOrder(orderId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **Integer**| ID of the order to fetch | 
+ **orderId** | **Integer**| Order ID to fetch | 
 
 ### Return type
 
@@ -117,7 +117,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.OrdersApi();
 
-var orderId = 789; // Integer | ID of the order to fetch
+var orderId = 789; // Integer | Order ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
@@ -135,7 +135,7 @@ apiInstance.getOrderHistories(orderId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **Integer**| ID of the order to fetch | 
+ **orderId** | **Integer**| Order ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -166,7 +166,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.OrdersApi();
 
-var orderId = 789; // Integer | ID of the order to fetch
+var orderId = 789; // Integer | Order ID to fetch
 
 apiInstance.getOrderInvoice(orderId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -180,7 +180,7 @@ apiInstance.getOrderInvoice(orderId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **Integer**| ID of the order to fetch | 
+ **orderId** | **Integer**| Order ID to fetch | 
 
 ### Return type
 
