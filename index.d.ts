@@ -659,6 +659,7 @@ declare module 'kinow-javascript-sdk' {
     attachProductToCategory(productId: number, categoryId: number, callback?: Function): any
     detachProductFromCategory(productId: number, categoryId: number, callback?: Function): any
     getProductsFromProduct(productId: number, opts?: any, callback?: Function): any
+    getProductGroups(productId: number, opts?: any, callback?: Function): any
     attachProductToGroup(productId: number, groupId: number, callback?: Function): any
     detachProductFromGroup(productId: number, groupId: number, callback?: Function): any
   }
