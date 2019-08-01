@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**searchProducts**](ProductsApi.md#searchProducts) | **GET** /products/search/{search_query} | 
 [**setProductGeolocation**](ProductsApi.md#setProductGeolocation) | **PUT** /products/{product_id}/geolocations | 
 [**updateProduct**](ProductsApi.md#updateProduct) | **PUT** /products/{product_id} | 
+[**updateProductGroupRestrictionBehavior**](ProductsApi.md#updateProductGroupRestrictionBehavior) | **PUT** /products/{product_id}/groups/behavior | 
 
 
 <a name="attachFeaturesToProduct"></a>
@@ -1700,6 +1701,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Product**](Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="updateProductGroupRestrictionBehavior"></a>
+# **updateProductGroupRestrictionBehavior**
+> updateProductGroupRestrictionBehavior(productId, behavior)
+
+
+
+Update product group restriction behavior
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var behavior = 56; // Integer |       Group restriction behavior        0 - Disable      1 - Allow Groups      2 - Forbid Groups
+
+apiInstance.updateProductGroupRestrictionBehavior(productId, behavior).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **behavior** | **Integer**|       Group restriction behavior        0 - Disable      1 - Allow Groups      2 - Forbid Groups | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

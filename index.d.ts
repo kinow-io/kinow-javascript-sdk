@@ -33,6 +33,14 @@ declare module 'kinow-javascript-sdk' {
     firstname: string
     lastname: string
   }
+  interface Bonus {
+    id: number
+    file_name: string
+    mime: string
+    url: string
+    name: Array<I18nField>
+    description: Array<I18nField>
+  }
   interface BlogCategory {
     position: number
     active: number
@@ -368,6 +376,7 @@ declare module 'kinow-javascript-sdk' {
     duration: number
     sub: boolean
     has_group_restriction: boolean
+    group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string
     behavior_non_detected_countries: string
@@ -662,6 +671,7 @@ declare module 'kinow-javascript-sdk' {
     getProductGroups(productId: number, opts?: any, callback?: Function): any
     attachProductToGroup(productId: number, groupId: number, callback?: Function): any
     detachProductFromGroup(productId: number, groupId: number, callback?: Function): any
+    updateProductGroupRestrictionBehavior(productId: number, behavior: number, callback?: Function): any
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)
@@ -730,6 +740,7 @@ declare module 'kinow-javascript-sdk' {
     getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
+    getVideoBonus(videoId: number, callback?: Function): any
   }
   export class CustomerThreadsApi {
     constructor(config?: ApiClient)

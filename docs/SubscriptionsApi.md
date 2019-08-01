@@ -215,7 +215,8 @@ var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789 // Integer | 
+  'perPage': 789, // Integer | 
+  'onlyActive': true // Boolean | 
 };
 apiInstance.getSubscriptions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -231,6 +232,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
+ **onlyActive** | **Boolean**|  | [optional] 
 
 ### Return type
 

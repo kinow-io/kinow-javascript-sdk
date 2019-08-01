@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getDisabledSubscriptions**](VideosApi.md#getDisabledSubscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**getVideo**](VideosApi.md#getVideo) | **GET** /videos/{video_id} | 
 [**getVideoAccess**](VideosApi.md#getVideoAccess) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
+[**getVideoBonus**](VideosApi.md#getVideoBonus) | **GET** /videos/{video_id}/bonus | 
 [**getVideoDownloadUrl**](VideosApi.md#getVideoDownloadUrl) | **GET** /videos/{video_id}/download-url | 
 [**getVideoFeatures**](VideosApi.md#getVideoFeatures) | **GET** /videos/{video_id}/features | 
 [**getVideoGeolocation**](VideosApi.md#getVideoGeolocation) | **GET** /videos/{video_id}/geolocation | 
@@ -424,6 +425,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getVideoBonus"></a>
+# **getVideoBonus**
+> [Bonus] getVideoBonus(videoId)
+
+
+
+Get bonus list
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var videoId = 789; // Integer | Video ID to fetch
+
+apiInstance.getVideoBonus(videoId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| Video ID to fetch | 
+
+### Return type
+
+[**[Bonus]**](Bonus.md)
 
 ### Authorization
 

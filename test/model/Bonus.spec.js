@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KinowJavascriptSdk.Geoloc();
+    instance = new KinowJavascriptSdk.Bonus();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,28 +49,46 @@
       object[property] = value;
   }
 
-  describe('Geoloc', function() {
-    it('should create an instance of Geoloc', function() {
-      // uncomment below and update the code to test Geoloc
-      //var instance = new KinowJavascriptSdk.Geoloc();
-      //expect(instance).to.be.a(KinowJavascriptSdk.Geoloc);
+  describe('Bonus', function() {
+    it('should create an instance of Bonus', function() {
+      // uncomment below and update the code to test Bonus
+      //var instance = new KinowJavascriptSdk.Bonus();
+      //expect(instance).to.be.a(KinowJavascriptSdk.Bonus);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new KinowJavascriptSdk.Geoloc();
+      //var instance = new KinowJavascriptSdk.Bonus();
       //expect(instance).to.be();
     });
 
-    it('should have the property isoCode (base name: "iso_code")', function() {
-      // uncomment below and update the code to test the property isoCode
-      //var instance = new KinowJavascriptSdk.Geoloc();
+    it('should have the property fileName (base name: "file_name")', function() {
+      // uncomment below and update the code to test the property fileName
+      //var instance = new KinowJavascriptSdk.Bonus();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mime (base name: "mime")', function() {
+      // uncomment below and update the code to test the property mime
+      //var instance = new KinowJavascriptSdk.Bonus();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instance = new KinowJavascriptSdk.Bonus();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new KinowJavascriptSdk.Geoloc();
+      //var instance = new KinowJavascriptSdk.Bonus();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new KinowJavascriptSdk.Bonus();
       //expect(instance).to.be();
     });
 

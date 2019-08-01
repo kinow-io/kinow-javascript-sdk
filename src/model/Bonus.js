@@ -25,7 +25,7 @@
     if (!root.KinowJavascriptSdk) {
       root.KinowJavascriptSdk = {};
     }
-    root.KinowJavascriptSdk.Gender = factory(root.KinowJavascriptSdk.ApiClient, root.KinowJavascriptSdk.I18nField);
+    root.KinowJavascriptSdk.Bonus = factory(root.KinowJavascriptSdk.ApiClient, root.KinowJavascriptSdk.I18nField);
   }
 }(this, function(ApiClient, I18nField) {
   'use strict';
@@ -34,14 +34,14 @@
 
 
   /**
-   * The Gender model module.
-   * @module model/Gender
+   * The Bonus model module.
+   * @module model/Bonus
    * @version 1.1.2
    */
 
   /**
-   * Constructs a new <code>Gender</code>.
-   * @alias module:model/Gender
+   * Constructs a new <code>Bonus</code>.
+   * @alias module:model/Bonus
    * @class
    */
   var exports = function() {
@@ -50,14 +50,17 @@
 
 
 
+
+
+
   };
 
   /**
-   * Constructs a <code>Gender</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Bonus</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Gender} obj Optional instance to populate.
-   * @return {module:model/Gender} The populated <code>Gender</code> instance.
+   * @param {module:model/Bonus} obj Optional instance to populate.
+   * @return {module:model/Bonus} The populated <code>Bonus</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -66,30 +69,49 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'Integer');
+      if (data.hasOwnProperty('file_name')) {
+        obj['file_name'] = ApiClient.convertToType(data['file_name'], 'String');
+      }
+      if (data.hasOwnProperty('mime')) {
+        obj['mime'] = ApiClient.convertToType(data['mime'], 'String');
+      }
+      if (data.hasOwnProperty('url')) {
+        obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], [I18nField]);
+      }
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], [I18nField]);
       }
     }
     return obj;
   }
 
   /**
-   * 
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * 
-   * @member {Integer} type
+   * @member {String} file_name
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['file_name'] = undefined;
+  /**
+   * @member {String} mime
+   */
+  exports.prototype['mime'] = undefined;
+  /**
+   * @member {String} url
+   */
+  exports.prototype['url'] = undefined;
   /**
    * @member {Array.<module:model/I18nField>} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {Array.<module:model/I18nField>} description
+   */
+  exports.prototype['description'] = undefined;
 
 
 
