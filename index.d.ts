@@ -519,6 +519,10 @@ declare module 'kinow-javascript-sdk' {
     unfold: number
     position: number
   }
+  export class OAuthApi {
+    constructor(config?: ApiClient)
+    getToken(clientId: string, clientSecret: string, callback?: Function): any
+  }
   export class ActorsApi {
     constructor(config?: ApiClient)
     getActors(opts?: any, callback?: Function): any
@@ -864,10 +868,6 @@ declare module 'kinow-javascript-sdk' {
     getCustomerVideoStats(customerId: number, opts?: any, callback?: Function): any
     getCustomerGroupTotalWatched(groupId: number, videoId: number, opts?: any, callback?: Function): any
     getVideoStats(opts?: any, callback?: Function): any
-  }
-  export class OAuthApi {
-    constructor(config?: ApiClient)
-    getToken(clientId: string, clientSecret: string, callback?: Function): any
   }
   export class ApiClient {
     defaultHeaders: any
