@@ -186,6 +186,7 @@ declare module 'kinow-javascript-sdk' {
     max_viewing: number
     custom: string
     password: string
+    last_passwd_gen: string
     id_country: number
   }
   interface CustomerGroupVideoStats {
@@ -261,6 +262,18 @@ declare module 'kinow-javascript-sdk' {
     id: number
     iso_code: string
     name: Array<I18nField>
+  }
+  interface Gift {
+    id: number
+    id_cart: number
+    id_product: number
+    id_product_attribute: number
+    firstname: string
+    lastname: string
+    message: string
+    email: string
+    used: boolean
+    date_send: string
   }
   interface Group {
     id: number
@@ -788,6 +801,19 @@ declare module 'kinow-javascript-sdk' {
     getProductGeolocationsByIp(productId: number, ipAddress: string, opts?: any, callback?: Function): any
     getVideoGeolocationByIp(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
     setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
+  }
+  export class GiftsApi {
+    constructor(config?: ApiClient)
+    getGifts(opts?: any, callback?: Function): any
+    createGift(body: any, callback?: Function): Promise<Gift>
+    getGift(giftId: number, callback?: Function): Promise<Gift>
+    updateGift(giftId: number, body: any, callback?: Function): Promise<Gift>
+    deleteGift(giftId: number, callback?: Function): any
+    getGiftToken(giftId: number, callback?: Function): any
+    sendGift(giftId: number, callback?: Function): any
+    consumeGift(giftId: number, customerId: number, callback?: Function): any
+    getGiftInCart(cartId: number, callback?: Function): Promise<Gift>
+    deleteGiftsInCart(cartId: number, callback?: Function): any
   }
   export class GroupsApi {
     constructor(config?: ApiClient)

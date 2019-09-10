@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **maxViewing** | **Integer** |  | [optional] 
 **custom** | **String** |  | [optional] 
 **password** | **String** | Only available in body | [optional] 
+**lastPasswdGen** | **String** |  | [optional] 
 **idCountry** | **Integer** | Only available in body | [optional] 
 
 
