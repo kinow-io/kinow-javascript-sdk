@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**deleteProductScreenshot**](ImagesApi.md#deleteProductScreenshot) | **DELETE** /products/{product_id}/screenshots/{image_id} | 
 [**getActorCoverImage**](ImagesApi.md#getActorCoverImage) | **GET** /actors/{actor_id}/cover | 
 [**getCategoryBanner**](ImagesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
+[**getCategoryThumbnail**](ImagesApi.md#getCategoryThumbnail) | **GET** /categories/{category_id}/thumbnail | 
 [**getDirectorCoverImage**](ImagesApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
 [**getIntroImage**](ImagesApi.md#getIntroImage) | **GET** /widgets/intro/images | 
 [**getProductCoverImage**](ImagesApi.md#getProductCoverImage) | **GET** /products/{product_id}/cover | 
@@ -129,6 +130,49 @@ var apiInstance = new KinowJavascriptSdk.ImagesApi();
 var categoryId = 789; // Integer | Category ID to fetch
 
 apiInstance.getCategoryBanner(categoryId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryThumbnail"></a>
+# **getCategoryThumbnail**
+> Image getCategoryThumbnail(categoryId)
+
+
+
+Get thumbnail of a category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+apiInstance.getCategoryThumbnail(categoryId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);

@@ -649,6 +649,7 @@ declare module 'kinow-javascript-sdk' {
     getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
+    getCategoryThumbnail(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any
   }
@@ -834,6 +835,7 @@ declare module 'kinow-javascript-sdk' {
     getActorCoverImage(actorId: number, callback?: Function): Promise<Image>
     uploadActorCover(actorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
+    getCategoryThumbnail(categoryId: number, callback?: Function): Promise<Image>
     getIntroImage(): any
     getVideoCover(videoId: number, callback?: Function): Promise<Image>
     getProductScreenshots(productId: number, callback?: Function): any

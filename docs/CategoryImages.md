@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**coverThumbnail** | [**Image**](Image.md) |  | [optional] 
+**thumbnail** | [**Image**](Image.md) |  | [optional] 
 **banner** | [**Image**](Image.md) |  | [optional] 
 
 
