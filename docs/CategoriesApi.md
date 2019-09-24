@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**getCategoryBanner**](CategoriesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
 [**getCategoryFeatures**](CategoriesApi.md#getCategoryFeatures) | **GET** /categories/{category_id}/features | 
 [**getCategoryProducts**](CategoriesApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
-[**getCategoryThumbnail**](CategoriesApi.md#getCategoryThumbnail) | **GET** /categories/{category_id}/thumbnail | 
 [**getProductCategories**](CategoriesApi.md#getProductCategories) | **GET** /products/{product_id}/categories | 
 [**getSubscriptionCategories**](CategoriesApi.md#getSubscriptionCategories) | **GET** /subscriptions/{subscription_id}/categories | 
 
@@ -398,49 +397,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Products**](Products.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getCategoryThumbnail"></a>
-# **getCategoryThumbnail**
-> Image getCategoryThumbnail(categoryId)
-
-
-
-Get thumbnail of a category
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.CategoriesApi();
-
-var categoryId = 789; // Integer | Category ID to fetch
-
-apiInstance.getCategoryThumbnail(categoryId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **categoryId** | **Integer**| Category ID to fetch | 
-
-### Return type
-
-[**Image**](Image.md)
 
 ### Authorization
 

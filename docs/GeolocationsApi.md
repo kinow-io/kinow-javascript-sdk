@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**geolocations**](GeolocationsApi.md#geolocations) | **POST** /geolocations | 
+[**getIPLocation**](GeolocationsApi.md#getIPLocation) | **GET** /geolocations/ip | 
 [**getProductGeolocations**](GeolocationsApi.md#getProductGeolocations) | **GET** /products/{product_id}/geolocations | 
 [**getProductGeolocationsByIp**](GeolocationsApi.md#getProductGeolocationsByIp) | **POST** /products/{product_id}/geolocations | 
 [**getVideoGeolocationByIp**](GeolocationsApi.md#getVideoGeolocationByIp) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
@@ -45,6 +46,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getIPLocation"></a>
+# **getIPLocation**
+> IPLocation getIPLocation(ipAddress)
+
+
+
+Get IP location
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var ipAddress = "ipAddress_example"; // String | address ip
+
+apiInstance.getIPLocation(ipAddress).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipAddress** | **String**| address ip | 
+
+### Return type
+
+[**IPLocation**](IPLocation.md)
 
 ### Authorization
 
