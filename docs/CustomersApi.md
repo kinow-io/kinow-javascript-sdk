@@ -22,8 +22,10 @@ Method | HTTP request | Description
 [**getCustomerOrders**](CustomersApi.md#getCustomerOrders) | **GET** /customers/{customer_id}/orders | 
 [**getCustomers**](CustomersApi.md#getCustomers) | **GET** /customers | 
 [**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
-[**getPaymentCustomerId**](CustomersApi.md#getPaymentCustomerId) | **GET** /customers/{customer_id}/payments/{payment_name}/customer | 
+[**getPaymentMethods**](CustomersApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
+[**getPendingPayments**](CustomersApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
 [**updateCustomer**](CustomersApi.md#updateCustomer) | **PUT** /customers/{customer_id} | 
+[**updatePaymentMethod**](CustomersApi.md#updatePaymentMethod) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
 
 
 <a name="attachCartToCustomer"></a>
@@ -853,13 +855,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getPaymentCustomerId"></a>
-# **getPaymentCustomerId**
-> &#39;String&#39; getPaymentCustomerId(customerId, paymentName)
+<a name="getPaymentMethods"></a>
+# **getPaymentMethods**
+> [PaymentMethods] getPaymentMethods(customerId, paymentName)
 
 
 
-Get payment modules list
+Get payment methods saved for a Customer on a payment gateway
 
 ### Example
 ```javascript
@@ -871,7 +873,7 @@ var customerId = 789; // Integer |
 
 var paymentName = "paymentName_example"; // String | 
 
-apiInstance.getPaymentCustomerId(customerId, paymentName).then(function(data) {
+apiInstance.getPaymentMethods(customerId, paymentName).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -888,7 +890,53 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**[PaymentMethods]**](PaymentMethods.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getPendingPayments"></a>
+# **getPendingPayments**
+> [PaymentDetails] getPendingPayments(paymentName, customerId)
+
+
+
+Get pending payments for a Customer on a payment gateway
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var paymentName = "paymentName_example"; // String | 
+
+var customerId = 789; // Integer | 
+
+apiInstance.getPendingPayments(paymentName, customerId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **paymentName** | **String**|  | 
+ **customerId** | **Integer**|  | 
+
+### Return type
+
+[**[PaymentDetails]**](PaymentDetails.md)
 
 ### Authorization
 
@@ -935,6 +983,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Customer**](Customer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="updatePaymentMethod"></a>
+# **updatePaymentMethod**
+> updatePaymentMethod(customerId, paymentName, paymentArguments)
+
+
+
+Update payment method for a Customer on a payment gateway
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | 
+
+var paymentName = "paymentName_example"; // String | 
+
+var paymentArguments = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment arguments
+
+apiInstance.updatePaymentMethod(customerId, paymentName, paymentArguments).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**|  | 
+ **paymentName** | **String**|  | 
+ **paymentArguments** | [**PaymentArguments**](PaymentArguments.md)| Payment arguments | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

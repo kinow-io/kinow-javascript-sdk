@@ -14,9 +14,10 @@ Method | HTTP request | Description
 [**getCustomerCarts**](CartsApi.md#getCustomerCarts) | **GET** /customers/{customer_id}/carts | 
 [**getLastCart**](CartsApi.md#getLastCart) | **GET** /customers/{customer_id}/last-cart | 
 [**getPaymentUrl**](CartsApi.md#getPaymentUrl) | **GET** /carts/{cart_id}/payments/{payment_name} | 
+[**preparePayment**](CartsApi.md#preparePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
 [**updateCart**](CartsApi.md#updateCart) | **PUT** /carts/{cart_id} | 
-[**validateCart**](CartsApi.md#validateCart) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
 [**validateFreeOrder**](CartsApi.md#validateFreeOrder) | **POST** /carts/{cart_id}/validate-free-order | 
+[**validatePayment**](CartsApi.md#validatePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
 
 
 <a name="addProductToCart"></a>
@@ -447,7 +448,7 @@ No authorization required
 
 
 
-Get payment url
+Get payment gateway URL to use in iframe
 
 ### Example
 ```javascript
@@ -457,7 +458,7 @@ var apiInstance = new KinowJavascriptSdk.CartsApi();
 
 var cartId = 789; // Integer | Cart ID to fetch
 
-var paymentName = "paymentName_example"; // String | Payment module name
+var paymentName = "paymentName_example"; // String | Payment gateway name
 
 apiInstance.getPaymentUrl(cartId, paymentName).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -472,11 +473,57 @@ apiInstance.getPaymentUrl(cartId, paymentName).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
- **paymentName** | **String**| Payment module name | 
+ **paymentName** | **String**| Payment gateway name | 
 
 ### Return type
 
 [**PaymentUrl**](PaymentUrl.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="preparePayment"></a>
+# **preparePayment**
+> PaymentDetails1 preparePayment(cartId, paymentName)
+
+
+
+Prepare payment
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var cartId = 789; // Integer | Cart ID to fetch
+
+var paymentName = "paymentName_example"; // String | Payment gateway name
+
+apiInstance.preparePayment(cartId, paymentName).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **paymentName** | **String**| Payment gateway name | 
+
+### Return type
+
+[**PaymentDetails1**](PaymentDetails1.md)
 
 ### Authorization
 
@@ -533,55 +580,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="validateCart"></a>
-# **validateCart**
-> validateCart(cartId, paymentName, paymentArguments)
-
-
-
-Validate order
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.CartsApi();
-
-var cartId = 789; // Integer | Cart ID to fetch
-
-var paymentName = "paymentName_example"; // String | Payment module name
-
-var paymentArguments = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | payment arguments, token and tokenType
-
-apiInstance.validateCart(cartId, paymentName, paymentArguments).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Cart ID to fetch | 
- **paymentName** | **String**| Payment module name | 
- **paymentArguments** | [**PaymentArguments**](PaymentArguments.md)| payment arguments, token and tokenType | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="validateFreeOrder"></a>
 # **validateFreeOrder**
 > validateFreeOrder(cartId)
@@ -611,6 +609,55 @@ apiInstance.validateFreeOrder(cartId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to validate | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="validatePayment"></a>
+# **validatePayment**
+> validatePayment(cartId, paymentName, paymentArgument)
+
+
+
+Validate payment
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var cartId = 789; // Integer | Cart ID to fetch
+
+var paymentName = "paymentName_example"; // String | Payment gateway name
+
+var paymentArgument = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment argument
+
+apiInstance.validatePayment(cartId, paymentName, paymentArgument).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **paymentName** | **String**| Payment gateway name | 
+ **paymentArgument** | [**PaymentArguments**](PaymentArguments.md)| Payment argument | 
 
 ### Return type
 

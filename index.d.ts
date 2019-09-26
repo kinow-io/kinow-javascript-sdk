@@ -154,6 +154,11 @@ declare module 'kinow-javascript-sdk' {
     description: Array<I18nField>
     description_short: Array<I18nField>
   }
+  interface Configuration {
+    id: number
+    name: string
+    value: string
+  }
   interface Country {
     id: number
     iso_code: string
@@ -364,7 +369,14 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PaymentArguments {
     token: string
-    tokenType: string
+  }
+  interface PaymentDetails {
+    identifier: string
+    metadata: string
+  }
+  interface PaymentMethods {
+    identifier: string
+    metadata: string
   }
   interface PaymentModule {
     id: number
@@ -608,7 +620,8 @@ declare module 'kinow-javascript-sdk' {
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<Cart>
     getLastCart(customerId: number, callback?: Function): Promise<Cart>
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
-    validateCart(cartId: number, paymentName: string, paymentArguments: any, callback?: Function): any
+    preparePayment(cartId: number, paymentName: string, callback?: Function): any
+    validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
   }
   export class CartRulesApi {
     constructor(config?: ApiClient)
@@ -624,7 +637,11 @@ declare module 'kinow-javascript-sdk' {
     validateFreeOrder(cartId: number, callback?: Function): any
     getPaymentModules(opts?: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
-    validateCart(cartId: number, paymentName: string, paymentArguments: any, callback?: Function): any
+    preparePayment(cartId: number, paymentName: string, callback?: Function): any
+    validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
+    getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
+    updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
+    getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
   }
   export class CustomersApi {
     constructor(config?: ApiClient)
@@ -647,7 +664,9 @@ declare module 'kinow-javascript-sdk' {
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
     getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
-    getPaymentCustomerId(customerId: number, paymentName: string, callback?: Function): any
+    getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
+    updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
+    getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
   }
   export class CategoriesApi {
     constructor(config?: ApiClient)
@@ -717,6 +736,11 @@ declare module 'kinow-javascript-sdk' {
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
     getProductAvailability(productId: number, callback?: Function): any
+  }
+  export class ConfigurationApi {
+    constructor(config?: ApiClient)
+    getConfiguration(opts?: any, callback?: Function): any
+    getConfigurationByName(configurationName: string, callback?: Function): Promise<Configuration>
   }
   export class CountriesApi {
     constructor(config?: ApiClient)
