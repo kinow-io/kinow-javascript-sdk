@@ -565,6 +565,7 @@ declare module 'kinow-javascript-sdk' {
     getActor(actorId: number, opts?: any, callback?: Function): Promise<Actor>
     updateActor(actorId: number, body: any, callback?: Function): any
     deleteActor(actorId: number, callback?: Function): any
+    getActorProducts(actorId: number, opts?: any, callback?: Function): any
     getProductActors(productId: number, opts?: any, callback?: Function): any
   }
   export class AddressApi {
@@ -805,6 +806,7 @@ declare module 'kinow-javascript-sdk' {
     getDirector(directorId: number, opts?: any, callback?: Function): Promise<Director>
     updateDirector(directorId: number, body: any, callback?: Function): any
     deleteDirector(directorId: number, callback?: Function): any
+    getDirectorProducts(directorId: number, opts?: any, callback?: Function): any
     getProductDirectors(productId: number, opts?: any, callback?: Function): any
   }
   export class ExtractsApi {
