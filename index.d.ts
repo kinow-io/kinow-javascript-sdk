@@ -646,6 +646,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class CustomersApi {
     constructor(config?: ApiClient)
+    getCustomerCarts(customerId: number, opts?: any, callback?: Function): any
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<Cart>
     getCustomers(opts?: any, callback?: Function): any
     createCustomer(body: any, callback?: Function): Promise<Customer>
@@ -719,6 +720,7 @@ declare module 'kinow-javascript-sdk' {
     attachProductToGroup(productId: number, groupId: number, callback?: Function): any
     detachProductFromGroup(productId: number, groupId: number, callback?: Function): any
     updateProductGroupRestrictionBehavior(productId: number, behavior: number, callback?: Function): any
+    getProductSubscription(productId: number, callback?: Function): Promise<Subscription>
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)
@@ -883,6 +885,7 @@ declare module 'kinow-javascript-sdk' {
   export class SubscriptionsApi {
     constructor(config?: ApiClient)
     getSubscriptionCoverImage(subscriptionId: number, callback?: Function): Promise<Image>
+    getProductSubscription(productId: number, callback?: Function): Promise<Subscription>
     getSubscriptions(opts?: any, callback?: Function): any
     getSubscription(subscriptionId: number, callback?: Function): Promise<Subscription>
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any

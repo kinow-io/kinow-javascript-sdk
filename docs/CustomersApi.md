@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getCustomerAccessesVideos**](CustomersApi.md#getCustomerAccessesVideos) | **GET** /customers/{customer_id}/accesses/videos | 
 [**getCustomerAddress**](CustomersApi.md#getCustomerAddress) | **GET** /customers/{customer_id}/address | 
 [**getCustomerCanSeeProduct**](CustomersApi.md#getCustomerCanSeeProduct) | **GET** /customers/{customer_id}/products/{product_id}/can-see | 
+[**getCustomerCarts**](CustomersApi.md#getCustomerCarts) | **GET** /customers/{customer_id}/carts | 
 [**getCustomerCurrentViews**](CustomersApi.md#getCustomerCurrentViews) | **GET** /customers/{customer_id}/current-views | 
 [**getCustomerGroups**](CustomersApi.md#getCustomerGroups) | **GET** /customers/{customer_id}/groups | 
 [**getCustomerHasAccessToProduct**](CustomersApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
@@ -517,6 +518,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCustomerCarts"></a>
+# **getCustomerCarts**
+> Carts getCustomerCarts(customerId, opts)
+
+
+
+Get customer carts
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'filters': "filters_example", // String |       ```      date_add[value]=string&date_add[operator]=lt      _______________        {      \"date_add\": {      \"value\": \"string\",      \"operator\": \"lt\"      }      } ```      Operator can be strict, contains, gt or lt.
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getCustomerCarts(customerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **filters** | **String**|       &#x60;&#x60;&#x60;      date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt      _______________        {      \&quot;date_add\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;lt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be strict, contains, gt or lt. | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Carts**](Carts.md)
 
 ### Authorization
 

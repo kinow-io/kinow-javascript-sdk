@@ -32,6 +32,7 @@ Method | HTTP request | Description
 [**getProductGeolocationsByIp**](ProductsApi.md#getProductGeolocationsByIp) | **POST** /products/{product_id}/geolocations | 
 [**getProductGroups**](ProductsApi.md#getProductGroups) | **GET** /products/{product_id}/groups | 
 [**getProductImages**](ProductsApi.md#getProductImages) | **GET** /products/{product_id}/images | 
+[**getProductSubscription**](ProductsApi.md#getProductSubscription) | **GET** /products/{product_id}/subscription | 
 [**getProducts**](ProductsApi.md#getProducts) | **GET** /products | 
 [**getProductsFromProduct**](ProductsApi.md#getProductsFromProduct) | **GET** /products/{product_id}/products | 
 [**getVideosFromProduct**](ProductsApi.md#getVideosFromProduct) | **GET** /products/{product_id}/videos | 
@@ -1362,6 +1363,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductImagesResponse**](ProductImagesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getProductSubscription"></a>
+# **getProductSubscription**
+> Subscription getProductSubscription(productId)
+
+
+
+Get Subscription linked to a Product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+apiInstance.getProductSubscription(productId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+
+### Return type
+
+[**Subscription**](Subscription.md)
 
 ### Authorization
 

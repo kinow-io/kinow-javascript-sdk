@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getDisabledSubscriptions**](SubscriptionsApi.md#getDisabledSubscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
+[**getProductSubscription**](SubscriptionsApi.md#getProductSubscription) | **GET** /products/{product_id}/subscription | 
 [**getSubscription**](SubscriptionsApi.md#getSubscription) | **GET** /subscriptions/{subscription_id} | 
 [**getSubscriptionCategories**](SubscriptionsApi.md#getSubscriptionCategories) | **GET** /subscriptions/{subscription_id}/categories | 
 [**getSubscriptionCoverImage**](SubscriptionsApi.md#getSubscriptionCoverImage) | **GET** /subscriptions/{subscription_id}/cover | 
@@ -50,6 +51,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Subscriptions**](Subscriptions.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getProductSubscription"></a>
+# **getProductSubscription**
+> Subscription getProductSubscription(productId)
+
+
+
+Get Subscription linked to a Product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+apiInstance.getProductSubscription(productId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+
+### Return type
+
+[**Subscription**](Subscription.md)
 
 ### Authorization
 
