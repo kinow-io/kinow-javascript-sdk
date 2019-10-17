@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **products** | [**[Product]**](Product.md) |  | [optional] 
 **cartRules** | [**[CartRule]**](CartRule.md) |  | [optional] 
 **totalWithoutTax** | **Number** |  | [optional] 
+**totalTrial** | **Number** |  | [optional] 
 
 

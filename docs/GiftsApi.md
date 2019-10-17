@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**deleteGift**](GiftsApi.md#deleteGift) | **DELETE** /gifts/{gift_id} | 
 [**deleteGiftsInCart**](GiftsApi.md#deleteGiftsInCart) | **DELETE** /carts/{cart_id}/gift/ | 
 [**getGift**](GiftsApi.md#getGift) | **GET** /gifts/{gift_id} | 
+[**getGiftByToken**](GiftsApi.md#getGiftByToken) | **GET** /gifts/{token} | 
 [**getGiftInCart**](GiftsApi.md#getGiftInCart) | **GET** /carts/{cart_id}/gift | 
 [**getGiftToken**](GiftsApi.md#getGiftToken) | **GET** /gifts/{gift_id}/token | 
 [**getGifts**](GiftsApi.md#getGifts) | **GET** /gifts | 
@@ -220,6 +221,49 @@ apiInstance.getGift(giftId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **giftId** | **Integer**| Gift ID to fetch | 
+
+### Return type
+
+[**Gift**](Gift.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getGiftByToken"></a>
+# **getGiftByToken**
+> Gift getGiftByToken(token)
+
+
+
+Retrieve a Gift using its token
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GiftsApi();
+
+var token = "token_example"; // String | Gift token to fetch
+
+apiInstance.getGiftByToken(token).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**| Gift token to fetch | 
 
 ### Return type
 

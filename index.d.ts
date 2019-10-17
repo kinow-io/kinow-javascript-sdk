@@ -86,14 +86,15 @@ declare module 'kinow-javascript-sdk' {
     id: number
   }
   interface CMSPage {
+    id: number
+    id_cms_category: number
+    active: boolean
+    position: number
     link_rewrite: Array<I18nField>
     meta_title: Array<I18nField>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
     content: Array<I18nField>
-    position: number
-    id_cms_category: number
-    id: number
   }
   interface Cart {
     id: number
@@ -106,6 +107,7 @@ declare module 'kinow-javascript-sdk' {
     products: Array<Product>
     cart_rules: Array<CartRule>
     total_without_tax: number
+    total_trial: number
   }
   interface CartRule {
     id: number
@@ -466,14 +468,16 @@ declare module 'kinow-javascript-sdk' {
     recurring_payment: number
   }
   interface Subtitle {
+    id: number
     src: string
     srclang: string
-    label: string
     name: string
     font: string
     size: number
     color: string
     text_shadow: string
+    background: string
+    opacity: number
     italic_color: boolean
   }
   interface Tag {
@@ -853,6 +857,7 @@ declare module 'kinow-javascript-sdk' {
     consumeGift(giftId: number, customerId: number, callback?: Function): any
     getGiftInCart(cartId: number, callback?: Function): Promise<Gift>
     deleteGiftsInCart(cartId: number, callback?: Function): any
+    getGiftByToken(token: string, callback?: Function): Promise<Gift>
   }
   export class GroupsApi {
     constructor(config?: ApiClient)
