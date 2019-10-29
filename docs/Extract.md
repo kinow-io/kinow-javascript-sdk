@@ -17,5 +17,6 @@ Name | Type | Description | Notes
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **cover** | **String** |  | [optional] 
 **thumbnail** | **String** |  | [optional] 
+**advertisingUrl** | **String** |  | [optional] 
 
 

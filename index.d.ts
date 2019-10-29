@@ -17,6 +17,9 @@ declare module 'kinow-javascript-sdk' {
     description: Array<I18nField>
     image: string
     description_short: Array<I18nField>
+    meta_description: Array<I18nField>
+    meta_keywords: Array<I18nField>
+    meta_title: Array<I18nField>
   }
   interface Address {
     id: number
@@ -186,6 +189,7 @@ declare module 'kinow-javascript-sdk' {
     birthday: string
     newsletter: boolean
     optin: boolean
+    notification: boolean
     active: boolean
     id_lang: number
     date_add: string
@@ -232,6 +236,9 @@ declare module 'kinow-javascript-sdk' {
     description: Array<I18nField>
     image: string
     description_short: Array<I18nField>
+    meta_description: Array<I18nField>
+    meta_keywords: Array<I18nField>
+    meta_title: Array<I18nField>
   }
   interface Extract {
     id: number
@@ -248,11 +255,13 @@ declare module 'kinow-javascript-sdk' {
     description: Array<I18nField>
     cover: string
     thumbnail: string
+    advertising_url: string
   }
   interface Feature {
     id: number
     position: number
     name: string
+    name_i18n: Array<I18nField>
   }
   interface FeatureValue {
     id: number
@@ -457,6 +466,7 @@ declare module 'kinow-javascript-sdk' {
     id: number
     id_product: number
     duration: number
+    download: boolean
     trial_duration: number
     trial_percent: number
     trial_sub: number
@@ -516,6 +526,7 @@ declare module 'kinow-javascript-sdk' {
     behavior_detected_countries: string
     behavior_non_detected_countries: string
     has_free_access: object
+    advertising_url: string
   }
   interface VideoStat {
     video_id: number
@@ -775,6 +786,9 @@ declare module 'kinow-javascript-sdk' {
     updateProductAccess(productAccessId: number, body: any, callback?: Function): Promise<ProductAccess>
     deleteProductAccess(productAccessId: number, callback?: Function): any
     stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
+    switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
+    switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
+    switchSubscriptionDelete(productAccessId: number, callback?: Function): any
   }
   export class VideosApi {
     constructor(config?: ApiClient)
@@ -857,7 +871,6 @@ declare module 'kinow-javascript-sdk' {
     consumeGift(giftId: number, customerId: number, callback?: Function): any
     getGiftInCart(cartId: number, callback?: Function): Promise<Gift>
     deleteGiftsInCart(cartId: number, callback?: Function): any
-    getGiftByToken(token: string, callback?: Function): Promise<Gift>
   }
   export class GroupsApi {
     constructor(config?: ApiClient)

@@ -11,6 +11,9 @@ Method | HTTP request | Description
 [**getProductAccess**](ProductAccessesApi.md#getProductAccess) | **GET** /product-accesses/{product_access_id} | 
 [**getProductAccesses**](ProductAccessesApi.md#getProductAccesses) | **GET** /product-accesses | 
 [**stopSubscription**](ProductAccessesApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
+[**switchSubscription**](ProductAccessesApi.md#switchSubscription) | **PUT** /product-accesses/{product_access_id}/switch | 
+[**switchSubscriptionDelete**](ProductAccessesApi.md#switchSubscriptionDelete) | **DELETE** /product-accesses/{product_access_id}/switch | 
+[**switchSubscriptionPending**](ProductAccessesApi.md#switchSubscriptionPending) | **GET** /product-accesses/{product_access_id}/switch | 
 [**updateProductAccess**](ProductAccessesApi.md#updateProductAccess) | **PUT** /product-accesses/{product_access_id} | 
 
 
@@ -71,7 +74,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var productAccessId = 789; // Integer | Product access ID to fetch
+var productAccessId = 789; // Integer | Access ID to fetch
 
 apiInstance.deleteProductAccess(productAccessId).then(function() {
   console.log('API called successfully.');
@@ -85,7 +88,7 @@ apiInstance.deleteProductAccess(productAccessId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productAccessId** | **Integer**| Product access ID to fetch | 
+ **productAccessId** | **Integer**| Access ID to fetch | 
 
 ### Return type
 
@@ -305,7 +308,7 @@ No authorization required
 
 
 
-unsubcribe a user from a access
+Unsubcribe an Access recurring payment
 
 ### Example
 ```javascript
@@ -335,6 +338,138 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="switchSubscription"></a>
+# **switchSubscription**
+> switchSubscription(productAccessId, subscriptionId)
+
+
+
+Switch an Access to another Subscription
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
+
+var productAccessId = "productAccessId_example"; // String | Access ID to switch
+
+var subscriptionId = 789; // Integer | Subscription to switch to
+
+apiInstance.switchSubscription(productAccessId, subscriptionId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productAccessId** | **String**| Access ID to switch | 
+ **subscriptionId** | **Integer**| Subscription to switch to | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="switchSubscriptionDelete"></a>
+# **switchSubscriptionDelete**
+> switchSubscriptionDelete(productAccessId)
+
+
+
+Delete Access pending switch
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
+
+var productAccessId = 789; // Integer | Product access ID to fetch
+
+apiInstance.switchSubscriptionDelete(productAccessId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productAccessId** | **Integer**| Product access ID to fetch | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="switchSubscriptionPending"></a>
+# **switchSubscriptionPending**
+> Subscription switchSubscriptionPending(productAccessId)
+
+
+
+Return Access pending switch
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
+
+var productAccessId = "productAccessId_example"; // String | Access ID to fetch
+
+apiInstance.switchSubscriptionPending(productAccessId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productAccessId** | **String**| Access ID to fetch | 
+
+### Return type
+
+[**Subscription**](Subscription.md)
 
 ### Authorization
 

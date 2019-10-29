@@ -26,5 +26,6 @@ Name | Type | Description | Notes
 **behaviorDetectedCountries** | **String** |  | [optional] 
 **behaviorNonDetectedCountries** | **String** |  | [optional] 
 **hasFreeAccess** | [**VideoFreeAccess**](VideoFreeAccess.md) |  | [optional] 
+**advertisingUrl** | **String** |  | [optional] 
 
 

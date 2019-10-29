@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **birthday** | **String** |  | [optional] 
 **newsletter** | **Boolean** |  | [optional] 
 **optin** | **Boolean** |  | [optional] 
+**notification** | **Boolean** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **idLang** | **Integer** |  | [optional] 
 **dateAdd** | **String** |  | [optional] 

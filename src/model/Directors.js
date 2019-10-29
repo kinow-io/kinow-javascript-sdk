@@ -16,32 +16,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Gift', 'model/Pagination'], factory);
+    define(['ApiClient', 'model/Director', 'model/Pagination'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Gift'), require('./Pagination'));
+    module.exports = factory(require('../ApiClient'), require('./Director'), require('./Pagination'));
   } else {
     // Browser globals (root is window)
     if (!root.KinowJavascriptSdk) {
       root.KinowJavascriptSdk = {};
     }
-    root.KinowJavascriptSdk.Gifts = factory(root.KinowJavascriptSdk.ApiClient, root.KinowJavascriptSdk.Gift, root.KinowJavascriptSdk.Pagination);
+    root.KinowJavascriptSdk.Directors = factory(root.KinowJavascriptSdk.ApiClient, root.KinowJavascriptSdk.Director, root.KinowJavascriptSdk.Pagination);
   }
-}(this, function(ApiClient, Gift, Pagination) {
+}(this, function(ApiClient, Director, Pagination) {
   'use strict';
 
 
 
 
   /**
-   * The Gifts model module.
-   * @module model/Gifts
+   * The Directors model module.
+   * @module model/Directors
    * @version 1.3.30
    */
 
   /**
-   * Constructs a new <code>Gifts</code>.
-   * @alias module:model/Gifts
+   * Constructs a new <code>Directors</code>.
+   * @alias module:model/Directors
    * @class
    */
   var exports = function() {
@@ -52,11 +52,11 @@
   };
 
   /**
-   * Constructs a <code>Gifts</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Directors</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Gifts} obj Optional instance to populate.
-   * @return {module:model/Gifts} The populated <code>Gifts</code> instance.
+   * @param {module:model/Directors} obj Optional instance to populate.
+   * @return {module:model/Directors} The populated <code>Directors</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -66,7 +66,7 @@
         obj['pagination'] = Pagination.constructFromObject(data['pagination']);
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [Gift]);
+        obj['data'] = ApiClient.convertToType(data['data'], [Director]);
       }
     }
     return obj;
@@ -77,7 +77,7 @@
    */
   exports.prototype['pagination'] = undefined;
   /**
-   * @member {Array.<module:model/Gift>} data
+   * @member {Array.<module:model/Director>} data
    */
   exports.prototype['data'] = undefined;
 

@@ -12,5 +12,8 @@ Name | Type | Description | Notes
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **image** | **String** |  | [optional] 
 **descriptionShort** | [**[I18nField]**](I18nField.md) |  | [optional] 
+**metaDescription** | [**[I18nField]**](I18nField.md) |  | [optional] 
+**metaKeywords** | [**[I18nField]**](I18nField.md) |  | [optional] 
+**metaTitle** | [**[I18nField]**](I18nField.md) |  | [optional] 
 
 

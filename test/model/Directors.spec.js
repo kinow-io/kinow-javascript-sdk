@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KinowJavascriptSdk.TaskCreateRequest();
+    instance = new KinowJavascriptSdk.Directors();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('TaskCreateRequest', function() {
-    it('should create an instance of TaskCreateRequest', function() {
-      // uncomment below and update the code to test TaskCreateRequest
-      //var instance = new KinowJavascriptSdk.TaskCreateRequest();
-      //expect(instance).to.be.a(KinowJavascriptSdk.TaskCreateRequest);
+  describe('Directors', function() {
+    it('should create an instance of Directors', function() {
+      // uncomment below and update the code to test Directors
+      //var instance = new KinowJavascriptSdk.Directors();
+      //expect(instance).to.be.a(KinowJavascriptSdk.Directors);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new KinowJavascriptSdk.TaskCreateRequest();
+    it('should have the property pagination (base name: "pagination")', function() {
+      // uncomment below and update the code to test the property pagination
+      //var instance = new KinowJavascriptSdk.Directors();
       //expect(instance).to.be();
     });
 
     it('should have the property data (base name: "data")', function() {
       // uncomment below and update the code to test the property data
-      //var instance = new KinowJavascriptSdk.TaskCreateRequest();
+      //var instance = new KinowJavascriptSdk.Directors();
       //expect(instance).to.be();
     });
 

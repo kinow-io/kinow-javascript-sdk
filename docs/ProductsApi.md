@@ -1025,7 +1025,7 @@ No authorization required
 
 <a name="getProductDirectors"></a>
 # **getProductDirectors**
-> Director1 getProductDirectors(productId, opts)
+> Directors getProductDirectors(productId, opts)
 
 
 
@@ -1063,7 +1063,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Director1**](Director1.md)
+[**Directors**](Directors.md)
 
 ### Authorization
 
