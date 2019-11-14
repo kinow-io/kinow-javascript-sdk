@@ -818,11 +818,11 @@ No authorization required
 
 <a name="getVideos"></a>
 # **getVideos**
-> Videos getVideos(opts)
+> Videos1 getVideos(opts)
 
 
 
-Get customer list
+Get video list
 
 ### Example
 ```javascript
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**Videos1**](Videos1.md)
 
 ### Authorization
 
@@ -870,7 +870,7 @@ No authorization required
 
 <a name="getVideosFromProduct"></a>
 # **getVideosFromProduct**
-> Videos getVideosFromProduct(productId, opts)
+> Videos1 getVideosFromProduct(productId, opts)
 
 
 
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**Videos1**](Videos1.md)
 
 ### Authorization
 

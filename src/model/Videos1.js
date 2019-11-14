@@ -16,32 +16,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Pagination', 'model/Video'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Pagination'), require('./Video'));
   } else {
     // Browser globals (root is window)
     if (!root.KinowJavascriptSdk) {
       root.KinowJavascriptSdk = {};
     }
-    root.KinowJavascriptSdk.CartRuleRestrictionGroupItem = factory(root.KinowJavascriptSdk.ApiClient);
+    root.KinowJavascriptSdk.Videos1 = factory(root.KinowJavascriptSdk.ApiClient, root.KinowJavascriptSdk.Pagination, root.KinowJavascriptSdk.Video);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Pagination, Video) {
   'use strict';
 
 
 
 
   /**
-   * The CartRuleRestrictionGroupItem model module.
-   * @module model/CartRuleRestrictionGroupItem
+   * The Videos1 model module.
+   * @module model/Videos1
    * @version 1.3.31
    */
 
   /**
-   * Constructs a new <code>CartRuleRestrictionGroupItem</code>.
-   * @alias module:model/CartRuleRestrictionGroupItem
+   * Constructs a new <code>Videos1</code>.
+   * @alias module:model/Videos1
    * @class
    */
   var exports = function() {
@@ -52,36 +52,34 @@
   };
 
   /**
-   * Constructs a <code>CartRuleRestrictionGroupItem</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Videos1</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CartRuleRestrictionGroupItem} obj Optional instance to populate.
-   * @return {module:model/CartRuleRestrictionGroupItem} The populated <code>CartRuleRestrictionGroupItem</code> instance.
+   * @param {module:model/Videos1} obj Optional instance to populate.
+   * @return {module:model/Videos1} The populated <code>Videos1</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('pagination')) {
+        obj['pagination'] = Pagination.constructFromObject(data['pagination']);
       }
-      if (data.hasOwnProperty('id_item')) {
-        obj['id_item'] = ApiClient.convertToType(data['id_item'], 'Integer');
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], [Video]);
       }
     }
     return obj;
   }
 
   /**
-   * Can be: product, subscription, category, actor or director
-   * @member {String} type
+   * @member {module:model/Pagination} pagination
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['pagination'] = undefined;
   /**
-   * Item ID to restrict
-   * @member {Integer} id_item
+   * @member {Array.<module:model/Video>} data
    */
-  exports.prototype['id_item'] = undefined;
+  exports.prototype['data'] = undefined;
 
 
 

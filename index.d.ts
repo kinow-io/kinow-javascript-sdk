@@ -831,7 +831,9 @@ declare module 'kinow-javascript-sdk' {
   }
   export class ExtractsApi {
     constructor(config?: ApiClient)
+    getExtracts(opts?: any, callback?: Function): any
     createExtract(body: any, callback?: Function): Promise<Extract>
+    getExtract(extractId: number, callback?: Function): Promise<Extract>
     updateExtract(extractId: number, body: any, callback?: Function): Promise<Extract>
     deleteExtract(extractId: number, callback?: Function): any
     getExtractPlayer(extractId: number, callback?: Function): any

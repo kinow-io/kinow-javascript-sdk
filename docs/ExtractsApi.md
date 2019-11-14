@@ -7,7 +7,9 @@ Method | HTTP request | Description
 [**attachCoverToExtract**](ExtractsApi.md#attachCoverToExtract) | **POST** /extracts/{extract_id}/cover | 
 [**createExtract**](ExtractsApi.md#createExtract) | **POST** /extracts | 
 [**deleteExtract**](ExtractsApi.md#deleteExtract) | **DELETE** /extracts/{extract_id} | 
+[**getExtract**](ExtractsApi.md#getExtract) | **GET** /extracts/{extract_id} | 
 [**getExtractPlayer**](ExtractsApi.md#getExtractPlayer) | **GET** /extracts/{extract_id}/player | 
+[**getExtracts**](ExtractsApi.md#getExtracts) | **GET** /extracts | 
 [**getProductExtracts**](ExtractsApi.md#getProductExtracts) | **GET** /products/{product_id}/extracts | 
 [**updateExtract**](ExtractsApi.md#updateExtract) | **PUT** /extracts/{extract_id} | 
 
@@ -144,6 +146,49 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getExtract"></a>
+# **getExtract**
+> Extract getExtract(extractId)
+
+
+
+Get extract
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ExtractsApi();
+
+var extractId = 789; // Integer | Extract ID to fetch
+
+apiInstance.getExtract(extractId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extractId** | **Integer**| Extract ID to fetch | 
+
+### Return type
+
+[**Extract**](Extract.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getExtractPlayer"></a>
 # **getExtractPlayer**
 > PlayerConfiguration getExtractPlayer(extractId)
@@ -187,9 +232,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getExtracts"></a>
+# **getExtracts**
+> Videos getExtracts(opts)
+
+
+
+Get extracts list
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ExtractsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getExtracts(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Videos**](Videos.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getProductExtracts"></a>
 # **getProductExtracts**
-> ProductExtractsResponse getProductExtracts(productId, opts)
+> Videos getProductExtracts(productId, opts)
 
 
 
@@ -225,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductExtractsResponse**](ProductExtractsResponse.md)
+[**Videos**](Videos.md)
 
 ### Authorization
 

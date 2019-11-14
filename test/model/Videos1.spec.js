@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KinowJavascriptSdk.PaymentMethods();
+    instance = new KinowJavascriptSdk.Videos1();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('PaymentMethods', function() {
-    it('should create an instance of PaymentMethods', function() {
-      // uncomment below and update the code to test PaymentMethods
-      //var instance = new KinowJavascriptSdk.PaymentMethods();
-      //expect(instance).to.be.a(KinowJavascriptSdk.PaymentMethods);
+  describe('Videos1', function() {
+    it('should create an instance of Videos1', function() {
+      // uncomment below and update the code to test Videos1
+      //var instance = new KinowJavascriptSdk.Videos1();
+      //expect(instance).to.be.a(KinowJavascriptSdk.Videos1);
     });
 
-    it('should have the property identifier (base name: "identifier")', function() {
-      // uncomment below and update the code to test the property identifier
-      //var instance = new KinowJavascriptSdk.PaymentMethods();
+    it('should have the property pagination (base name: "pagination")', function() {
+      // uncomment below and update the code to test the property pagination
+      //var instance = new KinowJavascriptSdk.Videos1();
       //expect(instance).to.be();
     });
 
-    it('should have the property metadata (base name: "metadata")', function() {
-      // uncomment below and update the code to test the property metadata
-      //var instance = new KinowJavascriptSdk.PaymentMethods();
+    it('should have the property data (base name: "data")', function() {
+      // uncomment below and update the code to test the property data
+      //var instance = new KinowJavascriptSdk.Videos1();
       //expect(instance).to.be();
     });
 

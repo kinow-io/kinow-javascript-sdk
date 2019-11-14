@@ -1076,7 +1076,7 @@ No authorization required
 
 <a name="getProductExtracts"></a>
 # **getProductExtracts**
-> ProductExtractsResponse getProductExtracts(productId, opts)
+> Videos getProductExtracts(productId, opts)
 
 
 
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductExtractsResponse**](ProductExtractsResponse.md)
+[**Videos**](Videos.md)
 
 ### Authorization
 
@@ -1535,7 +1535,7 @@ No authorization required
 
 <a name="getVideosFromProduct"></a>
 # **getVideosFromProduct**
-> Videos getVideosFromProduct(productId, opts)
+> Videos1 getVideosFromProduct(productId, opts)
 
 
 
@@ -1579,7 +1579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**Videos1**](Videos1.md)
 
 ### Authorization
 
