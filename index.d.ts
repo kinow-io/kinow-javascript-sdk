@@ -340,6 +340,7 @@ declare module 'kinow-javascript-sdk' {
     id_customer: number
     current_state: number
     payment: string
+    module: string
     total_discounts: number
     total_discounts_tax_incl: number
     total_discounts_tax_excl: number
@@ -870,7 +871,7 @@ declare module 'kinow-javascript-sdk' {
     deleteGift(giftId: number, callback?: Function): any
     getGiftToken(giftId: number, callback?: Function): any
     sendGift(giftId: number, callback?: Function): any
-    consumeGift(giftId: number, customerId: number, callback?: Function): any
+    consumeGift(giftId: number, customerId: number, opts?: any, callback?: Function): any
     getGiftInCart(cartId: number, callback?: Function): Promise<Gift>
     deleteGiftsInCart(cartId: number, callback?: Function): any
   }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **idCustomer** | **Integer** |  | [optional] 
 **currentState** | **Integer** |  | [optional] 
 **payment** | **String** |  | [optional] 
+**module** | **String** |  | [optional] 
 **totalDiscounts** | **Number** |  | [optional] 
 **totalDiscountsTaxIncl** | **Number** |  | [optional] 
 **totalDiscountsTaxExcl** | **Number** |  | [optional] 

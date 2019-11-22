@@ -52,9 +52,12 @@
      * Consume gift
      * @param {Integer} giftId Gift ID to fetch
      * @param {Integer} customerId Customer ID to fetch
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.token Gift token to check (optional)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.consumeGiftWithHttpInfo = function(giftId, customerId) {
+    this.consumeGiftWithHttpInfo = function(giftId, customerId, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'giftId' is set
@@ -73,6 +76,7 @@
       };
       var queryParams = {
         'customer_id': customerId,
+        'token': opts['token'],
       };
       var collectionQueryParams = {
       };
@@ -97,10 +101,12 @@
      * Consume gift
      * @param {Integer} giftId Gift ID to fetch
      * @param {Integer} customerId Customer ID to fetch
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.token Gift token to check (optional)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.consumeGift = function(giftId, customerId) {
-      return this.consumeGiftWithHttpInfo(giftId, customerId)
+    this.consumeGift = function(giftId, customerId, opts) {
+      return this.consumeGiftWithHttpInfo(giftId, customerId, opts)
         .then(function(response_and_data) {
           return response_and_data;
         });

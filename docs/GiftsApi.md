@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="consumeGift"></a>
 # **consumeGift**
-> consumeGift(giftId, customerId)
+> consumeGift(giftId, customerId, opts)
 
 
 
@@ -34,7 +34,10 @@ var giftId = 789; // Integer | Gift ID to fetch
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-apiInstance.consumeGift(giftId, customerId).then(function() {
+var opts = { 
+  'token': "token_example" // String | Gift token to check (optional)
+};
+apiInstance.consumeGift(giftId, customerId, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -48,6 +51,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **giftId** | **Integer**| Gift ID to fetch | 
  **customerId** | **Integer**| Customer ID to fetch | 
+ **token** | **String**| Gift token to check (optional) | [optional] 
 
 ### Return type
 

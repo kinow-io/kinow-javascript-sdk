@@ -69,6 +69,7 @@
 
 
 
+
   };
 
   /**
@@ -102,6 +103,9 @@
       }
       if (data.hasOwnProperty('payment')) {
         obj['payment'] = ApiClient.convertToType(data['payment'], 'String');
+      }
+      if (data.hasOwnProperty('module')) {
+        obj['module'] = ApiClient.convertToType(data['module'], 'String');
       }
       if (data.hasOwnProperty('total_discounts')) {
         obj['total_discounts'] = ApiClient.convertToType(data['total_discounts'], 'Number');
@@ -187,6 +191,11 @@
    * @member {String} payment
    */
   exports.prototype['payment'] = undefined;
+  /**
+   * 
+   * @member {String} module
+   */
+  exports.prototype['module'] = undefined;
   /**
    * 
    * @member {Number} total_discounts

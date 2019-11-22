@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property module (base name: "module")', function() {
+      // uncomment below and update the code to test the property module
+      //var instance = new KinowJavascriptSdk.Order();
+      //expect(instance).to.be();
+    });
+
     it('should have the property totalDiscounts (base name: "total_discounts")', function() {
       // uncomment below and update the code to test the property totalDiscounts
       //var instance = new KinowJavascriptSdk.Order();
