@@ -4,14 +4,62 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachProductToActor**](ActorsApi.md#attachProductToActor) | **POST** /products/{product_id}/actors | 
 [**createActor**](ActorsApi.md#createActor) | **POST** /actors | 
 [**deleteActor**](ActorsApi.md#deleteActor) | **DELETE** /actors/{actor_id} | 
+[**detachProductFromActor**](ActorsApi.md#detachProductFromActor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**getActor**](ActorsApi.md#getActor) | **GET** /actors/{actor_id} | 
 [**getActorProducts**](ActorsApi.md#getActorProducts) | **GET** /actors/{actor_id}/products | 
 [**getActors**](ActorsApi.md#getActors) | **GET** /actors | 
 [**getProductActors**](ActorsApi.md#getProductActors) | **GET** /products/{product_id}/actors | 
 [**updateActor**](ActorsApi.md#updateActor) | **PUT** /actors/{actor_id} | 
 
+
+<a name="attachProductToActor"></a>
+# **attachProductToActor**
+> attachProductToActor(productId, actorId)
+
+
+
+Attach product to actor
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ActorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var actorId = 789; // Integer | Actor ID to attach
+
+apiInstance.attachProductToActor(productId, actorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **actorId** | **Integer**| Actor ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="createActor"></a>
 # **createActor**
@@ -85,6 +133,52 @@ apiInstance.deleteActor(actorId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actorId** | **Integer**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachProductFromActor"></a>
+# **detachProductFromActor**
+> detachProductFromActor(productId, actorId)
+
+
+
+Detach product from actor
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ActorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var actorId = 789; // Integer | Actor ID to detach
+
+apiInstance.detachProductFromActor(productId, actorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **actorId** | **Integer**| Actor ID to detach | 
 
 ### Return type
 

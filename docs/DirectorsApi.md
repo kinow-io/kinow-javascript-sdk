@@ -4,14 +4,62 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachProductToDirector**](DirectorsApi.md#attachProductToDirector) | **POST** /products/{product_id}/directors | 
 [**createDirector**](DirectorsApi.md#createDirector) | **POST** /directors | 
 [**deleteDirector**](DirectorsApi.md#deleteDirector) | **DELETE** /directors/{director_id} | 
+[**detachProductFromDirector**](DirectorsApi.md#detachProductFromDirector) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**getDirector**](DirectorsApi.md#getDirector) | **GET** /directors/{director_id} | 
 [**getDirectorProducts**](DirectorsApi.md#getDirectorProducts) | **GET** /directors/{director_id}/products | 
 [**getDirectors**](DirectorsApi.md#getDirectors) | **GET** /directors | 
 [**getProductDirectors**](DirectorsApi.md#getProductDirectors) | **GET** /products/{product_id}/directors | 
 [**updateDirector**](DirectorsApi.md#updateDirector) | **PUT** /directors/{director_id} | 
 
+
+<a name="attachProductToDirector"></a>
+# **attachProductToDirector**
+> attachProductToDirector(productId, directorId)
+
+
+
+Attach product to director
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var directorId = 789; // Integer | Director ID to attach
+
+apiInstance.attachProductToDirector(productId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **directorId** | **Integer**| Director ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="createDirector"></a>
 # **createDirector**
@@ -85,6 +133,52 @@ apiInstance.deleteDirector(directorId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **directorId** | **Integer**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachProductFromDirector"></a>
+# **detachProductFromDirector**
+> detachProductFromDirector(productId, directorId)
+
+
+
+Detach product from director
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var directorId = 789; // Integer | Director ID to detach
+
+apiInstance.detachProductFromDirector(productId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **directorId** | **Integer**| Director ID to detach | 
 
 ### Return type
 

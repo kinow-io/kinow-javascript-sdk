@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
 [**getPaymentMethods**](CustomersApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**getPendingPayments**](CustomersApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
+[**stopSubscription**](CustomersApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**updateCustomer**](CustomersApi.md#updateCustomer) | **PUT** /customers/{customer_id} | 
 [**updatePaymentMethod**](CustomersApi.md#updatePaymentMethod) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
 
@@ -993,6 +994,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[PaymentDetails]**](PaymentDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="stopSubscription"></a>
+# **stopSubscription**
+> stopSubscription(customerId, productAccessId)
+
+
+
+Unsubcribe an Access recurring payment
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | Customer ID to unsubscribe
+
+var productAccessId = "productAccessId_example"; // String | Product access ID to unsubscribe from
+
+apiInstance.stopSubscription(customerId, productAccessId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to unsubscribe | 
+ **productAccessId** | **String**| Product access ID to unsubscribe from | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

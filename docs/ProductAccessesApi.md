@@ -10,10 +10,11 @@ Method | HTTP request | Description
 [**getCustomerAccessesVideos**](ProductAccessesApi.md#getCustomerAccessesVideos) | **GET** /customers/{customer_id}/accesses/videos | 
 [**getProductAccess**](ProductAccessesApi.md#getProductAccess) | **GET** /product-accesses/{product_access_id} | 
 [**getProductAccesses**](ProductAccessesApi.md#getProductAccesses) | **GET** /product-accesses | 
-[**stopSubscription**](ProductAccessesApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
+[**subscribe**](ProductAccessesApi.md#subscribe) | **PUT** /product-accesses/{product_access_id}/subscribe | 
 [**switchSubscription**](ProductAccessesApi.md#switchSubscription) | **PUT** /product-accesses/{product_access_id}/switch | 
 [**switchSubscriptionDelete**](ProductAccessesApi.md#switchSubscriptionDelete) | **DELETE** /product-accesses/{product_access_id}/switch | 
 [**switchSubscriptionPending**](ProductAccessesApi.md#switchSubscriptionPending) | **GET** /product-accesses/{product_access_id}/switch | 
+[**unsubscribe**](ProductAccessesApi.md#unsubscribe) | **PUT** /product-accesses/{product_access_id}/unsubscribe | 
 [**updateProductAccess**](ProductAccessesApi.md#updateProductAccess) | **PUT** /product-accesses/{product_access_id} | 
 
 
@@ -302,13 +303,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="stopSubscription"></a>
-# **stopSubscription**
-> stopSubscription(customerId, productAccessId)
+<a name="subscribe"></a>
+# **subscribe**
+> subscribe(productAccessId)
 
 
 
-Unsubcribe an Access recurring payment
+Subcribe to a reccuring payment for an Access
 
 ### Example
 ```javascript
@@ -316,11 +317,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var customerId = 789; // Integer | Customer ID to unsubscribe
+var productAccessId = 789; // Integer | Access ID to fetch
 
-var productAccessId = "productAccessId_example"; // String | Product access ID to unsubscribe from
-
-apiInstance.stopSubscription(customerId, productAccessId).then(function() {
+apiInstance.subscribe(productAccessId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -332,8 +331,7 @@ apiInstance.stopSubscription(customerId, productAccessId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Customer ID to unsubscribe | 
- **productAccessId** | **String**| Product access ID to unsubscribe from | 
+ **productAccessId** | **Integer**| Access ID to fetch | 
 
 ### Return type
 
@@ -470,6 +468,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Subscription**](Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="unsubscribe"></a>
+# **unsubscribe**
+> unsubscribe(productAccessId)
+
+
+
+Unsubcribe an Access recurring payment
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
+
+var productAccessId = 789; // Integer | Access ID to fetch
+
+apiInstance.unsubscribe(productAccessId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productAccessId** | **Integer**| Access ID to fetch | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

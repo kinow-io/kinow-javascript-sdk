@@ -583,6 +583,8 @@ declare module 'kinow-javascript-sdk' {
     deleteActor(actorId: number, callback?: Function): any
     getActorProducts(actorId: number, opts?: any, callback?: Function): any
     getProductActors(productId: number, opts?: any, callback?: Function): any
+    attachProductToActor(productId: number, actorId: number, callback?: Function): any
+    detachProductFromActor(productId: number, actorId: number, callback?: Function): any
   }
   export class AddressApi {
     constructor(config?: ApiClient)
@@ -680,6 +682,7 @@ declare module 'kinow-javascript-sdk' {
     generateAuthenticationToken(customerId: number, callback?: Function): any
     getCustomerCurrentViews(customerId: number, callback?: Function): any
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
+    stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
     getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
@@ -749,13 +752,6 @@ declare module 'kinow-javascript-sdk' {
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
-  export class AccessesApi {
-    constructor(config?: ApiClient)
-    getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
-    getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
-    getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
-    getProductAvailability(productId: number, callback?: Function): any
-  }
   export class ConfigurationApi {
     constructor(config?: ApiClient)
     getConfiguration(opts?: any, callback?: Function): any
@@ -786,7 +782,8 @@ declare module 'kinow-javascript-sdk' {
     getProductAccess(productAccessId: number, callback?: Function): Promise<ProductAccess>
     updateProductAccess(productAccessId: number, body: any, callback?: Function): Promise<ProductAccess>
     deleteProductAccess(productAccessId: number, callback?: Function): any
-    stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
+    unsubscribe(productAccessId: number, callback?: Function): any
+    subscribe(productAccessId: number, callback?: Function): any
     switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
     switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
     switchSubscriptionDelete(productAccessId: number, callback?: Function): any
@@ -829,6 +826,8 @@ declare module 'kinow-javascript-sdk' {
     deleteDirector(directorId: number, callback?: Function): any
     getDirectorProducts(directorId: number, opts?: any, callback?: Function): any
     getProductDirectors(productId: number, opts?: any, callback?: Function): any
+    attachProductToDirector(productId: number, directorId: number, callback?: Function): any
+    detachProductFromDirector(productId: number, directorId: number, callback?: Function): any
   }
   export class ExtractsApi {
     constructor(config?: ApiClient)
