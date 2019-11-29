@@ -381,6 +381,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PaymentArguments {
     token: string
+    type: string
   }
   interface PaymentDetails {
     identifier: string
@@ -395,6 +396,42 @@ declare module 'kinow-javascript-sdk' {
     name: string
     displayName: string
     description: string
+  }
+  interface PrepaymentBalance {
+    id: number
+    id_customer: number
+    amount: number
+    type: string
+    date_add: string
+    date_upd: string
+  }
+  interface PrepaymentBonus {
+    id: number
+    name: string
+    id_product: number
+    id_product_attribute: number
+    amount: number
+    type: string
+    date_add: string
+    date_upd: string
+  }
+  interface PrepaymentOperation {
+    id: number
+    id_customer: number
+    id_order: number
+    amount: number
+    type: string
+    date_add: string
+    date_upd: string
+  }
+  interface PrepaymentRecharge {
+    id: number
+    id_product: number
+    amount: number
+    type: string
+    date_add: string
+    date_upd: string
+    active: boolean
   }
   interface Product {
     id: number
@@ -421,6 +458,7 @@ declare module 'kinow-javascript-sdk' {
     can_buy: boolean
     available_in_subscriptions: boolean
     duration: number
+    type: string
     sub: boolean
     has_group_restriction: boolean
     group_restriction_behavior: number
@@ -672,8 +710,6 @@ declare module 'kinow-javascript-sdk' {
     updateCustomer(customerId: number, body: any, callback?: Function): Promise<Customer>
     deleteCustomer(customerId: number, callback?: Function): any
     getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
-    getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
-    getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerCanSeeProduct(customerId: number, productId: number, callback?: Function): any
@@ -682,12 +718,16 @@ declare module 'kinow-javascript-sdk' {
     generateAuthenticationToken(customerId: number, callback?: Function): any
     getCustomerCurrentViews(customerId: number, callback?: Function): any
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
-    stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
     getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
+    getPrepaymentBalances(customerId: number, type: string, callback?: Function): Promise<PrepaymentBalance>
+    getPrepaymentOperations(customerId: number, type: string, opts?: any, callback?: Function): any
+    getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
+    getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
+    stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
   }
   export class CategoriesApi {
     constructor(config?: ApiClient)
@@ -772,21 +812,6 @@ declare module 'kinow-javascript-sdk' {
     getOrder(orderId: number, callback?: Function): Promise<Order>
     getOrderInvoice(orderId: number, callback?: Function): any
     getOrderHistories(orderId: number, opts?: any, callback?: Function): any
-  }
-  export class ProductAccessesApi {
-    constructor(config?: ApiClient)
-    getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
-    getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
-    getProductAccesses(opts?: any, callback?: Function): any
-    createProductAccess(body: any, callback?: Function): Promise<ProductAccess>
-    getProductAccess(productAccessId: number, callback?: Function): Promise<ProductAccess>
-    updateProductAccess(productAccessId: number, body: any, callback?: Function): Promise<ProductAccess>
-    deleteProductAccess(productAccessId: number, callback?: Function): any
-    unsubscribe(productAccessId: number, callback?: Function): any
-    subscribe(productAccessId: number, callback?: Function): any
-    switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
-    switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
-    switchSubscriptionDelete(productAccessId: number, callback?: Function): any
   }
   export class VideosApi {
     constructor(config?: ApiClient)
@@ -943,6 +968,31 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getOrderStates(opts?: any, callback?: Function): any
     getOrderState(orderStateId: number, callback?: Function): Promise<OrderState>
+  }
+  export class PrepaymentsApi {
+    constructor(config?: ApiClient)
+    getPrepaymentBalances(customerId: number, type: string, callback?: Function): Promise<PrepaymentBalance>
+    getPrepaymentOperations(customerId: number, type: string, opts?: any, callback?: Function): any
+    getPrepaymentOperation(prepaymentOperationId: number, callback?: Function): Promise<PrepaymentOperation>
+    getPrepaymentBonus(opts?: any, callback?: Function): any
+    getPrepaymentBonus(prepaymentBonusId: number, callback?: Function): Promise<PrepaymentBonus>
+    getPrepaymentRecharges(opts?: any, callback?: Function): any
+    getPrepaymentRecharge(prepaymentRechargeId: number, callback?: Function): Promise<PrepaymentRecharge>
+  }
+  export class ProductAccessesApi {
+    constructor(config?: ApiClient)
+    getProductAccesses(opts?: any, callback?: Function): any
+    createProductAccess(body: any, callback?: Function): Promise<ProductAccess>
+    getProductAccess(productAccessId: number, callback?: Function): Promise<ProductAccess>
+    updateProductAccess(productAccessId: number, body: any, callback?: Function): Promise<ProductAccess>
+    deleteProductAccess(productAccessId: number, callback?: Function): any
+    getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
+    getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
+    unsubscribe(productAccessId: number, callback?: Function): any
+    subscribe(productAccessId: number, callback?: Function): any
+    switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
+    switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
+    switchSubscriptionDelete(productAccessId: number, callback?: Function): any
   }
   export class TasksApi {
     constructor(config?: ApiClient)

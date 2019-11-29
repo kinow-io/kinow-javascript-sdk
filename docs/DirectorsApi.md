@@ -199,7 +199,7 @@ No authorization required
 
 
 
-Get director
+Get Director
 
 ### Example
 ```javascript

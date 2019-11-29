@@ -109,7 +109,7 @@ No authorization required
 
 
 
-Get group
+Get Group
 
 ### Example
 ```javascript
