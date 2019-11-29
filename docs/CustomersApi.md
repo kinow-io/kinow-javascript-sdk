@@ -25,7 +25,7 @@ Method | HTTP request | Description
 [**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
 [**getPaymentMethods**](CustomersApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**getPendingPayments**](CustomersApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
-[**getPrepaymentBalances**](CustomersApi.md#getPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance/{type} | 
+[**getPrepaymentBalances**](CustomersApi.md#getPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**getPrepaymentOperations**](CustomersApi.md#getPrepaymentOperations) | **GET** /customers/{customer_id}/prepayment-operation/{type} | 
 [**stopSubscription**](CustomersApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**updateCustomer**](CustomersApi.md#updateCustomer) | **PUT** /customers/{customer_id} | 
@@ -1008,7 +1008,7 @@ No authorization required
 
 <a name="getPrepaymentBalances"></a>
 # **getPrepaymentBalances**
-> PrepaymentBalance getPrepaymentBalances(customerId, type)
+> [PrepaymentBalance] getPrepaymentBalances(customerId)
 
 
 
@@ -1022,9 +1022,7 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-var type = "type_example"; // String | PrepaymentBalance type to fetch (currency or credit)
-
-apiInstance.getPrepaymentBalances(customerId, type).then(function(data) {
+apiInstance.getPrepaymentBalances(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1037,11 +1035,10 @@ apiInstance.getPrepaymentBalances(customerId, type).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
- **type** | **String**| PrepaymentBalance type to fetch (currency or credit) | 
 
 ### Return type
 
-[**PrepaymentBalance**](PrepaymentBalance.md)
+[**[PrepaymentBalance]**](PrepaymentBalance.md)
 
 ### Authorization
 

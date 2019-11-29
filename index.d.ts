@@ -398,12 +398,8 @@ declare module 'kinow-javascript-sdk' {
     description: string
   }
   interface PrepaymentBalance {
-    id: number
-    id_customer: number
     amount: number
     type: string
-    date_add: string
-    date_upd: string
   }
   interface PrepaymentBonus {
     id: number
@@ -723,7 +719,7 @@ declare module 'kinow-javascript-sdk' {
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
-    getPrepaymentBalances(customerId: number, type: string, callback?: Function): Promise<PrepaymentBalance>
+    getPrepaymentBalances(customerId: number, callback?: Function): any
     getPrepaymentOperations(customerId: number, type: string, opts?: any, callback?: Function): any
     getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
@@ -971,7 +967,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class PrepaymentsApi {
     constructor(config?: ApiClient)
-    getPrepaymentBalances(customerId: number, type: string, callback?: Function): Promise<PrepaymentBalance>
+    getPrepaymentBalances(customerId: number, callback?: Function): any
     getPrepaymentOperations(customerId: number, type: string, opts?: any, callback?: Function): any
     getPrepaymentOperation(prepaymentOperationId: number, callback?: Function): Promise<PrepaymentOperation>
     getPrepaymentBonus(opts?: any, callback?: Function): any

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPrepaymentBalances**](PrepaymentsApi.md#getPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance/{type} | 
+[**getPrepaymentBalances**](PrepaymentsApi.md#getPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**getPrepaymentBonus**](PrepaymentsApi.md#getPrepaymentBonus) | **GET** /prepayment/bonus | 
 [**getPrepaymentBonus_0**](PrepaymentsApi.md#getPrepaymentBonus_0) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
 [**getPrepaymentOperation**](PrepaymentsApi.md#getPrepaymentOperation) | **GET** /prepayment/operations/{prepayment_operation_id} | 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="getPrepaymentBalances"></a>
 # **getPrepaymentBalances**
-> PrepaymentBalance getPrepaymentBalances(customerId, type)
+> [PrepaymentBalance] getPrepaymentBalances(customerId)
 
 
 
@@ -29,9 +29,7 @@ var apiInstance = new KinowJavascriptSdk.PrepaymentsApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-var type = "type_example"; // String | PrepaymentBalance type to fetch (currency or credit)
-
-apiInstance.getPrepaymentBalances(customerId, type).then(function(data) {
+apiInstance.getPrepaymentBalances(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -44,11 +42,10 @@ apiInstance.getPrepaymentBalances(customerId, type).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
- **type** | **String**| PrepaymentBalance type to fetch (currency or credit) | 
 
 ### Return type
 
-[**PrepaymentBalance**](PrepaymentBalance.md)
+[**[PrepaymentBalance]**](PrepaymentBalance.md)
 
 ### Authorization
 
