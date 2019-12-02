@@ -4,18 +4,19 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPrepaymentBalances**](PrepaymentsApi.md#getPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance | 
+[**getCustomerPrepaymentBalances**](PrepaymentsApi.md#getCustomerPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance | 
+[**getCustomerPrepaymentOperations**](PrepaymentsApi.md#getCustomerPrepaymentOperations) | **GET** /customers/{customer_id}/prepayment-operations | 
 [**getPrepaymentBonus**](PrepaymentsApi.md#getPrepaymentBonus) | **GET** /prepayment/bonus | 
 [**getPrepaymentBonus_0**](PrepaymentsApi.md#getPrepaymentBonus_0) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
 [**getPrepaymentOperation**](PrepaymentsApi.md#getPrepaymentOperation) | **GET** /prepayment/operations/{prepayment_operation_id} | 
-[**getPrepaymentOperations**](PrepaymentsApi.md#getPrepaymentOperations) | **GET** /customers/{customer_id}/prepayment-operation/{type} | 
+[**getPrepaymentOperations**](PrepaymentsApi.md#getPrepaymentOperations) | **GET** /prepayment/operations | 
 [**getPrepaymentRecharge**](PrepaymentsApi.md#getPrepaymentRecharge) | **GET** /prepayment/recharges/{prepayment_recharge_id} | 
 [**getPrepaymentRecharges**](PrepaymentsApi.md#getPrepaymentRecharges) | **GET** /prepayment/recharges | 
 
 
-<a name="getPrepaymentBalances"></a>
-# **getPrepaymentBalances**
-> [PrepaymentBalance] getPrepaymentBalances(customerId)
+<a name="getCustomerPrepaymentBalances"></a>
+# **getCustomerPrepaymentBalances**
+> [PrepaymentBalance] getCustomerPrepaymentBalances(customerId)
 
 
 
@@ -29,7 +30,7 @@ var apiInstance = new KinowJavascriptSdk.PrepaymentsApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-apiInstance.getPrepaymentBalances(customerId).then(function(data) {
+apiInstance.getCustomerPrepaymentBalances(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -46,6 +47,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[PrepaymentBalance]**](PrepaymentBalance.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCustomerPrepaymentOperations"></a>
+# **getCustomerPrepaymentOperations**
+> PrepaymentOperations getCustomerPrepaymentOperations(customerId, opts)
+
+
+
+Get PrepaymentOperations list
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PrepaymentsApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var opts = { 
+  'type': "type_example", // String | 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCustomerPrepaymentOperations(customerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **type** | **String**|  | [optional] 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**PrepaymentOperations**](PrepaymentOperations.md)
 
 ### Authorization
 
@@ -190,7 +242,7 @@ No authorization required
 
 <a name="getPrepaymentOperations"></a>
 # **getPrepaymentOperations**
-> PrepaymentOperations getPrepaymentOperations(customerId, type, opts)
+> PrepaymentOperations getPrepaymentOperations(opts)
 
 
 
@@ -202,15 +254,12 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.PrepaymentsApi();
 
-var customerId = 789; // Integer | Customer ID to fetch
-
-var type = "type_example"; // String | PrepaymentOperation type to fetch (currency or credit)
-
 var opts = { 
+  'type': "type_example", // String | 
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
-apiInstance.getPrepaymentOperations(customerId, type, opts).then(function(data) {
+apiInstance.getPrepaymentOperations(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -222,8 +271,7 @@ apiInstance.getPrepaymentOperations(customerId, type, opts).then(function(data) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Customer ID to fetch | 
- **type** | **String**| PrepaymentOperation type to fetch (currency or credit) | 
+ **type** | **String**|  | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

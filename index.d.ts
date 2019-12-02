@@ -719,8 +719,8 @@ declare module 'kinow-javascript-sdk' {
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
-    getPrepaymentBalances(customerId: number, callback?: Function): any
-    getPrepaymentOperations(customerId: number, type: string, opts?: any, callback?: Function): any
+    getCustomerPrepaymentBalances(customerId: number, callback?: Function): any
+    getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
     stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
@@ -967,8 +967,9 @@ declare module 'kinow-javascript-sdk' {
   }
   export class PrepaymentsApi {
     constructor(config?: ApiClient)
-    getPrepaymentBalances(customerId: number, callback?: Function): any
-    getPrepaymentOperations(customerId: number, type: string, opts?: any, callback?: Function): any
+    getCustomerPrepaymentBalances(customerId: number, callback?: Function): any
+    getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): any
+    getPrepaymentOperations(opts?: any, callback?: Function): any
     getPrepaymentOperation(prepaymentOperationId: number, callback?: Function): Promise<PrepaymentOperation>
     getPrepaymentBonus(opts?: any, callback?: Function): any
     getPrepaymentBonus(prepaymentBonusId: number, callback?: Function): Promise<PrepaymentBonus>
