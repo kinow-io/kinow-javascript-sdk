@@ -101,16 +101,17 @@ declare module 'kinow-javascript-sdk' {
   }
   interface Cart {
     id: number
-    id_currency: number
-    id_customer: number
-    id_lang: number
     date_add: string
     date_upd: string
+    id_customer: number
+    id_currency: number
+    id_lang: number
     total: number
-    products: Array<Product>
-    cart_rules: Array<CartRule>
     total_without_tax: number
     total_trial: number
+    available_checkout_processes: Array<string>
+    cart_rules: Array<CartRule>
+    products: Array<Product>
   }
   interface CartRule {
     id: number
@@ -290,6 +291,9 @@ declare module 'kinow-javascript-sdk' {
     email: string
     used: boolean
     date_send: string
+  }
+  interface GiftToken {
+    token: string
   }
   interface Group {
     id: number
@@ -889,7 +893,7 @@ declare module 'kinow-javascript-sdk' {
     getGift(giftId: number, callback?: Function): Promise<Gift>
     updateGift(giftId: number, body: any, callback?: Function): Promise<Gift>
     deleteGift(giftId: number, callback?: Function): any
-    getGiftToken(giftId: number, callback?: Function): any
+    getGiftToken(giftId: number, callback?: Function): Promise<GiftToken>
     sendGift(giftId: number, callback?: Function): any
     consumeGift(giftId: number, customerId: number, opts?: any, callback?: Function): any
     getGiftInCart(cartId: number, callback?: Function): Promise<Gift>

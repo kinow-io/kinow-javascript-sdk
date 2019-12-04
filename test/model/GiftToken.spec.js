@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KinowJavascriptSdk.BookmarksApi();
+    instance = new KinowJavascriptSdk.GiftToken();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,37 +49,19 @@
       object[property] = value;
   }
 
-  describe('BookmarksApi', function() {
-    describe('attachBookmarkToCustomer', function() {
-      it('should call attachBookmarkToCustomer successfully', function(done) {
-        //uncomment below and update the code to test attachBookmarkToCustomer
-        //instance.attachBookmarkToCustomer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('GiftToken', function() {
+    it('should create an instance of GiftToken', function() {
+      // uncomment below and update the code to test GiftToken
+      //var instance = new KinowJavascriptSdk.GiftToken();
+      //expect(instance).to.be.a(KinowJavascriptSdk.GiftToken);
     });
-    describe('detachBookmarkFromCustomer', function() {
-      it('should call detachBookmarkFromCustomer successfully', function(done) {
-        //uncomment below and update the code to test detachBookmarkFromCustomer
-        //instance.detachBookmarkFromCustomer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property token (base name: "token")', function() {
+      // uncomment below and update the code to test the property token
+      //var instance = new KinowJavascriptSdk.GiftToken();
+      //expect(instance).to.be();
     });
-    describe('getCustomerBookmarks', function() {
-      it('should call getCustomerBookmarks successfully', function(done) {
-        //uncomment below and update the code to test getCustomerBookmarks
-        //instance.getCustomerBookmarks(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
+
   });
 
 }));

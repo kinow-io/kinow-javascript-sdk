@@ -25,7 +25,7 @@
     if (!root.KinowJavascriptSdk) {
       root.KinowJavascriptSdk = {};
     }
-    root.KinowJavascriptSdk.PaymentDetails1 = factory(root.KinowJavascriptSdk.ApiClient);
+    root.KinowJavascriptSdk.GiftToken = factory(root.KinowJavascriptSdk.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,52 +34,45 @@
 
 
   /**
-   * The PaymentDetails1 model module.
-   * @module model/PaymentDetails1
+   * The GiftToken model module.
+   * @module model/GiftToken
    * @version 1.3.37
    */
 
   /**
-   * Constructs a new <code>PaymentDetails1</code>.
-   * @alias module:model/PaymentDetails1
+   * Constructs a new <code>GiftToken</code>.
+   * @alias module:model/GiftToken
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
   };
 
   /**
-   * Constructs a <code>PaymentDetails1</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>GiftToken</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/PaymentDetails1} obj Optional instance to populate.
-   * @return {module:model/PaymentDetails1} The populated <code>PaymentDetails1</code> instance.
+   * @param {module:model/GiftToken} obj Optional instance to populate.
+   * @return {module:model/GiftToken} The populated <code>GiftToken</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('identifier')) {
-        obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
-      }
-      if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = ApiClient.convertToType(data['metadata'], 'String');
+      if (data.hasOwnProperty('token')) {
+        obj['token'] = ApiClient.convertToType(data['token'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} identifier
+   * 
+   * @member {String} token
    */
-  exports.prototype['identifier'] = undefined;
-  /**
-   * @member {String} metadata
-   */
-  exports.prototype['metadata'] = undefined;
+  exports.prototype['token'] = undefined;
 
 
 

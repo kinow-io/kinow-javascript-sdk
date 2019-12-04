@@ -283,7 +283,7 @@ No authorization required
 
 <a name="getGiftToken"></a>
 # **getGiftToken**
-> getGiftToken(giftId)
+> GiftToken getGiftToken(giftId)
 
 
 
@@ -297,8 +297,8 @@ var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
 var giftId = 789; // Integer | Gift ID to fetch
 
-apiInstance.getGiftToken(giftId).then(function() {
-  console.log('API called successfully.');
+apiInstance.getGiftToken(giftId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**GiftToken**](GiftToken.md)
 
 ### Authorization
 
