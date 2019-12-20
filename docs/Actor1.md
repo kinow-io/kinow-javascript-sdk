@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **metaDescription** | [**[I18nField]**](I18nField.md) | Short description for search engines | [optional] 
 **metaKeywords** | [**[I18nField]**](I18nField.md) | List of keywords for search engines | [optional] 
 **linkRewrite** | [**[I18nField]**](I18nField.md) | Friendly URL used to reach real page | [optional] 
+**active** | **Boolean** | Actor&#39;s status | [optional] 
 
 
