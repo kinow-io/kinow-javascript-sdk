@@ -7,11 +7,12 @@ Method | HTTP request | Description
 [**attachProductToDirector**](DirectorsApi.md#attachProductToDirector) | **POST** /products/{product_id}/directors | 
 [**createDirector**](DirectorsApi.md#createDirector) | **POST** /directors | 
 [**deleteDirector**](DirectorsApi.md#deleteDirector) | **DELETE** /directors/{director_id} | 
-[**detachProductFromDirector**](DirectorsApi.md#detachProductFromDirector) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**getDirector**](DirectorsApi.md#getDirector) | **GET** /directors/{director_id} | 
 [**getDirectorProducts**](DirectorsApi.md#getDirectorProducts) | **GET** /directors/{director_id}/products | 
+[**getDirectorProductsRole**](DirectorsApi.md#getDirectorProductsRole) | **GET** /directors/{director_id}/products-role | 
 [**getDirectors**](DirectorsApi.md#getDirectors) | **GET** /directors | 
 [**getProductDirectors**](DirectorsApi.md#getProductDirectors) | **GET** /products/{product_id}/directors | 
+[**getProductDirectorsRole**](DirectorsApi.md#getProductDirectorsRole) | **GET** /products/{product_id}/directors-role | 
 [**updateDirector**](DirectorsApi.md#updateDirector) | **PUT** /directors/{director_id} | 
 
 
@@ -75,7 +76,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.DirectorsApi();
 
-var body = new KinowJavascriptSdk.Director(); // Director | 
+var body = new KinowJavascriptSdk.Director1(); // Director1 | Directory settings
 
 apiInstance.createDirector(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -89,7 +90,7 @@ apiInstance.createDirector(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Director**](Director.md)|  | 
+ **body** | [**Director1**](Director1.md)| Directory settings | 
 
 ### Return type
 
@@ -133,52 +134,6 @@ apiInstance.deleteDirector(directorId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **directorId** | **Integer**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="detachProductFromDirector"></a>
-# **detachProductFromDirector**
-> detachProductFromDirector(productId, directorId)
-
-
-
-Detach product from director
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.DirectorsApi();
-
-var productId = 789; // Integer | Product ID to fetch
-
-var directorId = 789; // Integer | Director ID to detach
-
-apiInstance.detachProductFromDirector(productId, directorId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Product ID to fetch | 
- **directorId** | **Integer**| Director ID to detach | 
 
 ### Return type
 
@@ -299,6 +254,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getDirectorProductsRole"></a>
+# **getDirectorProductsRole**
+> Products getDirectorProductsRole(directorId, opts)
+
+
+
+Get Products linked to Product with their role
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var directorId = 789; // Integer | Director ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getDirectorProductsRole(directorId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **directorId** | **Integer**| Director ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Products**](Products.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getDirectors"></a>
 # **getDirectors**
 > Directors getDirectors(opts)
@@ -398,6 +402,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getProductDirectorsRole"></a>
+# **getProductDirectorsRole**
+> Directors getProductDirectorsRole(productId, opts)
+
+
+
+Get Directors attached to Product with their role
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getProductDirectorsRole(productId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Directors**](Directors.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="updateDirector"></a>
 # **updateDirector**
 > updateDirector(directorId, body)
@@ -414,7 +467,7 @@ var apiInstance = new KinowJavascriptSdk.DirectorsApi();
 
 var directorId = 56; // Integer | 
 
-var body = new KinowJavascriptSdk.Director(); // Director | 
+var body = new KinowJavascriptSdk.Director2(); // Director2 | Directory settings
 
 apiInstance.updateDirector(directorId, body).then(function() {
   console.log('API called successfully.');
@@ -429,7 +482,7 @@ apiInstance.updateDirector(directorId, body).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **directorId** | **Integer**|  | 
- **body** | [**Director**](Director.md)|  | 
+ **body** | [**Director2**](Director2.md)| Directory settings | 
 
 ### Return type
 

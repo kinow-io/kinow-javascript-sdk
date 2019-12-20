@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**[Extract]**](Extract.md) |  | [optional] 
+**data** | [**[VideoCategory]**](VideoCategory.md) |  | [optional] 
 
 

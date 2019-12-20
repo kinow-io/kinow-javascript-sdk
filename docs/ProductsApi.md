@@ -13,19 +13,20 @@ Method | HTTP request | Description
 [**createProduct**](ProductsApi.md#createProduct) | **POST** /products | 
 [**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /products/{product_id} | 
 [**detachFeatureToProduct**](ProductsApi.md#detachFeatureToProduct) | **DELETE** /products/{product_id}/features/{feature_id} | 
-[**detachProductFromActor**](ProductsApi.md#detachProductFromActor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**detachProductFromCategory**](ProductsApi.md#detachProductFromCategory) | **DELETE** /products/{product_id}/categories/{category_id} | 
-[**detachProductFromDirector**](ProductsApi.md#detachProductFromDirector) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**detachProductFromGroup**](ProductsApi.md#detachProductFromGroup) | **DELETE** /products/{product_id}/groups/{group_id} | 
 [**getCategoryProducts**](ProductsApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
 [**getCustomerHasAccessToProduct**](ProductsApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
+[**getCustomerHasAccessToProducts**](ProductsApi.md#getCustomerHasAccessToProducts) | **POST** /customers/{customer_id}/products/has-access | 
 [**getProduct**](ProductsApi.md#getProduct) | **GET** /products/{product_id} | 
 [**getProductActors**](ProductsApi.md#getProductActors) | **GET** /products/{product_id}/actors | 
+[**getProductActorsRole**](ProductsApi.md#getProductActorsRole) | **GET** /products/{product_id}/actors-role | 
 [**getProductAttributes**](ProductsApi.md#getProductAttributes) | **GET** /products/{product_id}/attributes | 
 [**getProductAvailability**](ProductsApi.md#getProductAvailability) | **GET** /products/{product_id}/access | 
 [**getProductCategories**](ProductsApi.md#getProductCategories) | **GET** /products/{product_id}/categories | 
 [**getProductCoverImage**](ProductsApi.md#getProductCoverImage) | **GET** /products/{product_id}/cover | 
 [**getProductDirectors**](ProductsApi.md#getProductDirectors) | **GET** /products/{product_id}/directors | 
+[**getProductDirectorsRole**](ProductsApi.md#getProductDirectorsRole) | **GET** /products/{product_id}/directors-role | 
 [**getProductExtracts**](ProductsApi.md#getProductExtracts) | **GET** /products/{product_id}/extracts | 
 [**getProductFeatures**](ProductsApi.md#getProductFeatures) | **GET** /products/{product_id}/features | 
 [**getProductGeolocations**](ProductsApi.md#getProductGeolocations) | **GET** /products/{product_id}/geolocations | 
@@ -450,52 +451,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="detachProductFromActor"></a>
-# **detachProductFromActor**
-> detachProductFromActor(productId, actorId)
-
-
-
-Detach product from actor
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ProductsApi();
-
-var productId = 789; // Integer | Product ID to fetch
-
-var actorId = 789; // Integer | Actor ID to detach
-
-apiInstance.detachProductFromActor(productId, actorId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Product ID to fetch | 
- **actorId** | **Integer**| Actor ID to detach | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="detachProductFromCategory"></a>
 # **detachProductFromCategory**
 > detachProductFromCategory(productId, categoryId)
@@ -528,52 +483,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
  **categoryId** | **Integer**| Category ID to detach | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="detachProductFromDirector"></a>
-# **detachProductFromDirector**
-> detachProductFromDirector(productId, directorId)
-
-
-
-Detach product from director
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ProductsApi();
-
-var productId = 789; // Integer | Product ID to fetch
-
-var directorId = 789; // Integer | Director ID to detach
-
-apiInstance.detachProductFromDirector(productId, directorId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Product ID to fetch | 
- **directorId** | **Integer**| Director ID to detach | 
 
 ### Return type
 
@@ -739,6 +648,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getCustomerHasAccessToProducts"></a>
+# **getCustomerHasAccessToProducts**
+> [ProductAccessInfo] getCustomerHasAccessToProducts(customerId, ipAddress, body)
+
+
+
+Get customer access to Products
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var ipAddress = "ipAddress_example"; // String | IP address
+
+var body = new KinowJavascriptSdk.ProductIDList(); // ProductIDList | List of Product IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getCustomerHasAccessToProducts(customerId, ipAddress, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **ipAddress** | **String**| IP address | 
+ **body** | [**ProductIDList**](ProductIDList.md)| List of Product IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[ProductAccessInfo]**](ProductAccessInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getProduct"></a>
 # **getProduct**
 > Product getProduct(productId)
@@ -833,13 +791,62 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getProductActorsRole"></a>
+# **getProductActorsRole**
+> Actors getProductActorsRole(productId, opts)
+
+
+
+Get Actors attached to Product with their role
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getProductActorsRole(productId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Actors**](Actors.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getProductAttributes"></a>
 # **getProductAttributes**
 > ProductAttributesResponse getProductAttributes(productId, opts)
 
 
 
-Get product attributes. Mandatory to add product in cart: allows to buy product for download, streaming or both
+Get Product attributes. Mandatory to add TVOD Product in cart.
 
 ### Example
 ```javascript
@@ -1074,9 +1081,58 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getProductDirectorsRole"></a>
+# **getProductDirectorsRole**
+> Directors getProductDirectorsRole(productId, opts)
+
+
+
+Get Directors attached to Product with their role
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getProductDirectorsRole(productId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Directors**](Directors.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getProductExtracts"></a>
 # **getProductExtracts**
-> Videos getProductExtracts(productId, opts)
+> Videos1 getProductExtracts(productId, opts)
 
 
 
@@ -1112,7 +1168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**Videos1**](Videos1.md)
 
 ### Authorization
 
@@ -1535,7 +1591,7 @@ No authorization required
 
 <a name="getVideosFromProduct"></a>
 # **getVideosFromProduct**
-> Videos1 getVideosFromProduct(productId, opts)
+> Videos2 getVideosFromProduct(productId, opts)
 
 
 
@@ -1579,7 +1635,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos1**](Videos1.md)
+[**Videos2**](Videos2.md)
 
 ### Authorization
 

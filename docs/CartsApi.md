@@ -39,7 +39,7 @@ var cartId = 789; // Integer | Cart ID to fetch
 var productId = 789; // Integer | Product ID to add to cart
 
 var opts = { 
-  'productAttributeId': 789, // Integer | Product attribute ID, required to add product to cart if product is not a subscription
+  'productAttributeId': 789, // Integer | ProductAttribute ID, required to add product to cart if product is not a subscription
   'switchSubscriptionId': 789 // Integer | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel
 };
 apiInstance.addProductToCart(cartId, productId, opts).then(function(data) {
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
  **productId** | **Integer**| Product ID to add to cart | 
- **productAttributeId** | **Integer**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+ **productAttributeId** | **Integer**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
  **switchSubscriptionId** | **Integer**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
 
 ### Return type
@@ -166,7 +166,7 @@ No authorization required
 
 <a name="createCart"></a>
 # **createCart**
-> Cart createCart(opts)
+> Cart createCart(body)
 
 
 
@@ -178,10 +178,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var opts = { 
-  'body': new KinowJavascriptSdk.CartBody() // CartBody | Create cart object
-};
-apiInstance.createCart(opts).then(function(data) {
+var body = new KinowJavascriptSdk.Cart1(); // Cart1 | Cart settings
+
+apiInstance.createCart(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -193,7 +192,7 @@ apiInstance.createCart(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CartBody**](CartBody.md)| Create cart object | [optional] 
+ **body** | [**Cart1**](Cart1.md)| Cart settings | 
 
 ### Return type
 
@@ -550,7 +549,7 @@ var apiInstance = new KinowJavascriptSdk.CartsApi();
 
 var cartId = 789; // Integer | Cart id
 
-var body = new KinowJavascriptSdk.Cart(); // Cart | Cart body
+var body = new KinowJavascriptSdk.Cart2(); // Cart2 | Cart settings
 
 apiInstance.updateCart(cartId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -565,7 +564,7 @@ apiInstance.updateCart(cartId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart id | 
- **body** | [**Cart**](Cart.md)| Cart body | 
+ **body** | [**Cart2**](Cart2.md)| Cart settings | 
 
 ### Return type
 

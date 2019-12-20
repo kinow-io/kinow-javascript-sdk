@@ -67,7 +67,7 @@ var apiInstance = new KinowJavascriptSdk.AddressApi();
 
 var addressId = 789; // Integer | Address ID to update
 
-var body = new KinowJavascriptSdk.Address(); // Address | 
+var body = new KinowJavascriptSdk.Address1(); // Address1 | Address settings
 
 apiInstance.updateAddress(addressId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -82,7 +82,7 @@ apiInstance.updateAddress(addressId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addressId** | **Integer**| Address ID to update | 
- **body** | [**Address**](Address.md)|  | 
+ **body** | [**Address1**](Address1.md)| Address settings | 
 
 ### Return type
 

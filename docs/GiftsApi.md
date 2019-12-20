@@ -80,7 +80,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
-var body = new KinowJavascriptSdk.Gift(); // Gift | 
+var body = new KinowJavascriptSdk.Gift1(); // Gift1 | Gift settings
 
 apiInstance.createGift(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -94,7 +94,7 @@ apiInstance.createGift(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Gift**](Gift.md)|  | 
+ **body** | [**Gift1**](Gift1.md)| Gift settings | 
 
 ### Return type
 
@@ -427,7 +427,7 @@ var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
 var giftId = 789; // Integer | Gift ID to fetch
 
-var body = new KinowJavascriptSdk.Gift(); // Gift | 
+var body = new KinowJavascriptSdk.Gift2(); // Gift2 | Gift settings
 
 apiInstance.updateGift(giftId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -442,7 +442,7 @@ apiInstance.updateGift(giftId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **giftId** | **Integer**| Gift ID to fetch | 
- **body** | [**Gift**](Gift.md)|  | 
+ **body** | [**Gift2**](Gift2.md)| Gift settings | 
 
 ### Return type
 

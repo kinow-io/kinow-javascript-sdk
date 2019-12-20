@@ -35,5 +35,6 @@ Name | Type | Description | Notes
 **behaviorDetectedCountries** | **String** |  | [optional] 
 **behaviorNonDetectedCountries** | **String** |  | [optional] 
 **idProductAttribute** | **Integer** | Only available when the product is in a cart | [optional] 
+**roles** | **String** |  | [optional] 
 
 

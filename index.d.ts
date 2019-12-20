@@ -10,31 +10,29 @@ declare module 'kinow-javascript-sdk' {
   interface Actor {
     id: number
     name: string
-    date_add: string
-    date_upd: string
-    active: boolean
-    link_rewrite: Array<I18nField>
+    description_short: Array<I18nField>
     description: Array<I18nField>
     image: string
-    description_short: Array<I18nField>
+    meta_title: Array<I18nField>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
-    meta_title: Array<I18nField>
+    link_rewrite: Array<I18nField>
+    roles: string
+    active: boolean
+    date_add: string
+    date_upd: string
   }
   interface Address {
     id: number
     id_customer: number
-    id_country: number
-    id_state: number
     company: string
-    vat_number: string
     address1: string
     postcode: string
     city: string
+    id_country: number
+    id_state: number
     date_add: string
     date_upd: string
-    firstname: string
-    lastname: string
   }
   interface Bonus {
     id: number
@@ -227,19 +225,30 @@ declare module 'kinow-javascript-sdk' {
     duration: number
     views: number
   }
+  interface Device {
+    id: number
+    id_customer: number
+    fingerprint: string
+    type: string
+    os: string
+    application: string
+    date_add: string
+    date_upd: string
+  }
   interface Director {
     id: number
     name: string
-    date_add: string
-    date_upd: string
-    active: boolean
-    link_rewrite: Array<I18nField>
+    description_short: Array<I18nField>
     description: Array<I18nField>
     image: string
-    description_short: Array<I18nField>
+    meta_title: Array<I18nField>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
-    meta_title: Array<I18nField>
+    link_rewrite: Array<I18nField>
+    roles: string
+    active: boolean
+    date_add: string
+    date_upd: string
   }
   interface Extract {
     id: number
@@ -288,6 +297,7 @@ declare module 'kinow-javascript-sdk' {
     firstname: string
     lastname: string
     message: string
+    custom: string
     email: string
     used: boolean
     date_send: string
@@ -466,6 +476,7 @@ declare module 'kinow-javascript-sdk' {
     behavior_detected_countries: string
     behavior_non_detected_countries: string
     id_product_attribute: number
+    roles: string
   }
   interface ProductAccess {
     id: number
@@ -481,11 +492,20 @@ declare module 'kinow-javascript-sdk' {
     message: string
     id_order: number
   }
+  interface ProductAccessInfo {
+    id_product: number
+    can_see: boolean
+    can_buy: boolean
+    can_watch: boolean
+  }
   interface ProductAttribute {
     id: number
+    name: string
     price: number
+    price_noreduc: number
+    type: string
+    quality: string
     active: number
-    type: number
   }
   interface Screenshot {
     id: number
@@ -567,6 +587,25 @@ declare module 'kinow-javascript-sdk' {
     has_free_access: object
     advertising_url: string
   }
+  interface VideoAccessInfo {
+    id_video: number
+    streaming: boolean
+    download: boolean
+    maximum_watched: boolean
+    maximum_viewing: boolean
+    quality_hd: boolean
+    quality_sd: boolean
+  }
+  interface VideoCategory {
+    id: number
+    id_category: number
+    id_media_source: number
+    filename: string
+    cover: string
+    thumbnail: string
+    date_add: string
+    date_upd: string
+  }
   interface VideoStat {
     video_id: number
     played: number
@@ -620,9 +659,10 @@ declare module 'kinow-javascript-sdk' {
     updateActor(actorId: number, body: any, callback?: Function): any
     deleteActor(actorId: number, callback?: Function): any
     getActorProducts(actorId: number, opts?: any, callback?: Function): any
+    getActorProductsRole(actorId: number, opts?: any, callback?: Function): any
     getProductActors(productId: number, opts?: any, callback?: Function): any
     attachProductToActor(productId: number, actorId: number, callback?: Function): any
-    detachProductFromActor(productId: number, actorId: number, callback?: Function): any
+    getProductActorsRole(productId: number, opts?: any, callback?: Function): any
   }
   export class AddressApi {
     constructor(config?: ApiClient)
@@ -632,7 +672,6 @@ declare module 'kinow-javascript-sdk' {
   export class AttributesApi {
     constructor(config?: ApiClient)
     createProductAttribute(body: any, callback?: Function): Promise<ProductAttribute>
-    updateProductAttribute(attributeId: number, body: any, callback?: Function): Promise<ProductAttribute>
     getProductAttributes(productId: number, opts?: any, callback?: Function): any
   }
   export class BlogCategoriesApi {
@@ -668,7 +707,7 @@ declare module 'kinow-javascript-sdk' {
     getCart(cartId: number, callback?: Function): Promise<Cart>
     updateCart(cartId: number, body: any, callback?: Function): Promise<Cart>
     deleteCart(cartId: number, callback?: Function): any
-    createCart(opts?: any, callback?: Function): Promise<Cart>
+    createCart(body: any, callback?: Function): Promise<Cart>
     attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
     addProductToCart(cartId: number, productId: number, opts?: any, callback?: Function): Promise<Cart>
     deleteProductFromCart(cartId: number, productId: number, opts?: any, callback?: Function): any
@@ -711,7 +750,9 @@ declare module 'kinow-javascript-sdk' {
     deleteCustomer(customerId: number, callback?: Function): any
     getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
+    getCustomerHasAccessToVideos(customerId: number, ipAddress: string, body: any, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
+    getCustomerHasAccessToProducts(customerId: number, ipAddress: string, body: any, callback?: Function): any
     getCustomerCanSeeProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerAddress(customerId: number, callback?: Function): Promise<Address>
     checkCustomerCredentials(email: string, password: string, callback?: Function): Promise<Customer>
@@ -734,10 +775,13 @@ declare module 'kinow-javascript-sdk' {
     getCategories(opts?: any, callback?: Function): any
     createCategory(body: any, callback?: Function): Promise<Category>
     getCategory(categoryId: number, callback?: Function): Promise<Category>
+    deleteCategory(categoryId: number, callback?: Function): any
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
     getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): any
+    getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): any
+    getVideosFromCategories(opts?: any, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any
@@ -746,6 +790,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
+    getCustomerHasAccessToProducts(customerId: number, ipAddress: string, body: any, callback?: Function): any
     getProductCoverImage(productId: number, callback?: Function): Promise<Image>
     getProducts(opts?: any, callback?: Function): any
     createProduct(body: any, callback?: Function): Promise<Product>
@@ -764,10 +809,10 @@ declare module 'kinow-javascript-sdk' {
     getProductAvailability(productId: number, callback?: Function): any
     getProductDirectors(productId: number, opts?: any, callback?: Function): any
     attachProductToDirector(productId: number, directorId: number, callback?: Function): any
-    detachProductFromDirector(productId: number, directorId: number, callback?: Function): any
+    getProductDirectorsRole(productId: number, opts?: any, callback?: Function): any
     getProductActors(productId: number, opts?: any, callback?: Function): any
     attachProductToActor(productId: number, actorId: number, callback?: Function): any
-    detachProductFromActor(productId: number, actorId: number, callback?: Function): any
+    getProductActorsRole(productId: number, opts?: any, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): any
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
     searchProducts(searchQuery: string, opts?: any, callback?: Function): any
@@ -792,30 +837,12 @@ declare module 'kinow-javascript-sdk' {
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
-  export class ConfigurationApi {
-    constructor(config?: ApiClient)
-    getConfiguration(opts?: any, callback?: Function): any
-    getConfigurationByName(configurationName: string, callback?: Function): Promise<Configuration>
-  }
-  export class CountriesApi {
-    constructor(config?: ApiClient)
-    getCountries(opts?: any, callback?: Function): any
-  }
-  export class CurrenciesApi {
-    constructor(config?: ApiClient)
-    getCurrencies(opts?: any, callback?: Function): any
-  }
-  export class OrdersApi {
-    constructor(config?: ApiClient)
-    getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
-    getOrders(opts?: any, callback?: Function): any
-    getOrder(orderId: number, callback?: Function): Promise<Order>
-    getOrderInvoice(orderId: number, callback?: Function): any
-    getOrderHistories(orderId: number, opts?: any, callback?: Function): any
-  }
   export class VideosApi {
     constructor(config?: ApiClient)
+    getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): any
+    getVideosFromCategories(opts?: any, callback?: Function): any
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
+    getCustomerHasAccessToVideos(customerId: number, ipAddress: string, body: any, callback?: Function): any
     attachCoverToVideo(videoId: number, idImage: number, callback?: Function): any
     getVideosFromProduct(productId: number, opts?: any, callback?: Function): any
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any
@@ -837,10 +864,37 @@ declare module 'kinow-javascript-sdk' {
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
     getVideoBonus(videoId: number, callback?: Function): any
   }
+  export class ConfigurationApi {
+    constructor(config?: ApiClient)
+    getConfiguration(opts?: any, callback?: Function): any
+    getConfigurationByName(configurationName: string, callback?: Function): Promise<Configuration>
+  }
+  export class CountriesApi {
+    constructor(config?: ApiClient)
+    getCountries(opts?: any, callback?: Function): any
+  }
+  export class CurrenciesApi {
+    constructor(config?: ApiClient)
+    getCurrencies(opts?: any, callback?: Function): any
+  }
+  export class OrdersApi {
+    constructor(config?: ApiClient)
+    getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
+    getOrders(opts?: any, callback?: Function): any
+    getOrder(orderId: number, callback?: Function): Promise<Order>
+    getOrderInvoice(orderId: number, callback?: Function): any
+    getOrderHistories(orderId: number, opts?: any, callback?: Function): any
+  }
   export class CustomerThreadsApi {
     constructor(config?: ApiClient)
     getCustomerThreads(opts?: any, callback?: Function): any
     getCustomerThread(customerThreadId: number, callback?: Function): Promise<CustomerThread>
+  }
+  export class DevicesApi {
+    constructor(config?: ApiClient)
+    getCustomerDevices(customerId: number, opts?: any, callback?: Function): any
+    createDevices(body: any, callback?: Function): Promise<Device>
+    deleteDevice(deviceId: number, callback?: Function): any
   }
   export class DirectorsApi {
     constructor(config?: ApiClient)
@@ -850,9 +904,10 @@ declare module 'kinow-javascript-sdk' {
     updateDirector(directorId: number, body: any, callback?: Function): any
     deleteDirector(directorId: number, callback?: Function): any
     getDirectorProducts(directorId: number, opts?: any, callback?: Function): any
+    getDirectorProductsRole(directorId: number, opts?: any, callback?: Function): any
     getProductDirectors(productId: number, opts?: any, callback?: Function): any
     attachProductToDirector(productId: number, directorId: number, callback?: Function): any
-    detachProductFromDirector(productId: number, directorId: number, callback?: Function): any
+    getProductDirectorsRole(productId: number, opts?: any, callback?: Function): any
   }
   export class ExtractsApi {
     constructor(config?: ApiClient)
@@ -975,7 +1030,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): any
     getPrepaymentOperations(opts?: any, callback?: Function): any
     getPrepaymentOperation(prepaymentOperationId: number, callback?: Function): Promise<PrepaymentOperation>
-    getPrepaymentBonus(opts?: any, callback?: Function): any
+    getPrepaymentBonusList(opts?: any, callback?: Function): any
     getPrepaymentBonus(prepaymentBonusId: number, callback?: Function): Promise<PrepaymentBonus>
     getPrepaymentRecharges(opts?: any, callback?: Function): any
     getPrepaymentRecharge(prepaymentRechargeId: number, callback?: Function): Promise<PrepaymentRecharge>

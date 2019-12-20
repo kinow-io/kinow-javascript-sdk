@@ -1,0 +1,14 @@
+# KinowJavascriptSdk.VideoAccessInfo
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**idVideo** | **Number** |  | [optional] 
+**streaming** | **Boolean** |  | [optional] 
+**download** | **Boolean** |  | [optional] 
+**maximumWatched** | **Boolean** |  | [optional] 
+**maximumViewing** | **Boolean** |  | [optional] 
+**qualityHd** | **Boolean** |  | [optional] 
+**qualitySd** | **Boolean** |  | [optional] 
+
+

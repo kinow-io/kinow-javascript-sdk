@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProductAttribute**](AttributesApi.md#createProductAttribute) | **POST** /attributes | 
 [**getProductAttributes**](AttributesApi.md#getProductAttributes) | **GET** /products/{product_id}/attributes | 
-[**updateProductAttribute**](AttributesApi.md#updateProductAttribute) | **PUT** /attributes/{attribute_id} | 
 
 
 <a name="createProductAttribute"></a>
@@ -58,7 +57,7 @@ No authorization required
 
 
 
-Get product attributes. Mandatory to add product in cart: allows to buy product for download, streaming or both
+Get Product attributes. Mandatory to add TVOD Product in cart.
 
 ### Example
 ```javascript
@@ -91,52 +90,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductAttributesResponse**](ProductAttributesResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="updateProductAttribute"></a>
-# **updateProductAttribute**
-> ProductAttribute updateProductAttribute(attributeId, body)
-
-
-
-Update product attribute
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.AttributesApi();
-
-var attributeId = 789; // Integer | Attribute ID to update
-
-var body = new KinowJavascriptSdk.ProductAttributeUpdateRequest(); // ProductAttributeUpdateRequest | 
-
-apiInstance.updateProductAttribute(attributeId, body).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attributeId** | **Integer**| Attribute ID to update | 
- **body** | [**ProductAttributeUpdateRequest**](ProductAttributeUpdateRequest.md)|  | 
-
-### Return type
-
-[**ProductAttribute**](ProductAttribute.md)
 
 ### Authorization
 

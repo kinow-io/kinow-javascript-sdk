@@ -19,7 +19,9 @@ Method | HTTP request | Description
 [**getCustomerCurrentViews**](CustomersApi.md#getCustomerCurrentViews) | **GET** /customers/{customer_id}/current-views | 
 [**getCustomerGroups**](CustomersApi.md#getCustomerGroups) | **GET** /customers/{customer_id}/groups | 
 [**getCustomerHasAccessToProduct**](CustomersApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
+[**getCustomerHasAccessToProducts**](CustomersApi.md#getCustomerHasAccessToProducts) | **POST** /customers/{customer_id}/products/has-access | 
 [**getCustomerHasAccessToVideo**](CustomersApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
+[**getCustomerHasAccessToVideos**](CustomersApi.md#getCustomerHasAccessToVideos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**getCustomerOrders**](CustomersApi.md#getCustomerOrders) | **GET** /customers/{customer_id}/orders | 
 [**getCustomerPrepaymentBalances**](CustomersApi.md#getCustomerPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**getCustomerPrepaymentOperations**](CustomersApi.md#getCustomerPrepaymentOperations) | **GET** /customers/{customer_id}/prepayment-operations | 
@@ -724,6 +726,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getCustomerHasAccessToProducts"></a>
+# **getCustomerHasAccessToProducts**
+> [ProductAccessInfo] getCustomerHasAccessToProducts(customerId, ipAddress, body)
+
+
+
+Get customer access to Products
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var ipAddress = "ipAddress_example"; // String | IP address
+
+var body = new KinowJavascriptSdk.ProductIDList(); // ProductIDList | List of Product IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getCustomerHasAccessToProducts(customerId, ipAddress, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **ipAddress** | **String**| IP address | 
+ **body** | [**ProductIDList**](ProductIDList.md)| List of Product IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[ProductAccessInfo]**](ProductAccessInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getCustomerHasAccessToVideo"></a>
 # **getCustomerHasAccessToVideo**
 > getCustomerHasAccessToVideo(customerId, videoId)
@@ -760,6 +811,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCustomerHasAccessToVideos"></a>
+# **getCustomerHasAccessToVideos**
+> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, ipAddress, body)
+
+
+
+Get customer access to Videos
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var ipAddress = "ipAddress_example"; // String | IP address
+
+var body = new KinowJavascriptSdk.VideoIDList(); // VideoIDList | List of Video IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getCustomerHasAccessToVideos(customerId, ipAddress, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **ipAddress** | **String**| IP address | 
+ **body** | [**VideoIDList**](VideoIDList.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[VideoAccessInfo]**](VideoAccessInfo.md)
 
 ### Authorization
 

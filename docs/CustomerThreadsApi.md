@@ -53,7 +53,7 @@ No authorization required
 
 <a name="getCustomerThreads"></a>
 # **getCustomerThreads**
-> CustomerThread1 getCustomerThreads(opts)
+> CustomerThreadList getCustomerThreads(opts)
 
 
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerThread1**](CustomerThread1.md)
+[**CustomerThreadList**](CustomerThreadList.md)
 
 ### Authorization
 

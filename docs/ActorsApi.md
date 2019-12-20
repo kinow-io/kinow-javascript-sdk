@@ -7,11 +7,12 @@ Method | HTTP request | Description
 [**attachProductToActor**](ActorsApi.md#attachProductToActor) | **POST** /products/{product_id}/actors | 
 [**createActor**](ActorsApi.md#createActor) | **POST** /actors | 
 [**deleteActor**](ActorsApi.md#deleteActor) | **DELETE** /actors/{actor_id} | 
-[**detachProductFromActor**](ActorsApi.md#detachProductFromActor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**getActor**](ActorsApi.md#getActor) | **GET** /actors/{actor_id} | 
 [**getActorProducts**](ActorsApi.md#getActorProducts) | **GET** /actors/{actor_id}/products | 
+[**getActorProductsRole**](ActorsApi.md#getActorProductsRole) | **GET** /actors/{actor_id}/products-role | 
 [**getActors**](ActorsApi.md#getActors) | **GET** /actors | 
 [**getProductActors**](ActorsApi.md#getProductActors) | **GET** /products/{product_id}/actors | 
+[**getProductActorsRole**](ActorsApi.md#getProductActorsRole) | **GET** /products/{product_id}/actors-role | 
 [**updateActor**](ActorsApi.md#updateActor) | **PUT** /actors/{actor_id} | 
 
 
@@ -75,7 +76,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.ActorsApi();
 
-var body = new KinowJavascriptSdk.Actor(); // Actor | 
+var body = new KinowJavascriptSdk.Actor1(); // Actor1 | Actor settings
 
 apiInstance.createActor(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -89,7 +90,7 @@ apiInstance.createActor(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Actor**](Actor.md)|  | 
+ **body** | [**Actor1**](Actor1.md)| Actor settings | 
 
 ### Return type
 
@@ -133,52 +134,6 @@ apiInstance.deleteActor(actorId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actorId** | **Integer**|  | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="detachProductFromActor"></a>
-# **detachProductFromActor**
-> detachProductFromActor(productId, actorId)
-
-
-
-Detach product from actor
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ActorsApi();
-
-var productId = 789; // Integer | Product ID to fetch
-
-var actorId = 789; // Integer | Actor ID to detach
-
-apiInstance.detachProductFromActor(productId, actorId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Product ID to fetch | 
- **actorId** | **Integer**| Actor ID to detach | 
 
 ### Return type
 
@@ -299,6 +254,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getActorProductsRole"></a>
+# **getActorProductsRole**
+> Products getActorProductsRole(actorId, opts)
+
+
+
+Get Products linked to Actor with their role
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ActorsApi();
+
+var actorId = 789; // Integer | Actor ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getActorProductsRole(actorId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actorId** | **Integer**| Actor ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Products**](Products.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getActors"></a>
 # **getActors**
 > Actors getActors(opts)
@@ -398,6 +402,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getProductActorsRole"></a>
+# **getProductActorsRole**
+> Actors getProductActorsRole(productId, opts)
+
+
+
+Get Actors attached to Product with their role
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ActorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getProductActorsRole(productId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Actors**](Actors.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="updateActor"></a>
 # **updateActor**
 > updateActor(actorId, body)
@@ -414,7 +467,7 @@ var apiInstance = new KinowJavascriptSdk.ActorsApi();
 
 var actorId = 56; // Integer | 
 
-var body = new KinowJavascriptSdk.Actor(); // Actor | 
+var body = new KinowJavascriptSdk.Actor2(); // Actor2 | Actor settings
 
 apiInstance.updateActor(actorId, body).then(function() {
   console.log('API called successfully.');
@@ -429,7 +482,7 @@ apiInstance.updateActor(actorId, body).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actorId** | **Integer**|  | 
- **body** | [**Actor**](Actor.md)|  | 
+ **body** | [**Actor2**](Actor2.md)| Actor settings | 
 
 ### Return type
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **firstname** | **String** |  | [optional] 
 **lastname** | **String** |  | [optional] 
 **message** | **String** |  | [optional] 
+**custom** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
 **used** | **Boolean** |  | [optional] 
 **dateSend** | **String** |  | [optional] 

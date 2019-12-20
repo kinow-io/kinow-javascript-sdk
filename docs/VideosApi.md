@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**createVideo**](VideosApi.md#createVideo) | **POST** /videos | 
 [**deleteVideo**](VideosApi.md#deleteVideo) | **DELETE** /videos/{video_id} | 
 [**getCustomerHasAccessToVideo**](VideosApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
+[**getCustomerHasAccessToVideos**](VideosApi.md#getCustomerHasAccessToVideos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**getDisabledSubscriptions**](VideosApi.md#getDisabledSubscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**getVideo**](VideosApi.md#getVideo) | **GET** /videos/{video_id} | 
 [**getVideoAccess**](VideosApi.md#getVideoAccess) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
@@ -22,6 +23,8 @@ Method | HTTP request | Description
 [**getVideoSubtitles**](VideosApi.md#getVideoSubtitles) | **GET** /videos/{video_id}/subtitles | 
 [**getVideoViews**](VideosApi.md#getVideoViews) | **GET** /videos/{video_id}/views | 
 [**getVideos**](VideosApi.md#getVideos) | **GET** /videos | 
+[**getVideosFromCategories**](VideosApi.md#getVideosFromCategories) | **GET** /categories/videos | 
+[**getVideosFromCategory**](VideosApi.md#getVideosFromCategory) | **GET** /categories/{category_id}/videos | 
 [**getVideosFromProduct**](VideosApi.md#getVideosFromProduct) | **GET** /products/{product_id}/videos | 
 [**setVideoGeolocation**](VideosApi.md#setVideoGeolocation) | **PUT** /videos/{video_id}/geolocations | 
 [**updateVideo**](VideosApi.md#updateVideo) | **PUT** /videos/{video_id} | 
@@ -287,6 +290,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCustomerHasAccessToVideos"></a>
+# **getCustomerHasAccessToVideos**
+> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, ipAddress, body)
+
+
+
+Get customer access to Videos
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var ipAddress = "ipAddress_example"; // String | IP address
+
+var body = new KinowJavascriptSdk.VideoIDList(); // VideoIDList | List of Video IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getCustomerHasAccessToVideos(customerId, ipAddress, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **ipAddress** | **String**| IP address | 
+ **body** | [**VideoIDList**](VideoIDList.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[VideoAccessInfo]**](VideoAccessInfo.md)
 
 ### Authorization
 
@@ -818,7 +870,7 @@ No authorization required
 
 <a name="getVideos"></a>
 # **getVideos**
-> Videos1 getVideos(opts)
+> Videos2 getVideos(opts)
 
 
 
@@ -857,7 +909,110 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos1**](Videos1.md)
+[**Videos2**](Videos2.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getVideosFromCategories"></a>
+# **getVideosFromCategories**
+> Videos getVideosFromCategories(opts)
+
+
+
+Get Videos attached to Categories
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getVideosFromCategories(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Videos**](Videos.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getVideosFromCategory"></a>
+# **getVideosFromCategory**
+> Videos getVideosFromCategory(categoryId, opts)
+
+
+
+Get Videos attached to Category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getVideosFromCategory(categoryId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Videos**](Videos.md)
 
 ### Authorization
 
@@ -870,7 +1025,7 @@ No authorization required
 
 <a name="getVideosFromProduct"></a>
 # **getVideosFromProduct**
-> Videos1 getVideosFromProduct(productId, opts)
+> Videos2 getVideosFromProduct(productId, opts)
 
 
 
@@ -914,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos1**](Videos1.md)
+[**Videos2**](Videos2.md)
 
 ### Authorization
 

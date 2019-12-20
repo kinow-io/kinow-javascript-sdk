@@ -3,7 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**[Director]**](Director.md) |  | [optional] 
+**name** | **String** | Director&#39;s name | 
+**descriptionShort** | [**[I18nField]**](I18nField.md) | Director&#39;s short description | [optional] 
+**description** | [**[I18nField]**](I18nField.md) | Director&#39;s description | [optional] 
+**metaTitle** | [**[I18nField]**](I18nField.md) | Title page for search engines | [optional] 
+**metaDescription** | [**[I18nField]**](I18nField.md) | Short description for search engines | [optional] 
+**metaKeywords** | [**[I18nField]**](I18nField.md) | List of keywords for search engines | [optional] 
+**linkRewrite** | [**[I18nField]**](I18nField.md) | Friendly URL used to reach real page | [optional] 
 
 

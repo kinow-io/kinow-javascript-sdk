@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCustomerPrepaymentBalances**](PrepaymentsApi.md#getCustomerPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**getCustomerPrepaymentOperations**](PrepaymentsApi.md#getCustomerPrepaymentOperations) | **GET** /customers/{customer_id}/prepayment-operations | 
-[**getPrepaymentBonus**](PrepaymentsApi.md#getPrepaymentBonus) | **GET** /prepayment/bonus | 
-[**getPrepaymentBonus_0**](PrepaymentsApi.md#getPrepaymentBonus_0) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
+[**getPrepaymentBonus**](PrepaymentsApi.md#getPrepaymentBonus) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
+[**getPrepaymentBonusList**](PrepaymentsApi.md#getPrepaymentBonusList) | **GET** /prepayment/bonus | 
 [**getPrepaymentOperation**](PrepaymentsApi.md#getPrepaymentOperation) | **GET** /prepayment/operations/{prepayment_operation_id} | 
 [**getPrepaymentOperations**](PrepaymentsApi.md#getPrepaymentOperations) | **GET** /prepayment/operations | 
 [**getPrepaymentRecharge**](PrepaymentsApi.md#getPrepaymentRecharge) | **GET** /prepayment/recharges/{prepayment_recharge_id} | 
@@ -110,7 +110,50 @@ No authorization required
 
 <a name="getPrepaymentBonus"></a>
 # **getPrepaymentBonus**
-> PrepaymentBonus1 getPrepaymentBonus(opts)
+> PrepaymentBonus getPrepaymentBonus(prepaymentBonusId)
+
+
+
+Get PrepaymentBonus
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PrepaymentsApi();
+
+var prepaymentBonusId = 789; // Integer | PrepaymentBonus ID to fetch
+
+apiInstance.getPrepaymentBonus(prepaymentBonusId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **prepaymentBonusId** | **Integer**| PrepaymentBonus ID to fetch | 
+
+### Return type
+
+[**PrepaymentBonus**](PrepaymentBonus.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getPrepaymentBonusList"></a>
+# **getPrepaymentBonusList**
+> PrepaymentBonus1 getPrepaymentBonusList(opts)
 
 
 
@@ -126,7 +169,7 @@ var opts = {
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
-apiInstance.getPrepaymentBonus(opts).then(function(data) {
+apiInstance.getPrepaymentBonusList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -144,49 +187,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrepaymentBonus1**](PrepaymentBonus1.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getPrepaymentBonus_0"></a>
-# **getPrepaymentBonus_0**
-> PrepaymentBonus getPrepaymentBonus_0(prepaymentBonusId)
-
-
-
-Get PrepaymentBonus
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.PrepaymentsApi();
-
-var prepaymentBonusId = 789; // Integer | PrepaymentBonus ID to fetch
-
-apiInstance.getPrepaymentBonus_0(prepaymentBonusId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **prepaymentBonusId** | **Integer**| PrepaymentBonus ID to fetch | 
-
-### Return type
-
-[**PrepaymentBonus**](PrepaymentBonus.md)
 
 ### Authorization
 

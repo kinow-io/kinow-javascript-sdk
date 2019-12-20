@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCategory**](CategoriesApi.md#createCategory) | **POST** /categories | 
+[**deleteCategory**](CategoriesApi.md#deleteCategory) | **DELETE** /categories/{category_id} | 
 [**getAvailableCategory**](CategoriesApi.md#getAvailableCategory) | **GET** /categories-accesses/{category_id} | 
 [**getCategories**](CategoriesApi.md#getCategories) | **GET** /categories | 
 [**getCategoriesFromCategory**](CategoriesApi.md#getCategoriesFromCategory) | **GET** /categories/{category_id}/categories | 
@@ -14,6 +15,8 @@ Method | HTTP request | Description
 [**getCategoryProducts**](CategoriesApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
 [**getProductCategories**](CategoriesApi.md#getProductCategories) | **GET** /products/{product_id}/categories | 
 [**getSubscriptionCategories**](CategoriesApi.md#getSubscriptionCategories) | **GET** /subscriptions/{subscription_id}/categories | 
+[**getVideosFromCategories**](CategoriesApi.md#getVideosFromCategories) | **GET** /categories/videos | 
+[**getVideosFromCategory**](CategoriesApi.md#getVideosFromCategory) | **GET** /categories/{category_id}/videos | 
 
 
 <a name="createCategory"></a>
@@ -49,6 +52,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Category**](Category.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="deleteCategory"></a>
+# **deleteCategory**
+> deleteCategory(categoryId)
+
+
+
+Delete Category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+apiInstance.deleteCategory(categoryId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -505,6 +551,109 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Categories**](Categories.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getVideosFromCategories"></a>
+# **getVideosFromCategories**
+> Videos getVideosFromCategories(opts)
+
+
+
+Get Videos attached to Categories
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getVideosFromCategories(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Videos**](Videos.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getVideosFromCategory"></a>
+# **getVideosFromCategory**
+> Videos getVideosFromCategory(categoryId, opts)
+
+
+
+Get Videos attached to Category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getVideosFromCategory(categoryId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Videos**](Videos.md)
 
 ### Authorization
 
