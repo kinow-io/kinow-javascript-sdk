@@ -17,7 +17,7 @@ declare module 'kinow-javascript-sdk' {
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
     link_rewrite: Array<I18nField>
-    roles: string
+    roles: Array<I18nField>
     active: boolean
     date_add: string
     date_upd: string
