@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **metaDescription** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **metaKeywords** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **linkRewrite** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**roles** | **String** |  | [optional] 
+**roles** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **dateAdd** | **String** |  | [optional] 
 **dateUpd** | **String** |  | [optional] 
