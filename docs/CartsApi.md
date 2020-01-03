@@ -40,7 +40,8 @@ var productId = 789; // Integer | Product ID to add to cart
 
 var opts = { 
   'productAttributeId': 789, // Integer | ProductAttribute ID, required to add product to cart if product is not a subscription
-  'switchSubscriptionId': 789 // Integer | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel
+  'switchSubscriptionId': 789, // Integer | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel
+  'isGift': false // Boolean | Allows bypass of access check (in case the current user already bought the product and it cannot be reordered)
 };
 apiInstance.addProductToCart(cartId, productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -58,6 +59,7 @@ Name | Type | Description  | Notes
  **productId** | **Integer**| Product ID to add to cart | 
  **productAttributeId** | **Integer**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
  **switchSubscriptionId** | **Integer**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
+ **isGift** | **Boolean**| Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) | [optional] [default to false]
 
 ### Return type
 

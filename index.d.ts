@@ -782,6 +782,8 @@ declare module 'kinow-javascript-sdk' {
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getVideosFromCategories(opts?: any, callback?: Function): any
+    getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
+    getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any
@@ -841,6 +843,8 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getVideosFromCategories(opts?: any, callback?: Function): any
+    getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
+    getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
     getCustomerHasAccessToVideos(customerId: number, ipAddress: string, body: any, callback?: Function): any
     attachCoverToVideo(videoId: number, idImage: number, callback?: Function): any

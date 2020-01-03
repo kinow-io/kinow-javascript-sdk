@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**attachVideoToProduct**](VideosApi.md#attachVideoToProduct) | **POST** /products/{product_id}/videos | 
 [**createVideo**](VideosApi.md#createVideo) | **POST** /videos | 
 [**deleteVideo**](VideosApi.md#deleteVideo) | **DELETE** /videos/{video_id} | 
+[**getCategoryVideoPlayer**](VideosApi.md#getCategoryVideoPlayer) | **GET** /categories/videos/{video_id}/player | 
+[**getCategoryVideoSubtitles**](VideosApi.md#getCategoryVideoSubtitles) | **GET** /categories/videos/{video_id}/subtitles | 
 [**getCustomerHasAccessToVideo**](VideosApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getCustomerHasAccessToVideos**](VideosApi.md#getCustomerHasAccessToVideos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**getDisabledSubscriptions**](VideosApi.md#getDisabledSubscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
@@ -244,6 +246,104 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryVideoPlayer"></a>
+# **getCategoryVideoPlayer**
+> Player getCategoryVideoPlayer(videoId, opts)
+
+
+
+Get video player
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var videoId = 789; // Integer | Video ID to fetch
+
+var opts = { 
+  'customerId': 789, // Integer | Customer ID to fetch
+  'countryId': 789 // Integer | Country ID to use in video analytics
+};
+apiInstance.getCategoryVideoPlayer(videoId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| Video ID to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | [optional] 
+ **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
+
+### Return type
+
+[**Player**](Player.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryVideoSubtitles"></a>
+# **getCategoryVideoSubtitles**
+> VideoSubtitlesResponse getCategoryVideoSubtitles(videoId, opts)
+
+
+
+Get subtitles of a video
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var videoId = 789; // Integer | Video ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCategoryVideoSubtitles(videoId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| Video ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
 
 ### Authorization
 
@@ -729,7 +829,7 @@ No authorization required
 
 <a name="getVideoPlayer"></a>
 # **getVideoPlayer**
-> PlayerConfiguration getVideoPlayer(videoId, opts)
+> Player getVideoPlayer(videoId, opts)
 
 
 
@@ -765,7 +865,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlayerConfiguration**](PlayerConfiguration.md)
+[**Player**](Player.md)
 
 ### Authorization
 
