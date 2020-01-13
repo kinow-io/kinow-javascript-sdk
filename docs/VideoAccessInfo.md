@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **maximumViewing** | **Boolean** |  | [optional] 
 **qualityHd** | **Boolean** |  | [optional] 
 **qualitySd** | **Boolean** |  | [optional] 
+**expires** | **String** |  | [optional] 
 
 

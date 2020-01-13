@@ -166,6 +166,7 @@ declare module 'kinow-javascript-sdk' {
   interface Country {
     id: number
     iso_code: string
+    id_zone: string
     name: Array<I18nField>
   }
   interface Currency {
@@ -448,6 +449,8 @@ declare module 'kinow-javascript-sdk' {
     reference: string
     date_from: string
     date_to: string
+    visible_before_publication: boolean
+    visible_after_publication: boolean
     price: number
     position: number
     active: boolean
@@ -595,6 +598,7 @@ declare module 'kinow-javascript-sdk' {
     maximum_viewing: boolean
     quality_hd: boolean
     quality_sd: boolean
+    expires: string
   }
   interface VideoCategory {
     id: number
