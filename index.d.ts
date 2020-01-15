@@ -412,6 +412,10 @@ declare module 'kinow-javascript-sdk' {
     displayName: string
     description: string
   }
+  interface PlatformAccessInfo {
+    can_access: boolean
+    can_buy: boolean
+  }
   interface PrepaymentBalance {
     amount: number
     type: string
@@ -941,7 +945,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class GeolocationsApi {
     constructor(config?: ApiClient)
-    geolocations(ipAddress: string, callback?: Function): any
+    geolocations(ipAddress: string, callback?: Function): Promise<PlatformAccessInfo>
     getIPLocation(ipAddress: string, callback?: Function): Promise<IPLocation>
     getProductGeolocations(productId: number, opts?: any, callback?: Function): any
     setProductGeolocation(productId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any

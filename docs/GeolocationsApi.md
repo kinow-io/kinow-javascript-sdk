@@ -4,7 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**geolocations**](GeolocationsApi.md#geolocations) | **POST** /geolocations | 
+[**geolocations**](GeolocationsApi.md#geolocations) | **GET** /geolocations/platform-access | 
 [**getIPLocation**](GeolocationsApi.md#getIPLocation) | **GET** /geolocations/ip | 
 [**getProductGeolocations**](GeolocationsApi.md#getProductGeolocations) | **GET** /products/{product_id}/geolocations | 
 [**getProductGeolocationsByIp**](GeolocationsApi.md#getProductGeolocationsByIp) | **POST** /products/{product_id}/geolocations | 
@@ -15,11 +15,11 @@ Method | HTTP request | Description
 
 <a name="geolocations"></a>
 # **geolocations**
-> geolocations(ipAddress)
+> PlatformAccessInfo geolocations(ipAddress)
 
 
 
-Check access to platform by ip
+Get PlatformAccessInfo by ip
 
 ### Example
 ```javascript
@@ -27,10 +27,10 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
-var ipAddress = "ipAddress_example"; // String | address ip
+var ipAddress = "ipAddress_example"; // String | IP address
 
-apiInstance.geolocations(ipAddress).then(function() {
-  console.log('API called successfully.');
+apiInstance.geolocations(ipAddress).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
@@ -41,11 +41,11 @@ apiInstance.geolocations(ipAddress).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ipAddress** | **String**| address ip | 
+ **ipAddress** | **String**| IP address | 
 
 ### Return type
 
-null (empty response body)
+[**PlatformAccessInfo**](PlatformAccessInfo.md)
 
 ### Authorization
 
