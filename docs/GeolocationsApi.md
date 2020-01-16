@@ -4,57 +4,14 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**geolocations**](GeolocationsApi.md#geolocations) | **GET** /geolocations/platform-access | 
 [**getIPLocation**](GeolocationsApi.md#getIPLocation) | **GET** /geolocations/ip | 
+[**getPlatformAccessInfo**](GeolocationsApi.md#getPlatformAccessInfo) | **GET** /geolocations/platform-access | 
 [**getProductGeolocations**](GeolocationsApi.md#getProductGeolocations) | **GET** /products/{product_id}/geolocations | 
 [**getProductGeolocationsByIp**](GeolocationsApi.md#getProductGeolocationsByIp) | **POST** /products/{product_id}/geolocations | 
 [**getVideoGeolocationByIp**](GeolocationsApi.md#getVideoGeolocationByIp) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 [**setProductGeolocation**](GeolocationsApi.md#setProductGeolocation) | **PUT** /products/{product_id}/geolocations | 
 [**setVideoGeolocation**](GeolocationsApi.md#setVideoGeolocation) | **PUT** /videos/{video_id}/geolocations | 
 
-
-<a name="geolocations"></a>
-# **geolocations**
-> PlatformAccessInfo geolocations(ipAddress)
-
-
-
-Get PlatformAccessInfo by ip
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
-
-var ipAddress = "ipAddress_example"; // String | IP address
-
-apiInstance.geolocations(ipAddress).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ipAddress** | **String**| IP address | 
-
-### Return type
-
-[**PlatformAccessInfo**](PlatformAccessInfo.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
 
 <a name="getIPLocation"></a>
 # **getIPLocation**
@@ -89,6 +46,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**IPLocation**](IPLocation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getPlatformAccessInfo"></a>
+# **getPlatformAccessInfo**
+> PlatformAccessInfo getPlatformAccessInfo(ipAddress)
+
+
+
+Get PlatformAccessInfo by ip
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var ipAddress = "ipAddress_example"; // String | IP address
+
+apiInstance.getPlatformAccessInfo(ipAddress).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipAddress** | **String**| IP address | 
+
+### Return type
+
+[**PlatformAccessInfo**](PlatformAccessInfo.md)
 
 ### Authorization
 

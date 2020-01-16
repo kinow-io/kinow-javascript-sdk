@@ -945,7 +945,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class GeolocationsApi {
     constructor(config?: ApiClient)
-    geolocations(ipAddress: string, callback?: Function): Promise<PlatformAccessInfo>
+    getPlatformAccessInfo(ipAddress: string, callback?: Function): Promise<PlatformAccessInfo>
     getIPLocation(ipAddress: string, callback?: Function): Promise<IPLocation>
     getProductGeolocations(productId: number, opts?: any, callback?: Function): any
     setProductGeolocation(productId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
