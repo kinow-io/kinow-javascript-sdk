@@ -148,6 +148,7 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_upd: string
     active: boolean
+    level_depth: number
     position: number
     images: object
     meta_description: Array<I18nField>

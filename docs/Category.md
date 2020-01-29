@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **dateAdd** | **String** |  | [optional] 
 **dateUpd** | **String** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
+**levelDepth** | **Integer** |  | [optional] 
 **position** | **Integer** |  | [optional] 
 **images** | [**CategoryImages**](CategoryImages.md) |  | [optional] 
 **metaDescription** | [**[I18nField]**](I18nField.md) |  | [optional] 
