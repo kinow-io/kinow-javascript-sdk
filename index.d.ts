@@ -508,11 +508,16 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ProductAttribute {
     id: number
+    video_id: number
     name: string
     price: number
+    price_mode: number
     price_noreduc: number
+    mode: string
     type: string
     quality: string
+    duration: number
+    watching_duration: number
     active: number
   }
   interface Screenshot {
@@ -604,6 +609,7 @@ declare module 'kinow-javascript-sdk' {
     quality_hd: boolean
     quality_sd: boolean
     expires: string
+    play_duration: number
   }
   interface VideoCategory {
     id: number

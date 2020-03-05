@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **qualityHd** | **Boolean** |  | [optional] 
 **qualitySd** | **Boolean** |  | [optional] 
 **expires** | **String** |  | [optional] 
+**playDuration** | **Number** |  | [optional] 
 
 
