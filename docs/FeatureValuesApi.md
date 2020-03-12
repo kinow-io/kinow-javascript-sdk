@@ -4,11 +4,58 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachFeaturesToExtract**](FeatureValuesApi.md#attachFeaturesToExtract) | **POST** /extracts/{extract_id}/features | 
 [**attachFeaturesToProduct**](FeatureValuesApi.md#attachFeaturesToProduct) | **POST** /products/{product_id}/features | 
 [**attachFeaturesToVideo**](FeatureValuesApi.md#attachFeaturesToVideo) | **POST** /videos/{video_id}/features | 
 [**detachFeatureToProduct**](FeatureValuesApi.md#detachFeatureToProduct) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**getFeatureValues**](FeatureValuesApi.md#getFeatureValues) | **GET** /feature-values | 
 
+
+<a name="attachFeaturesToExtract"></a>
+# **attachFeaturesToExtract**
+> attachFeaturesToExtract(extractId, features)
+
+
+
+Attach feature to extract
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.FeatureValuesApi();
+
+var extractId = 789; // Integer | 
+
+var features = "features_example"; // String |       To attach existing FeatureValue to Product:      ```      [{      \"id_feature\":3,      \"id_feature_value\":5      }]      ```        To create a custom FeatureValue:      ```      [{      \"id_feature\":3,      \"custom_value\":[{      \"lang\": 1,      \"value\": \"string\"      }]      }]      ```
+
+apiInstance.attachFeaturesToExtract(extractId, features).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extractId** | **Integer**|  | 
+ **features** | **String**|       To attach existing FeatureValue to Product:      &#x60;&#x60;&#x60;      [{      \&quot;id_feature\&quot;:3,      \&quot;id_feature_value\&quot;:5      }]      &#x60;&#x60;&#x60;        To create a custom FeatureValue:      &#x60;&#x60;&#x60;      [{      \&quot;id_feature\&quot;:3,      \&quot;custom_value\&quot;:[{      \&quot;lang\&quot;: 1,      \&quot;value\&quot;: \&quot;string\&quot;      }]      }]      &#x60;&#x60;&#x60; | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="attachFeaturesToProduct"></a>
 # **attachFeaturesToProduct**

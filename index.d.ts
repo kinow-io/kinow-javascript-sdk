@@ -846,6 +846,8 @@ declare module 'kinow-javascript-sdk' {
   export class FeaturesApi {
     constructor(config?: ApiClient)
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
+    getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
+    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     getFeatures(opts?: any, callback?: Function): any
     getFeatureValues(opts?: any, callback?: Function): any
     getProductFeatures(productId: number, opts?: any, callback?: Function): any
@@ -936,11 +938,14 @@ declare module 'kinow-javascript-sdk' {
     updateExtract(extractId: number, body: any, callback?: Function): Promise<Extract>
     deleteExtract(extractId: number, callback?: Function): any
     getExtractPlayer(extractId: number, callback?: Function): any
+    getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
+    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): any
   }
   export class FeatureValuesApi {
     constructor(config?: ApiClient)
+    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     getFeatureValues(opts?: any, callback?: Function): any
     attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
