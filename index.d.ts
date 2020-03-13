@@ -326,6 +326,7 @@ declare module 'kinow-javascript-sdk' {
   interface Image {
     id: number
     source: string
+    type: string
   }
   interface Language {
     id: number
@@ -524,6 +525,7 @@ declare module 'kinow-javascript-sdk' {
     id: number
     source: string
     position: number
+    type: string
   }
   interface SessionVideoStat {
     customer_id: number
