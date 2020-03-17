@@ -206,7 +206,7 @@ No authorization required
 
 
 
-Check access to a product by geolocation
+Check access to a video by geolocation
 
 ### Example
 ```javascript

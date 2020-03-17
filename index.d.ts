@@ -726,7 +726,7 @@ declare module 'kinow-javascript-sdk' {
     deleteCart(cartId: number, callback?: Function): any
     createCart(body: any, callback?: Function): Promise<Cart>
     attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
-    addProductToCart(cartId: number, productId: number, opts?: any, callback?: Function): Promise<Cart>
+    addProductToCart(cartId: number, productId: number, ipAddress: string, opts?: any, callback?: Function): Promise<Cart>
     deleteProductFromCart(cartId: number, productId: number, opts?: any, callback?: Function): any
     validateFreeOrder(cartId: number, callback?: Function): any
     getCustomerCarts(customerId: number, opts?: any, callback?: Function): any
@@ -767,9 +767,9 @@ declare module 'kinow-javascript-sdk' {
     deleteCustomer(customerId: number, callback?: Function): any
     getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
-    getCustomerHasAccessToVideos(customerId: number, ipAddress: string, body: any, callback?: Function): any
+    getCustomerHasAccessToVideos(customerId: number, body: any, opts?: any, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
-    getCustomerHasAccessToProducts(customerId: number, ipAddress: string, body: any, callback?: Function): any
+    getCustomerHasAccessToProducts(customerId: number, body: any, opts?: any, callback?: Function): any
     getCustomerCanSeeProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerAddress(customerId: number, callback?: Function): Promise<Address>
     checkCustomerCredentials(email: string, password: string, callback?: Function): Promise<Customer>
@@ -809,7 +809,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
-    getCustomerHasAccessToProducts(customerId: number, ipAddress: string, body: any, callback?: Function): any
+    getCustomerHasAccessToProducts(customerId: number, body: any, opts?: any, callback?: Function): any
     getProductCoverImage(productId: number, callback?: Function): Promise<Image>
     getProducts(opts?: any, callback?: Function): any
     createProduct(body: any, callback?: Function): Promise<Product>
@@ -865,7 +865,7 @@ declare module 'kinow-javascript-sdk' {
     getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
-    getCustomerHasAccessToVideos(customerId: number, ipAddress: string, body: any, callback?: Function): any
+    getCustomerHasAccessToVideos(customerId: number, body: any, opts?: any, callback?: Function): any
     attachCoverToVideo(videoId: number, idImage: number, callback?: Function): any
     getVideosFromProduct(productId: number, opts?: any, callback?: Function): any
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any

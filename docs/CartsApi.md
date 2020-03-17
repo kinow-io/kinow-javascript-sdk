@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 <a name="addProductToCart"></a>
 # **addProductToCart**
-> Cart addProductToCart(cartId, productId, opts)
+> Cart addProductToCart(cartId, productId, ipAddress, opts)
 
 
 
@@ -38,12 +38,14 @@ var cartId = 789; // Integer | Cart ID to fetch
 
 var productId = 789; // Integer | Product ID to add to cart
 
+var ipAddress = "ipAddress_example"; // String | IP address
+
 var opts = { 
   'productAttributeId': 789, // Integer | ProductAttribute ID, required to add product to cart if product is not a subscription
   'switchSubscriptionId': 789, // Integer | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel
   'isGift': false // Boolean | Allows bypass of access check (in case the current user already bought the product and it cannot be reordered)
 };
-apiInstance.addProductToCart(cartId, productId, opts).then(function(data) {
+apiInstance.addProductToCart(cartId, productId, ipAddress, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -57,6 +59,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
  **productId** | **Integer**| Product ID to add to cart | 
+ **ipAddress** | **String**| IP address | 
  **productAttributeId** | **Integer**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
  **switchSubscriptionId** | **Integer**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
  **isGift** | **Boolean**| Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) | [optional] [default to false]

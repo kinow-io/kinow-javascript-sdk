@@ -402,7 +402,7 @@ No authorization required
 
 <a name="getCustomerHasAccessToVideos"></a>
 # **getCustomerHasAccessToVideos**
-> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, ipAddress, body)
+> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, body, opts)
 
 
 
@@ -416,11 +416,12 @@ var apiInstance = new KinowJavascriptSdk.VideosApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-var ipAddress = "ipAddress_example"; // String | IP address
-
 var body = new KinowJavascriptSdk.VideoIDList(); // VideoIDList | List of Video IDs separated by comma, eg. '42,21,84'
 
-apiInstance.getCustomerHasAccessToVideos(customerId, ipAddress, body).then(function(data) {
+var opts = { 
+  'ipAddress': "ipAddress_example" // String | IP address
+};
+apiInstance.getCustomerHasAccessToVideos(customerId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -433,8 +434,8 @@ apiInstance.getCustomerHasAccessToVideos(customerId, ipAddress, body).then(funct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
- **ipAddress** | **String**| IP address | 
  **body** | [**VideoIDList**](VideoIDList.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+ **ipAddress** | **String**| IP address | [optional] 
 
 ### Return type
 
@@ -647,7 +648,8 @@ var apiInstance = new KinowJavascriptSdk.VideosApi();
 var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
-  'customerId': 789 // Integer | Customer ID to fetch
+  'customerId': 789, // Integer | Customer ID to fetch
+  'ipAddress': "ipAddress_example" // String | IP address
 };
 apiInstance.getVideoDownloadUrl(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -663,6 +665,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **Integer**| Video ID to fetch | 
  **customerId** | **Integer**| Customer ID to fetch | [optional] 
+ **ipAddress** | **String**| IP address | [optional] 
 
 ### Return type
 
@@ -781,7 +784,7 @@ No authorization required
 
 
 
-Check access to a product by geolocation
+Check access to a video by geolocation
 
 ### Example
 ```javascript
@@ -845,7 +848,8 @@ var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
   'customerId': 789, // Integer | Customer ID to fetch
-  'countryId': 789 // Integer | Country ID to use in video analytics
+  'countryId': 789, // Integer | Country ID to use in video analytics
+  'ipAddress': "ipAddress_example" // String | IP address
 };
 apiInstance.getVideoPlayer(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -862,6 +866,7 @@ Name | Type | Description  | Notes
  **videoId** | **Integer**| Video ID to fetch | 
  **customerId** | **Integer**| Customer ID to fetch | [optional] 
  **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
+ **ipAddress** | **String**| IP address | [optional] 
 
 ### Return type
 

@@ -650,7 +650,7 @@ No authorization required
 
 <a name="getCustomerHasAccessToProducts"></a>
 # **getCustomerHasAccessToProducts**
-> [ProductAccessInfo] getCustomerHasAccessToProducts(customerId, ipAddress, body)
+> [ProductAccessInfo] getCustomerHasAccessToProducts(customerId, body, opts)
 
 
 
@@ -664,11 +664,12 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-var ipAddress = "ipAddress_example"; // String | IP address
-
 var body = new KinowJavascriptSdk.ProductIDList(); // ProductIDList | List of Product IDs separated by comma, eg. '42,21,84'
 
-apiInstance.getCustomerHasAccessToProducts(customerId, ipAddress, body).then(function(data) {
+var opts = { 
+  'ipAddress': "ipAddress_example" // String | IP address
+};
+apiInstance.getCustomerHasAccessToProducts(customerId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -681,8 +682,8 @@ apiInstance.getCustomerHasAccessToProducts(customerId, ipAddress, body).then(fun
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
- **ipAddress** | **String**| IP address | 
  **body** | [**ProductIDList**](ProductIDList.md)| List of Product IDs separated by comma, eg. &#39;42,21,84&#39; | 
+ **ipAddress** | **String**| IP address | [optional] 
 
 ### Return type
 
