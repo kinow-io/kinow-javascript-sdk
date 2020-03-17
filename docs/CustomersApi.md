@@ -29,6 +29,8 @@ Method | HTTP request | Description
 [**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
 [**getPaymentMethods**](CustomersApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**getPendingPayments**](CustomersApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
+[**passwordToken**](CustomersApi.md#passwordToken) | **POST** /customers/password-token | 
+[**passwordTokenConsume**](CustomersApi.md#passwordTokenConsume) | **POST** /customers/password-token-consume | 
 [**stopSubscription**](CustomersApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**updateCustomer**](CustomersApi.md#updateCustomer) | **PUT** /customers/{customer_id} | 
 [**updatePaymentMethod**](CustomersApi.md#updatePaymentMethod) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
@@ -1184,6 +1186,95 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[PaymentDetails]**](PaymentDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="passwordToken"></a>
+# **passwordToken**
+> Token passwordToken(email)
+
+
+
+Create temporary token to update password
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var email = "email_example"; // String | Email of the Customer
+
+apiInstance.passwordToken(email).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| Email of the Customer | 
+
+### Return type
+
+[**Token**](Token.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="passwordTokenConsume"></a>
+# **passwordTokenConsume**
+> passwordTokenConsume(token, password)
+
+
+
+Consume password token and update password
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var token = "token_example"; // String | Temporary token to consume
+
+var password = "password_example"; // String | Password to set on Customer account
+
+apiInstance.passwordTokenConsume(token, password).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**| Temporary token to consume | 
+ **password** | **String**| Password to set on Customer account | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

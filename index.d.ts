@@ -776,6 +776,8 @@ declare module 'kinow-javascript-sdk' {
     generateAuthenticationToken(customerId: number, callback?: Function): any
     getCustomerCurrentViews(customerId: number, callback?: Function): any
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
+    passwordToken(email: string, callback?: Function): any
+    passwordTokenConsume(token: string, password: string, callback?: Function): any
     getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
