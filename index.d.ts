@@ -726,7 +726,7 @@ declare module 'kinow-javascript-sdk' {
     deleteCart(cartId: number, callback?: Function): any
     createCart(body: any, callback?: Function): Promise<Cart>
     attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
-    addProductToCart(cartId: number, productId: number, ipAddress: string, opts?: any, callback?: Function): Promise<Cart>
+    addProductToCart(cartId: number, productId: number, opts?: any, callback?: Function): Promise<Cart>
     deleteProductFromCart(cartId: number, productId: number, opts?: any, callback?: Function): any
     validateFreeOrder(cartId: number, callback?: Function): any
     getCustomerCarts(customerId: number, opts?: any, callback?: Function): any
@@ -780,6 +780,7 @@ declare module 'kinow-javascript-sdk' {
     passwordTokenConsume(token: string, password: string, callback?: Function): any
     getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
+    loginWithFacebook(tokenType: string, token: string, opts?: any, callback?: Function): Promise<Customer>
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any

@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
 [**getPaymentMethods**](CustomersApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**getPendingPayments**](CustomersApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
+[**loginWithFacebook**](CustomersApi.md#loginWithFacebook) | **POST** /customers/facebook-login | 
 [**passwordToken**](CustomersApi.md#passwordToken) | **POST** /customers/password-token | 
 [**passwordTokenConsume**](CustomersApi.md#passwordTokenConsume) | **POST** /customers/password-token-consume | 
 [**stopSubscription**](CustomersApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
@@ -177,7 +178,7 @@ No authorization required
 
 
 
-Create new Facebook ID for user
+Link a Facebook account ID to a Customer
 
 ### Example
 ```javascript
@@ -1067,7 +1068,7 @@ No authorization required
 
 
 
-Get customer ID by Facebook ID
+Get Customer ID linked to a Facebook ID
 
 ### Example
 ```javascript
@@ -1186,6 +1187,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[PaymentDetails]**](PaymentDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="loginWithFacebook"></a>
+# **loginWithFacebook**
+> Customer loginWithFacebook(tokenType, token, opts)
+
+
+
+Create or retrieve existing Customer account using Facebook authorization token
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var tokenType = "tokenType_example"; // String | Can be 'oauth2' or 'authorization'
+
+var token = "token_example"; // String | oAuth2 token or authorization code given by Facebook
+
+var opts = { 
+  'redirectUri': "redirectUri_example" // String | Redirect URI is required if you're using authorization code method
+};
+apiInstance.loginWithFacebook(tokenType, token, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tokenType** | **String**| Can be &#39;oauth2&#39; or &#39;authorization&#39; | 
+ **token** | **String**| oAuth2 token or authorization code given by Facebook | 
+ **redirectUri** | **String**| Redirect URI is required if you&#39;re using authorization code method | [optional] 
+
+### Return type
+
+[**Customer**](Customer.md)
 
 ### Authorization
 
