@@ -576,6 +576,13 @@ declare module 'kinow-javascript-sdk' {
     status: string
     date_add: string
   }
+  interface TaxRule {
+    id: number
+    id_country: number
+    id_state: number
+    rate: number
+    name: string
+  }
   interface Video {
     id: number
     id_product: number
@@ -1082,6 +1089,10 @@ declare module 'kinow-javascript-sdk' {
   export class TasksApi {
     constructor(config?: ApiClient)
     createTask(body: any, callback?: Function): Promise<Task>
+  }
+  export class Tax RulesApi {
+    constructor(config?: ApiClient)
+    getTaxRules(opts?: any, callback?: Function): any
   }
   export class StatsApi {
     constructor(config?: ApiClient)
