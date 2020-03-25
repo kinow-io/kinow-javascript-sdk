@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **visibleBeforePublication** | **Boolean** |  | [optional] 
 **visibleAfterPublication** | **Boolean** |  | [optional] 
 **price** | **Number** |  | [optional] 
+**priceMode** | **Number** |  | [optional] 
 **position** | **Integer** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **availableForOrder** | **Boolean** |  | [optional] 

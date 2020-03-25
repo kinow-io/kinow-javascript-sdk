@@ -458,6 +458,7 @@ declare module 'kinow-javascript-sdk' {
     visible_before_publication: boolean
     visible_after_publication: boolean
     price: number
+    price_mode: number
     position: number
     active: boolean
     available_for_order: boolean
@@ -1090,7 +1091,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     createTask(body: any, callback?: Function): Promise<Task>
   }
-  export class Tax RulesApi {
+  export class TaxRulesApi {
     constructor(config?: ApiClient)
     getTaxRules(opts?: any, callback?: Function): any
   }
