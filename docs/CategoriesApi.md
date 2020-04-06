@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**getSubscriptionCategories**](CategoriesApi.md#getSubscriptionCategories) | **GET** /subscriptions/{subscription_id}/categories | 
 [**getVideosFromCategories**](CategoriesApi.md#getVideosFromCategories) | **GET** /categories/videos | 
 [**getVideosFromCategory**](CategoriesApi.md#getVideosFromCategory) | **GET** /categories/{category_id}/videos | 
+[**updateCategory**](CategoriesApi.md#updateCategory) | **PUT** /categories/{category_id} | 
 
 
 <a name="createCategory"></a>
@@ -754,6 +755,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Videos**](Videos.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="updateCategory"></a>
+# **updateCategory**
+> Category updateCategory(categoryId, body)
+
+
+
+Update category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to update
+
+var body = new KinowJavascriptSdk.Category(); // Category | 
+
+apiInstance.updateCategory(categoryId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to update | 
+ **body** | [**Category**](Category.md)|  | 
+
+### Return type
+
+[**Category**](Category.md)
 
 ### Authorization
 

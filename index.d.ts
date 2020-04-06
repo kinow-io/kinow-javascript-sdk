@@ -386,6 +386,14 @@ declare module 'kinow-javascript-sdk' {
     deleted: boolean
     name: Array<I18nField>
   }
+  interface Page {
+    id: number
+    enabled: boolean
+    title: Array<I18nField>
+    description: Array<I18nField>
+    keywords: Array<I18nField>
+    url_rewrite: Array<I18nField>
+  }
   interface Pagination {
     total: number
     current_page: number
@@ -647,6 +655,16 @@ declare module 'kinow-javascript-sdk' {
     blank: number
     position: number
   }
+  interface WidgetHookPhrase {
+    id: number
+    label: Array<I18nField>
+    url: Array<I18nField>
+    type: string
+    type_id: number
+    blank: boolean
+    color: boolean
+    position: number
+  }
   interface WidgetSlider {
     id: number
     label: Array<I18nField>
@@ -803,6 +821,7 @@ declare module 'kinow-javascript-sdk' {
     getCategories(opts?: any, callback?: Function): any
     createCategory(body: any, callback?: Function): Promise<Category>
     getCategory(categoryId: number, callback?: Function): Promise<Category>
+    updateCategory(categoryId: number, body: any, callback?: Function): Promise<Category>
     deleteCategory(categoryId: number, callback?: Function): any
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
@@ -1035,6 +1054,8 @@ declare module 'kinow-javascript-sdk' {
     getWidgetFooterMenu(opts?: any, callback?: Function): any
     getWidgetSlider(opts?: any, callback?: Function): any
     getWidgetSliderItem(sliderId: number, callback?: Function): Promise<WidgetSlider>
+    getWidgetAnalytics(): any
+    getWidgetHookPhrase(opts?: any, callback?: Function): any
   }
   export class LanguagesApi {
     constructor(config?: ApiClient)
@@ -1060,6 +1081,11 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getOrderStates(opts?: any, callback?: Function): any
     getOrderState(orderStateId: number, callback?: Function): Promise<OrderState>
+  }
+  export class PagesApi {
+    constructor(config?: ApiClient)
+    getPages(opts?: any, callback?: Function): any
+    getPage(pageId: number, callback?: Function): Promise<Page>
   }
   export class PrepaymentsApi {
     constructor(config?: ApiClient)
