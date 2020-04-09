@@ -33,6 +33,7 @@ Method | HTTP request | Description
 [**getProductGeolocationsByIp**](ProductsApi.md#getProductGeolocationsByIp) | **POST** /products/{product_id}/geolocations | 
 [**getProductGroups**](ProductsApi.md#getProductGroups) | **GET** /products/{product_id}/groups | 
 [**getProductImages**](ProductsApi.md#getProductImages) | **GET** /products/{product_id}/images | 
+[**getProductScreenshots**](ProductsApi.md#getProductScreenshots) | **GET** /products/{product_id}/screenshots | 
 [**getProductSubscription**](ProductsApi.md#getProductSubscription) | **GET** /products/{product_id}/subscription | 
 [**getProducts**](ProductsApi.md#getProducts) | **GET** /products | 
 [**getProductsFromProduct**](ProductsApi.md#getProductsFromProduct) | **GET** /products/{product_id}/products | 
@@ -41,6 +42,7 @@ Method | HTTP request | Description
 [**setProductGeolocation**](ProductsApi.md#setProductGeolocation) | **PUT** /products/{product_id}/geolocations | 
 [**updateProduct**](ProductsApi.md#updateProduct) | **PUT** /products/{product_id} | 
 [**updateProductGroupRestrictionBehavior**](ProductsApi.md#updateProductGroupRestrictionBehavior) | **PUT** /products/{product_id}/groups/behavior | 
+[**uploadProductCover**](ProductsApi.md#uploadProductCover) | **POST** /products/{product_id}/cover | 
 
 
 <a name="attachFeaturesToProduct"></a>
@@ -1392,7 +1394,7 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
-  'type': "type_example", // String | type as screen_small or screen_large
+  'type': "type_example", // String | Filter on specific Image type
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
@@ -1409,13 +1411,56 @@ apiInstance.getProductImages(productId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
- **type** | **String**| type as screen_small or screen_large | [optional] 
+ **type** | **String**| Filter on specific Image type | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
 ### Return type
 
 [**ProductImagesResponse**](ProductImagesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getProductScreenshots"></a>
+# **getProductScreenshots**
+> [Screenshot] getProductScreenshots(productId)
+
+
+
+Get product screenshots
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+apiInstance.getProductScreenshots(productId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+
+### Return type
+
+[**[Screenshot]**](Screenshot.md)
 
 ### Authorization
 
@@ -1852,5 +1897,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="uploadProductCover"></a>
+# **uploadProductCover**
+> Image uploadProductCover(productId, file, hash, opts)
+
+
+
+Upload product cover
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 3.4; // Number | Product ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadProductCover(productId, file, hash, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Number**| Product ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 

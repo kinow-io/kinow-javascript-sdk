@@ -8,12 +8,14 @@ Method | HTTP request | Description
 [**createActor**](ActorsApi.md#createActor) | **POST** /actors | 
 [**deleteActor**](ActorsApi.md#deleteActor) | **DELETE** /actors/{actor_id} | 
 [**getActor**](ActorsApi.md#getActor) | **GET** /actors/{actor_id} | 
+[**getActorCoverImage**](ActorsApi.md#getActorCoverImage) | **GET** /actors/{actor_id}/cover | 
 [**getActorProducts**](ActorsApi.md#getActorProducts) | **GET** /actors/{actor_id}/products | 
 [**getActorProductsRole**](ActorsApi.md#getActorProductsRole) | **GET** /actors/{actor_id}/products-role | 
 [**getActors**](ActorsApi.md#getActors) | **GET** /actors | 
 [**getProductActors**](ActorsApi.md#getProductActors) | **GET** /products/{product_id}/actors | 
 [**getProductActorsRole**](ActorsApi.md#getProductActorsRole) | **GET** /products/{product_id}/actors-role | 
 [**updateActor**](ActorsApi.md#updateActor) | **PUT** /actors/{actor_id} | 
+[**uploadActorCover**](ActorsApi.md#uploadActorCover) | **POST** /actors/{actor_id}/cover | 
 
 
 <a name="attachProductToActor"></a>
@@ -150,7 +152,7 @@ No authorization required
 
 <a name="getActor"></a>
 # **getActor**
-> Actor getActor(actorId, opts)
+> Actor getActor(actorId)
 
 
 
@@ -164,10 +166,7 @@ var apiInstance = new KinowJavascriptSdk.ActorsApi();
 
 var actorId = 789; // Integer | Actor ID to fetch
 
-var opts = { 
-  'imageType': "imageType_example" // String | 
-};
-apiInstance.getActor(actorId, opts).then(function(data) {
+apiInstance.getActor(actorId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -180,11 +179,53 @@ apiInstance.getActor(actorId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actorId** | **Integer**| Actor ID to fetch | 
- **imageType** | **String**|  | [optional] 
 
 ### Return type
 
 [**Actor**](Actor.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getActorCoverImage"></a>
+# **getActorCoverImage**
+> Image getActorCoverImage(actorId)
+
+
+
+Get cover image of an actor
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ActorsApi();
+
+var actorId = 789; // Integer | Actor ID to fetch
+
+apiInstance.getActorCoverImage(actorId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actorId** | **Integer**| Actor ID to fetch | 
+
+### Return type
+
+[**Image**](Image.md)
 
 ### Authorization
 
@@ -319,8 +360,7 @@ var apiInstance = new KinowJavascriptSdk.ActorsApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'imageType': "imageType_example" // String | 
+  'perPage': 789 // Integer | 
 };
 apiInstance.getActors(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -336,7 +376,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **imageType** | **String**|  | [optional] 
 
 ### Return type
 
@@ -495,5 +534,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="uploadActorCover"></a>
+# **uploadActorCover**
+> Image uploadActorCover(actorId, file, hash, opts)
+
+
+
+Upload actor cover
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ActorsApi();
+
+var actorId = 3.4; // Number | Actor ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadActorCover(actorId, file, hash, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actorId** | **Number**| Actor ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 

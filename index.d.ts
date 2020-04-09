@@ -13,6 +13,7 @@ declare module 'kinow-javascript-sdk' {
     description_short: Array<I18nField>
     description: Array<I18nField>
     image: string
+    images: object
     meta_title: Array<I18nField>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
@@ -243,6 +244,7 @@ declare module 'kinow-javascript-sdk' {
     description_short: Array<I18nField>
     description: Array<I18nField>
     image: string
+    images: object
     meta_title: Array<I18nField>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
@@ -698,11 +700,13 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getActors(opts?: any, callback?: Function): any
     createActor(body: any, callback?: Function): Promise<Actor>
-    getActor(actorId: number, opts?: any, callback?: Function): Promise<Actor>
+    getActor(actorId: number, callback?: Function): Promise<Actor>
     updateActor(actorId: number, body: any, callback?: Function): any
     deleteActor(actorId: number, callback?: Function): any
     getActorProducts(actorId: number, opts?: any, callback?: Function): any
     getActorProductsRole(actorId: number, opts?: any, callback?: Function): any
+    getActorCoverImage(actorId: number, callback?: Function): Promise<Image>
+    uploadActorCover(actorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getProductActors(productId: number, opts?: any, callback?: Function): any
     attachProductToActor(productId: number, actorId: number, callback?: Function): any
     getProductActorsRole(productId: number, opts?: any, callback?: Function): any
@@ -834,6 +838,7 @@ declare module 'kinow-javascript-sdk' {
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any
+    uploadCategoryCover(categoryId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
   }
   export class ProductsApi {
     constructor(config?: ApiClient)
@@ -841,6 +846,8 @@ declare module 'kinow-javascript-sdk' {
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerHasAccessToProducts(customerId: number, body: any, callback?: Function): any
     getProductCoverImage(productId: number, callback?: Function): Promise<Image>
+    uploadProductCover(productId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
+    getProductScreenshots(productId: number, callback?: Function): any
     getProducts(opts?: any, callback?: Function): any
     createProduct(body: any, callback?: Function): Promise<Product>
     getProduct(productId: number, callback?: Function): Promise<Product>
@@ -896,6 +903,7 @@ declare module 'kinow-javascript-sdk' {
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
     getCustomerHasAccessToVideos(customerId: number, body: any, callback?: Function): any
+    getVideoCover(videoId: number, callback?: Function): Promise<Image>
     attachCoverToVideo(videoId: number, idImage: number, callback?: Function): any
     getVideosFromProduct(productId: number, opts?: any, callback?: Function): any
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any
@@ -953,11 +961,13 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getDirectors(opts?: any, callback?: Function): any
     createDirector(body: any, callback?: Function): Promise<Director>
-    getDirector(directorId: number, opts?: any, callback?: Function): Promise<Director>
+    getDirector(directorId: number, callback?: Function): Promise<Director>
     updateDirector(directorId: number, body: any, callback?: Function): any
     deleteDirector(directorId: number, callback?: Function): any
     getDirectorProducts(directorId: number, opts?: any, callback?: Function): any
     getDirectorProductsRole(directorId: number, opts?: any, callback?: Function): any
+    getDirectorCoverImage(directorId: number, callback?: Function): Promise<Image>
+    uploadDirectorCover(directorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getProductDirectors(productId: number, opts?: any, callback?: Function): any
     attachProductToDirector(productId: number, directorId: number, callback?: Function): any
     getProductDirectorsRole(productId: number, opts?: any, callback?: Function): any
@@ -1029,18 +1039,16 @@ declare module 'kinow-javascript-sdk' {
     getActorCoverImage(actorId: number, callback?: Function): Promise<Image>
     uploadActorCover(actorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
-    getIntroImage(): any
+    getSliderImage(): any
     getVideoCover(videoId: number, callback?: Function): Promise<Image>
     getProductScreenshots(productId: number, callback?: Function): any
-    uploadProductScreenshots(productId: number, file: File, hash: string, opts?: any, callback?: Function): any
     getProductImages(productId: number, opts?: any, callback?: Function): any
-    uploadCategoryBanner(categoryId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    uploadProductScreenshot(productId: number, imageId: number, opts?: any, callback?: Function): Promise<Screenshot>
-    deleteProductScreenshot(productId: number, imageId: number, callback?: Function): any
+    uploadCategoryCover(categoryId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
   }
   export class SubscriptionsApi {
     constructor(config?: ApiClient)
     getSubscriptionCoverImage(subscriptionId: number, callback?: Function): Promise<Image>
+    uploadSubscriptionCover(subscriptionId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
     getProductSubscription(productId: number, callback?: Function): Promise<Subscription>
     getSubscriptions(opts?: any, callback?: Function): any
     getSubscription(subscriptionId: number, callback?: Function): Promise<Subscription>
@@ -1049,7 +1057,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class WidgetsApi {
     constructor(config?: ApiClient)
-    getIntroImage(): any
+    getSliderImage(): any
     getWidgetTopMenu(opts?: any, callback?: Function): any
     getWidgetFooterMenu(opts?: any, callback?: Function): any
     getWidgetSlider(opts?: any, callback?: Function): any

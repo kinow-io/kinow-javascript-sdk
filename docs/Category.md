@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **active** | **Boolean** |  | [optional] 
 **levelDepth** | **Integer** |  | [optional] 
 **position** | **Integer** |  | [optional] 
-**images** | [**CategoryImages**](CategoryImages.md) |  | [optional] 
+**images** | [**ActorImages**](ActorImages.md) |  | [optional] 
 **metaDescription** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **metaKeywords** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **metaTitle** | [**[I18nField]**](I18nField.md) |  | [optional] 

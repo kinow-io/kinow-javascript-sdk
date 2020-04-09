@@ -8,12 +8,14 @@ Method | HTTP request | Description
 [**createDirector**](DirectorsApi.md#createDirector) | **POST** /directors | 
 [**deleteDirector**](DirectorsApi.md#deleteDirector) | **DELETE** /directors/{director_id} | 
 [**getDirector**](DirectorsApi.md#getDirector) | **GET** /directors/{director_id} | 
+[**getDirectorCoverImage**](DirectorsApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
 [**getDirectorProducts**](DirectorsApi.md#getDirectorProducts) | **GET** /directors/{director_id}/products | 
 [**getDirectorProductsRole**](DirectorsApi.md#getDirectorProductsRole) | **GET** /directors/{director_id}/products-role | 
 [**getDirectors**](DirectorsApi.md#getDirectors) | **GET** /directors | 
 [**getProductDirectors**](DirectorsApi.md#getProductDirectors) | **GET** /products/{product_id}/directors | 
 [**getProductDirectorsRole**](DirectorsApi.md#getProductDirectorsRole) | **GET** /products/{product_id}/directors-role | 
 [**updateDirector**](DirectorsApi.md#updateDirector) | **PUT** /directors/{director_id} | 
+[**uploadDirectorCover**](DirectorsApi.md#uploadDirectorCover) | **POST** /directors/{director_id}/cover | 
 
 
 <a name="attachProductToDirector"></a>
@@ -150,7 +152,7 @@ No authorization required
 
 <a name="getDirector"></a>
 # **getDirector**
-> Director getDirector(directorId, opts)
+> Director getDirector(directorId)
 
 
 
@@ -164,10 +166,7 @@ var apiInstance = new KinowJavascriptSdk.DirectorsApi();
 
 var directorId = 789; // Integer | Director ID to fetch
 
-var opts = { 
-  'imageType': "imageType_example" // String | 
-};
-apiInstance.getDirector(directorId, opts).then(function(data) {
+apiInstance.getDirector(directorId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -180,11 +179,53 @@ apiInstance.getDirector(directorId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **directorId** | **Integer**| Director ID to fetch | 
- **imageType** | **String**|  | [optional] 
 
 ### Return type
 
 [**Director**](Director.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getDirectorCoverImage"></a>
+# **getDirectorCoverImage**
+> Image getDirectorCoverImage(directorId)
+
+
+
+Get cover image of a director
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var directorId = 789; // Integer | Director ID to fetch
+
+apiInstance.getDirectorCoverImage(directorId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **directorId** | **Integer**| Director ID to fetch | 
+
+### Return type
+
+[**Image**](Image.md)
 
 ### Authorization
 
@@ -319,8 +360,7 @@ var apiInstance = new KinowJavascriptSdk.DirectorsApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'imageType': "imageType_example" // String | 
+  'perPage': 789 // Integer | 
 };
 apiInstance.getDirectors(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -336,7 +376,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **imageType** | **String**|  | [optional] 
 
 ### Return type
 
@@ -495,5 +534,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="uploadDirectorCover"></a>
+# **uploadDirectorCover**
+> Image uploadDirectorCover(directorId, file, hash, opts)
+
+
+
+Upload director cover
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var directorId = 3.4; // Number | Director ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadDirectorCover(directorId, file, hash, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **directorId** | **Number**| Director ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 

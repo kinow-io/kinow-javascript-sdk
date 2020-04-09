@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getSubscriptionCategories**](SubscriptionsApi.md#getSubscriptionCategories) | **GET** /subscriptions/{subscription_id}/categories | 
 [**getSubscriptionCoverImage**](SubscriptionsApi.md#getSubscriptionCoverImage) | **GET** /subscriptions/{subscription_id}/cover | 
 [**getSubscriptions**](SubscriptionsApi.md#getSubscriptions) | **GET** /subscriptions | 
+[**uploadSubscriptionCover**](SubscriptionsApi.md#uploadSubscriptionCover) | **POST** /subscriptions/{subscription_id}/cover | 
 
 
 <a name="getDisabledSubscriptions"></a>
@@ -287,5 +288,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="uploadSubscriptionCover"></a>
+# **uploadSubscriptionCover**
+> Image uploadSubscriptionCover(subscriptionId, file, hash, opts)
+
+
+
+Upload subscription cover
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
+
+var subscriptionId = 3.4; // Number | Subscription ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadSubscriptionCover(subscriptionId, file, hash, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionId** | **Number**| Subscription ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 

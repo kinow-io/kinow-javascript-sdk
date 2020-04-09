@@ -4,70 +4,21 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteProductScreenshot**](ImagesApi.md#deleteProductScreenshot) | **DELETE** /products/{product_id}/screenshots/{image_id} | 
 [**getActorCoverImage**](ImagesApi.md#getActorCoverImage) | **GET** /actors/{actor_id}/cover | 
 [**getCategoryBanner**](ImagesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
 [**getDirectorCoverImage**](ImagesApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
-[**getIntroImage**](ImagesApi.md#getIntroImage) | **GET** /widgets/intro/images | 
 [**getProductCoverImage**](ImagesApi.md#getProductCoverImage) | **GET** /products/{product_id}/cover | 
 [**getProductImages**](ImagesApi.md#getProductImages) | **GET** /products/{product_id}/images | 
 [**getProductScreenshots**](ImagesApi.md#getProductScreenshots) | **GET** /products/{product_id}/screenshots | 
+[**getSliderImage**](ImagesApi.md#getSliderImage) | **GET** /widgets/slider/images | 
 [**getSubscriptionCoverImage**](ImagesApi.md#getSubscriptionCoverImage) | **GET** /subscriptions/{subscription_id}/cover | 
 [**getVideoCover**](ImagesApi.md#getVideoCover) | **GET** /videos/{video_id}/cover | 
 [**uploadActorCover**](ImagesApi.md#uploadActorCover) | **POST** /actors/{actor_id}/cover | 
-[**uploadCategoryBanner**](ImagesApi.md#uploadCategoryBanner) | **POST** /category/{category_id}/banner | 
+[**uploadCategoryCover**](ImagesApi.md#uploadCategoryCover) | **POST** /categories/{category_id}/cover | 
 [**uploadDirectorCover**](ImagesApi.md#uploadDirectorCover) | **POST** /directors/{director_id}/cover | 
 [**uploadProductCover**](ImagesApi.md#uploadProductCover) | **POST** /products/{product_id}/cover | 
-[**uploadProductScreenshot**](ImagesApi.md#uploadProductScreenshot) | **PUT** /products/{product_id}/screenshots/{image_id} | 
-[**uploadProductScreenshots**](ImagesApi.md#uploadProductScreenshots) | **POST** /products/{product_id}/screenshots | 
 [**uploadSubscriptionCover**](ImagesApi.md#uploadSubscriptionCover) | **POST** /subscriptions/{subscription_id}/cover | 
 
-
-<a name="deleteProductScreenshot"></a>
-# **deleteProductScreenshot**
-> deleteProductScreenshot(productId, imageId)
-
-
-
-Delete product screenshot
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ImagesApi();
-
-var productId = 3.4; // Number | Product ID to fetch
-
-var imageId = 3.4; // Number | Image ID to delete
-
-apiInstance.deleteProductScreenshot(productId, imageId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Product ID to fetch | 
- **imageId** | **Number**| Image ID to delete | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
 
 <a name="getActorCoverImage"></a>
 # **getActorCoverImage**
@@ -118,7 +69,7 @@ No authorization required
 
 
 
-Get banner of a category
+Get Category banner
 
 ### Example
 ```javascript
@@ -198,43 +149,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getIntroImage"></a>
-# **getIntroImage**
-> [Image] getIntroImage()
-
-
-
-Get introduction image
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ImagesApi();
-apiInstance.getIntroImage().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**[Image]**](Image.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="getProductCoverImage"></a>
 # **getProductCoverImage**
 > Image getProductCoverImage(productId)
@@ -295,7 +209,7 @@ var apiInstance = new KinowJavascriptSdk.ImagesApi();
 var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
-  'type': "type_example", // String | type as screen_small or screen_large
+  'type': "type_example", // String | Filter on specific Image type
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
@@ -312,7 +226,7 @@ apiInstance.getProductImages(productId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
- **type** | **String**| type as screen_small or screen_large | [optional] 
+ **type** | **String**| Filter on specific Image type | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -362,6 +276,43 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Screenshot]**](Screenshot.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getSliderImage"></a>
+# **getSliderImage**
+> [Image] getSliderImage()
+
+
+
+Get slider images
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+apiInstance.getSliderImage().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[Image]**](Image.md)
 
 ### Authorization
 
@@ -511,13 +462,13 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
-<a name="uploadCategoryBanner"></a>
-# **uploadCategoryBanner**
-> Image uploadCategoryBanner(categoryId, file, hash, opts)
+<a name="uploadCategoryCover"></a>
+# **uploadCategoryCover**
+> Image uploadCategoryCover(categoryId, file, hash, opts)
 
 
 
-Upload category banner
+Upload Category cover
 
 ### Example
 ```javascript
@@ -534,7 +485,7 @@ var hash = "hash_example"; // String |
 var opts = { 
   'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
 };
-apiInstance.uploadCategoryBanner(categoryId, file, hash, opts).then(function(data) {
+apiInstance.uploadCategoryCover(categoryId, file, hash, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -660,111 +611,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Image**](Image.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: Not defined
-
-<a name="uploadProductScreenshot"></a>
-# **uploadProductScreenshot**
-> Screenshot uploadProductScreenshot(productId, imageId, opts)
-
-
-
-Upload product screenshot
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ImagesApi();
-
-var productId = 3.4; // Number | Product ID to fetch
-
-var imageId = 3.4; // Number | Image ID to fetch
-
-var opts = { 
-  'position': 3.4 // Number | 
-};
-apiInstance.uploadProductScreenshot(productId, imageId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Product ID to fetch | 
- **imageId** | **Number**| Image ID to fetch | 
- **position** | **Number**|  | [optional] 
-
-### Return type
-
-[**Screenshot**](Screenshot.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="uploadProductScreenshots"></a>
-# **uploadProductScreenshots**
-> [Screenshot] uploadProductScreenshots(productId, file, hash, opts)
-
-
-
-Upload product screenshots
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-
-var apiInstance = new KinowJavascriptSdk.ImagesApi();
-
-var productId = 3.4; // Number | Product ID to fetch
-
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example", // String | Hash algorithm to check the hash file (default value is: sha256)
-  'position': 3.4 // Number | 
-};
-apiInstance.uploadProductScreenshots(productId, file, hash, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Product ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
- **position** | **Number**|  | [optional] 
-
-### Return type
-
-[**[Screenshot]**](Screenshot.md)
 
 ### Authorization
 

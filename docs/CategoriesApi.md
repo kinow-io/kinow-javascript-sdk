@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**getVideosFromCategories**](CategoriesApi.md#getVideosFromCategories) | **GET** /categories/videos | 
 [**getVideosFromCategory**](CategoriesApi.md#getVideosFromCategory) | **GET** /categories/{category_id}/videos | 
 [**updateCategory**](CategoriesApi.md#updateCategory) | **PUT** /categories/{category_id} | 
+[**uploadCategoryCover**](CategoriesApi.md#uploadCategoryCover) | **POST** /categories/{category_id}/cover | 
 
 
 <a name="createCategory"></a>
@@ -311,7 +312,7 @@ No authorization required
 
 
 
-Get banner of a category
+Get Category banner
 
 ### Example
 ```javascript
@@ -809,5 +810,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="uploadCategoryCover"></a>
+# **uploadCategoryCover**
+> Image uploadCategoryCover(categoryId, file, hash, opts)
+
+
+
+Upload Category cover
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 3.4; // Number | Category ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadCategoryCover(categoryId, file, hash, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Number**| Category ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getIntroImage**](WidgetsApi.md#getIntroImage) | **GET** /widgets/intro/images | 
+[**getSliderImage**](WidgetsApi.md#getSliderImage) | **GET** /widgets/slider/images | 
 [**getWidgetAnalytics**](WidgetsApi.md#getWidgetAnalytics) | **GET** /widgets/analytics | 
 [**getWidgetFooterMenu**](WidgetsApi.md#getWidgetFooterMenu) | **GET** /widgets/footer-menu | 
 [**getWidgetHookPhrase**](WidgetsApi.md#getWidgetHookPhrase) | **GET** /widgets/hook-phrase | 
@@ -13,20 +13,20 @@ Method | HTTP request | Description
 [**getWidgetTopMenu**](WidgetsApi.md#getWidgetTopMenu) | **GET** /widgets/top-menu | 
 
 
-<a name="getIntroImage"></a>
-# **getIntroImage**
-> [Image] getIntroImage()
+<a name="getSliderImage"></a>
+# **getSliderImage**
+> [Image] getSliderImage()
 
 
 
-Get introduction image
+Get slider images
 
 ### Example
 ```javascript
 var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.WidgetsApi();
-apiInstance.getIntroImage().then(function(data) {
+apiInstance.getSliderImage().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
