@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **descriptionShort** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **image** | **String** |  | [optional] 
-**images** | [**ActorImages**](ActorImages.md) |  | [optional] 
+**images** | [**[Image]**](Image.md) |  | [optional] 
 **metaTitle** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **metaDescription** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **metaKeywords** | [**[I18nField]**](I18nField.md) |  | [optional] 

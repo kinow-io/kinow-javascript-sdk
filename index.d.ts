@@ -13,7 +13,7 @@ declare module 'kinow-javascript-sdk' {
     description_short: Array<I18nField>
     description: Array<I18nField>
     image: string
-    images: object
+    images: Array<Image>
     meta_title: Array<I18nField>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
@@ -151,7 +151,7 @@ declare module 'kinow-javascript-sdk' {
     active: boolean
     level_depth: number
     position: number
-    images: object
+    images: Array<Image>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
     meta_title: Array<I18nField>
@@ -244,7 +244,7 @@ declare module 'kinow-javascript-sdk' {
     description_short: Array<I18nField>
     description: Array<I18nField>
     image: string
-    images: object
+    images: Array<Image>
     meta_title: Array<I18nField>
     meta_description: Array<I18nField>
     meta_keywords: Array<I18nField>
