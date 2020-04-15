@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**detachFeatureToProduct**](ProductsApi.md#detachFeatureToProduct) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**detachProductFromCategory**](ProductsApi.md#detachProductFromCategory) | **DELETE** /products/{product_id}/categories/{category_id} | 
 [**detachProductFromGroup**](ProductsApi.md#detachProductFromGroup) | **DELETE** /products/{product_id}/groups/{group_id} | 
+[**getBestSales**](ProductsApi.md#getBestSales) | **GET** /products/best-sales | 
 [**getCategoryProducts**](ProductsApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
 [**getCustomerHasAccessToProduct**](ProductsApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**getCustomerHasAccessToProducts**](ProductsApi.md#getCustomerHasAccessToProducts) | **POST** /customers/{customer_id}/products/has-access | 
@@ -535,6 +536,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getBestSales"></a>
+# **getBestSales**
+> Products getBestSales(opts)
+
+
+
+Get most saled Products
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'ip': "ip_example" // String | filter by Customer IP
+};
+apiInstance.getBestSales(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **ip** | **String**| filter by Customer IP | [optional] 
+
+### Return type
+
+[**Products**](Products.md)
 
 ### Authorization
 

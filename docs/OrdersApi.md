@@ -154,7 +154,7 @@ No authorization required
 
 <a name="getOrderInvoice"></a>
 # **getOrderInvoice**
-> &#39;String&#39; getOrderInvoice(orderId)
+> &#39;String&#39; getOrderInvoice(orderId, opts)
 
 
 
@@ -168,7 +168,10 @@ var apiInstance = new KinowJavascriptSdk.OrdersApi();
 
 var orderId = 789; // Integer | Order ID to fetch
 
-apiInstance.getOrderInvoice(orderId).then(function(data) {
+var opts = { 
+  'toBlob': true // Boolean | Get PDF content in blob
+};
+apiInstance.getOrderInvoice(orderId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -181,6 +184,7 @@ apiInstance.getOrderInvoice(orderId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **Integer**| Order ID to fetch | 
+ **toBlob** | **Boolean**| Get PDF content in blob | [optional] [default to true]
 
 ### Return type
 

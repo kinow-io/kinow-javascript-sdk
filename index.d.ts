@@ -881,6 +881,7 @@ declare module 'kinow-javascript-sdk' {
     detachProductFromGroup(productId: number, groupId: number, callback?: Function): any
     updateProductGroupRestrictionBehavior(productId: number, behavior: number, callback?: Function): any
     getProductSubscription(productId: number, callback?: Function): Promise<Subscription>
+    getBestSales(opts?: any, callback?: Function): any
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)
@@ -943,7 +944,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
     getOrders(opts?: any, callback?: Function): any
     getOrder(orderId: number, callback?: Function): Promise<Order>
-    getOrderInvoice(orderId: number, callback?: Function): any
+    getOrderInvoice(orderId: number, opts?: any, callback?: Function): any
     getOrderHistories(orderId: number, opts?: any, callback?: Function): any
   }
   export class CustomerThreadsApi {
