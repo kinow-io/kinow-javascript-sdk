@@ -673,7 +673,7 @@ No authorization required
 
 <a name="getVideoDownloadUrl"></a>
 # **getVideoDownloadUrl**
-> DownloadUrl getVideoDownloadUrl(videoId, opts)
+> DownloadInformations getVideoDownloadUrl(videoId, opts)
 
 
 
@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DownloadUrl**](DownloadUrl.md)
+[**DownloadInformations**](DownloadInformations.md)
 
 ### Authorization
 
