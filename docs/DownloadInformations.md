@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**downloadUrl** | **String** |  | [optional] 
+**sourceUrl** | **String** |  | [optional] 
 **manifest** | **Object** |  | [optional] 
 **sessionId** | **String** |  | [optional] 
 
