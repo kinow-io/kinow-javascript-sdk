@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Get page
+Get automatic page
 
 ### Example
 ```javascript
@@ -57,7 +57,7 @@ No authorization required
 
 
 
-Get pages
+Get automatic pages
 
 ### Example
 ```javascript
