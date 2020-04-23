@@ -165,6 +165,12 @@ declare module 'kinow-javascript-sdk' {
     name: string
     value: string
   }
+  interface Contact {
+    id: number
+    email: string
+    name: Array<I18nField>
+    description: Array<I18nField>
+  }
   interface Country {
     id: number
     iso_code: string
@@ -208,19 +214,6 @@ declare module 'kinow-javascript-sdk' {
     played: number
     duration: number
     views: number
-  }
-  interface CustomerThread {
-    id: number
-    id_land: number
-    id_contact: number
-    id_customer: number
-    id_order: number
-    id_product: number
-    status: string
-    email: string
-    token: string
-    date_add: string
-    date_upd: string
   }
   interface CustomerVideoStats {
     customer_id: number
@@ -574,6 +567,26 @@ declare module 'kinow-javascript-sdk' {
     background: string
     opacity: number
     italic_color: boolean
+  }
+  interface Support {
+    id: number
+    id_lang: number
+    id_contact: number
+    id_customer: number
+    id_order: number
+    id_product: number
+    status: string
+    email: string
+    date_add: string
+    date_upd: string
+  }
+  interface SupportMessage {
+    id: number
+    id_support: number
+    message: string
+    private: boolean
+    date_add: string
+    date_upd: string
   }
   interface Tag {
     id: number
@@ -947,11 +960,6 @@ declare module 'kinow-javascript-sdk' {
     getOrderInvoice(orderId: number, opts?: any, callback?: Function): any
     getOrderHistories(orderId: number, opts?: any, callback?: Function): any
   }
-  export class CustomerThreadsApi {
-    constructor(config?: ApiClient)
-    getCustomerThreads(opts?: any, callback?: Function): any
-    getCustomerThread(customerThreadId: number, callback?: Function): Promise<CustomerThread>
-  }
   export class DevicesApi {
     constructor(config?: ApiClient)
     getCustomerDevices(customerId: number, opts?: any, callback?: Function): any
@@ -1121,6 +1129,11 @@ declare module 'kinow-javascript-sdk' {
     switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
     switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
     switchSubscriptionDelete(productAccessId: number, callback?: Function): any
+  }
+  export class SupportApi {
+    constructor(config?: ApiClient)
+    createMessage(idLang: number, email: string, idContact: number, message: string, idProduct: number, opts?: any, callback?: Function): Promise<Support>
+    getContacts(opts?: any, callback?: Function): any
   }
   export class TasksApi {
     constructor(config?: ApiClient)
