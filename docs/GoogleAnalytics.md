@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **analyticsId** | **String** |  | [optional] 
 **analyticsUniversal** | **Boolean** |  | [optional] 
-**analyticsUserId** | **String** |  | [optional] 
+**analyticsUserId** | **Boolean** |  | [optional] 
 
 

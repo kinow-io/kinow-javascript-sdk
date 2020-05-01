@@ -15,5 +15,7 @@ Name | Type | Description | Notes
 **active** | **Integer** |  | [optional] 
 **message** | **String** |  | [optional] 
 **idOrder** | **Integer** |  | [optional] 
+**dateRenewal** | **String** |  | [optional] 
+**paymentMethod** | **String** |  | [optional] 
 
 

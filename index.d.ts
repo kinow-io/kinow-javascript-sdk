@@ -247,6 +247,13 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_upd: string
   }
+  interface Employee {
+    id: number
+    email: string
+    firstname: string
+    lastname: string
+    active: boolean
+  }
   interface Extract {
     id: number
     id_product: number
@@ -504,6 +511,8 @@ declare module 'kinow-javascript-sdk' {
     active: number
     message: string
     id_order: number
+    date_renewal: string
+    payment_method: string
   }
   interface ProductAccessInfo {
     id_product: number
@@ -980,6 +989,11 @@ declare module 'kinow-javascript-sdk' {
     getProductDirectors(productId: number, opts?: any, callback?: Function): any
     attachProductToDirector(productId: number, directorId: number, callback?: Function): any
     getProductDirectorsRole(productId: number, opts?: any, callback?: Function): any
+  }
+  export class EmployeesApi {
+    constructor(config?: ApiClient)
+    getEmployees(opts?: any, callback?: Function): any
+    getEmployee(employeeId: number, callback?: Function): Promise<Employee>
   }
   export class ExtractsApi {
     constructor(config?: ApiClient)
