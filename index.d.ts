@@ -1146,7 +1146,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class SupportApi {
     constructor(config?: ApiClient)
-    createMessage(idLang: number, email: string, idContact: number, message: string, idProduct: number, opts?: any, callback?: Function): Promise<Support>
+    createMessage(idLang: number, email: string, idContact: number, message: string, opts?: any, callback?: Function): Promise<Support>
     getContacts(opts?: any, callback?: Function): any
   }
   export class TasksApi {

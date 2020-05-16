@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createMessage"></a>
 # **createMessage**
-> Support createMessage(idLang, email, idContact, message, idProduct, opts)
+> Support createMessage(idLang, email, idContact, message, opts)
 
 
 
@@ -30,12 +30,11 @@ var idContact = 56; // Integer |
 
 var message = "message_example"; // String | 
 
-var idProduct = 56; // Integer | 
-
 var opts = { 
+  'idProduct': 56, // Integer | 
   'idOrder': 56 // Integer | 
 };
-apiInstance.createMessage(idLang, email, idContact, message, idProduct, opts).then(function(data) {
+apiInstance.createMessage(idLang, email, idContact, message, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -51,7 +50,7 @@ Name | Type | Description  | Notes
  **email** | **String**|  | 
  **idContact** | **Integer**|  | 
  **message** | **String**|  | 
- **idProduct** | **Integer**|  | 
+ **idProduct** | **Integer**|  | [optional] 
  **idOrder** | **Integer**|  | [optional] 
 
 ### Return type
