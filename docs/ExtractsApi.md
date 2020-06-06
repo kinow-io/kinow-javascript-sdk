@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**attachCoverToExtract**](ExtractsApi.md#attachCoverToExtract) | **POST** /extracts/{extract_id}/cover | 
 [**attachFeaturesToExtract**](ExtractsApi.md#attachFeaturesToExtract) | **POST** /extracts/{extract_id}/features | 
 [**createExtract**](ExtractsApi.md#createExtract) | **POST** /extracts | 
+[**createSubtitle**](ExtractsApi.md#createSubtitle) | **POST** /extracts/{extract_id}/subtitle | 
 [**deleteExtract**](ExtractsApi.md#deleteExtract) | **DELETE** /extracts/{extract_id} | 
 [**getExtract**](ExtractsApi.md#getExtract) | **GET** /extracts/{extract_id} | 
 [**getExtractFeatures**](ExtractsApi.md#getExtractFeatures) | **GET** /extracts/{extract_id}/features | 
@@ -141,6 +142,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Extract**](Extract.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createSubtitle"></a>
+# **createSubtitle**
+> Subtitle createSubtitle(extractId, body)
+
+
+
+Create new Extract Subtitle
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ExtractsApi();
+
+var extractId = 789; // Integer | Extract ID to attach the created Subtitle
+
+var body = new KinowJavascriptSdk.CreateExtractSubtitleRequest(); // CreateExtractSubtitleRequest | Subtitle settings
+
+apiInstance.createSubtitle(extractId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extractId** | **Integer**| Extract ID to attach the created Subtitle | 
+ **body** | [**CreateExtractSubtitleRequest**](CreateExtractSubtitleRequest.md)| Subtitle settings | 
+
+### Return type
+
+[**Subtitle**](Subtitle.md)
 
 ### Authorization
 

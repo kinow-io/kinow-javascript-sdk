@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attachCartToCustomer**](CustomersApi.md#attachCartToCustomer) | **POST** /customers/{customer_id}/carts | 
+[**checkAuthenticationToken**](CustomersApi.md#checkAuthenticationToken) | **POST** /customers/check-authentication-token | 
 [**checkCustomerCredentials**](CustomersApi.md#checkCustomerCredentials) | **POST** /customers/check-credentials | 
 [**createCustomer**](CustomersApi.md#createCustomer) | **POST** /customers | 
 [**createFacebookId**](CustomersApi.md#createFacebookId) | **POST** /customers/facebook | 
@@ -73,6 +74,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Cart**](Cart.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="checkAuthenticationToken"></a>
+# **checkAuthenticationToken**
+> Customer checkAuthenticationToken(token)
+
+
+
+Check authentication token
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var token = "token_example"; // String | Authentication token
+
+apiInstance.checkAuthenticationToken(token).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**| Authentication token | 
+
+### Return type
+
+[**Customer**](Customer.md)
 
 ### Authorization
 

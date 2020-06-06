@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**associateProducts**](ProductsApi.md#associateProducts) | **POST** /products/{product_id}/products | 
 [**attachFeaturesToProduct**](ProductsApi.md#attachFeaturesToProduct) | **POST** /products/{product_id}/features | 
 [**attachProductToActor**](ProductsApi.md#attachProductToActor) | **POST** /products/{product_id}/actors | 
 [**attachProductToCategory**](ProductsApi.md#attachProductToCategory) | **POST** /products/{product_id}/categories | 
@@ -45,6 +46,52 @@ Method | HTTP request | Description
 [**updateProductGroupRestrictionBehavior**](ProductsApi.md#updateProductGroupRestrictionBehavior) | **PUT** /products/{product_id}/groups/behavior | 
 [**uploadProductCover**](ProductsApi.md#uploadProductCover) | **POST** /products/{product_id}/cover | 
 
+
+<a name="associateProducts"></a>
+# **associateProducts**
+> associateProducts(productId, associatedProductIds)
+
+
+
+Associate products to another product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var associatedProductIds = "associatedProductIds_example"; // String | Products IDs to associate to another product. IDs must be separated with comma (,)
+
+apiInstance.associateProducts(productId, associatedProductIds).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **associatedProductIds** | **String**| Products IDs to associate to another product. IDs must be separated with comma (,) | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="attachFeaturesToProduct"></a>
 # **attachFeaturesToProduct**

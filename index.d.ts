@@ -577,6 +577,9 @@ declare module 'kinow-javascript-sdk' {
     opacity: number
     italic_color: boolean
   }
+  interface SubtitleFile {
+    filename: string
+  }
   interface Support {
     id: number
     id_lang: number
@@ -619,6 +622,7 @@ declare module 'kinow-javascript-sdk' {
   interface Video {
     id: number
     id_product: number
+    id_product_image: number
     id_language: number
     language_filter: number
     id_media_source: number
@@ -826,6 +830,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerAddress(customerId: number, callback?: Function): Promise<Address>
     checkCustomerCredentials(email: string, password: string, callback?: Function): Promise<Customer>
     generateAuthenticationToken(customerId: number, callback?: Function): any
+    checkAuthenticationToken(token: string, callback?: Function): Promise<Customer>
     getCustomerCurrentViews(customerId: number, callback?: Function): any
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
     passwordToken(email: string, callback?: Function): any
@@ -898,6 +903,7 @@ declare module 'kinow-javascript-sdk' {
     attachProductToCategory(productId: number, categoryId: number, callback?: Function): any
     detachProductFromCategory(productId: number, categoryId: number, callback?: Function): any
     getProductsFromProduct(productId: number, opts?: any, callback?: Function): any
+    associateProducts(productId: number, associatedProductIds: string, callback?: Function): any
     getProductGroups(productId: number, opts?: any, callback?: Function): any
     attachProductToGroup(productId: number, groupId: number, callback?: Function): any
     detachProductFromGroup(productId: number, groupId: number, callback?: Function): any
@@ -930,6 +936,7 @@ declare module 'kinow-javascript-sdk' {
     attachCoverToVideo(videoId: number, idImage: number, callback?: Function): any
     getVideosFromProduct(productId: number, opts?: any, callback?: Function): any
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any
+    createSubtitle(videoId: number, body: any, callback?: Function): Promise<Subtitle>
     getVideos(opts?: any, callback?: Function): any
     createVideo(body: any, callback?: Function): Promise<Video>
     getVideo(videoId: number, callback?: Function): Promise<Video>
@@ -1007,6 +1014,7 @@ declare module 'kinow-javascript-sdk' {
     attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): any
+    createSubtitle(extractId: number, body: any, callback?: Function): Promise<Subtitle>
   }
   export class FeatureValuesApi {
     constructor(config?: ApiClient)
@@ -1143,6 +1151,10 @@ declare module 'kinow-javascript-sdk' {
     switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
     switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
     switchSubscriptionDelete(productAccessId: number, callback?: Function): any
+  }
+  export class SubtitlesApi {
+    constructor(config?: ApiClient)
+    getSubtitles(opts?: any, callback?: Function): any
   }
   export class SupportApi {
     constructor(config?: ApiClient)

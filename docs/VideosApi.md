@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**attachCoverToVideo**](VideosApi.md#attachCoverToVideo) | **POST** /videos/{video_id}/cover | 
 [**attachFeaturesToVideo**](VideosApi.md#attachFeaturesToVideo) | **POST** /videos/{video_id}/features | 
 [**attachVideoToProduct**](VideosApi.md#attachVideoToProduct) | **POST** /products/{product_id}/videos | 
+[**createSubtitle**](VideosApi.md#createSubtitle) | **POST** /videos/{video_id}/subtitle | 
 [**createVideo**](VideosApi.md#createVideo) | **POST** /videos | 
 [**deleteVideo**](VideosApi.md#deleteVideo) | **DELETE** /videos/{video_id} | 
 [**getCategoryVideoPlayer**](VideosApi.md#getCategoryVideoPlayer) | **GET** /categories/videos/{video_id}/player | 
@@ -161,6 +162,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createSubtitle"></a>
+# **createSubtitle**
+> Subtitle createSubtitle(videoId, body)
+
+
+
+Create new Video Subtitle
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var videoId = 789; // Integer | Video ID to attach the created Subtitle
+
+var body = new KinowJavascriptSdk.CreateVideoSubtitleRequest(); // CreateVideoSubtitleRequest | Subtitle settings
+
+apiInstance.createSubtitle(videoId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| Video ID to attach the created Subtitle | 
+ **body** | [**CreateVideoSubtitleRequest**](CreateVideoSubtitleRequest.md)| Subtitle settings | 
+
+### Return type
+
+[**Subtitle**](Subtitle.md)
 
 ### Authorization
 
