@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**getCategoryVideoSubtitles**](VideosApi.md#getCategoryVideoSubtitles) | **GET** /categories/videos/{video_id}/subtitles | 
 [**getCustomerHasAccessToVideo**](VideosApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getCustomerHasAccessToVideos**](VideosApi.md#getCustomerHasAccessToVideos) | **POST** /customers/{customer_id}/videos/has-access | 
+[**getCustomerSessionsMultiple**](VideosApi.md#getCustomerSessionsMultiple) | **POST** /video-stats/{customer_id}/sessions | 
 [**getDisabledSubscriptions**](VideosApi.md#getDisabledSubscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**getVideo**](VideosApi.md#getVideo) | **GET** /videos/{video_id} | 
 [**getVideoAccess**](VideosApi.md#getVideoAccess) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
@@ -484,6 +485,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[VideoAccessInfo]**](VideoAccessInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCustomerSessionsMultiple"></a>
+# **getCustomerSessionsMultiple**
+> SessionVideoStats getCustomerSessionsMultiple(customerId, body)
+
+
+
+Get Customer sessions statistics for multiple videos
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var body = new KinowJavascriptSdk.VideoIDList1(); // VideoIDList1 | List of Video IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getCustomerSessionsMultiple(customerId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **body** | [**VideoIDList1**](VideoIDList1.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**SessionVideoStats**](SessionVideoStats.md)
 
 ### Authorization
 

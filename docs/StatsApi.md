@@ -68,7 +68,7 @@ No authorization required
 
 
 
-Get customer video sessions statistics
+Get Customer video sessions statistics
 
 ### Example
 ```javascript

@@ -846,6 +846,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
     stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
+    getCustomerSessionsMultiple(customerId: number, body: any, callback?: Function): any
   }
   export class CategoriesApi {
     constructor(config?: ApiClient)
@@ -954,6 +955,7 @@ declare module 'kinow-javascript-sdk' {
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
     getVideoBonus(videoId: number, callback?: Function): any
+    getCustomerSessionsMultiple(customerId: number, body: any, callback?: Function): any
   }
   export class ConfigurationApi {
     constructor(config?: ApiClient)
