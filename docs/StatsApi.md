@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCustomerGroupTotalWatched**](StatsApi.md#getCustomerGroupTotalWatched) | **GET** /video-stats/customer-group | 
 [**getCustomerSessions**](StatsApi.md#getCustomerSessions) | **GET** /video-stats/sessions | 
+[**getCustomerSessionsMultiple**](StatsApi.md#getCustomerSessionsMultiple) | **POST** /video-stats/{customer_id}/sessions | 
 [**getCustomerVideoStats**](StatsApi.md#getCustomerVideoStats) | **GET** /video-stats/customers | 
 [**getVideoStats**](StatsApi.md#getVideoStats) | **GET** /video-stats/videos | 
 
@@ -102,6 +103,52 @@ Name | Type | Description  | Notes
  **dateTo** | **String**| Search entries to this date | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**SessionVideoStats**](SessionVideoStats.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCustomerSessionsMultiple"></a>
+# **getCustomerSessionsMultiple**
+> SessionVideoStats getCustomerSessionsMultiple(customerId, body)
+
+
+
+Get Customer sessions statistics for multiple videos
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.StatsApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var body = new KinowJavascriptSdk.VideoIDList1(); // VideoIDList1 | List of Video IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getCustomerSessionsMultiple(customerId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **body** | [**VideoIDList1**](VideoIDList1.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
 
 ### Return type
 
