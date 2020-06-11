@@ -829,6 +829,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerCanSeeProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerAddress(customerId: number, callback?: Function): Promise<Address>
     checkCustomerCredentials(email: string, password: string, callback?: Function): Promise<Customer>
+    validateCustomerCredentials(email: string, password: string, callback?: Function): any
     generateAuthenticationToken(customerId: number, callback?: Function): any
     checkAuthenticationToken(token: string, callback?: Function): Promise<Customer>
     getCustomerCurrentViews(customerId: number, callback?: Function): any

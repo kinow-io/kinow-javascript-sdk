@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**stopSubscription**](CustomersApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**updateCustomer**](CustomersApi.md#updateCustomer) | **PUT** /customers/{customer_id} | 
 [**updatePaymentMethod**](CustomersApi.md#updatePaymentMethod) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
+[**validateCustomerCredentials**](CustomersApi.md#validateCustomerCredentials) | **POST** /customers/validate-credentials | 
 
 
 <a name="attachCartToCustomer"></a>
@@ -1511,6 +1512,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="validateCustomerCredentials"></a>
+# **validateCustomerCredentials**
+> CredentialsValidation validateCustomerCredentials(email, password)
+
+
+
+Validate Customer credentials
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var email = "email_example"; // String | Customer email to validate
+
+var password = "password_example"; // String | Customer password to check
+
+apiInstance.validateCustomerCredentials(email, password).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| Customer email to validate | 
+ **password** | **String**| Customer password to check | 
+
+### Return type
+
+[**CredentialsValidation**](CredentialsValidation.md)
 
 ### Authorization
 

@@ -119,7 +119,7 @@ No authorization required
 
 <a name="getCustomerSessionsMultiple"></a>
 # **getCustomerSessionsMultiple**
-> SessionVideoStats getCustomerSessionsMultiple(customerId, body)
+> [SessionVideoStat] getCustomerSessionsMultiple(customerId, body)
 
 
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SessionVideoStats**](SessionVideoStats.md)
+[**[SessionVideoStat]**](SessionVideoStat.md)
 
 ### Authorization
 
