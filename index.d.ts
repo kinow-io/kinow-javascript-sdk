@@ -497,6 +497,7 @@ declare module 'kinow-javascript-sdk' {
     behavior_non_detected_countries: string
     id_product_attribute: number
     roles: string
+    categories: Array<ProductCategories>
   }
   interface ProductAccess {
     id: number
@@ -533,6 +534,10 @@ declare module 'kinow-javascript-sdk' {
     duration: number
     watching_duration: number
     active: number
+  }
+  interface ProductCategories {
+    id: number
+    position: number
   }
   interface Screenshot {
     id: number
