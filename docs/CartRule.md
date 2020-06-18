@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **everyRecurringPayments** | **Boolean** | If customer cart contains a subscription, select if cart rule will apply on recurring payments | [optional] 
 **reductionPercent** | **Number** | Discount applied to cart when rule is added (in %). | [optional] 
 **reductionAmount** | **Number** | Discount applied to cart when rule is added (in currency). | [optional] 
+**reductionTax** | **Integer** | Tax application for currency discount | [optional] 
 **restrictionGroups** | [**[CartRuleRestrictionGroup]**](CartRuleRestrictionGroup.md) |  | [optional] 
 
 

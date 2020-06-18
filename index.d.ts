@@ -133,6 +133,7 @@ declare module 'kinow-javascript-sdk' {
     every_recurring_payments: boolean
     reduction_percent: number
     reduction_amount: number
+    reduction_tax: number
     restriction_groups: Array<CartRuleRestrictionGroup>
   }
   interface CartRuleRestrictionGroup {
@@ -661,6 +662,7 @@ declare module 'kinow-javascript-sdk' {
     quality_sd: boolean
     expires: string
     play_duration: number
+    error_code: number
   }
   interface VideoCategory {
     id: number

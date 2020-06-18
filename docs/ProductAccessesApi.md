@@ -268,7 +268,8 @@ var opts = {
   'dateAdd': "dateAdd_example", // String | Filter by creation date
   'dateAddDirection': "dateAddDirection_example", // String | Choose the direction for date_add parameter, default value is after ,available values are: before, equal, after
   'dateExp': "dateExp_example", // String | Filter by expiration date
-  'dateExpDirection': "dateExpDirection_example" // String | Choose the direction for date_exp parameter, default value is after ,available values are: before, equal, after
+  'dateExpDirection': "dateExpDirection_example", // String | Choose the direction for date_exp parameter, default value is after ,available values are: before, equal, after
+  'filters': "filters_example" // String |       ```      type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains      _______________        {      \"type\": {      \"value\": \"string\",      \"operator\": \"strict\"      },      \"cancel\": {      \"value\": \"string\",      \"operator\": \"contains\"      }      } ```Operator can be strict, contains, gt or lt.
 };
 apiInstance.getProductAccesses(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -289,6 +290,7 @@ Name | Type | Description  | Notes
  **dateAddDirection** | **String**| Choose the direction for date_add parameter, default value is after ,available values are: before, equal, after | [optional] 
  **dateExp** | **String**| Filter by expiration date | [optional] 
  **dateExpDirection** | **String**| Choose the direction for date_exp parameter, default value is after ,available values are: before, equal, after | [optional] 
+ **filters** | **String**|       &#x60;&#x60;&#x60;      type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains      _______________        {      \&quot;type\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;strict\&quot;      },      \&quot;cancel\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      }      } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
 
 ### Return type
 

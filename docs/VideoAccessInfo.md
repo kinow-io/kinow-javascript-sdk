@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **qualitySd** | **Boolean** |  | [optional] 
 **expires** | **String** |  | [optional] 
 **playDuration** | **Number** |  | [optional] 
+**errorCode** | **Number** |  | [optional] 
 
 
