@@ -515,6 +515,7 @@ declare module 'kinow-javascript-sdk' {
     id_order: number
     date_renewal: string
     payment_method: string
+    renewed: number
   }
   interface ProductAccessInfo {
     id_product: number

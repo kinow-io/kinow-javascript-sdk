@@ -17,5 +17,6 @@ Name | Type | Description | Notes
 **idOrder** | **Integer** |  | [optional] 
 **dateRenewal** | **String** |  | [optional] 
 **paymentMethod** | **String** |  | [optional] 
+**renewed** | **Integer** |  | [optional] 
 
 
