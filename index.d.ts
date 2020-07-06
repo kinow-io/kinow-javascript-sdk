@@ -753,6 +753,7 @@ declare module 'kinow-javascript-sdk' {
   export class AttributesApi {
     constructor(config?: ApiClient)
     createProductAttribute(body: any, callback?: Function): Promise<ProductAttribute>
+    deleteAttribute(attributeId: number, callback?: Function): any
     getProductAttributes(productId: number, opts?: any, callback?: Function): any
   }
   export class BlogCategoriesApi {
@@ -790,12 +791,14 @@ declare module 'kinow-javascript-sdk' {
     deleteCart(cartId: number, callback?: Function): any
     createCart(body: any, callback?: Function): Promise<Cart>
     attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
+    detachCartRuleFromCart(cartId: number, cartRuleId: number, callback?: Function): any
     addProductToCart(cartId: number, productId: number, opts?: any, callback?: Function): Promise<Cart>
     deleteProductFromCart(cartId: number, productId: number, opts?: any, callback?: Function): any
     validateFreeOrder(cartId: number, callback?: Function): any
     getCustomerCarts(customerId: number, opts?: any, callback?: Function): any
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<Cart>
     getLastCart(customerId: number, callback?: Function): Promise<Cart>
+    emptyCart(cartId: number, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
     preparePayment(cartId: number, paymentName: string, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
@@ -803,6 +806,7 @@ declare module 'kinow-javascript-sdk' {
   export class CartRulesApi {
     constructor(config?: ApiClient)
     attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
+    detachCartRuleFromCart(cartId: number, cartRuleId: number, callback?: Function): any
     getCartRules(opts?: any, callback?: Function): any
     createCartRule(body: any, callback?: Function): any
     getCartRule(cartRuleId: number, callback?: Function): Promise<CartRule>

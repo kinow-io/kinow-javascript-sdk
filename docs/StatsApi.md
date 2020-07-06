@@ -79,6 +79,7 @@ var apiInstance = new KinowJavascriptSdk.StatsApi();
 
 var opts = { 
   'customerId': 789, // Integer | Customer ID to fetch
+  'groupId': 789, // Integer | Group ID to fetch
   'videoId': 789, // Integer | Video ID to fetch
   'dateFrom': "dateFrom_example", // String | Search entries from this date
   'dateTo': "dateTo_example", // String | Search entries to this date
@@ -98,6 +99,7 @@ apiInstance.getCustomerSessions(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | [optional] 
+ **groupId** | **Integer**| Group ID to fetch | [optional] 
  **videoId** | **Integer**| Video ID to fetch | [optional] 
  **dateFrom** | **String**| Search entries from this date | [optional] 
  **dateTo** | **String**| Search entries to this date | [optional] 

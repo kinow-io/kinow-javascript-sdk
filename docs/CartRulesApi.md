@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**attachCartRuleToCart**](CartRulesApi.md#attachCartRuleToCart) | **POST** /carts/{cart_id}/cart-rules | 
 [**createCartRule**](CartRulesApi.md#createCartRule) | **POST** /cart-rules | 
 [**deleteCartRule**](CartRulesApi.md#deleteCartRule) | **DELETE** /cart-rules/{cart_rule_id} | 
+[**detachCartRuleFromCart**](CartRulesApi.md#detachCartRuleFromCart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
 [**getCartRule**](CartRulesApi.md#getCartRule) | **GET** /cart-rules/{cart_rule_id} | 
 [**getCartRules**](CartRulesApi.md#getCartRules) | **GET** /cart-rules | 
 [**updateCartRule**](CartRulesApi.md#updateCartRule) | **PUT** /cart-rules/{cart_rule_id} | 
@@ -130,6 +131,52 @@ apiInstance.deleteCartRule(cartRuleId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartRuleId** | **Integer**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachCartRuleFromCart"></a>
+# **detachCartRuleFromCart**
+> detachCartRuleFromCart(cartId, cartRuleId)
+
+
+
+Detach Cart rule from Cart
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartRulesApi();
+
+var cartId = 789; // Integer | Cart ID to fetch
+
+var cartRuleId = 789; // Integer | Cart rule ID to detach
+
+apiInstance.detachCartRuleFromCart(cartId, cartRuleId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **cartRuleId** | **Integer**| Cart rule ID to detach | 
 
 ### Return type
 

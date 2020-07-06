@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProductAttribute**](AttributesApi.md#createProductAttribute) | **POST** /attributes | 
+[**deleteAttribute**](AttributesApi.md#deleteAttribute) | **DELETE** /attributes/{attribute_id} | 
 [**getProductAttributes**](AttributesApi.md#getProductAttributes) | **GET** /products/{product_id}/attributes | 
 
 
@@ -41,6 +42,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductAttribute**](ProductAttribute.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="deleteAttribute"></a>
+# **deleteAttribute**
+> deleteAttribute(attributeId)
+
+
+
+Delete Attribute
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.AttributesApi();
+
+var attributeId = 789; // Integer | Attribute ID to delete
+
+apiInstance.deleteAttribute(attributeId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attributeId** | **Integer**| Attribute ID to delete | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

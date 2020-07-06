@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**createCart**](CartsApi.md#createCart) | **POST** /carts | 
 [**deleteCart**](CartsApi.md#deleteCart) | **DELETE** /carts/{cart_id} | 
 [**deleteProductFromCart**](CartsApi.md#deleteProductFromCart) | **DELETE** /carts/{cart_id}/products | 
+[**detachCartRuleFromCart**](CartsApi.md#detachCartRuleFromCart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
+[**emptyCart**](CartsApi.md#emptyCart) | **POST** /carts/{cart_id}/empty | 
 [**getCart**](CartsApi.md#getCart) | **GET** /carts/{cart_id} | 
 [**getCustomerCarts**](CartsApi.md#getCustomerCarts) | **GET** /customers/{customer_id}/carts | 
 [**getLastCart**](CartsApi.md#getLastCart) | **GET** /customers/{customer_id}/last-cart | 
@@ -290,6 +292,95 @@ Name | Type | Description  | Notes
  **cartId** | **Integer**| Cart ID to fetch | 
  **productId** | **Integer**| Product ID to delete from cart | 
  **productAttributeId** | **Integer**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachCartRuleFromCart"></a>
+# **detachCartRuleFromCart**
+> detachCartRuleFromCart(cartId, cartRuleId)
+
+
+
+Detach Cart rule from Cart
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var cartId = 789; // Integer | Cart ID to fetch
+
+var cartRuleId = 789; // Integer | Cart rule ID to detach
+
+apiInstance.detachCartRuleFromCart(cartId, cartRuleId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **cartRuleId** | **Integer**| Cart rule ID to detach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="emptyCart"></a>
+# **emptyCart**
+> emptyCart(cartId)
+
+
+
+Remove all items in a Cart
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var cartId = 789; // Integer | Cart ID to empty
+
+apiInstance.emptyCart(cartId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to empty | 
 
 ### Return type
 
