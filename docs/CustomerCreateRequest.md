@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **postcode** | **String** |  | [optional] 
 **address1** | **String** |  | [optional] 
 **company** | **String** |  | [optional] 
+**sendMail** | **Boolean** |  | [optional] 
 
 

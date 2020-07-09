@@ -32,7 +32,8 @@ var message = "message_example"; // String |
 
 var opts = { 
   'idProduct': 56, // Integer | 
-  'idOrder': 56 // Integer | 
+  'idOrder': 56, // Integer | 
+  'sendMail': true // Boolean | 
 };
 apiInstance.createMessage(idLang, email, idContact, message, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -52,6 +53,7 @@ Name | Type | Description  | Notes
  **message** | **String**|  | 
  **idProduct** | **Integer**|  | [optional] 
  **idOrder** | **Integer**|  | [optional] 
+ **sendMail** | **Boolean**|  | [optional] 
 
 ### Return type
 

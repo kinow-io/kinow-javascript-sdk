@@ -541,6 +541,11 @@ declare module 'kinow-javascript-sdk' {
     id: number
     position: number
   }
+  interface RegistrationField {
+    name: string
+    required: boolean
+    displayed: boolean
+  }
   interface Screenshot {
     id: number
     source: string
@@ -848,6 +853,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
     passwordToken(email: string, callback?: Function): any
     passwordTokenConsume(token: string, password: string, callback?: Function): any
+    getRegistrationFields(opts?: any, callback?: Function): any
     getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     loginWithFacebook(tokenType: string, token: string, opts?: any, callback?: Function): Promise<Customer>

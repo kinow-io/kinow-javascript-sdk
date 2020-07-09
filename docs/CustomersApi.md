@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
 [**getPaymentMethods**](CustomersApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**getPendingPayments**](CustomersApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
+[**getRegistrationFields**](CustomersApi.md#getRegistrationFields) | **GET** /customer/registration-fields | 
 [**loginWithFacebook**](CustomersApi.md#loginWithFacebook) | **POST** /customers/facebook-login | 
 [**passwordToken**](CustomersApi.md#passwordToken) | **POST** /customers/password-token | 
 [**passwordTokenConsume**](CustomersApi.md#passwordTokenConsume) | **POST** /customers/password-token-consume | 
@@ -1232,6 +1233,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[PaymentDetails]**](PaymentDetails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getRegistrationFields"></a>
+# **getRegistrationFields**
+> RegistrationFields getRegistrationFields(opts)
+
+
+
+Get registration fields
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getRegistrationFields(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**RegistrationFields**](RegistrationFields.md)
 
 ### Authorization
 
