@@ -294,6 +294,12 @@ declare module 'kinow-javascript-sdk' {
     iso_code: string
     name: Array<I18nField>
   }
+  interface GeolocSettings {
+    geoloc_enabled: boolean
+    behavior_detected_countries: string
+    behavior_non_detected_countries: string
+    countries: Array<string>
+  }
   interface Gift {
     id: number
     id_cart: number
@@ -1051,6 +1057,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getPlatformAccessInfo(ipAddress: string, callback?: Function): Promise<PlatformAccessInfo>
     getIPLocation(ipAddress: string, callback?: Function): Promise<IPLocation>
+    getGeolocSettings(type: string, typeId: number, callback?: Function): Promise<GeolocSettings>
     getProductGeolocations(productId: number, opts?: any, callback?: Function): any
     setProductGeolocation(productId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
     getProductGeolocationsByIp(productId: number, ipAddress: string, opts?: any, callback?: Function): any

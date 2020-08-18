@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getGeolocSettings**](GeolocationsApi.md#getGeolocSettings) | **GET** /geolocations/settings | 
 [**getIPLocation**](GeolocationsApi.md#getIPLocation) | **GET** /geolocations/ip | 
 [**getPlatformAccessInfo**](GeolocationsApi.md#getPlatformAccessInfo) | **GET** /geolocations/platform-access | 
 [**getProductGeolocations**](GeolocationsApi.md#getProductGeolocations) | **GET** /products/{product_id}/geolocations | 
@@ -12,6 +13,52 @@ Method | HTTP request | Description
 [**setProductGeolocation**](GeolocationsApi.md#setProductGeolocation) | **PUT** /products/{product_id}/geolocations | 
 [**setVideoGeolocation**](GeolocationsApi.md#setVideoGeolocation) | **PUT** /videos/{video_id}/geolocations | 
 
+
+<a name="getGeolocSettings"></a>
+# **getGeolocSettings**
+> GeolocSettings getGeolocSettings(type, typeId)
+
+
+
+Get geolocation settings for an item
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
+
+var type = "type_example"; // String | Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu
+
+var typeId = 56; // Integer | Item ID
+
+apiInstance.getGeolocSettings(type, typeId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **String**| Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu | 
+ **typeId** | **Integer**| Item ID | 
+
+### Return type
+
+[**GeolocSettings**](GeolocSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getIPLocation"></a>
 # **getIPLocation**
