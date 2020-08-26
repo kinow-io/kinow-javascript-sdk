@@ -531,6 +531,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ProductAttribute {
     id: number
+    video_group_id: number
     video_id: number
     name: string
     price: number
@@ -640,6 +641,7 @@ declare module 'kinow-javascript-sdk' {
   interface Video {
     id: number
     id_product: number
+    id_video_group: number
     id_product_image: number
     id_language: number
     language_filter: number
@@ -683,6 +685,15 @@ declare module 'kinow-javascript-sdk' {
     filename: string
     cover: string
     thumbnail: string
+    date_add: string
+    date_upd: string
+  }
+  interface VideoGroup {
+    id: number
+    id_product: number
+    name: Array<I18nField>
+    description: Array<I18nField>
+    position: number
     date_add: string
     date_upd: string
   }
@@ -907,6 +918,7 @@ declare module 'kinow-javascript-sdk' {
     deleteProduct(productId: number, callback?: Function): any
     getVideosFromProduct(productId: number, opts?: any, callback?: Function): any
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any
+    getVideoGroupsFromProduct(productId: number, opts?: any, callback?: Function): any
     getProductFeatures(productId: number, opts?: any, callback?: Function): any
     attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
     getProductGeolocations(productId: number, opts?: any, callback?: Function): any
@@ -949,12 +961,36 @@ declare module 'kinow-javascript-sdk' {
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
-  export class VideosApi {
+  export class CategoryVideosApi {
     constructor(config?: ApiClient)
     getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getVideosFromCategories(opts?: any, callback?: Function): any
     getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
+  }
+  export class ConfigurationApi {
+    constructor(config?: ApiClient)
+    getConfiguration(opts?: any, callback?: Function): any
+    getConfigurationByName(configurationName: string, callback?: Function): Promise<Configuration>
+  }
+  export class CountriesApi {
+    constructor(config?: ApiClient)
+    getCountries(opts?: any, callback?: Function): any
+  }
+  export class CurrenciesApi {
+    constructor(config?: ApiClient)
+    getCurrencies(opts?: any, callback?: Function): any
+  }
+  export class OrdersApi {
+    constructor(config?: ApiClient)
+    getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
+    getOrders(opts?: any, callback?: Function): any
+    getOrder(orderId: number, callback?: Function): Promise<Order>
+    getOrderInvoice(orderId: number, opts?: any, callback?: Function): any
+    getOrderHistories(orderId: number, opts?: any, callback?: Function): any
+  }
+  export class VideosApi {
+    constructor(config?: ApiClient)
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
     getCustomerHasAccessToVideos(customerId: number, body: any, callback?: Function): any
     getVideoCover(videoId: number, callback?: Function): Promise<Image>
@@ -979,27 +1015,6 @@ declare module 'kinow-javascript-sdk' {
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
     getVideoBonus(videoId: number, callback?: Function): any
-  }
-  export class ConfigurationApi {
-    constructor(config?: ApiClient)
-    getConfiguration(opts?: any, callback?: Function): any
-    getConfigurationByName(configurationName: string, callback?: Function): Promise<Configuration>
-  }
-  export class CountriesApi {
-    constructor(config?: ApiClient)
-    getCountries(opts?: any, callback?: Function): any
-  }
-  export class CurrenciesApi {
-    constructor(config?: ApiClient)
-    getCurrencies(opts?: any, callback?: Function): any
-  }
-  export class OrdersApi {
-    constructor(config?: ApiClient)
-    getCustomerOrders(customerId: number, opts?: any, callback?: Function): any
-    getOrders(opts?: any, callback?: Function): any
-    getOrder(orderId: number, callback?: Function): Promise<Order>
-    getOrderInvoice(orderId: number, opts?: any, callback?: Function): any
-    getOrderHistories(orderId: number, opts?: any, callback?: Function): any
   }
   export class DevicesApi {
     constructor(config?: ApiClient)
@@ -1177,6 +1192,12 @@ declare module 'kinow-javascript-sdk' {
     switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
     switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
     switchSubscriptionDelete(productAccessId: number, callback?: Function): any
+  }
+  export class VideoGroupsApi {
+    constructor(config?: ApiClient)
+    getVideoGroupsFromProduct(productId: number, opts?: any, callback?: Function): any
+    getVideoGroups(opts?: any, callback?: Function): any
+    getVideoGroup(videoGroupId: number, callback?: Function): Promise<VideoGroup>
   }
   export class SubtitlesApi {
     constructor(config?: ApiClient)

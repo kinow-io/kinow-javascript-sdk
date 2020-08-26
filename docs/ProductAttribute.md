@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
+**videoGroupId** | **Integer** |  | [optional] 
 **videoId** | **Integer** |  | [optional] 
 **name** | **String** |  | [optional] 
 **price** | **Number** |  | [optional] 

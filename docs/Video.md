@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
 **idProduct** | **Integer** |  | [optional] 
+**idVideoGroup** | **Integer** |  | [optional] 
 **idProductImage** | **Integer** |  | [optional] 
 **idLanguage** | **Integer** |  | [optional] 
 **languageFilter** | **Integer** |  | [optional] 
