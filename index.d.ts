@@ -972,6 +972,8 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getConfiguration(opts?: any, callback?: Function): any
     getConfigurationByName(configurationName: string, callback?: Function): Promise<Configuration>
+    getConfigurationSocial(): any
+    getConfigurationLogo(): any
   }
   export class CountriesApi {
     constructor(config?: ApiClient)

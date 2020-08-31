@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getConfiguration**](ConfigurationApi.md#getConfiguration) | **GET** /configuration | 
 [**getConfigurationByName**](ConfigurationApi.md#getConfigurationByName) | **GET** /configuration/{configuration_name} | 
+[**getConfigurationLogo**](ConfigurationApi.md#getConfigurationLogo) | **GET** /configuration/logo | 
+[**getConfigurationSocial**](ConfigurationApi.md#getConfigurationSocial) | **GET** /configuration/social | 
 
 
 <a name="getConfiguration"></a>
@@ -87,6 +89,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Configuration**](Configuration.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getConfigurationLogo"></a>
+# **getConfigurationLogo**
+> LogoSettings getConfigurationLogo()
+
+
+
+Get logo settings
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ConfigurationApi();
+apiInstance.getConfigurationLogo().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**LogoSettings**](LogoSettings.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getConfigurationSocial"></a>
+# **getConfigurationSocial**
+> SocialSettings getConfigurationSocial()
+
+
+
+Get social networks settings
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ConfigurationApi();
+apiInstance.getConfigurationSocial().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SocialSettings**](SocialSettings.md)
 
 ### Authorization
 
