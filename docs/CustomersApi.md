@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**getCustomerHasAccessToVideo**](CustomersApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getCustomerHasAccessToVideos**](CustomersApi.md#getCustomerHasAccessToVideos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**getCustomerOrders**](CustomersApi.md#getCustomerOrders) | **GET** /customers/{customer_id}/orders | 
+[**getCustomerPlaylists**](CustomersApi.md#getCustomerPlaylists) | **GET** /customers/{customer_id}/playlists | 
 [**getCustomerPrepaymentBalances**](CustomersApi.md#getCustomerPrepaymentBalances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**getCustomerPrepaymentOperations**](CustomersApi.md#getCustomerPrepaymentOperations) | **GET** /customers/{customer_id}/prepayment-operations | 
 [**getCustomers**](CustomersApi.md#getCustomers) | **GET** /customers | 
@@ -181,7 +182,7 @@ No authorization required
 
 
 
-Create new customer
+Create new Customer
 
 ### Example
 ```javascript
@@ -189,7 +190,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var body = new KinowJavascriptSdk.CustomerCreateRequest(); // CustomerCreateRequest | Created user object
+var body = new KinowJavascriptSdk.CustomerCreateRequest(); // CustomerCreateRequest | Customer settings
 
 apiInstance.createCustomer(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -203,7 +204,7 @@ apiInstance.createCustomer(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerCreateRequest**](CustomerCreateRequest.md)| Created user object | 
+ **body** | [**CustomerCreateRequest**](CustomerCreateRequest.md)| Customer settings | 
 
 ### Return type
 
@@ -962,6 +963,59 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getCustomerPlaylists"></a>
+# **getCustomerPlaylists**
+> Playlists getCustomerPlaylists(customerId, opts)
+
+
+
+Get customer playlists
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | 
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getCustomerPlaylists(customerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**|  | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Playlists**](Playlists.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getCustomerPrepaymentBalances"></a>
 # **getCustomerPrepaymentBalances**
 > [PrepaymentBalance] getCustomerPrepaymentBalances(customerId)
@@ -1341,7 +1395,7 @@ No authorization required
 
 <a name="passwordToken"></a>
 # **passwordToken**
-> Token passwordToken(email)
+> Token passwordToken(email, opts)
 
 
 
@@ -1355,7 +1409,10 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var email = "email_example"; // String | Email of the Customer
 
-apiInstance.passwordToken(email).then(function(data) {
+var opts = { 
+  'sendNotification': false // Boolean | Send notification email
+};
+apiInstance.passwordToken(email, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1368,6 +1425,7 @@ apiInstance.passwordToken(email).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **String**| Email of the Customer | 
+ **sendNotification** | **Boolean**| Send notification email | [optional] [default to false]
 
 ### Return type
 

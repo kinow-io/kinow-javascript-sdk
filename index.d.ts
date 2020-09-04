@@ -284,6 +284,17 @@ declare module 'kinow-javascript-sdk' {
     custom: boolean
     value: Array<I18nField>
   }
+  interface FreeGift {
+    id: number
+    id_customer: number
+    id_product: number
+    id_product_attribute: number
+    firstname: string
+    lastname: string
+    email: string
+    used: boolean
+    date_send: string
+  }
   interface Gender {
     id: number
     type: number
@@ -434,6 +445,11 @@ declare module 'kinow-javascript-sdk' {
   interface PlatformAccessInfo {
     can_access: boolean
     can_buy: boolean
+  }
+  interface PlaylistBookmark {
+    id: number
+    name: string
+    id_customer: number
   }
   interface PrepaymentBalance {
     amount: number
@@ -791,8 +807,8 @@ declare module 'kinow-javascript-sdk' {
   export class BookmarksApi {
     constructor(config?: ApiClient)
     getCustomerBookmarks(customerId: number, opts?: any, callback?: Function): any
-    attachBookmarkToCustomer(customerId: number, productId: number, callback?: Function): any
-    detachBookmarkFromCustomer(customerId: number, productId: number, callback?: Function): any
+    attachBookmarkToCustomer(customerId: number, productId: number, opts?: any, callback?: Function): any
+    detachBookmarkFromCustomer(customerId: number, productId: number, opts?: any, callback?: Function): any
   }
   export class CMSCategoriesApi {
     constructor(config?: ApiClient)
@@ -821,6 +837,7 @@ declare module 'kinow-javascript-sdk' {
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<Cart>
     getLastCart(customerId: number, callback?: Function): Promise<Cart>
     emptyCart(cartId: number, callback?: Function): any
+    getLostsCarts(opts?: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
     preparePayment(cartId: number, paymentName: string, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
@@ -868,7 +885,7 @@ declare module 'kinow-javascript-sdk' {
     checkAuthenticationToken(token: string, callback?: Function): Promise<Customer>
     getCustomerCurrentViews(customerId: number, callback?: Function): any
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): any
-    passwordToken(email: string, callback?: Function): any
+    passwordToken(email: string, opts?: any, callback?: Function): any
     passwordTokenConsume(token: string, password: string, callback?: Function): any
     getRegistrationFields(opts?: any, callback?: Function): any
     getFacebookCustomer(facebookId: number, callback?: Function): any
@@ -877,6 +894,7 @@ declare module 'kinow-javascript-sdk' {
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
+    getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): any
     getCustomerPrepaymentBalances(customerId: number, callback?: Function): any
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
@@ -1066,6 +1084,17 @@ declare module 'kinow-javascript-sdk' {
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
+  export class FreeGiftsApi {
+    constructor(config?: ApiClient)
+    getFreeGifts(opts?: any, callback?: Function): any
+    createFreeGift(body: any, callback?: Function): Promise<FreeGift>
+    getFreeGift(freeGiftId: number, callback?: Function): Promise<FreeGift>
+    updateFreeGift(freeGiftId: number, body: any, callback?: Function): Promise<FreeGift>
+    deleteFreeGift(freeGiftId: number, callback?: Function): any
+    consumeFreeGift(freeGiftId: number, customerId: number, opts?: any, callback?: Function): any
+    getFreeGiftToken(freeGiftId: number, callback?: Function): Promise<GiftToken>
+    sendFreeGift(freeGiftId: number, callback?: Function): any
+  }
   export class GendersApi {
     constructor(config?: ApiClient)
     getGenders(opts?: any, callback?: Function): any
@@ -1097,6 +1126,7 @@ declare module 'kinow-javascript-sdk' {
   export class GroupsApi {
     constructor(config?: ApiClient)
     getGroups(opts?: any, callback?: Function): any
+    createGroup(body: any, callback?: Function): Promise<Group>
     getGroup(groupId: number, callback?: Function): Promise<Group>
     attachCustomerToGroup(groupId: number, customerId: number, callback?: Function): any
     detachCustomerFromGroup(groupId: number, customerId: number, callback?: Function): any
@@ -1168,6 +1198,14 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getPages(opts?: any, callback?: Function): any
     getPage(pageId: number, callback?: Function): Promise<Page>
+  }
+  export class PlaylistsApi {
+    constructor(config?: ApiClient)
+    getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): any
+    getPlaylist(playlistId: number, callback?: Function): Promise<PlaylistBookmark>
+    updatePlaylistBookmark(playlistId: number, body: any, callback?: Function): Promise<PlaylistBookmark>
+    deletePlaylistBookmark(playlistId: number, callback?: Function): any
+    createPlaylistBookmark(customerId: number, name: string, callback?: Function): Promise<PlaylistBookmark>
   }
   export class PrepaymentsApi {
     constructor(config?: ApiClient)

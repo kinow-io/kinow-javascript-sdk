@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 
-Consume gift
+Consume Gift
 
 ### Example
 ```javascript
@@ -72,7 +72,7 @@ No authorization required
 
 
 
-Create gift
+Create Gift
 
 ### Example
 ```javascript
@@ -80,7 +80,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
-var body = new KinowJavascriptSdk.Gift1(); // Gift1 | Gift settings
+var body = new KinowJavascriptSdk.Gift2(); // Gift2 | Gift settings
 
 apiInstance.createGift(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -94,7 +94,7 @@ apiInstance.createGift(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Gift1**](Gift1.md)| Gift settings | 
+ **body** | [**Gift2**](Gift2.md)| Gift settings | 
 
 ### Return type
 
@@ -115,7 +115,7 @@ No authorization required
 
 
 
-Delete gift
+Delete Gift
 
 ### Example
 ```javascript
@@ -158,7 +158,7 @@ No authorization required
 
 
 
-Delete gifts in cart
+Delete Gifts in cart
 
 ### Example
 ```javascript
@@ -201,7 +201,7 @@ No authorization required
 
 
 
-Get gift
+Get Gift
 
 ### Example
 ```javascript
@@ -244,7 +244,7 @@ No authorization required
 
 
 
-Get gift in cart
+Get Gift in Cart
 
 ### Example
 ```javascript
@@ -287,7 +287,7 @@ No authorization required
 
 
 
-Get gift token
+Get Gift token
 
 ### Example
 ```javascript
@@ -326,11 +326,11 @@ No authorization required
 
 <a name="getGifts"></a>
 # **getGifts**
-> Gifts getGifts(opts)
+> Gifts1 getGifts(opts)
 
 
 
-Get gifts
+Get Gifts
 
 ### Example
 ```javascript
@@ -339,7 +339,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
 var opts = { 
-  'unusedOnly': 56 // Integer | Only unused gifts
+  'unusedOnly': 56 // Integer | Only unused Gifts
 };
 apiInstance.getGifts(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -353,11 +353,11 @@ apiInstance.getGifts(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unusedOnly** | **Integer**| Only unused gifts | [optional] 
+ **unusedOnly** | **Integer**| Only unused Gifts | [optional] 
 
 ### Return type
 
-[**Gifts**](Gifts.md)
+[**Gifts1**](Gifts1.md)
 
 ### Authorization
 
@@ -374,7 +374,7 @@ No authorization required
 
 
 
-Send gift
+Send Gift
 
 ### Example
 ```javascript
@@ -417,7 +417,7 @@ No authorization required
 
 
 
-Update gift
+Update Gift
 
 ### Example
 ```javascript
@@ -427,7 +427,7 @@ var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
 var giftId = 789; // Integer | Gift ID to fetch
 
-var body = new KinowJavascriptSdk.Gift2(); // Gift2 | Gift settings
+var body = new KinowJavascriptSdk.Gift3(); // Gift3 | Gift settings
 
 apiInstance.updateGift(giftId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -442,7 +442,7 @@ apiInstance.updateGift(giftId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **giftId** | **Integer**| Gift ID to fetch | 
- **body** | [**Gift2**](Gift2.md)| Gift settings | 
+ **body** | [**Gift3**](Gift3.md)| Gift settings | 
 
 ### Return type
 

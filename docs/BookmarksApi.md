@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="attachBookmarkToCustomer"></a>
 # **attachBookmarkToCustomer**
-> attachBookmarkToCustomer(customerId, productId)
+> attachBookmarkToCustomer(customerId, productId, opts)
 
 
 
@@ -27,7 +27,10 @@ var customerId = 789; // Integer | Customer ID to fetch
 
 var productId = 789; // Integer | 
 
-apiInstance.attachBookmarkToCustomer(customerId, productId).then(function() {
+var opts = { 
+  'playlistId': 789 // Integer | 
+};
+apiInstance.attachBookmarkToCustomer(customerId, productId, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -41,6 +44,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
  **productId** | **Integer**|  | 
+ **playlistId** | **Integer**|  | [optional] 
 
 ### Return type
 
@@ -57,7 +61,7 @@ No authorization required
 
 <a name="detachBookmarkFromCustomer"></a>
 # **detachBookmarkFromCustomer**
-> detachBookmarkFromCustomer(customerId, productId)
+> detachBookmarkFromCustomer(customerId, productId, opts)
 
 
 
@@ -73,7 +77,10 @@ var customerId = 789; // Integer | Customer ID to fetch
 
 var productId = 789; // Integer | 
 
-apiInstance.detachBookmarkFromCustomer(customerId, productId).then(function() {
+var opts = { 
+  'playlistId': 789 // Integer | 
+};
+apiInstance.detachBookmarkFromCustomer(customerId, productId, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -87,6 +94,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
  **productId** | **Integer**|  | 
+ **playlistId** | **Integer**|  | [optional] 
 
 ### Return type
 
@@ -118,6 +126,7 @@ var apiInstance = new KinowJavascriptSdk.BookmarksApi();
 var customerId = 789; // Integer | 
 
 var opts = { 
+  'playlistId': 789, // Integer | 
   'page': 789, // Integer | 
   'perPage': 789, // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
@@ -136,6 +145,7 @@ apiInstance.getCustomerBookmarks(customerId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**|  | 
+ **playlistId** | **Integer**|  | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 

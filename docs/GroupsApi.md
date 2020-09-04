@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attachCustomerToGroup**](GroupsApi.md#attachCustomerToGroup) | **POST** /groups/{group_id}/customers | 
+[**createGroup**](GroupsApi.md#createGroup) | **POST** /groups | 
 [**detachCustomerFromGroup**](GroupsApi.md#detachCustomerFromGroup) | **DELETE** /groups/{group_id}/customers/{customer_id} | 
 [**getGroup**](GroupsApi.md#getGroup) | **GET** /groups/{group_id} | 
 [**getGroups**](GroupsApi.md#getGroups) | **GET** /groups | 
@@ -47,6 +48,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createGroup"></a>
+# **createGroup**
+> Group createGroup(body)
+
+
+
+Create new Group
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.GroupsApi();
+
+var body = new KinowJavascriptSdk.GroupCreateRequest(); // GroupCreateRequest | Group settings
+
+apiInstance.createGroup(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GroupCreateRequest**](GroupCreateRequest.md)| Group settings | 
+
+### Return type
+
+[**Group**](Group.md)
 
 ### Authorization
 

@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**[Gift]**](Gift.md) |  | [optional] 
+**data** | [**[FreeGift]**](FreeGift.md) |  | [optional] 
 
 

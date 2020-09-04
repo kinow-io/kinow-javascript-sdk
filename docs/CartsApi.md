@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getCart**](CartsApi.md#getCart) | **GET** /carts/{cart_id} | 
 [**getCustomerCarts**](CartsApi.md#getCustomerCarts) | **GET** /customers/{customer_id}/carts | 
 [**getLastCart**](CartsApi.md#getLastCart) | **GET** /customers/{customer_id}/last-cart | 
+[**getLostsCarts**](CartsApi.md#getLostsCarts) | **GET** /carts/losts-carts | 
 [**getPaymentUrl**](CartsApi.md#getPaymentUrl) | **GET** /carts/{cart_id}/payments/{payment_name} | 
 [**preparePayment**](CartsApi.md#preparePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
 [**updateCart**](CartsApi.md#updateCart) | **PUT** /carts/{cart_id} | 
@@ -526,6 +527,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Cart**](Cart.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getLostsCarts"></a>
+# **getLostsCarts**
+> Carts getLostsCarts(opts)
+
+
+
+Get losts Carts
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'filters': "filters_example", // String |   ```  date_add[value]=string&date_add[operator]=lt  _______________    {      \"date_add\": {          \"value\": \"string\",          \"operator\": \"lt\"      }  } ```  Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getLostsCarts(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **filters** | **String**|   &#x60;&#x60;&#x60;  date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt  _______________    {      \&quot;date_add\&quot;: {          \&quot;value\&quot;: \&quot;string\&quot;,          \&quot;operator\&quot;: \&quot;lt\&quot;      }  } &#x60;&#x60;&#x60;  Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Carts**](Carts.md)
 
 ### Authorization
 
