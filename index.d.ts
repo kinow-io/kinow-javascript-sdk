@@ -446,7 +446,7 @@ declare module 'kinow-javascript-sdk' {
     can_access: boolean
     can_buy: boolean
   }
-  interface PlaylistBookmark {
+  interface Playlist {
     id: number
     name: string
     id_customer: number
@@ -807,8 +807,8 @@ declare module 'kinow-javascript-sdk' {
   export class BookmarksApi {
     constructor(config?: ApiClient)
     getCustomerBookmarks(customerId: number, opts?: any, callback?: Function): any
-    attachBookmarkToCustomer(customerId: number, productId: number, opts?: any, callback?: Function): any
-    detachBookmarkFromCustomer(customerId: number, productId: number, opts?: any, callback?: Function): any
+    attachBookmarkToCustomer(customerId: number, productId: number, callback?: Function): any
+    detachBookmarkFromCustomer(customerId: number, productId: number, callback?: Function): any
   }
   export class CMSCategoriesApi {
     constructor(config?: ApiClient)
@@ -1201,11 +1201,15 @@ declare module 'kinow-javascript-sdk' {
   }
   export class PlaylistsApi {
     constructor(config?: ApiClient)
+    getPlaylists(opts?: any, callback?: Function): any
+    createPlaylist(customerId: number, name: string, callback?: Function): Promise<Playlist>
     getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): any
-    getPlaylist(playlistId: number, callback?: Function): Promise<PlaylistBookmark>
-    updatePlaylistBookmark(playlistId: number, body: any, callback?: Function): Promise<PlaylistBookmark>
-    deletePlaylistBookmark(playlistId: number, callback?: Function): any
-    createPlaylistBookmark(customerId: number, name: string, callback?: Function): Promise<PlaylistBookmark>
+    getPlaylist(playlistId: number, callback?: Function): Promise<Playlist>
+    updatePlaylist(playlistId: number, body: any, callback?: Function): Promise<Playlist>
+    deletePlaylist(playlistId: number, callback?: Function): any
+    getPlaylistBookmarks(playlistId: number, opts?: any, callback?: Function): any
+    attachBookmarkToPlaylist(playlistId: number, productId: number, callback?: Function): any
+    detachBookmarkFromPlaylist(playlistId: number, productId: number, callback?: Function): any
   }
   export class PrepaymentsApi {
     constructor(config?: ApiClient)

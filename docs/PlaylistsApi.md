@@ -4,20 +4,70 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPlaylistBookmark**](PlaylistsApi.md#createPlaylistBookmark) | **POST** /playlists | 
-[**deletePlaylistBookmark**](PlaylistsApi.md#deletePlaylistBookmark) | **DELETE** /playlists/{playlist_id} | 
+[**attachBookmarkToPlaylist**](PlaylistsApi.md#attachBookmarkToPlaylist) | **POST** /playlists/{playlist_id}/bookmarks | 
+[**createPlaylist**](PlaylistsApi.md#createPlaylist) | **POST** /playlists | 
+[**deletePlaylist**](PlaylistsApi.md#deletePlaylist) | **DELETE** /playlists/{playlist_id} | 
+[**detachBookmarkFromPlaylist**](PlaylistsApi.md#detachBookmarkFromPlaylist) | **DELETE** /playlists/{playlist_id}/bookmarks/{product_id} | 
 [**getCustomerPlaylists**](PlaylistsApi.md#getCustomerPlaylists) | **GET** /customers/{customer_id}/playlists | 
 [**getPlaylist**](PlaylistsApi.md#getPlaylist) | **GET** /playlists/{playlist_id} | 
-[**updatePlaylistBookmark**](PlaylistsApi.md#updatePlaylistBookmark) | **PUT** /playlists/{playlist_id} | 
+[**getPlaylistBookmarks**](PlaylistsApi.md#getPlaylistBookmarks) | **GET** /playlists/{playlist_id}/bookmarks | 
+[**getPlaylists**](PlaylistsApi.md#getPlaylists) | **GET** /playlists | 
+[**updatePlaylist**](PlaylistsApi.md#updatePlaylist) | **PUT** /playlists/{playlist_id} | 
 
 
-<a name="createPlaylistBookmark"></a>
-# **createPlaylistBookmark**
-> PlaylistBookmark createPlaylistBookmark(customerId, name)
+<a name="attachBookmarkToPlaylist"></a>
+# **attachBookmarkToPlaylist**
+> attachBookmarkToPlaylist(playlistId, productId)
 
 
 
-Create playlist bookmark
+Attach bookmark to playlist
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PlaylistsApi();
+
+var playlistId = 789; // Integer | Playlist ID to fetch
+
+var productId = 789; // Integer | 
+
+apiInstance.attachBookmarkToPlaylist(playlistId, productId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playlistId** | **Integer**| Playlist ID to fetch | 
+ **productId** | **Integer**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createPlaylist"></a>
+# **createPlaylist**
+> Playlist createPlaylist(customerId, name)
+
+
+
+Create playlist
 
 ### Example
 ```javascript
@@ -29,7 +79,7 @@ var customerId = 789; // Integer |
 
 var name = "name_example"; // String | 
 
-apiInstance.createPlaylistBookmark(customerId, name).then(function(data) {
+apiInstance.createPlaylist(customerId, name).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -46,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlaylistBookmark**](PlaylistBookmark.md)
+[**Playlist**](Playlist.md)
 
 ### Authorization
 
@@ -57,13 +107,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="deletePlaylistBookmark"></a>
-# **deletePlaylistBookmark**
-> deletePlaylistBookmark(playlistId)
+<a name="deletePlaylist"></a>
+# **deletePlaylist**
+> deletePlaylist(playlistId)
 
 
 
-Delete playlist bookmark
+Delete playlist
 
 ### Example
 ```javascript
@@ -73,7 +123,7 @@ var apiInstance = new KinowJavascriptSdk.PlaylistsApi();
 
 var playlistId = 56; // Integer | 
 
-apiInstance.deletePlaylistBookmark(playlistId).then(function() {
+apiInstance.deletePlaylist(playlistId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -86,6 +136,52 @@ apiInstance.deletePlaylistBookmark(playlistId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **playlistId** | **Integer**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachBookmarkFromPlaylist"></a>
+# **detachBookmarkFromPlaylist**
+> detachBookmarkFromPlaylist(playlistId, productId)
+
+
+
+Detach bookmark from playlist
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PlaylistsApi();
+
+var playlistId = 789; // Integer | Playlist ID to fetch
+
+var productId = 789; // Integer | 
+
+apiInstance.detachBookmarkFromPlaylist(playlistId, productId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playlistId** | **Integer**| Playlist ID to fetch | 
+ **productId** | **Integer**|  | 
 
 ### Return type
 
@@ -155,7 +251,7 @@ No authorization required
 
 <a name="getPlaylist"></a>
 # **getPlaylist**
-> PlaylistBookmark getPlaylist(playlistId)
+> Playlist getPlaylist(playlistId)
 
 
 
@@ -185,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlaylistBookmark**](PlaylistBookmark.md)
+[**Playlist**](Playlist.md)
 
 ### Authorization
 
@@ -196,9 +292,112 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="updatePlaylistBookmark"></a>
-# **updatePlaylistBookmark**
-> PlaylistBookmark updatePlaylistBookmark(playlistId, body)
+<a name="getPlaylistBookmarks"></a>
+# **getPlaylistBookmarks**
+> Products getPlaylistBookmarks(playlistId, opts)
+
+
+
+Get playlist bookmarks
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PlaylistsApi();
+
+var playlistId = 789; // Integer | 
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getPlaylistBookmarks(playlistId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playlistId** | **Integer**|  | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Products**](Products.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getPlaylists"></a>
+# **getPlaylists**
+> Playlists getPlaylists(opts)
+
+
+
+Get playlists
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PlaylistsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getPlaylists(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Playlists**](Playlists.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="updatePlaylist"></a>
+# **updatePlaylist**
+> Playlist updatePlaylist(playlistId, body)
 
 
 
@@ -212,9 +411,9 @@ var apiInstance = new KinowJavascriptSdk.PlaylistsApi();
 
 var playlistId = 789; // Integer | Playlist ID to update
 
-var body = new KinowJavascriptSdk.PlaylistBookmarkUpdate(); // PlaylistBookmarkUpdate | Playlist settings
+var body = new KinowJavascriptSdk.PlaylistUpdate(); // PlaylistUpdate | Playlist settings
 
-apiInstance.updatePlaylistBookmark(playlistId, body).then(function(data) {
+apiInstance.updatePlaylist(playlistId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -227,11 +426,11 @@ apiInstance.updatePlaylistBookmark(playlistId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **playlistId** | **Integer**| Playlist ID to update | 
- **body** | [**PlaylistBookmarkUpdate**](PlaylistBookmarkUpdate.md)| Playlist settings | 
+ **body** | [**PlaylistUpdate**](PlaylistUpdate.md)| Playlist settings | 
 
 ### Return type
 
-[**PlaylistBookmark**](PlaylistBookmark.md)
+[**Playlist**](Playlist.md)
 
 ### Authorization
 
