@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="getCustomerGroupTotalWatched"></a>
 # **getCustomerGroupTotalWatched**
-> CustomerGroupVideoStats1 getCustomerGroupTotalWatched(groupId, videoId, opts)
+> CustomerGroupVideoStats1 getCustomerGroupTotalWatched(groupId, opts)
 
 
 
@@ -27,13 +27,13 @@ var apiInstance = new KinowJavascriptSdk.StatsApi();
 
 var groupId = 789; // Integer | Customer group ID to fecth
 
-var videoId = 789; // Integer | Video ID to fetch
-
 var opts = { 
+  'dateFrom': "dateFrom_example", // String | Search entries from this date
+  'dateTo': "dateTo_example", // String | Search entries to this date
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
-apiInstance.getCustomerGroupTotalWatched(groupId, videoId, opts).then(function(data) {
+apiInstance.getCustomerGroupTotalWatched(groupId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -46,7 +46,8 @@ apiInstance.getCustomerGroupTotalWatched(groupId, videoId, opts).then(function(d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **Integer**| Customer group ID to fecth | 
- **videoId** | **Integer**| Video ID to fetch | 
+ **dateFrom** | **String**| Search entries from this date | [optional] 
+ **dateTo** | **String**| Search entries to this date | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 

@@ -1265,7 +1265,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerSessions(opts?: any, callback?: Function): any
     getCustomerSessionsMultiple(customerId: number, body: any, callback?: Function): any
     getCustomerVideoStats(customerId: number, opts?: any, callback?: Function): any
-    getCustomerGroupTotalWatched(groupId: number, videoId: number, opts?: any, callback?: Function): any
+    getCustomerGroupTotalWatched(groupId: number, opts?: any, callback?: Function): any
     getVideoStats(opts?: any, callback?: Function): any
   }
   export class ApiClient {
