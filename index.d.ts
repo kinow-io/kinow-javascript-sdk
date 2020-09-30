@@ -112,6 +112,13 @@ declare module 'kinow-javascript-sdk' {
     cart_rules: Array<CartRule>
     products: Array<Product>
   }
+  interface CartPrice {
+    id_cart: number
+    total_without_tax: number
+    total_discount: number
+    total_trial: number
+    total: number
+  }
   interface CartRule {
     id: number
     id_customer: number
@@ -266,6 +273,7 @@ declare module 'kinow-javascript-sdk' {
     active: boolean
     date_add: string
     date_upd: string
+    can_watch: boolean
     name: Array<I18nField>
     description: Array<I18nField>
     cover: string
@@ -564,6 +572,10 @@ declare module 'kinow-javascript-sdk' {
     id: number
     position: number
   }
+  interface ProductPrice {
+    id_product: number
+    prices: Array<any>
+  }
   interface RegistrationField {
     name: string
     required: boolean
@@ -824,10 +836,11 @@ declare module 'kinow-javascript-sdk' {
   }
   export class CartsApi {
     constructor(config?: ApiClient)
+    getCarts(opts?: any, callback?: Function): any
+    createCart(body: any, callback?: Function): Promise<Cart>
     getCart(cartId: number, callback?: Function): Promise<Cart>
     updateCart(cartId: number, body: any, callback?: Function): Promise<Cart>
     deleteCart(cartId: number, callback?: Function): any
-    createCart(body: any, callback?: Function): Promise<Cart>
     attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
     detachCartRuleFromCart(cartId: number, cartRuleId: number, callback?: Function): any
     addProductToCart(cartId: number, productId: number, opts?: any, callback?: Function): Promise<Cart>
@@ -838,6 +851,7 @@ declare module 'kinow-javascript-sdk' {
     getLastCart(customerId: number, callback?: Function): Promise<Cart>
     emptyCart(cartId: number, callback?: Function): any
     getLostsCarts(opts?: any, callback?: Function): any
+    getPrice(body: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
     preparePayment(cartId: number, paymentName: string, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
@@ -965,6 +979,7 @@ declare module 'kinow-javascript-sdk' {
     updateProductGroupRestrictionBehavior(productId: number, behavior: number, callback?: Function): any
     getProductSubscription(productId: number, callback?: Function): Promise<Subscription>
     getBestSales(opts?: any, callback?: Function): any
+    getPrice(body: any, callback?: Function): any
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)

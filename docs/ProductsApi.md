@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**getCategoryProducts**](ProductsApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
 [**getCustomerHasAccessToProduct**](ProductsApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**getCustomerHasAccessToProducts**](ProductsApi.md#getCustomerHasAccessToProducts) | **POST** /customers/{customer_id}/products/has-access | 
+[**getPrice**](ProductsApi.md#getPrice) | **POST** /products/price | 
 [**getProduct**](ProductsApi.md#getProduct) | **GET** /products/{product_id} | 
 [**getProductActors**](ProductsApi.md#getProductActors) | **GET** /products/{product_id}/actors | 
 [**getProductActorsRole**](ProductsApi.md#getProductActorsRole) | **GET** /products/{product_id}/actors-role | 
@@ -663,7 +664,7 @@ var opts = {
   'perPage': 789, // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example", // String | Sorting direction (asc by default)
-  'ip': "ip_example", // String | filter by customer ip
+  'ip': "ip_example", // String | Filter by user IP
   'features': "features_example", // String |       ```      features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict      _______________        {      \"*\": {      \"value\": \"string\",      \"operator\": \"strict\"      },      \"1\": {      \"value\": \"string\",      \"operator\": \"contains\"      }      } ```      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).      To search on all features, you can pass * as featureId.
   'filters': "filters_example" // String |       ```      name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt      _______________        {      \"name\": {      \"value\": \"string\",      \"operator\": \"contains\"      },      \"date_add\": {      \"value\": \"string\",      \"operator\": \"lt\"      }      } ```      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
 };
@@ -684,7 +685,7 @@ Name | Type | Description  | Notes
  **perPage** | **Integer**|  | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
- **ip** | **String**| filter by customer ip | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
  **features** | **String**|       &#x60;&#x60;&#x60;      features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict      _______________        {      \&quot;*\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;strict\&quot;      },      \&quot;1\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).      To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **String**|       &#x60;&#x60;&#x60;      name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt      _______________        {      \&quot;name\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      },      \&quot;date_add\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;lt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
@@ -783,6 +784,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[ProductAccessInfo]**](ProductAccessInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getPrice"></a>
+# **getPrice**
+> [ProductPrice] getPrice(body)
+
+
+
+Get prices for multiple Products
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var body = new KinowJavascriptSdk.ProductIDList1(); // ProductIDList1 | List of Product IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getPrice(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductIDList1**](ProductIDList1.md)| List of Product IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[ProductPrice]**](ProductPrice.md)
 
 ### Authorization
 
@@ -1243,6 +1287,7 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
+  'ip': "ip_example", // String | Filter by user IP
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
@@ -1259,6 +1304,7 @@ apiInstance.getProductExtracts(productId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
+ **ip** | **String**| Filter by user IP | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
@@ -1632,7 +1678,7 @@ var opts = {
   'filters': "filters_example", // String |       ```      name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt      _______________        {      \"name\": {      \"value\": \"string\",      \"operator\": \"contains\"      },      \"date_add\": {      \"value\": \"string\",      \"operator\": \"lt\"      }      } ```      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example", // String | Sorting direction (asc by default)
-  'ip': "ip_example", // String | filter by customer ip
+  'ip': "ip_example", // String | Filter by user IP
   'customerId': "customerId_example" // String | Check if customer can see this product, if it's group is not restricted
 };
 apiInstance.getProducts(opts).then(function(data) {
@@ -1653,7 +1699,7 @@ Name | Type | Description  | Notes
  **filters** | **String**|       &#x60;&#x60;&#x60;      name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt      _______________        {      \&quot;name\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      },      \&quot;date_add\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;lt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
- **ip** | **String**| filter by customer ip | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
  **customerId** | **String**| Check if customer can see this product, if it&#39;s group is not restricted | [optional] 
 
 ### Return type
@@ -1692,7 +1738,7 @@ var opts = {
   'filters': "filters_example", // String |       ```      name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt      _______________        {      \"name\": {      \"value\": \"string\",      \"operator\": \"contains\"      },      \"date_add\": {      \"value\": \"string\",      \"operator\": \"lt\"      }      } ```      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example", // String | Sorting direction (asc by default)
-  'ip': "ip_example" // String | filter by customer ip
+  'ip': "ip_example" // String | Filter by user IP
 };
 apiInstance.getProductsFromProduct(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1713,7 +1759,7 @@ Name | Type | Description  | Notes
  **filters** | **String**|       &#x60;&#x60;&#x60;      name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt      _______________        {      \&quot;name\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      },      \&quot;date_add\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;lt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
- **ip** | **String**| filter by customer ip | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
 
 ### Return type
 
@@ -1803,8 +1849,8 @@ var opts = {
   'page': 789, // Integer | 
   'filters': "filters_example", // String |       ```      name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt      _______________        {      \"name\": {      \"value\": \"string\",      \"operator\": \"strict\"      },      \"duration\": {      \"value\": \"string\",      \"operator\": \"gt\"      }      } ```      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'perPage': 789, // Integer | 
-  'ip': "ip_example", // String | filter by customer ip
-  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'ip': "ip_example", // String | Filter by user IP
+  'sortBy': "sortBy_example", // String | Sort by this attribute (default is ID)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
 apiInstance.getVideosFromProduct(productId, opts).then(function(data) {
@@ -1823,8 +1869,8 @@ Name | Type | Description  | Notes
  **page** | **Integer**|  | [optional] 
  **filters** | **String**|       &#x60;&#x60;&#x60;      name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt      _______________        {      \&quot;name\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;strict\&quot;      },      \&quot;duration\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;gt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **ip** | **String**| filter by customer ip | [optional] 
- **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
+ **sortBy** | **String**| Sort by this attribute (default is ID) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type

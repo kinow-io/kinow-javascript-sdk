@@ -13,10 +13,12 @@ Method | HTTP request | Description
 [**detachCartRuleFromCart**](CartsApi.md#detachCartRuleFromCart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
 [**emptyCart**](CartsApi.md#emptyCart) | **POST** /carts/{cart_id}/empty | 
 [**getCart**](CartsApi.md#getCart) | **GET** /carts/{cart_id} | 
+[**getCarts**](CartsApi.md#getCarts) | **GET** /carts | 
 [**getCustomerCarts**](CartsApi.md#getCustomerCarts) | **GET** /customers/{customer_id}/carts | 
 [**getLastCart**](CartsApi.md#getLastCart) | **GET** /customers/{customer_id}/last-cart | 
 [**getLostsCarts**](CartsApi.md#getLostsCarts) | **GET** /carts/losts-carts | 
 [**getPaymentUrl**](CartsApi.md#getPaymentUrl) | **GET** /carts/{cart_id}/payments/{payment_name} | 
+[**getPrice**](CartsApi.md#getPrice) | **POST** /carts/price | 
 [**preparePayment**](CartsApi.md#preparePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
 [**updateCart**](CartsApi.md#updateCart) | **PUT** /carts/{cart_id} | 
 [**validateFreeOrder**](CartsApi.md#validateFreeOrder) | **POST** /carts/{cart_id}/validate-free-order | 
@@ -439,6 +441,58 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getCarts"></a>
+# **getCarts**
+> Carts getCarts(opts)
+
+
+
+Get Carts
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'filters': "filters_example", // String |       ```      name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt      _______________        {      \"name\": {      \"value\": \"string\",      \"operator\": \"contains\"      },      \"date_add\": {      \"value\": \"string\",      \"operator\": \"lt\"      }      } ```      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getCarts(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **filters** | **String**|       &#x60;&#x60;&#x60;      name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt      _______________        {      \&quot;name\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      },      \&quot;date_add\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;lt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Carts**](Carts.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getCustomerCarts"></a>
 # **getCustomerCarts**
 > Carts getCustomerCarts(customerId, opts)
@@ -625,6 +679,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentUrl**](PaymentUrl.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getPrice"></a>
+# **getPrice**
+> [CartPrice] getPrice(body)
+
+
+
+Get prices for multiple Carts
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var body = new KinowJavascriptSdk.CartIDList(); // CartIDList | List of Cart IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getPrice(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CartIDList**](CartIDList.md)| List of Cart IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[CartPrice]**](CartPrice.md)
 
 ### Authorization
 

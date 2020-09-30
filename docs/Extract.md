@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **active** | **Boolean** |  | [optional] 
 **dateAdd** | **String** |  | [optional] 
 **dateUpd** | **String** |  | [optional] 
+**canWatch** | **Boolean** |  | [optional] 
 **name** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **cover** | **String** |  | [optional] 
