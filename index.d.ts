@@ -350,6 +350,7 @@ declare module 'kinow-javascript-sdk' {
     continent: string
     country: string
     time_zone: string
+    isVpnOrProxy: boolean
   }
   interface Image {
     id: number

@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **country** | **String** |  | [optional] 
 **timeZone** | **String** |  | [optional] 
 **coordinates** | [**IPCoordinates**](IPCoordinates.md) |  | [optional] 
+**isVpnOrProxy** | **Boolean** |  | [optional] 
 
 
