@@ -734,7 +734,7 @@ No authorization required
 
 <a name="preparePayment"></a>
 # **preparePayment**
-> PaymentDetails1 preparePayment(cartId, paymentName)
+> PaymentDetails1 preparePayment(cartId, paymentName, opts)
 
 
 
@@ -750,7 +750,10 @@ var cartId = 789; // Integer | Cart ID to fetch
 
 var paymentName = "paymentName_example"; // String | Payment gateway name
 
-apiInstance.preparePayment(cartId, paymentName).then(function(data) {
+var opts = { 
+  'ipAddress': "ipAddress_example" // String | Filter by user IP
+};
+apiInstance.preparePayment(cartId, paymentName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -764,6 +767,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment gateway name | 
+ **ipAddress** | **String**| Filter by user IP | [optional] 
 
 ### Return type
 

@@ -854,7 +854,7 @@ declare module 'kinow-javascript-sdk' {
     getLostsCarts(opts?: any, callback?: Function): any
     getPrice(body: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
-    preparePayment(cartId: number, paymentName: string, callback?: Function): any
+    preparePayment(cartId: number, paymentName: string, opts?: any, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
   }
   export class CartRulesApi {
@@ -872,11 +872,13 @@ declare module 'kinow-javascript-sdk' {
     validateFreeOrder(cartId: number, callback?: Function): any
     getPaymentModules(opts?: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
-    preparePayment(cartId: number, paymentName: string, callback?: Function): any
+    preparePayment(cartId: number, paymentName: string, opts?: any, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
-    updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
+    getPaymentMethodsWithIp(customerId: number, paymentName: string, ipAddress: string, callback?: Function): any
+    updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, opts?: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
+    getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): any
   }
   export class CustomersApi {
     constructor(config?: ApiClient)
@@ -907,8 +909,10 @@ declare module 'kinow-javascript-sdk' {
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     loginWithFacebook(tokenType: string, token: string, opts?: any, callback?: Function): Promise<Customer>
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
-    updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, callback?: Function): any
+    getPaymentMethodsWithIp(customerId: number, paymentName: string, ipAddress: string, callback?: Function): any
+    updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, opts?: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
+    getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): any
     getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): any
     getCustomerPrepaymentBalances(customerId: number, callback?: Function): any
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): any
