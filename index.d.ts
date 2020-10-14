@@ -171,7 +171,7 @@ declare module 'kinow-javascript-sdk' {
   interface Configuration {
     id: number
     name: string
-    value: string
+    value: object
   }
   interface Contact {
     id: number

@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
 **name** | **String** |  | [optional] 
-**value** | **String** |  | [optional] 
+**value** | **Object** |  | [optional] 
 
 
