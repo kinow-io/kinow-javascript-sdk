@@ -140,6 +140,7 @@ declare module 'kinow-javascript-sdk' {
     every_recurring_payments: boolean
     reduction_percent: number
     reduction_amount: number
+    reduction_currency: number
     reduction_tax: number
     restriction_groups: Array<CartRuleRestrictionGroup>
   }
@@ -1177,6 +1178,8 @@ declare module 'kinow-javascript-sdk' {
     getSubscriptions(opts?: any, callback?: Function): any
     getSubscription(subscriptionId: number, callback?: Function): Promise<Subscription>
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any
+    attachCategoriesToSubscription(subscriptionId: number, categoryIds: string, callback?: Function): any
+    detachCategoryFromSubscription(subscriptionId: number, categoryId: number, callback?: Function): any
     getDisabledSubscriptions(videoId: number, opts?: any, callback?: Function): any
   }
   export class WidgetsApi {

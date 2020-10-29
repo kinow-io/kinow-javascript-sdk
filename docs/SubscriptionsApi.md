@@ -4,6 +4,8 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachCategoriesToSubscription**](SubscriptionsApi.md#attachCategoriesToSubscription) | **POST** /subscriptions/{subscription_id}/categories | 
+[**detachCategoryFromSubscription**](SubscriptionsApi.md#detachCategoryFromSubscription) | **DELETE** /subscriptions/{subscription_id}/categories/{category_id} | 
 [**getDisabledSubscriptions**](SubscriptionsApi.md#getDisabledSubscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**getProductSubscription**](SubscriptionsApi.md#getProductSubscription) | **GET** /products/{product_id}/subscription | 
 [**getSubscription**](SubscriptionsApi.md#getSubscription) | **GET** /subscriptions/{subscription_id} | 
@@ -12,6 +14,98 @@ Method | HTTP request | Description
 [**getSubscriptions**](SubscriptionsApi.md#getSubscriptions) | **GET** /subscriptions | 
 [**uploadSubscriptionCover**](SubscriptionsApi.md#uploadSubscriptionCover) | **POST** /subscriptions/{subscription_id}/cover | 
 
+
+<a name="attachCategoriesToSubscription"></a>
+# **attachCategoriesToSubscription**
+> attachCategoriesToSubscription(subscriptionId, categoryIds)
+
+
+
+Attach categories to subscription
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
+
+var subscriptionId = 789; // Integer | Subscription ID to fetch
+
+var categoryIds = "categoryIds_example"; // String | List of category IDs to attach, separated with comma
+
+apiInstance.attachCategoriesToSubscription(subscriptionId, categoryIds).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionId** | **Integer**| Subscription ID to fetch | 
+ **categoryIds** | **String**| List of category IDs to attach, separated with comma | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachCategoryFromSubscription"></a>
+# **detachCategoryFromSubscription**
+> detachCategoryFromSubscription(subscriptionId, categoryId)
+
+
+
+Detach category from subscription
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
+
+var subscriptionId = 789; // Integer | Subscription ID to fetch
+
+var categoryId = 789; // Integer | Category ID to detach
+
+apiInstance.detachCategoryFromSubscription(subscriptionId, categoryId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionId** | **Integer**| Subscription ID to fetch | 
+ **categoryId** | **Integer**| Category ID to detach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getDisabledSubscriptions"></a>
 # **getDisabledSubscriptions**
