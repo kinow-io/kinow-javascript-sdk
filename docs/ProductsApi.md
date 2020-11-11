@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**getCategoryProducts**](ProductsApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
 [**getCustomerHasAccessToProduct**](ProductsApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**getCustomerHasAccessToProducts**](ProductsApi.md#getCustomerHasAccessToProducts) | **POST** /customers/{customer_id}/products/has-access | 
+[**getNewProducts**](ProductsApi.md#getNewProducts) | **GET** /products/new | 
 [**getPrice**](ProductsApi.md#getPrice) | **POST** /products/price | 
 [**getProduct**](ProductsApi.md#getProduct) | **GET** /products/{product_id} | 
 [**getProductActors**](ProductsApi.md#getProductActors) | **GET** /products/{product_id}/actors | 
@@ -784,6 +785,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[ProductAccessInfo]**](ProductAccessInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getNewProducts"></a>
+# **getNewProducts**
+> Products getNewProducts(opts)
+
+
+
+Get new products list
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'ip': "ip_example" // String | Filter by user IP
+};
+apiInstance.getNewProducts(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
+
+### Return type
+
+[**Products**](Products.md)
 
 ### Authorization
 
@@ -1847,8 +1896,8 @@ var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'perPage': 789, // Integer | 
+  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'ip': "ip_example", // String | Filter by user IP
   'sortBy': "sortBy_example", // String | Sort by this attribute (default is ID)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
@@ -1867,8 +1916,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **perPage** | **Integer**|  | [optional] 
+ **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **ip** | **String**| Filter by user IP | [optional] 
  **sortBy** | **String**| Sort by this attribute (default is ID) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 

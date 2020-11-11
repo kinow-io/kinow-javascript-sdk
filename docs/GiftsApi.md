@@ -339,7 +339,9 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
 var opts = { 
-  'unusedOnly': 56 // Integer | Only unused Gifts
+  'unusedOnly': 56, // Integer | Only unused Gifts
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
 };
 apiInstance.getGifts(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -354,6 +356,8 @@ apiInstance.getGifts(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unusedOnly** | **Integer**| Only unused Gifts | [optional] 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
 
 ### Return type
 

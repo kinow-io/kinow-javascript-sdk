@@ -751,7 +751,7 @@ var cartId = 789; // Integer | Cart ID to fetch
 var paymentName = "paymentName_example"; // String | Payment gateway name
 
 var opts = { 
-  'ipAddress': "ipAddress_example" // String | Filter by user IP
+  'ipAddress': "ipAddress_example" // String | Use IP address in payment process
 };
 apiInstance.preparePayment(cartId, paymentName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -767,7 +767,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment gateway name | 
- **ipAddress** | **String**| Filter by user IP | [optional] 
+ **ipAddress** | **String**| Use IP address in payment process | [optional] 
 
 ### Return type
 

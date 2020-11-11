@@ -482,7 +482,7 @@ No authorization required
 
 <a name="unsubscribe"></a>
 # **unsubscribe**
-> unsubscribe(productAccessId)
+> unsubscribe(productAccessId, opts)
 
 
 
@@ -496,7 +496,10 @@ var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
 var productAccessId = 789; // Integer | Access ID to fetch
 
-apiInstance.unsubscribe(productAccessId).then(function() {
+var opts = { 
+  'message': 789 // Integer | Unsubscribe message
+};
+apiInstance.unsubscribe(productAccessId, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -509,6 +512,7 @@ apiInstance.unsubscribe(productAccessId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productAccessId** | **Integer**| Access ID to fetch | 
+ **message** | **Integer**| Unsubscribe message | [optional] 
 
 ### Return type
 

@@ -4,9 +4,53 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getMediaFile**](MediaFilesApi.md#getMediaFile) | **GET** /media-files/{media_file_id} | 
 [**getMediaSourceFiles**](MediaFilesApi.md#getMediaSourceFiles) | **GET** /media-sources/{source_id}/files | 
 [**postMediaSourceFiles**](MediaFilesApi.md#postMediaSourceFiles) | **POST** /media-sources/{source_id}/files | 
 
+
+<a name="getMediaFile"></a>
+# **getMediaFile**
+> MediaFile getMediaFile(mediaFileId)
+
+
+
+Get Media file
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.MediaFilesApi();
+
+var mediaFileId = 789; // Integer | MediaFile ID to fetch
+
+apiInstance.getMediaFile(mediaFileId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mediaFileId** | **Integer**| MediaFile ID to fetch | 
+
+### Return type
+
+[**MediaFile**](MediaFile.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getMediaSourceFiles"></a>
 # **getMediaSourceFiles**

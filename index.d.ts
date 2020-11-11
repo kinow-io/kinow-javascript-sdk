@@ -986,6 +986,7 @@ declare module 'kinow-javascript-sdk' {
     getProductSubscription(productId: number, callback?: Function): Promise<Subscription>
     getBestSales(opts?: any, callback?: Function): any
     getPrice(body: any, callback?: Function): any
+    getNewProducts(opts?: any, callback?: Function): any
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)
@@ -1196,15 +1197,16 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getLanguages(opts?: any, callback?: Function): any
   }
+  export class MediaFilesApi {
+    constructor(config?: ApiClient)
+    getMediaFile(mediaFileId: number, callback?: Function): Promise<MediaFile>
+    getMediaSourceFiles(sourceId: number, opts?: any, callback?: Function): any
+    postMediaSourceFiles(sourceId: number, body: any, callback?: Function): Promise<MediaFile>
+  }
   export class MediaSourcesApi {
     constructor(config?: ApiClient)
     getMediaSources(opts?: any, callback?: Function): any
     getMediaSource(sourceId: number, callback?: Function): Promise<MediaSource>
-    getMediaSourceFiles(sourceId: number, opts?: any, callback?: Function): any
-    postMediaSourceFiles(sourceId: number, body: any, callback?: Function): Promise<MediaFile>
-  }
-  export class MediaFilesApi {
-    constructor(config?: ApiClient)
     getMediaSourceFiles(sourceId: number, opts?: any, callback?: Function): any
     postMediaSourceFiles(sourceId: number, body: any, callback?: Function): Promise<MediaFile>
   }
@@ -1254,7 +1256,7 @@ declare module 'kinow-javascript-sdk' {
     deleteProductAccess(productAccessId: number, callback?: Function): any
     getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
-    unsubscribe(productAccessId: number, callback?: Function): any
+    unsubscribe(productAccessId: number, opts?: any, callback?: Function): any
     subscribe(productAccessId: number, callback?: Function): any
     switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<Subscription>
     switchSubscription(productAccessId: string, subscriptionId: number, callback?: Function): any
