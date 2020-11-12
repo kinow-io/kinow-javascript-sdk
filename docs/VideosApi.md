@@ -817,7 +817,7 @@ No authorization required
 
 <a name="getVideoPlayer"></a>
 # **getVideoPlayer**
-> Player1 getVideoPlayer(videoId, opts)
+> PlayerConfiguration getVideoPlayer(videoId, opts)
 
 
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Player1**](Player1.md)
+[**PlayerConfiguration**](PlayerConfiguration.md)
 
 ### Authorization
 

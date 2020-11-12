@@ -335,7 +335,7 @@ No authorization required
 
 <a name="getExtractPlayer"></a>
 # **getExtractPlayer**
-> Player getExtractPlayer(extractId)
+> PlayerConfiguration getExtractPlayer(extractId)
 
 
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Player**](Player.md)
+[**PlayerConfiguration**](PlayerConfiguration.md)
 
 ### Authorization
 
