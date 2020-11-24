@@ -1,6 +1,6 @@
 {
   "name": "kinow-javascript-sdk",
-  "version": "1.4.18",
+  "version": "1.4.19",
   "description": "Client_API_for_Kinow_back_office",
   "license": "",
   "main": "src/index.js",

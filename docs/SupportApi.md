@@ -22,18 +22,19 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.SupportApi();
 
-var idLang = 56; // Integer | 
+var idLang = 56; // Integer | Language ID used by user to write his message
 
-var email = "email_example"; // String | 
+var email = "email_example"; // String | User email in order to send him a response
 
-var idContact = 56; // Integer | 
+var idContact = 56; // Integer | Contact ID to send the user message
 
-var message = "message_example"; // String | 
+var message = "message_example"; // String | User message
 
 var opts = { 
-  'idProduct': 56, // Integer | 
-  'idOrder': 56, // Integer | 
-  'sendMail': true // Boolean | 
+  'idSupport': 56, // Integer | Link the message to a previous message
+  'idProduct': 56, // Integer | Link the message to a product in catalog
+  'idOrder': 56, // Integer | Link the message to an existing order
+  'sendMail': true // Boolean | Send confirmation email to the providen email
 };
 apiInstance.createMessage(idLang, email, idContact, message, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -47,13 +48,14 @@ apiInstance.createMessage(idLang, email, idContact, message, opts).then(function
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **idLang** | **Integer**|  | 
- **email** | **String**|  | 
- **idContact** | **Integer**|  | 
- **message** | **String**|  | 
- **idProduct** | **Integer**|  | [optional] 
- **idOrder** | **Integer**|  | [optional] 
- **sendMail** | **Boolean**|  | [optional] 
+ **idLang** | **Integer**| Language ID used by user to write his message | 
+ **email** | **String**| User email in order to send him a response | 
+ **idContact** | **Integer**| Contact ID to send the user message | 
+ **message** | **String**| User message | 
+ **idSupport** | **Integer**| Link the message to a previous message | [optional] 
+ **idProduct** | **Integer**| Link the message to a product in catalog | [optional] 
+ **idOrder** | **Integer**| Link the message to an existing order | [optional] 
+ **sendMail** | **Boolean**| Send confirmation email to the providen email | [optional] 
 
 ### Return type
 

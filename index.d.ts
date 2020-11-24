@@ -113,11 +113,17 @@ declare module 'kinow-javascript-sdk' {
     products: Array<Product>
   }
   interface CartPrice {
-    id_cart: number
+    cart_id: number
     total_without_tax: number
+    total_tax: number
     total_discount: number
     total_trial: number
     total: number
+    total_without_tax_formatted: string
+    total_tax_formatted: string
+    total_discount_formatted: string
+    total_trial_formatted: string
+    total_formatted: string
   }
   interface CartRule {
     id: number
@@ -418,6 +424,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface Page {
     id: number
+    page: string
     enabled: boolean
     title: Array<I18nField>
     description: Array<I18nField>
@@ -562,7 +569,7 @@ declare module 'kinow-javascript-sdk' {
     name: string
     price: number
     price_mode: number
-    price_noreduc: number
+    price_without_reduction: number
     mode: string
     type: string
     quality: string
@@ -576,7 +583,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ProductPrice {
     id_product: number
-    prices: Array<any>
+    attributes: Array<any>
   }
   interface RegistrationField {
     name: string

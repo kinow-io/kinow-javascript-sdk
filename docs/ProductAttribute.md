@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **price** | **Number** |  | [optional] 
 **priceMode** | **Number** |  | [optional] 
-**priceNoreduc** | **Number** |  | [optional] 
+**priceWithoutReduction** | **Number** |  | [optional] 
 **mode** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **quality** | **String** |  | [optional] 
