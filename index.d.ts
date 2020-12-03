@@ -585,6 +585,15 @@ declare module 'kinow-javascript-sdk' {
     id_product: number
     attributes: Array<any>
   }
+  interface Promotion {
+    id: number
+    name: string
+    id_country: number
+    date_from: string
+    date_to: string
+    date_add: string
+    date_upd: string
+  }
   interface RegistrationField {
     name: string
     required: boolean
