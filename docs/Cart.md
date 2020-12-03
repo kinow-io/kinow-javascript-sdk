@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **totalTrial** | **Number** |  | [optional] 
 **availableCheckoutProcesses** | **[String]** |  | [optional] 
 **cartRules** | [**[CartRule]**](CartRule.md) |  | [optional] 
-**products** | [**[Product]**](Product.md) |  | [optional] 
+**products** | [**[CartProduct]**](CartProduct.md) |  | [optional] 
 
 
 <a name="[AvailableCheckoutProcessesEnum]"></a>

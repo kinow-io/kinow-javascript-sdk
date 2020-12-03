@@ -110,7 +110,7 @@ declare module 'kinow-javascript-sdk' {
     total_trial: number
     available_checkout_processes: Array<string>
     cart_rules: Array<CartRule>
-    products: Array<Product>
+    products: Array<CartProduct>
   }
   interface CartPrice {
     cart_id: number
@@ -124,6 +124,46 @@ declare module 'kinow-javascript-sdk' {
     total_discount_formatted: string
     total_trial_formatted: string
     total_formatted: string
+  }
+  interface CartProduct {
+    id_gift: number
+    id: number
+    reference: string
+    date_from: string
+    date_to: string
+    visible_before_publication: boolean
+    visible_after_publication: boolean
+    price: number
+    price_mode: number
+    position: number
+    active: boolean
+    available_for_order: boolean
+    date_add: string
+    date_upd: string
+    id_category_default: number
+    images: Array<Image>
+    attributes: Array<ProductAttribute>
+    meta_description: Array<I18nField>
+    meta_keywords: Array<I18nField>
+    meta_title: Array<I18nField>
+    link_rewrite: Array<I18nField>
+    name: Array<I18nField>
+    description: Array<I18nField>
+    description_short: Array<I18nField>
+    tags: Array<Tag>
+    can_buy: boolean
+    available_in_subscriptions: boolean
+    duration: number
+    type: string
+    sub: boolean
+    has_group_restriction: boolean
+    group_restriction_behavior: number
+    geoloc_enabled: boolean
+    behavior_detected_countries: string
+    behavior_non_detected_countries: string
+    id_product_attribute: number
+    roles: string
+    categories: Array<ProductCategories>
   }
   interface CartRule {
     id: number
@@ -1159,6 +1199,7 @@ declare module 'kinow-javascript-sdk' {
     sendGift(giftId: number, callback?: Function): any
     consumeGift(giftId: number, customerId: number, opts?: any, callback?: Function): any
     getGiftInCart(cartId: number, callback?: Function): Promise<Gift>
+    getGiftsInCart(cartId: number, callback?: Function): any
     deleteGiftsInCart(cartId: number, callback?: Function): any
   }
   export class GroupsApi {
