@@ -615,6 +615,7 @@ declare module 'kinow-javascript-sdk' {
     quality: string
     duration: number
     watching_duration: number
+    maximum_views: number
     active: number
   }
   interface ProductCategories {

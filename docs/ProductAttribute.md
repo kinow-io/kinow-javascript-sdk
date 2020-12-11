@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **quality** | **String** |  | [optional] 
 **duration** | **Integer** |  | [optional] 
 **watchingDuration** | **Integer** |  | [optional] 
+**maximumViews** | **Integer** |  | [optional] 
 **active** | **Integer** |  | [optional] 
 
 
