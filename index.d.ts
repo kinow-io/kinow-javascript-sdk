@@ -488,6 +488,8 @@ declare module 'kinow-javascript-sdk' {
   interface PaymentDetails {
     identifier: string
     metadata: string
+    id_order: number
+    id_customer: number
   }
   interface PaymentMethods {
     identifier: string

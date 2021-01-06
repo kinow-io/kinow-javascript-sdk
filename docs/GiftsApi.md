@@ -340,7 +340,8 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
 var opts = { 
-  'unusedOnly': 56, // Integer | Only unused Gifts
+  'unusedOnly': true, // Boolean | Filter only unused gifts
+  'paidOnly': true, // Boolean | Filter only gifts linked to an order which is paid by the user
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
 };
@@ -356,7 +357,8 @@ apiInstance.getGifts(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unusedOnly** | **Integer**| Only unused Gifts | [optional] 
+ **unusedOnly** | **Boolean**| Filter only unused gifts | [optional] 
+ **paidOnly** | **Boolean**| Filter only gifts linked to an order which is paid by the user | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
 
