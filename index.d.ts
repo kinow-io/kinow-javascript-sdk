@@ -449,6 +449,7 @@ declare module 'kinow-javascript-sdk' {
     reference: string
     date_add: string
     date_upd: string
+    histories: Array<OrderHistory>
   }
   interface OrderHistory {
     id: number
@@ -802,6 +803,14 @@ declare module 'kinow-javascript-sdk' {
     blank: number
     position: number
   }
+  interface WidgetHomeRail {
+    id: number
+    label: Array<I18nField>
+    type: string
+    type_id: number
+    visibility: string
+    position: number
+  }
   interface WidgetHookPhrase {
     id: number
     label: Array<I18nField>
@@ -1046,6 +1055,7 @@ declare module 'kinow-javascript-sdk' {
     getBestSales(opts?: any, callback?: Function): any
     getPrice(body: any, callback?: Function): any
     getNewProducts(opts?: any, callback?: Function): any
+    getMostWatched(opts?: any, callback?: Function): any
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)
@@ -1252,6 +1262,7 @@ declare module 'kinow-javascript-sdk' {
     getWidgetSliderItem(sliderId: number, callback?: Function): Promise<WidgetSlider>
     getWidgetAnalytics(): any
     getWidgetHookPhrase(opts?: any, callback?: Function): any
+    getWidgetHomeRail(opts?: any, callback?: Function): any
   }
   export class LanguagesApi {
     constructor(config?: ApiClient)

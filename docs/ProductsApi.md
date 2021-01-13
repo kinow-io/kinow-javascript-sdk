@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**getCategoryProducts**](ProductsApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
 [**getCustomerHasAccessToProduct**](ProductsApi.md#getCustomerHasAccessToProduct) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**getCustomerHasAccessToProducts**](ProductsApi.md#getCustomerHasAccessToProducts) | **POST** /customers/{customer_id}/products/has-access | 
+[**getMostWatched**](ProductsApi.md#getMostWatched) | **GET** /products/most-watched | 
 [**getNewProducts**](ProductsApi.md#getNewProducts) | **GET** /products/new | 
 [**getPrice**](ProductsApi.md#getPrice) | **POST** /products/price | 
 [**getProduct**](ProductsApi.md#getProduct) | **GET** /products/{product_id} | 
@@ -785,6 +786,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[ProductAccessInfo]**](ProductAccessInfo.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getMostWatched"></a>
+# **getMostWatched**
+> Products getMostWatched(opts)
+
+
+
+Get most watched products list
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789, // Integer | 
+  'ip': "ip_example" // String | Filter by user IP
+};
+apiInstance.getMostWatched(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
+
+### Return type
+
+[**Products**](Products.md)
 
 ### Authorization
 

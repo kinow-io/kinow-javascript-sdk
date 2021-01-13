@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getSliderImage**](WidgetsApi.md#getSliderImage) | **GET** /widgets/slider/images | 
 [**getWidgetAnalytics**](WidgetsApi.md#getWidgetAnalytics) | **GET** /widgets/analytics | 
 [**getWidgetFooterMenu**](WidgetsApi.md#getWidgetFooterMenu) | **GET** /widgets/footer-menu | 
+[**getWidgetHomeRail**](WidgetsApi.md#getWidgetHomeRail) | **GET** /widgets/home-rail | 
 [**getWidgetHookPhrase**](WidgetsApi.md#getWidgetHookPhrase) | **GET** /widgets/hook-phrase | 
 [**getWidgetSlider**](WidgetsApi.md#getWidgetSlider) | **GET** /widgets/slider | 
 [**getWidgetSliderItem**](WidgetsApi.md#getWidgetSliderItem) | **GET** /widgets/slider/{slider_id} | 
@@ -123,6 +124,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WidgetFooterMenus**](WidgetFooterMenus.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getWidgetHomeRail"></a>
+# **getWidgetHomeRail**
+> WidgetHomeRails getWidgetHomeRail(opts)
+
+
+
+Get home rails list
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.WidgetsApi();
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getWidgetHomeRail(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**WidgetHomeRails**](WidgetHomeRails.md)
 
 ### Authorization
 

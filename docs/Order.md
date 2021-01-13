@@ -26,5 +26,6 @@ Name | Type | Description | Notes
 **reference** | **String** |  | [optional] 
 **dateAdd** | **String** |  | [optional] 
 **dateUpd** | **String** |  | [optional] 
+**histories** | [**[OrderHistory]**](OrderHistory.md) |  | [optional] 
 
 

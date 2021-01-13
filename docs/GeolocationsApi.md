@@ -28,7 +28,7 @@ var KinowJavascriptSdk = require('kinow-javascript-sdk');
 
 var apiInstance = new KinowJavascriptSdk.GeolocationsApi();
 
-var type = "type_example"; // String | Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu
+var type = "type_example"; // String | Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu, homerail
 
 var typeId = 56; // Integer | Item ID
 
@@ -44,7 +44,7 @@ apiInstance.getGeolocSettings(type, typeId).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu | 
+ **type** | **String**| Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu, homerail | 
  **typeId** | **Integer**| Item ID | 
 
 ### Return type
