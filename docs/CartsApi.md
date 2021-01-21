@@ -85,7 +85,7 @@ No authorization required
 
 <a name="attachCartRuleToCart"></a>
 # **attachCartRuleToCart**
-> attachCartRuleToCart(cartId, code)
+> attachCartRuleToCart(cartId, code, opts)
 
 
 
@@ -101,7 +101,10 @@ var cartId = 789; // Integer | Cart ID to fetch
 
 var code = "code_example"; // String | Code of the cart rule to attach
 
-apiInstance.attachCartRuleToCart(cartId, code).then(function() {
+var opts = { 
+  'ip': "ip_example" // String | Filter by user IP
+};
+apiInstance.attachCartRuleToCart(cartId, code, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -115,6 +118,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
  **code** | **String**| Code of the cart rule to attach | 
+ **ip** | **String**| Filter by user IP | [optional] 
 
 ### Return type
 

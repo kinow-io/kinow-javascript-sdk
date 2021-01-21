@@ -844,6 +844,7 @@ declare module 'kinow-javascript-sdk' {
     type_id: number
     blank: number
     unfold: number
+    visibility: string
     position: number
   }
   export class OAuthApi {
@@ -911,7 +912,7 @@ declare module 'kinow-javascript-sdk' {
     getCart(cartId: number, callback?: Function): Promise<Cart>
     updateCart(cartId: number, body: any, callback?: Function): Promise<Cart>
     deleteCart(cartId: number, callback?: Function): any
-    attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
+    attachCartRuleToCart(cartId: number, code: string, opts?: any, callback?: Function): any
     detachCartRuleFromCart(cartId: number, cartRuleId: number, callback?: Function): any
     addProductToCart(cartId: number, productId: number, opts?: any, callback?: Function): Promise<Cart>
     deleteProductFromCart(cartId: number, productId: number, opts?: any, callback?: Function): any
@@ -928,7 +929,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class CartRulesApi {
     constructor(config?: ApiClient)
-    attachCartRuleToCart(cartId: number, code: string, callback?: Function): any
+    attachCartRuleToCart(cartId: number, code: string, opts?: any, callback?: Function): any
     detachCartRuleFromCart(cartId: number, cartRuleId: number, callback?: Function): any
     getCartRules(opts?: any, callback?: Function): any
     createCartRule(body: any, callback?: Function): any

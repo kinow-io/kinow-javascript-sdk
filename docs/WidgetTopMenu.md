@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **typeId** | **Integer** |  | [optional] 
 **blank** | **Integer** |  | [optional] 
 **unfold** | **Integer** |  | [optional] 
+**visibility** | **String** |  | [optional] 
 **position** | **Integer** |  | [optional] 
 
 
