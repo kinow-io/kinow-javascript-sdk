@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**checkCustomerCredentials**](CustomersApi.md#checkCustomerCredentials) | **POST** /customers/check-credentials | 
 [**createCustomer**](CustomersApi.md#createCustomer) | **POST** /customers | 
 [**createFacebookId**](CustomersApi.md#createFacebookId) | **POST** /customers/facebook | 
+[**createGoogleId**](CustomersApi.md#createGoogleId) | **POST** /customers/google | 
 [**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /customers/{customer_id} | 
 [**generateAuthenticationToken**](CustomersApi.md#generateAuthenticationToken) | **GET** /customers/{customer_id}/authentication-token | 
 [**getCustomer**](CustomersApi.md#getCustomer) | **GET** /customers/{customer_id} | 
@@ -29,12 +30,14 @@ Method | HTTP request | Description
 [**getCustomerPrepaymentOperations**](CustomersApi.md#getCustomerPrepaymentOperations) | **GET** /customers/{customer_id}/prepayment-operations | 
 [**getCustomers**](CustomersApi.md#getCustomers) | **GET** /customers | 
 [**getFacebookCustomer**](CustomersApi.md#getFacebookCustomer) | **GET** /customers/facebook/{facebook_id} | 
+[**getGoogleCustomer**](CustomersApi.md#getGoogleCustomer) | **GET** /customers/google/{google_id} | 
 [**getPaymentMethods**](CustomersApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**getPaymentMethodsWithIp**](CustomersApi.md#getPaymentMethodsWithIp) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods/{ip_address} | 
 [**getPendingPayments**](CustomersApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
 [**getPendingPaymentsWithIp**](CustomersApi.md#getPendingPaymentsWithIp) | **GET** /customers/{customer_id}/payments/{payment_name}/pending/{ip_address} | 
 [**getRegistrationFields**](CustomersApi.md#getRegistrationFields) | **GET** /customer/registration-fields | 
 [**loginWithFacebook**](CustomersApi.md#loginWithFacebook) | **POST** /customers/facebook-login | 
+[**loginWithGoogle**](CustomersApi.md#loginWithGoogle) | **POST** /customers/google-login | 
 [**passwordToken**](CustomersApi.md#passwordToken) | **POST** /customers/password-token | 
 [**passwordTokenConsume**](CustomersApi.md#passwordTokenConsume) | **POST** /customers/password-token-consume | 
 [**stopSubscription**](CustomersApi.md#stopSubscription) | **PUT** /customers/{customer_id}/unsubscribe | 
@@ -253,6 +256,52 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID | 
  **facebookId** | **String**| Facebook ID | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createGoogleId"></a>
+# **createGoogleId**
+> createGoogleId(customerId, googleId)
+
+
+
+Link a Google account ID to a Customer
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | Customer ID
+
+var googleId = "googleId_example"; // String | Google ID
+
+apiInstance.createGoogleId(customerId, googleId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID | 
+ **googleId** | **String**| Google ID | 
 
 ### Return type
 
@@ -1207,6 +1256,49 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getGoogleCustomer"></a>
+# **getGoogleCustomer**
+> CustomerId getGoogleCustomer(googleId)
+
+
+
+Get Customer ID linked to a Google ID
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var googleId = 789; // Integer | Google ID to fetch
+
+apiInstance.getGoogleCustomer(googleId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **googleId** | **Integer**| Google ID to fetch | 
+
+### Return type
+
+[**CustomerId**](CustomerId.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getPaymentMethods"></a>
 # **getPaymentMethods**
 > [PaymentMethods] getPaymentMethods(customerId, paymentName)
@@ -1479,6 +1571,49 @@ Name | Type | Description  | Notes
  **tokenType** | **String**| Can be &#39;oauth2&#39; or &#39;authorization&#39; | 
  **token** | **String**| oAuth2 token or authorization code given by Facebook | 
  **redirectUri** | **String**| Redirect URI is required if you&#39;re using authorization code method | [optional] 
+
+### Return type
+
+[**Customer**](Customer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="loginWithGoogle"></a>
+# **loginWithGoogle**
+> Customer loginWithGoogle(token)
+
+
+
+Create or retrieve existing Customer account using Google authorization token
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var token = "token_example"; // String | token given by Google
+
+apiInstance.loginWithGoogle(token).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**| token given by Google | 
 
 ### Return type
 

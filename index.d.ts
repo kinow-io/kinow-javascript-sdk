@@ -978,6 +978,9 @@ declare module 'kinow-javascript-sdk' {
     getFacebookCustomer(facebookId: number, callback?: Function): any
     createFacebookId(customerId: number, facebookId: string, callback?: Function): any
     loginWithFacebook(tokenType: string, token: string, opts?: any, callback?: Function): Promise<Customer>
+    getGoogleCustomer(googleId: number, callback?: Function): any
+    createGoogleId(customerId: number, googleId: string, callback?: Function): any
+    loginWithGoogle(token: string, callback?: Function): Promise<Customer>
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
     getPaymentMethodsWithIp(customerId: number, paymentName: string, ipAddress: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, opts?: any, callback?: Function): any
