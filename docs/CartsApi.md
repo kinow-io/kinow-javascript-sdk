@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**getPaymentUrl**](CartsApi.md#getPaymentUrl) | **GET** /carts/{cart_id}/payments/{payment_name} | 
 [**getPrice**](CartsApi.md#getPrice) | **POST** /carts/price | 
 [**preparePayment**](CartsApi.md#preparePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
+[**recurringPayment**](CartsApi.md#recurringPayment) | **POST** /carts/{cart_id}/payments/{payment_name}/recurring | 
 [**updateCart**](CartsApi.md#updateCart) | **PUT** /carts/{cart_id} | 
 [**validateFreeOrder**](CartsApi.md#validateFreeOrder) | **POST** /carts/{cart_id}/validate-free-order | 
 [**validatePayment**](CartsApi.md#validatePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
@@ -780,6 +781,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentDetails1**](PaymentDetails1.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="recurringPayment"></a>
+# **recurringPayment**
+> recurringPayment(cartId, paymentName, paymentArgument)
+
+
+
+Validate recurring payment on a payment gateway
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var cartId = 789; // Integer | Cart ID to fetch
+
+var paymentName = "paymentName_example"; // String | Payment gateway name
+
+var paymentArgument = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment argument
+
+apiInstance.recurringPayment(cartId, paymentName, paymentArgument).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **paymentName** | **String**| Payment gateway name | 
+ **paymentArgument** | [**PaymentArguments**](PaymentArguments.md)| Payment argument | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

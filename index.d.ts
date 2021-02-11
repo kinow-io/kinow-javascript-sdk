@@ -502,6 +502,10 @@ declare module 'kinow-javascript-sdk' {
     displayName: string
     description: string
   }
+  interface PaymentToken {
+    token: string
+    id_cart: number
+  }
   interface PlatformAccessInfo {
     can_access: boolean
     can_buy: boolean
@@ -926,6 +930,7 @@ declare module 'kinow-javascript-sdk' {
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
     preparePayment(cartId: number, paymentName: string, opts?: any, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
+    recurringPayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
   }
   export class CartRulesApi {
     constructor(config?: ApiClient)
@@ -941,9 +946,11 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     validateFreeOrder(cartId: number, callback?: Function): any
     getPaymentModules(opts?: any, callback?: Function): any
+    getPaymentToken(token: number, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
     preparePayment(cartId: number, paymentName: string, opts?: any, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
+    recurringPayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
     getPaymentMethods(customerId: number, paymentName: string, callback?: Function): any
     getPaymentMethodsWithIp(customerId: number, paymentName: string, ipAddress: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, opts?: any, callback?: Function): any

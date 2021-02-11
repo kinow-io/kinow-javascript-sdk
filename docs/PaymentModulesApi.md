@@ -7,10 +7,12 @@ Method | HTTP request | Description
 [**getPaymentMethods**](PaymentModulesApi.md#getPaymentMethods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**getPaymentMethodsWithIp**](PaymentModulesApi.md#getPaymentMethodsWithIp) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods/{ip_address} | 
 [**getPaymentModules**](PaymentModulesApi.md#getPaymentModules) | **GET** /payment-modules | 
+[**getPaymentToken**](PaymentModulesApi.md#getPaymentToken) | **GET** /payment-modules/token/{token} | 
 [**getPaymentUrl**](PaymentModulesApi.md#getPaymentUrl) | **GET** /carts/{cart_id}/payments/{payment_name} | 
 [**getPendingPayments**](PaymentModulesApi.md#getPendingPayments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
 [**getPendingPaymentsWithIp**](PaymentModulesApi.md#getPendingPaymentsWithIp) | **GET** /customers/{customer_id}/payments/{payment_name}/pending/{ip_address} | 
 [**preparePayment**](PaymentModulesApi.md#preparePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
+[**recurringPayment**](PaymentModulesApi.md#recurringPayment) | **POST** /carts/{cart_id}/payments/{payment_name}/recurring | 
 [**updatePaymentMethod**](PaymentModulesApi.md#updatePaymentMethod) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
 [**validateFreeOrder**](PaymentModulesApi.md#validateFreeOrder) | **POST** /carts/{cart_id}/validate-free-order | 
 [**validatePayment**](PaymentModulesApi.md#validatePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
@@ -147,6 +149,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentModules**](PaymentModules.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getPaymentToken"></a>
+# **getPaymentToken**
+> PaymentToken1 getPaymentToken(token)
+
+
+
+Get payment token details
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PaymentModulesApi();
+
+var token = 56; // Integer | Token to fetch
+
+apiInstance.getPaymentToken(token).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **Integer**| Token to fetch | 
+
+### Return type
+
+[**PaymentToken1**](PaymentToken1.md)
 
 ### Authorization
 
@@ -338,6 +383,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentDetails1**](PaymentDetails1.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="recurringPayment"></a>
+# **recurringPayment**
+> recurringPayment(cartId, paymentName, paymentArgument)
+
+
+
+Validate recurring payment on a payment gateway
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+
+var apiInstance = new KinowJavascriptSdk.PaymentModulesApi();
+
+var cartId = 789; // Integer | Cart ID to fetch
+
+var paymentName = "paymentName_example"; // String | Payment gateway name
+
+var paymentArgument = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment argument
+
+apiInstance.recurringPayment(cartId, paymentName, paymentArgument).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **paymentName** | **String**| Payment gateway name | 
+ **paymentArgument** | [**PaymentArguments**](PaymentArguments.md)| Payment argument | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
