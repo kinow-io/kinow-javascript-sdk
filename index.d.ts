@@ -35,6 +35,10 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_upd: string
   }
+  interface Analytic {
+    tag: string
+    type: string
+  }
   interface Bonus {
     id: number
     file_name: string
@@ -1094,6 +1098,7 @@ declare module 'kinow-javascript-sdk' {
     getConfigurationByName(configurationName: string, callback?: Function): Promise<Configuration>
     getConfigurationSocial(): any
     getConfigurationLogo(): any
+    getConfigurationAnalytics(): any
   }
   export class CountriesApi {
     constructor(config?: ApiClient)
