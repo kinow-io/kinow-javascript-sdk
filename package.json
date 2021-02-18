@@ -1,6 +1,6 @@
 {
   "name": "kinow-javascript-sdk",
-  "version": "1.4.32",
+  "version": "1.4.33",
   "description": "Client_API_for_Kinow_Rest_API",
   "license": "",
   "main": "src/index.js",

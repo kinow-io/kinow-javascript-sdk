@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 <a name="getConfigurationAnalytics"></a>
 # **getConfigurationAnalytics**
-> Analytics getConfigurationAnalytics()
+> Analytics getConfigurationAnalytics(opts)
 
 
 
@@ -96,7 +96,12 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 //ApiClientSecret.apiKeyPrefix = 'Token';
 
 var apiInstance = new KinowJavascriptSdk.ConfigurationApi();
-apiInstance.getConfigurationAnalytics().then(function(data) {
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getConfigurationAnalytics(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -105,7 +110,11 @@ apiInstance.getConfigurationAnalytics().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
 
 ### Return type
 
