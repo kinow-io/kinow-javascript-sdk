@@ -452,7 +452,7 @@ null (empty response body)
 
 <a name="generateAuthenticationToken"></a>
 # **generateAuthenticationToken**
-> generateAuthenticationToken(customerId)
+> &#39;String&#39; generateAuthenticationToken(customerId)
 
 
 
@@ -479,8 +479,8 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var customerId = 789; // Integer | Customer ID to authenticate
 
-apiInstance.generateAuthenticationToken(customerId).then(function() {
-  console.log('API called successfully.');
+apiInstance.generateAuthenticationToken(customerId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**&#39;String&#39;**
 
 ### Authorization
 
