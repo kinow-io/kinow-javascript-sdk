@@ -882,6 +882,7 @@ declare module 'kinow-javascript-sdk' {
   export class AttributesApi {
     constructor(config?: ApiClient)
     createProductAttribute(body: any, callback?: Function): Promise<ProductAttribute>
+    getAttribute(attributeId: number, callback?: Function): Promise<ProductAttribute>
     deleteAttribute(attributeId: number, callback?: Function): any
     getProductAttributes(productId: number, opts?: any, callback?: Function): any
   }

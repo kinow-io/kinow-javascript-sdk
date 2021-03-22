@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProductAttribute**](AttributesApi.md#createProductAttribute) | **POST** /attributes | 
 [**deleteAttribute**](AttributesApi.md#deleteAttribute) | **DELETE** /attributes/{attribute_id} | 
+[**getAttribute**](AttributesApi.md#getAttribute) | **GET** /attributes/{attribute_id} | 
 [**getProductAttributes**](AttributesApi.md#getProductAttributes) | **GET** /products/{product_id}/attributes | 
 
 
@@ -111,6 +112,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getAttribute"></a>
+# **getAttribute**
+> ProductAttribute getAttribute(attributeId)
+
+
+
+Get Attribute
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.AttributesApi();
+
+var attributeId = 789; // Integer | Attribute ID to get
+
+apiInstance.getAttribute(attributeId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attributeId** | **Integer**| Attribute ID to get | 
+
+### Return type
+
+[**ProductAttribute**](ProductAttribute.md)
 
 ### Authorization
 
