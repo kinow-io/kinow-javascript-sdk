@@ -895,6 +895,9 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getBlogPages(opts?: any, callback?: Function): any
     getBlogPage(blogPageId: number, callback?: Function): Promise<BlogPage>
+    getBlogPageProducts(blogPageId: number, opts?: any, callback?: Function): any
+    attachProductToBlogPage(blogPageId: number, productId: number, callback?: Function): any
+    detachProductFromBlogPage(blogPageId: number, productId: number, callback?: Function): any
   }
   export class BookmarksApi {
     constructor(config?: ApiClient)
