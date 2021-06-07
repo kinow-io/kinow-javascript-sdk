@@ -406,7 +406,13 @@ declare module 'kinow-javascript-sdk' {
   interface Image {
     id: number
     source: string
+    position: number
     type: string
+  }
+  interface ImageType {
+    name: string
+    width: number
+    height: number
   }
   interface Language {
     id: number
@@ -650,12 +656,6 @@ declare module 'kinow-javascript-sdk' {
     name: string
     required: boolean
     displayed: boolean
-  }
-  interface Screenshot {
-    id: number
-    source: string
-    position: number
-    type: string
   }
   interface SessionVideoStat {
     customer_id: number
@@ -1023,10 +1023,12 @@ declare module 'kinow-javascript-sdk' {
     getVideosFromCategories(opts?: any, callback?: Function): any
     getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
+    getCategoryImages(categoryId: number, opts?: any, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
     getProductCategories(productId: number, opts?: any, callback?: Function): any
     getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): any
     uploadCategoryCover(categoryId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
+    uploadCategoryImage(categoryId: number, file: File, hash: string, imageTypeName: string, opts?: any, callback?: Function): Promise<Image>
   }
   export class ProductsApi {
     constructor(config?: ApiClient)
@@ -1075,6 +1077,7 @@ declare module 'kinow-javascript-sdk' {
     getPrice(body: any, callback?: Function): any
     getNewProducts(opts?: any, callback?: Function): any
     getMostWatched(opts?: any, callback?: Function): any
+    uploadProductImage(productId: number, file: File, hash: string, imageTypeName: string, opts?: any, callback?: Function): Promise<Image>
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)
@@ -1095,6 +1098,28 @@ declare module 'kinow-javascript-sdk' {
     getVideosFromCategories(opts?: any, callback?: Function): any
     getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
+  }
+  export class ImagesApi {
+    constructor(config?: ApiClient)
+    getCategoryImages(categoryId: number, opts?: any, callback?: Function): any
+    getSubscriptionCoverImage(subscriptionId: number, callback?: Function): Promise<Image>
+    uploadSubscriptionCover(subscriptionId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
+    getProductImageTypes(): any
+    getProductCoverImage(productId: number, callback?: Function): Promise<Image>
+    uploadProductCover(productId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
+    getProductScreenshots(productId: number, callback?: Function): any
+    getDirectorCoverImage(directorId: number, callback?: Function): Promise<Image>
+    uploadDirectorCover(directorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
+    getActorCoverImage(actorId: number, callback?: Function): Promise<Image>
+    uploadActorCover(actorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
+    getCategoryImageTypes(): any
+    getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
+    getSliderImage(): any
+    getVideoCover(videoId: number, callback?: Function): Promise<Image>
+    getProductImages(productId: number, opts?: any, callback?: Function): any
+    uploadProductImage(productId: number, file: File, hash: string, imageTypeName: string, opts?: any, callback?: Function): Promise<Image>
+    uploadCategoryCover(categoryId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
+    uploadCategoryImage(categoryId: number, file: File, hash: string, imageTypeName: string, opts?: any, callback?: Function): Promise<Image>
   }
   export class ConfigurationApi {
     constructor(config?: ApiClient)
@@ -1243,23 +1268,6 @@ declare module 'kinow-javascript-sdk' {
     attachCustomerToGroup(groupId: number, customerId: number, callback?: Function): any
     detachCustomerFromGroup(groupId: number, customerId: number, callback?: Function): any
     getProductGroups(productId: number, opts?: any, callback?: Function): any
-  }
-  export class ImagesApi {
-    constructor(config?: ApiClient)
-    getSubscriptionCoverImage(subscriptionId: number, callback?: Function): Promise<Image>
-    uploadSubscriptionCover(subscriptionId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    getProductCoverImage(productId: number, callback?: Function): Promise<Image>
-    uploadProductCover(productId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    getDirectorCoverImage(directorId: number, callback?: Function): Promise<Image>
-    uploadDirectorCover(directorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    getActorCoverImage(actorId: number, callback?: Function): Promise<Image>
-    uploadActorCover(actorId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
-    getCategoryBanner(categoryId: number, callback?: Function): Promise<Image>
-    getSliderImage(): any
-    getVideoCover(videoId: number, callback?: Function): Promise<Image>
-    getProductScreenshots(productId: number, callback?: Function): any
-    getProductImages(productId: number, opts?: any, callback?: Function): any
-    uploadCategoryCover(categoryId: number, file: File, hash: string, opts?: any, callback?: Function): Promise<Image>
   }
   export class SubscriptionsApi {
     constructor(config?: ApiClient)

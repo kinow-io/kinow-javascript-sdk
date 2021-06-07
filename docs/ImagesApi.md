@@ -6,8 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getActorCoverImage**](ImagesApi.md#getActorCoverImage) | **GET** /actors/{actor_id}/cover | 
 [**getCategoryBanner**](ImagesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
+[**getCategoryImageTypes**](ImagesApi.md#getCategoryImageTypes) | **GET** /categories/image-types | 
+[**getCategoryImages**](ImagesApi.md#getCategoryImages) | **GET** /categories/{category_id}/images | 
 [**getDirectorCoverImage**](ImagesApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
 [**getProductCoverImage**](ImagesApi.md#getProductCoverImage) | **GET** /products/{product_id}/cover | 
+[**getProductImageTypes**](ImagesApi.md#getProductImageTypes) | **GET** /products/image-types | 
 [**getProductImages**](ImagesApi.md#getProductImages) | **GET** /products/{product_id}/images | 
 [**getProductScreenshots**](ImagesApi.md#getProductScreenshots) | **GET** /products/{product_id}/screenshots | 
 [**getSliderImage**](ImagesApi.md#getSliderImage) | **GET** /widgets/slider/images | 
@@ -15,8 +18,10 @@ Method | HTTP request | Description
 [**getVideoCover**](ImagesApi.md#getVideoCover) | **GET** /videos/{video_id}/cover | 
 [**uploadActorCover**](ImagesApi.md#uploadActorCover) | **POST** /actors/{actor_id}/cover | 
 [**uploadCategoryCover**](ImagesApi.md#uploadCategoryCover) | **POST** /categories/{category_id}/cover | 
+[**uploadCategoryImage**](ImagesApi.md#uploadCategoryImage) | **POST** /categories/{category_id}/image | 
 [**uploadDirectorCover**](ImagesApi.md#uploadDirectorCover) | **POST** /directors/{director_id}/cover | 
 [**uploadProductCover**](ImagesApi.md#uploadProductCover) | **POST** /products/{product_id}/cover | 
+[**uploadProductImage**](ImagesApi.md#uploadProductImage) | **POST** /products/{product_id}/image | 
 [**uploadSubscriptionCover**](ImagesApi.md#uploadSubscriptionCover) | **POST** /subscriptions/{subscription_id}/cover | 
 
 
@@ -82,7 +87,7 @@ Name | Type | Description  | Notes
 
 
 
-Get Category banner
+Get Category cover
 
 ### Example
 ```javascript
@@ -122,6 +127,120 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Image**](Image.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryImageTypes"></a>
+# **getCategoryImageTypes**
+> [ImageType] getCategoryImageTypes()
+
+
+
+Get image types for categories
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+apiInstance.getCategoryImageTypes().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[ImageType]**](ImageType.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryImages"></a>
+# **getCategoryImages**
+> CategoryImagesResponse getCategoryImages(categoryId, opts)
+
+
+
+Get images attached to Category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var opts = { 
+  'type': "type_example", // String | Filter on specific Image type
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCategoryImages(categoryId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **type** | **String**| Filter on specific Image type | [optional] 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**CategoryImagesResponse**](CategoryImagesResponse.md)
 
 ### Authorization
 
@@ -244,9 +363,59 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getProductImageTypes"></a>
+# **getProductImageTypes**
+> [ImageType] getProductImageTypes()
+
+
+
+Get image types for products
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+apiInstance.getProductImageTypes().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[ImageType]**](ImageType.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getProductImages"></a>
 # **getProductImages**
-> ProductImagesResponse getProductImages(productId, opts)
+> CategoryImagesResponse getProductImages(productId, opts)
 
 
 
@@ -297,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductImagesResponse**](ProductImagesResponse.md)
+[**CategoryImagesResponse**](CategoryImagesResponse.md)
 
 ### Authorization
 
@@ -310,7 +479,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductScreenshots"></a>
 # **getProductScreenshots**
-> [Screenshot] getProductScreenshots(productId)
+> [Image] getProductScreenshots(productId)
 
 
 
@@ -353,7 +522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Screenshot]**](Screenshot.md)
+[**[Image]**](Image.md)
 
 ### Authorization
 
@@ -658,6 +827,75 @@ Name | Type | Description  | Notes
  - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
+<a name="uploadCategoryImage"></a>
+# **uploadCategoryImage**
+> Image uploadCategoryImage(categoryId, file, hash, imageTypeName, opts)
+
+
+
+Upload Category image
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+
+var categoryId = 3.4; // Number | Category ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var imageTypeName = "imageTypeName_example"; // String | Image types name to use to generate image assets
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadCategoryImage(categoryId, file, hash, imageTypeName, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Number**| Category ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **imageTypeName** | **String**| Image types name to use to generate image assets | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
 <a name="uploadDirectorCover"></a>
 # **uploadDirectorCover**
 > Image uploadDirectorCover(directorId, file, hash, opts)
@@ -775,6 +1013,75 @@ Name | Type | Description  | Notes
  **productId** | **Number**| Product ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+<a name="uploadProductImage"></a>
+# **uploadProductImage**
+> Image uploadProductImage(productId, file, hash, imageTypeName, opts)
+
+
+
+Upload product image
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+
+var productId = 3.4; // Number | Product ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var imageTypeName = "imageTypeName_example"; // String | Image types name to use to generate image assets
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadProductImage(productId, file, hash, imageTypeName, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Number**| Product ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **imageTypeName** | **String**| Image types name to use to generate image assets | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type

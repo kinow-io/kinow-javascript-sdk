@@ -49,6 +49,7 @@ Method | HTTP request | Description
 [**updateProduct**](ProductsApi.md#updateProduct) | **PUT** /products/{product_id} | 
 [**updateProductGroupRestrictionBehavior**](ProductsApi.md#updateProductGroupRestrictionBehavior) | **PUT** /products/{product_id}/groups/behavior | 
 [**uploadProductCover**](ProductsApi.md#uploadProductCover) | **POST** /products/{product_id}/cover | 
+[**uploadProductImage**](ProductsApi.md#uploadProductImage) | **POST** /products/{product_id}/image | 
 
 
 <a name="associateProducts"></a>
@@ -2049,7 +2050,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductImages"></a>
 # **getProductImages**
-> ProductImagesResponse getProductImages(productId, opts)
+> CategoryImagesResponse getProductImages(productId, opts)
 
 
 
@@ -2100,7 +2101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductImagesResponse**](ProductImagesResponse.md)
+[**CategoryImagesResponse**](CategoryImagesResponse.md)
 
 ### Authorization
 
@@ -2113,7 +2114,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductScreenshots"></a>
 # **getProductScreenshots**
-> [Screenshot] getProductScreenshots(productId)
+> [Image] getProductScreenshots(productId)
 
 
 
@@ -2156,7 +2157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Screenshot]**](Screenshot.md)
+[**[Image]**](Image.md)
 
 ### Authorization
 
@@ -2818,6 +2819,75 @@ Name | Type | Description  | Notes
  **productId** | **Number**| Product ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+<a name="uploadProductImage"></a>
+# **uploadProductImage**
+> Image uploadProductImage(productId, file, hash, imageTypeName, opts)
+
+
+
+Upload product image
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 3.4; // Number | Product ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var imageTypeName = "imageTypeName_example"; // String | Image types name to use to generate image assets
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadProductImage(productId, file, hash, imageTypeName, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Number**| Product ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **imageTypeName** | **String**| Image types name to use to generate image assets | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type

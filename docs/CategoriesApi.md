@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**getCategory**](CategoriesApi.md#getCategory) | **GET** /categories/{category_id} | 
 [**getCategoryBanner**](CategoriesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
 [**getCategoryFeatures**](CategoriesApi.md#getCategoryFeatures) | **GET** /categories/{category_id}/features | 
+[**getCategoryImages**](CategoriesApi.md#getCategoryImages) | **GET** /categories/{category_id}/images | 
 [**getCategoryProducts**](CategoriesApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
 [**getCategoryVideoPlayer**](CategoriesApi.md#getCategoryVideoPlayer) | **GET** /categories/videos/{video_id}/player | 
 [**getCategoryVideoSubtitles**](CategoriesApi.md#getCategoryVideoSubtitles) | **GET** /categories/videos/{video_id}/subtitles | 
@@ -21,6 +22,7 @@ Method | HTTP request | Description
 [**getVideosFromCategory**](CategoriesApi.md#getVideosFromCategory) | **GET** /categories/{category_id}/videos | 
 [**updateCategory**](CategoriesApi.md#updateCategory) | **PUT** /categories/{category_id} | 
 [**uploadCategoryCover**](CategoriesApi.md#uploadCategoryCover) | **POST** /categories/{category_id}/cover | 
+[**uploadCategoryImage**](CategoriesApi.md#uploadCategoryImage) | **POST** /categories/{category_id}/image | 
 
 
 <a name="createCategory"></a>
@@ -390,7 +392,7 @@ Name | Type | Description  | Notes
 
 
 
-Get Category banner
+Get Category cover
 
 ### Example
 ```javascript
@@ -492,6 +494,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Features**](Features.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryImages"></a>
+# **getCategoryImages**
+> CategoryImagesResponse getCategoryImages(categoryId, opts)
+
+
+
+Get images attached to Category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var opts = { 
+  'type': "type_example", // String | Filter on specific Image type
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCategoryImages(categoryId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **type** | **String**| Filter on specific Image type | [optional] 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**CategoryImagesResponse**](CategoryImagesResponse.md)
 
 ### Authorization
 
@@ -1071,6 +1137,75 @@ Name | Type | Description  | Notes
  **categoryId** | **Number**| Category ID to fetch | 
  **file** | **File**|  | 
  **hash** | **String**|  | 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+<a name="uploadCategoryImage"></a>
+# **uploadCategoryImage**
+> Image uploadCategoryImage(categoryId, file, hash, imageTypeName, opts)
+
+
+
+Upload Category image
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 3.4; // Number | Category ID to fetch
+
+var file = "/path/to/file.txt"; // File | 
+
+var hash = "hash_example"; // String | 
+
+var imageTypeName = "imageTypeName_example"; // String | Image types name to use to generate image assets
+
+var opts = { 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadCategoryImage(categoryId, file, hash, imageTypeName, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Number**| Category ID to fetch | 
+ **file** | **File**|  | 
+ **hash** | **String**|  | 
+ **imageTypeName** | **String**| Image types name to use to generate image assets | 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
