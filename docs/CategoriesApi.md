@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachFeaturesToCategory**](CategoriesApi.md#attachFeaturesToCategory) | **POST** /categories/{category_id}/features | 
 [**createCategory**](CategoriesApi.md#createCategory) | **POST** /categories | 
 [**deleteCategory**](CategoriesApi.md#deleteCategory) | **DELETE** /categories/{category_id} | 
 [**getAvailableCategory**](CategoriesApi.md#getAvailableCategory) | **GET** /categories-accesses/{category_id} | 
@@ -24,6 +25,65 @@ Method | HTTP request | Description
 [**uploadCategoryCover**](CategoriesApi.md#uploadCategoryCover) | **POST** /categories/{category_id}/cover | 
 [**uploadCategoryImage**](CategoriesApi.md#uploadCategoryImage) | **POST** /categories/{category_id}/image | 
 
+
+<a name="attachFeaturesToCategory"></a>
+# **attachFeaturesToCategory**
+> attachFeaturesToCategory(categoryId, features)
+
+
+
+Attach feature to category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | 
+
+var features = "features_example"; // String |      To attach existing FeatureValue to Category:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]     ```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]     ```
+
+apiInstance.attachFeaturesToCategory(categoryId, features).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**|  | 
+ **features** | **String**|      To attach existing FeatureValue to Category:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5     }]     &#x60;&#x60;&#x60;      To create a custom FeatureValue:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;custom_value\&quot;:[{     \&quot;lang\&quot;: 1,     \&quot;value\&quot;: \&quot;string\&quot;     }]     }]     &#x60;&#x60;&#x60; | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="createCategory"></a>
 # **createCategory**

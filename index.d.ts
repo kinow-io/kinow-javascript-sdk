@@ -39,14 +39,6 @@ declare module 'kinow-javascript-sdk' {
     tag: string
     type: string
   }
-  interface Bonus {
-    id: number
-    file_name: string
-    mime: string
-    url: string
-    name: Array<I18nField>
-    description: Array<I18nField>
-  }
   interface BlogCategory {
     position: number
     active: number
@@ -75,6 +67,14 @@ declare module 'kinow-javascript-sdk' {
     id_blog_category: number
     cover: string
     id: number
+  }
+  interface Bonus {
+    id: number
+    url: string
+    mime: string
+    file_name: string
+    name: Array<I18nField>
+    description: Array<I18nField>
   }
   interface CMSCategory {
     id_parent: number
@@ -423,6 +423,7 @@ declare module 'kinow-javascript-sdk' {
   interface MediaFile {
     id: number
     id_media_source: number
+    type: string
     filename: string
     title: string
     cover: string
@@ -1017,6 +1018,7 @@ declare module 'kinow-javascript-sdk' {
     deleteCategory(categoryId: number, callback?: Function): any
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): any
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
+    attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
     getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<Category>
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): any
     getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): any
@@ -1082,6 +1084,7 @@ declare module 'kinow-javascript-sdk' {
   export class FeaturesApi {
     constructor(config?: ApiClient)
     getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): any
+    attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
     getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
     attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     getFeatures(opts?: any, callback?: Function): any
@@ -1090,6 +1093,15 @@ declare module 'kinow-javascript-sdk' {
     attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
     getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
+    attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
+  }
+  export class FeatureValuesApi {
+    constructor(config?: ApiClient)
+    attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
+    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
+    getFeatureValues(opts?: any, callback?: Function): any
+    attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
+    detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
   export class CategoryVideosApi {
@@ -1211,14 +1223,6 @@ declare module 'kinow-javascript-sdk' {
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): any
     createSubtitle(extractId: number, body: any, callback?: Function): Promise<Subtitle>
-  }
-  export class FeatureValuesApi {
-    constructor(config?: ApiClient)
-    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
-    getFeatureValues(opts?: any, callback?: Function): any
-    attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
-    detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
-    attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
   export class FreeGiftsApi {
     constructor(config?: ApiClient)

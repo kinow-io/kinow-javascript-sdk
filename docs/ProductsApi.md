@@ -784,7 +784,8 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789, // Integer | 
-  'ip': "ip_example" // String | filter by Customer IP
+  'ip': "ip_example", // String | Filter by Customer IP
+  'isoCode': "isoCode_example" // String | Filter by ISO Code
 };
 apiInstance.getBestSales(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -800,7 +801,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **ip** | **String**| filter by Customer IP | [optional] 
+ **ip** | **String**| Filter by Customer IP | [optional] 
+ **isoCode** | **String**| Filter by ISO Code | [optional] 
 
 ### Return type
 
@@ -1035,7 +1037,8 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789, // Integer | 
-  'ip': "ip_example" // String | Filter by user IP
+  'ip': "ip_example", // String | Filter by user IP
+  'isoCode': "isoCode_example" // String | Filter by ISO Code
 };
 apiInstance.getMostWatched(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1052,6 +1055,7 @@ Name | Type | Description  | Notes
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
  **ip** | **String**| Filter by user IP | [optional] 
+ **isoCode** | **String**| Filter by ISO Code | [optional] 
 
 ### Return type
 
