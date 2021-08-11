@@ -1371,6 +1371,10 @@ declare module 'kinow-javascript-sdk' {
     getVideoGroups(opts?: any, callback?: Function): any
     getVideoGroup(videoGroupId: number, callback?: Function): Promise<VideoGroup>
   }
+  export class RecommendationsApi {
+    constructor(config?: ApiClient)
+    getCustomerRecommendations(customerId: number, opts?: any, callback?: Function): any
+  }
   export class SubtitlesApi {
     constructor(config?: ApiClient)
     getSubtitles(opts?: any, callback?: Function): any
