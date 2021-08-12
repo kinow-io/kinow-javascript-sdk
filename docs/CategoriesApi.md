@@ -4,14 +4,20 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachActorToCategory**](CategoriesApi.md#attachActorToCategory) | **POST** /categories/{category_id}/actors | 
+[**attachDirectorToCategory**](CategoriesApi.md#attachDirectorToCategory) | **POST** /categories/{category_id}/directors | 
 [**attachFeaturesToCategory**](CategoriesApi.md#attachFeaturesToCategory) | **POST** /categories/{category_id}/features | 
 [**createCategory**](CategoriesApi.md#createCategory) | **POST** /categories | 
 [**deleteCategory**](CategoriesApi.md#deleteCategory) | **DELETE** /categories/{category_id} | 
+[**detachActorFromCategory**](CategoriesApi.md#detachActorFromCategory) | **DELETE** /categories/{category_id}/actors/{actor_id} | 
+[**detachDirectorFromCategory**](CategoriesApi.md#detachDirectorFromCategory) | **DELETE** /categories/{category_id}/directors/{director_id} | 
 [**getAvailableCategory**](CategoriesApi.md#getAvailableCategory) | **GET** /categories-accesses/{category_id} | 
 [**getCategories**](CategoriesApi.md#getCategories) | **GET** /categories | 
 [**getCategoriesFromCategory**](CategoriesApi.md#getCategoriesFromCategory) | **GET** /categories/{category_id}/categories | 
 [**getCategory**](CategoriesApi.md#getCategory) | **GET** /categories/{category_id} | 
+[**getCategoryActors**](CategoriesApi.md#getCategoryActors) | **GET** /categories/{category_id}/actors | 
 [**getCategoryBanner**](CategoriesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
+[**getCategoryDirectors**](CategoriesApi.md#getCategoryDirectors) | **GET** /categories/{category_id}/directors | 
 [**getCategoryFeatures**](CategoriesApi.md#getCategoryFeatures) | **GET** /categories/{category_id}/features | 
 [**getCategoryImages**](CategoriesApi.md#getCategoryImages) | **GET** /categories/{category_id}/images | 
 [**getCategoryProducts**](CategoriesApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
@@ -25,6 +31,124 @@ Method | HTTP request | Description
 [**uploadCategoryCover**](CategoriesApi.md#uploadCategoryCover) | **POST** /categories/{category_id}/cover | 
 [**uploadCategoryImage**](CategoriesApi.md#uploadCategoryImage) | **POST** /categories/{category_id}/image | 
 
+
+<a name="attachActorToCategory"></a>
+# **attachActorToCategory**
+> attachActorToCategory(categoryId, actorId)
+
+
+
+Attach actor to category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var actorId = 789; // Integer | Actor ID to attach
+
+apiInstance.attachActorToCategory(categoryId, actorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **actorId** | **Integer**| Actor ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="attachDirectorToCategory"></a>
+# **attachDirectorToCategory**
+> attachDirectorToCategory(categoryId, directorId)
+
+
+
+Attach director to category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var directorId = 789; // Integer | Director ID to attach
+
+apiInstance.attachDirectorToCategory(categoryId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **directorId** | **Integer**| Director ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="attachFeaturesToCategory"></a>
 # **attachFeaturesToCategory**
@@ -183,6 +307,124 @@ apiInstance.deleteCategory(categoryId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **Integer**| Category ID to fetch | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachActorFromCategory"></a>
+# **detachActorFromCategory**
+> detachActorFromCategory(categoryId, actorId)
+
+
+
+Detach actor from category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var actorId = 789; // Integer | Actor ID to detach
+
+apiInstance.detachActorFromCategory(categoryId, actorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **actorId** | **Integer**| Actor ID to detach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachDirectorFromCategory"></a>
+# **detachDirectorFromCategory**
+> detachDirectorFromCategory(categoryId, directorId)
+
+
+
+Detach director from category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var directorId = 789; // Integer | Director ID to detach
+
+apiInstance.detachDirectorFromCategory(categoryId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **directorId** | **Integer**| Director ID to detach | 
 
 ### Return type
 
@@ -446,6 +688,68 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getCategoryActors"></a>
+# **getCategoryActors**
+> Actors getCategoryActors(categoryId, opts)
+
+
+
+Get actors attached to category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCategoryActors(categoryId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**Actors**](Actors.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getCategoryBanner"></a>
 # **getCategoryBanner**
 > Image getCategoryBanner(categoryId)
@@ -492,6 +796,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Image**](Image.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryDirectors"></a>
+# **getCategoryDirectors**
+> CategoryDirectorsResponse getCategoryDirectors(categoryId, opts)
+
+
+
+Get directors attached to category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCategoryDirectors(categoryId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
 
 ### Authorization
 

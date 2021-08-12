@@ -5,10 +5,10 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**associateProducts**](ProductsApi.md#associateProducts) | **POST** /products/{product_id}/products | 
+[**attachActorToProduct**](ProductsApi.md#attachActorToProduct) | **POST** /products/{product_id}/actors | 
+[**attachDirectorToProduct**](ProductsApi.md#attachDirectorToProduct) | **POST** /products/{product_id}/directors | 
 [**attachFeaturesToProduct**](ProductsApi.md#attachFeaturesToProduct) | **POST** /products/{product_id}/features | 
-[**attachProductToActor**](ProductsApi.md#attachProductToActor) | **POST** /products/{product_id}/actors | 
 [**attachProductToCategory**](ProductsApi.md#attachProductToCategory) | **POST** /products/{product_id}/categories | 
-[**attachProductToDirector**](ProductsApi.md#attachProductToDirector) | **POST** /products/{product_id}/directors | 
 [**attachProductToGroup**](ProductsApi.md#attachProductToGroup) | **POST** /products/{product_id}/groups | 
 [**attachVideoToProduct**](ProductsApi.md#attachVideoToProduct) | **POST** /products/{product_id}/videos | 
 [**createProduct**](ProductsApi.md#createProduct) | **POST** /products | 
@@ -111,6 +111,124 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="attachActorToProduct"></a>
+# **attachActorToProduct**
+> attachActorToProduct(productId, actorId)
+
+
+
+Attach actor to product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var actorId = 789; // Integer | Actor ID to attach
+
+apiInstance.attachActorToProduct(productId, actorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **actorId** | **Integer**| Actor ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="attachDirectorToProduct"></a>
+# **attachDirectorToProduct**
+> attachDirectorToProduct(productId, directorId)
+
+
+
+Attach director to product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var directorId = 789; // Integer | Director ID to attach
+
+apiInstance.attachDirectorToProduct(productId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **directorId** | **Integer**| Director ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="attachFeaturesToProduct"></a>
 # **attachFeaturesToProduct**
 > attachFeaturesToProduct(productId, features)
@@ -170,65 +288,6 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="attachProductToActor"></a>
-# **attachProductToActor**
-> attachProductToActor(productId, actorId)
-
-
-
-Attach product to actor
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-var defaultClient = KinowJavascriptSdk.ApiClient.instance;
-
-// Configure API key authorization: ApiClientId
-var ApiClientId = defaultClient.authentications['ApiClientId'];
-ApiClientId.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientId.apiKeyPrefix = 'Token';
-
-// Configure API key authorization: ApiClientSecret
-var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
-ApiClientSecret.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientSecret.apiKeyPrefix = 'Token';
-
-var apiInstance = new KinowJavascriptSdk.ProductsApi();
-
-var productId = 789; // Integer | Product ID to fetch
-
-var actorId = 789; // Integer | Actor ID to attach
-
-apiInstance.attachProductToActor(productId, actorId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Product ID to fetch | 
- **actorId** | **Integer**| Actor ID to attach | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="attachProductToCategory"></a>
 # **attachProductToCategory**
 > attachProductToCategory(productId, categoryId)
@@ -274,65 +333,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
  **categoryId** | **Integer**| Category ID to attach | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="attachProductToDirector"></a>
-# **attachProductToDirector**
-> attachProductToDirector(productId, directorId)
-
-
-
-Attach product to director
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-var defaultClient = KinowJavascriptSdk.ApiClient.instance;
-
-// Configure API key authorization: ApiClientId
-var ApiClientId = defaultClient.authentications['ApiClientId'];
-ApiClientId.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientId.apiKeyPrefix = 'Token';
-
-// Configure API key authorization: ApiClientSecret
-var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
-ApiClientSecret.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientSecret.apiKeyPrefix = 'Token';
-
-var apiInstance = new KinowJavascriptSdk.ProductsApi();
-
-var productId = 789; // Integer | Product ID to fetch
-
-var directorId = 789; // Integer | Director ID to attach
-
-apiInstance.attachProductToDirector(productId, directorId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **Integer**| Product ID to fetch | 
- **directorId** | **Integer**| Director ID to attach | 
 
 ### Return type
 
@@ -1613,7 +1613,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductDirectors"></a>
 # **getProductDirectors**
-> Directors getProductDirectors(productId, opts)
+> CategoryDirectorsResponse getProductDirectors(productId, opts)
 
 
 
@@ -1664,7 +1664,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](Directors.md)
+[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
 
 ### Authorization
 
@@ -1677,7 +1677,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductDirectorsRole"></a>
 # **getProductDirectorsRole**
-> Directors getProductDirectorsRole(productId, opts)
+> CategoryDirectorsResponse getProductDirectorsRole(productId, opts)
 
 
 
@@ -1726,7 +1726,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](Directors.md)
+[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
 
 ### Authorization
 

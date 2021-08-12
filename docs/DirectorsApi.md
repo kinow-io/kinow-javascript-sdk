@@ -4,9 +4,12 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attachProductToDirector**](DirectorsApi.md#attachProductToDirector) | **POST** /products/{product_id}/directors | 
+[**attachDirectorToCategory**](DirectorsApi.md#attachDirectorToCategory) | **POST** /categories/{category_id}/directors | 
+[**attachDirectorToProduct**](DirectorsApi.md#attachDirectorToProduct) | **POST** /products/{product_id}/directors | 
 [**createDirector**](DirectorsApi.md#createDirector) | **POST** /directors | 
 [**deleteDirector**](DirectorsApi.md#deleteDirector) | **DELETE** /directors/{director_id} | 
+[**detachDirectorFromCategory**](DirectorsApi.md#detachDirectorFromCategory) | **DELETE** /categories/{category_id}/directors/{director_id} | 
+[**getCategoryDirectors**](DirectorsApi.md#getCategoryDirectors) | **GET** /categories/{category_id}/directors | 
 [**getDirector**](DirectorsApi.md#getDirector) | **GET** /directors/{director_id} | 
 [**getDirectorCoverImage**](DirectorsApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
 [**getDirectorProducts**](DirectorsApi.md#getDirectorProducts) | **GET** /directors/{director_id}/products | 
@@ -18,13 +21,72 @@ Method | HTTP request | Description
 [**uploadDirectorCover**](DirectorsApi.md#uploadDirectorCover) | **POST** /directors/{director_id}/cover | 
 
 
-<a name="attachProductToDirector"></a>
-# **attachProductToDirector**
-> attachProductToDirector(productId, directorId)
+<a name="attachDirectorToCategory"></a>
+# **attachDirectorToCategory**
+> attachDirectorToCategory(categoryId, directorId)
 
 
 
-Attach product to director
+Attach director to category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var directorId = 789; // Integer | Director ID to attach
+
+apiInstance.attachDirectorToCategory(categoryId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **directorId** | **Integer**| Director ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="attachDirectorToProduct"></a>
+# **attachDirectorToProduct**
+> attachDirectorToProduct(productId, directorId)
+
+
+
+Attach director to product
 
 ### Example
 ```javascript
@@ -49,7 +111,7 @@ var productId = 789; // Integer | Product ID to fetch
 
 var directorId = 789; // Integer | Director ID to attach
 
-apiInstance.attachProductToDirector(productId, directorId).then(function() {
+apiInstance.attachDirectorToProduct(productId, directorId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -179,6 +241,127 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachDirectorFromCategory"></a>
+# **detachDirectorFromCategory**
+> detachDirectorFromCategory(categoryId, directorId)
+
+
+
+Detach director from category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var directorId = 789; // Integer | Director ID to detach
+
+apiInstance.detachDirectorFromCategory(categoryId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **directorId** | **Integer**| Director ID to detach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCategoryDirectors"></a>
+# **getCategoryDirectors**
+> CategoryDirectorsResponse getCategoryDirectors(categoryId, opts)
+
+
+
+Get directors attached to category
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var categoryId = 789; // Integer | Category ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCategoryDirectors(categoryId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **Integer**| Category ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
 
 ### Authorization
 
@@ -437,7 +620,7 @@ Name | Type | Description  | Notes
 
 <a name="getDirectors"></a>
 # **getDirectors**
-> Directors getDirectors(opts)
+> CategoryDirectorsResponse getDirectors(opts)
 
 
 
@@ -483,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](Directors.md)
+[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
 
 ### Authorization
 
@@ -496,7 +679,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductDirectors"></a>
 # **getProductDirectors**
-> Directors getProductDirectors(productId, opts)
+> CategoryDirectorsResponse getProductDirectors(productId, opts)
 
 
 
@@ -547,7 +730,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](Directors.md)
+[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
 
 ### Authorization
 
@@ -560,7 +743,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductDirectorsRole"></a>
 # **getProductDirectorsRole**
-> Directors getProductDirectorsRole(productId, opts)
+> CategoryDirectorsResponse getProductDirectorsRole(productId, opts)
 
 
 
@@ -609,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](Directors.md)
+[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
 
 ### Authorization
 
