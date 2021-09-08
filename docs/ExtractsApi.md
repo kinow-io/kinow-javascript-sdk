@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**getExtractPlayer**](ExtractsApi.md#getExtractPlayer) | **GET** /extracts/{extract_id}/player | 
 [**getExtracts**](ExtractsApi.md#getExtracts) | **GET** /extracts | 
 [**getProductExtracts**](ExtractsApi.md#getProductExtracts) | **GET** /products/{product_id}/extracts | 
+[**hasAccessToExtracts**](ExtractsApi.md#hasAccessToExtracts) | **POST** /extracts/has-access | 
 [**updateExtract**](ExtractsApi.md#updateExtract) | **PUT** /extracts/{extract_id} | 
 
 
@@ -426,7 +427,7 @@ Name | Type | Description  | Notes
 
 <a name="getExtractPlayer"></a>
 # **getExtractPlayer**
-> PlayerConfiguration getExtractPlayer(extractId)
+> PlayerConfiguration getExtractPlayer(extractId, opts)
 
 
 
@@ -453,7 +454,10 @@ var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
 var extractId = 789; // Integer | Extract ID to fetch
 
-apiInstance.getExtractPlayer(extractId).then(function(data) {
+var opts = { 
+  'ipAddress': "ipAddress_example" // String | IP address
+};
+apiInstance.getExtractPlayer(extractId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -466,6 +470,7 @@ apiInstance.getExtractPlayer(extractId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **extractId** | **Integer**| Extract ID to fetch | 
+ **ipAddress** | **String**| IP address | [optional] 
 
 ### Return type
 
@@ -599,6 +604,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Videos1**](Videos1.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="hasAccessToExtracts"></a>
+# **hasAccessToExtracts**
+> [ExtractAccessInfo] hasAccessToExtracts(body)
+
+
+
+Check access to Extracts
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ExtractsApi();
+
+var body = new KinowJavascriptSdk.ExtractIDList(); // ExtractIDList | List of Extract IDs separated by comma, eg. '42,21,84'
+
+apiInstance.hasAccessToExtracts(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ExtractIDList**](ExtractIDList.md)| List of Extract IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[ExtractAccessInfo]**](ExtractAccessInfo.md)
 
 ### Authorization
 

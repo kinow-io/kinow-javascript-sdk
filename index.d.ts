@@ -331,6 +331,11 @@ declare module 'kinow-javascript-sdk' {
     thumbnail: string
     advertising_url: string
   }
+  interface ExtractAccessInfo {
+    id_extract: number
+    streaming: boolean
+    error_code: number
+  }
   interface Feature {
     id: number
     position: number
@@ -1229,7 +1234,8 @@ declare module 'kinow-javascript-sdk' {
     getExtract(extractId: number, callback?: Function): Promise<Extract>
     updateExtract(extractId: number, body: any, callback?: Function): Promise<Extract>
     deleteExtract(extractId: number, callback?: Function): any
-    getExtractPlayer(extractId: number, callback?: Function): any
+    hasAccessToExtracts(body: any, callback?: Function): any
+    getExtractPlayer(extractId: number, opts?: any, callback?: Function): any
     getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
     attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
