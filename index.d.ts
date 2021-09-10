@@ -1247,7 +1247,6 @@ declare module 'kinow-javascript-sdk' {
     getFreeGifts(opts?: any, callback?: Function): any
     createFreeGift(body: any, callback?: Function): Promise<FreeGift>
     getFreeGift(freeGiftId: number, callback?: Function): Promise<FreeGift>
-    updateFreeGift(freeGiftId: number, body: any, callback?: Function): Promise<FreeGift>
     deleteFreeGift(freeGiftId: number, callback?: Function): any
     consumeFreeGift(freeGiftId: number, customerId: number, opts?: any, callback?: Function): any
     getFreeGiftToken(freeGiftId: number, callback?: Function): Promise<GiftToken>

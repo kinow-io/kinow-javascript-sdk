@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**getFreeGiftToken**](FreeGiftsApi.md#getFreeGiftToken) | **GET** /free-gifts/{free_gift_id}/token | 
 [**getFreeGifts**](FreeGiftsApi.md#getFreeGifts) | **GET** /free-gifts | 
 [**sendFreeGift**](FreeGiftsApi.md#sendFreeGift) | **POST** /free-gifts/{free_gift_id}/send | 
-[**updateFreeGift**](FreeGiftsApi.md#updateFreeGift) | **PUT** /free-gifts/{free_gift_id} | 
 
 
 <a name="consumeFreeGift"></a>
@@ -404,65 +403,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
-
-### Authorization
-
-[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="updateFreeGift"></a>
-# **updateFreeGift**
-> FreeGift updateFreeGift(freeGiftId, body)
-
-
-
-Update free Gift
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-var defaultClient = KinowJavascriptSdk.ApiClient.instance;
-
-// Configure API key authorization: ApiClientId
-var ApiClientId = defaultClient.authentications['ApiClientId'];
-ApiClientId.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientId.apiKeyPrefix = 'Token';
-
-// Configure API key authorization: ApiClientSecret
-var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
-ApiClientSecret.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientSecret.apiKeyPrefix = 'Token';
-
-var apiInstance = new KinowJavascriptSdk.FreeGiftsApi();
-
-var freeGiftId = 789; // Integer | Free Gift ID to fetch
-
-var body = new KinowJavascriptSdk.Gift1(); // Gift1 | Free Gift settings
-
-apiInstance.updateFreeGift(freeGiftId, body).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **freeGiftId** | **Integer**| Free Gift ID to fetch | 
- **body** | [**Gift1**](Gift1.md)| Free Gift settings | 
-
-### Return type
-
-[**FreeGift**](FreeGift.md)
 
 ### Authorization
 
