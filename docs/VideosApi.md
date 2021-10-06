@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**attachCoverToVideo**](VideosApi.md#attachCoverToVideo) | **POST** /videos/{video_id}/cover | 
 [**attachFeaturesToVideo**](VideosApi.md#attachFeaturesToVideo) | **POST** /videos/{video_id}/features | 
 [**attachVideoToProduct**](VideosApi.md#attachVideoToProduct) | **POST** /products/{product_id}/videos | 
-[**createSubtitle**](VideosApi.md#createSubtitle) | **POST** /videos/{video_id}/subtitle | 
 [**createVideo**](VideosApi.md#createVideo) | **POST** /videos | 
+[**createVideoSubtitle**](VideosApi.md#createVideoSubtitle) | **POST** /videos/{video_id}/subtitle | 
 [**deleteVideo**](VideosApi.md#deleteVideo) | **DELETE** /videos/{video_id} | 
 [**getCustomerHasAccessToVideo**](VideosApi.md#getCustomerHasAccessToVideo) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**getCustomerHasAccessToVideos**](VideosApi.md#getCustomerHasAccessToVideos) | **POST** /customers/{customer_id}/videos/has-access | 
@@ -207,65 +207,6 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="createSubtitle"></a>
-# **createSubtitle**
-> Subtitle createSubtitle(videoId, body)
-
-
-
-Create new Video Subtitle
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-var defaultClient = KinowJavascriptSdk.ApiClient.instance;
-
-// Configure API key authorization: ApiClientId
-var ApiClientId = defaultClient.authentications['ApiClientId'];
-ApiClientId.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientId.apiKeyPrefix = 'Token';
-
-// Configure API key authorization: ApiClientSecret
-var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
-ApiClientSecret.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientSecret.apiKeyPrefix = 'Token';
-
-var apiInstance = new KinowJavascriptSdk.VideosApi();
-
-var videoId = 789; // Integer | Video ID to attach the created Subtitle
-
-var body = new KinowJavascriptSdk.CreateVideoSubtitleRequest(); // CreateVideoSubtitleRequest | Subtitle settings
-
-apiInstance.createSubtitle(videoId, body).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| Video ID to attach the created Subtitle | 
- **body** | [**CreateVideoSubtitleRequest**](CreateVideoSubtitleRequest.md)| Subtitle settings | 
-
-### Return type
-
-[**Subtitle**](Subtitle.md)
-
-### Authorization
-
-[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="createVideo"></a>
 # **createVideo**
 > Video createVideo(body)
@@ -312,6 +253,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Video**](Video.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createVideoSubtitle"></a>
+# **createVideoSubtitle**
+> Subtitle createVideoSubtitle(videoId, body)
+
+
+
+Create new Video Subtitle
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.VideosApi();
+
+var videoId = 789; // Integer | Video ID to attach the created Subtitle
+
+var body = new KinowJavascriptSdk.CreateVideoSubtitleRequest(); // CreateVideoSubtitleRequest | Subtitle settings
+
+apiInstance.createVideoSubtitle(videoId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| Video ID to attach the created Subtitle | 
+ **body** | [**CreateVideoSubtitleRequest**](CreateVideoSubtitleRequest.md)| Subtitle settings | 
+
+### Return type
+
+[**Subtitle**](Subtitle.md)
 
 ### Authorization
 

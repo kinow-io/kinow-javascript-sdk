@@ -7,11 +7,12 @@ Method | HTTP request | Description
 [**attachCoverToExtract**](ExtractsApi.md#attachCoverToExtract) | **POST** /extracts/{extract_id}/cover | 
 [**attachFeaturesToExtract**](ExtractsApi.md#attachFeaturesToExtract) | **POST** /extracts/{extract_id}/features | 
 [**createExtract**](ExtractsApi.md#createExtract) | **POST** /extracts | 
-[**createSubtitle**](ExtractsApi.md#createSubtitle) | **POST** /extracts/{extract_id}/subtitle | 
+[**createExtractSubtitle**](ExtractsApi.md#createExtractSubtitle) | **POST** /extracts/{extract_id}/subtitle | 
 [**deleteExtract**](ExtractsApi.md#deleteExtract) | **DELETE** /extracts/{extract_id} | 
 [**getExtract**](ExtractsApi.md#getExtract) | **GET** /extracts/{extract_id} | 
 [**getExtractFeatures**](ExtractsApi.md#getExtractFeatures) | **GET** /extracts/{extract_id}/features | 
 [**getExtractPlayer**](ExtractsApi.md#getExtractPlayer) | **GET** /extracts/{extract_id}/player | 
+[**getExtractSubtitles**](ExtractsApi.md#getExtractSubtitles) | **GET** /extracts/{extract_id}/subtitles | 
 [**getExtracts**](ExtractsApi.md#getExtracts) | **GET** /extracts | 
 [**getProductExtracts**](ExtractsApi.md#getProductExtracts) | **GET** /products/{product_id}/extracts | 
 [**hasAccessToExtracts**](ExtractsApi.md#hasAccessToExtracts) | **POST** /extracts/has-access | 
@@ -192,9 +193,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="createSubtitle"></a>
-# **createSubtitle**
-> Subtitle createSubtitle(extractId, body)
+<a name="createExtractSubtitle"></a>
+# **createExtractSubtitle**
+> Subtitle createExtractSubtitle(extractId, body)
 
 
 
@@ -223,7 +224,7 @@ var extractId = 789; // Integer | Extract ID to attach the created Subtitle
 
 var body = new KinowJavascriptSdk.CreateExtractSubtitleRequest(); // CreateExtractSubtitleRequest | Subtitle settings
 
-apiInstance.createSubtitle(extractId, body).then(function(data) {
+apiInstance.createExtractSubtitle(extractId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -475,6 +476,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PlayerConfiguration**](PlayerConfiguration.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getExtractSubtitles"></a>
+# **getExtractSubtitles**
+> VideoSubtitlesResponse getExtractSubtitles(extractId, opts)
+
+
+
+Get subtitles of an extract
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ExtractsApi();
+
+var extractId = 789; // Integer | Extract ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getExtractSubtitles(extractId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extractId** | **Integer**| Extract ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
 
 ### Authorization
 

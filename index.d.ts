@@ -1125,6 +1125,15 @@ declare module 'kinow-javascript-sdk' {
     getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
   }
+  export class SubtitlesApi {
+    constructor(config?: ApiClient)
+    getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
+    getExtractSubtitles(extractId: number, opts?: any, callback?: Function): any
+    getSubtitles(opts?: any, callback?: Function): any
+    createVideoSubtitle(videoId: number, body: any, callback?: Function): Promise<Subtitle>
+    createExtractSubtitle(extractId: number, body: any, callback?: Function): Promise<Subtitle>
+    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
+  }
   export class ImagesApi {
     constructor(config?: ApiClient)
     getCategoryImages(categoryId: number, opts?: any, callback?: Function): any
@@ -1197,7 +1206,7 @@ declare module 'kinow-javascript-sdk' {
     attachCoverToVideo(videoId: number, idImage: number, callback?: Function): any
     getVideosFromProduct(productId: number, opts?: any, callback?: Function): any
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any
-    createSubtitle(videoId: number, body: any, callback?: Function): Promise<Subtitle>
+    createVideoSubtitle(videoId: number, body: any, callback?: Function): Promise<Subtitle>
     getVideos(opts?: any, callback?: Function): any
     createVideo(body: any, callback?: Function): Promise<Video>
     getVideo(videoId: number, callback?: Function): Promise<Video>
@@ -1236,11 +1245,12 @@ declare module 'kinow-javascript-sdk' {
     deleteExtract(extractId: number, callback?: Function): any
     hasAccessToExtracts(body: any, callback?: Function): any
     getExtractPlayer(extractId: number, opts?: any, callback?: Function): any
+    getExtractSubtitles(extractId: number, opts?: any, callback?: Function): any
     getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
     attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): any
-    createSubtitle(extractId: number, body: any, callback?: Function): Promise<Subtitle>
+    createExtractSubtitle(extractId: number, body: any, callback?: Function): Promise<Subtitle>
   }
   export class FreeGiftsApi {
     constructor(config?: ApiClient)
@@ -1397,10 +1407,6 @@ declare module 'kinow-javascript-sdk' {
   export class RecommendationsApi {
     constructor(config?: ApiClient)
     getCustomerRecommendations(customerId: number, opts?: any, callback?: Function): any
-  }
-  export class SubtitlesApi {
-    constructor(config?: ApiClient)
-    getSubtitles(opts?: any, callback?: Function): any
   }
   export class SupportApi {
     constructor(config?: ApiClient)
