@@ -128,6 +128,7 @@ declare module 'kinow-javascript-sdk' {
     total_discount_formatted: string
     total_trial_formatted: string
     total_formatted: string
+    taxes: Array<TaxPrice>
   }
   interface CartProduct {
     id_gift: number
@@ -734,6 +735,11 @@ declare module 'kinow-javascript-sdk' {
     data: string
     status: string
     date_add: string
+  }
+  interface TaxPrice {
+    name: string
+    amount: number
+    amount_formatted: string
   }
   interface TaxRule {
     id: number

@@ -10,5 +10,7 @@ Name | Type | Description | Notes
 **priceFormatted** | **String** |  | [optional] 
 **priceWithoutReductionFormatted** | **String** |  | [optional] 
 **reductionFormatted** | **String** |  | [optional] 
+**priceWithoutTaxes** | **Number** |  | [optional] 
+**priceWithoutTaxesFormatted** | **String** |  | [optional] 
 
 

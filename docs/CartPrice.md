@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **totalDiscountFormatted** | **String** |  | [optional] 
 **totalTrialFormatted** | **String** |  | [optional] 
 **totalFormatted** | **String** |  | [optional] 
+**taxes** | [**[TaxPrice]**](TaxPrice.md) |  | [optional] 
 
 
