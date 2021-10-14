@@ -1355,7 +1355,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerPrepaymentBalances"></a>
 # **getCustomerPrepaymentBalances**
-> [PrepaymentBalance] getCustomerPrepaymentBalances(customerId)
+> [PrepaymentBalance] getCustomerPrepaymentBalances(customerId, opts)
 
 
 
@@ -1382,7 +1382,10 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-apiInstance.getCustomerPrepaymentBalances(customerId).then(function(data) {
+var opts = { 
+  'currencyId': 56 // Integer | Currency ID to format amount
+};
+apiInstance.getCustomerPrepaymentBalances(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1395,6 +1398,7 @@ apiInstance.getCustomerPrepaymentBalances(customerId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
+ **currencyId** | **Integer**| Currency ID to format amount | [optional] 
 
 ### Return type
 

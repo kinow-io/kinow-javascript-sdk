@@ -546,6 +546,11 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_upd: string
   }
+  interface PrepaymentBonusAmount {
+    prepayment_bonus_id: number
+    amount: number
+    amount_formatted: string
+  }
   interface PrepaymentOperation {
     id: number
     id_customer: number
@@ -554,6 +559,11 @@ declare module 'kinow-javascript-sdk' {
     type: string
     date_add: string
     date_upd: string
+  }
+  interface PrepaymentOperationAmount {
+    prepayment_operation_id: number
+    amount: number
+    amount_formatted: string
   }
   interface PrepaymentRecharge {
     id: number
@@ -1017,7 +1027,7 @@ declare module 'kinow-javascript-sdk' {
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
     getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): any
     getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): any
-    getCustomerPrepaymentBalances(customerId: number, callback?: Function): any
+    getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): any
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): any
     getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): any
@@ -1374,11 +1384,13 @@ declare module 'kinow-javascript-sdk' {
   }
   export class PrepaymentsApi {
     constructor(config?: ApiClient)
-    getCustomerPrepaymentBalances(customerId: number, callback?: Function): any
+    getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): any
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): any
     getPrepaymentOperations(opts?: any, callback?: Function): any
+    getPrepaymentOperationsAmount(body: any, callback?: Function): any
     getPrepaymentOperation(prepaymentOperationId: number, callback?: Function): Promise<PrepaymentOperation>
     getPrepaymentBonusList(opts?: any, callback?: Function): any
+    getPrepaymentBonusAmount(body: any, callback?: Function): any
     getPrepaymentBonus(prepaymentBonusId: number, callback?: Function): Promise<PrepaymentBonus>
     getPrepaymentRecharges(opts?: any, callback?: Function): any
     getPrepaymentRecharge(prepaymentRechargeId: number, callback?: Function): Promise<PrepaymentRecharge>
