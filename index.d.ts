@@ -221,7 +221,6 @@ declare module 'kinow-javascript-sdk' {
     description_short: Array<I18nField>
   }
   interface Configuration {
-    id: number
     name: string
     value: object
   }
@@ -960,6 +959,7 @@ declare module 'kinow-javascript-sdk' {
     emptyCart(cartId: number, callback?: Function): any
     getLostsCarts(opts?: any, callback?: Function): any
     getPrice(body: any, callback?: Function): any
+    getCartPaymentModules(cartId: number, opts?: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
     preparePayment(cartId: number, paymentName: string, opts?: any, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
@@ -980,6 +980,7 @@ declare module 'kinow-javascript-sdk' {
     validateFreeOrder(cartId: number, callback?: Function): any
     getPaymentModules(opts?: any, callback?: Function): any
     getPaymentToken(token: number, callback?: Function): any
+    getCartPaymentModules(cartId: number, opts?: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
     preparePayment(cartId: number, paymentName: string, opts?: any, callback?: Function): any
     validatePayment(cartId: number, paymentName: string, paymentArgument: any, callback?: Function): any
