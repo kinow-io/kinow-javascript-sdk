@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** |  | [optional] 
-**amountFormatted** | **Number** |  | [optional] 
+**amountFormatted** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 
 
