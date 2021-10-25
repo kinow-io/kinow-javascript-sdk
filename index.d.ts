@@ -533,6 +533,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PrepaymentBalance {
     amount: number
+    amount_formatted: number
     type: string
   }
   interface PrepaymentBonus {
