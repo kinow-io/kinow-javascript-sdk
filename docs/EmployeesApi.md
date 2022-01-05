@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getEmployee"></a>
 # **getEmployee**
-> Employee getEmployee(employeeId)
+> EmployeeResponse getEmployee(employeeId)
 
 
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Employee**](Employee.md)
+[**EmployeeResponse**](EmployeeResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a name="getEmployees"></a>
 # **getEmployees**
-> Employees getEmployees(opts)
+> EmployeeListResponse getEmployees(opts)
 
 
 
@@ -93,8 +93,8 @@ var apiInstance = new KinowJavascriptSdk.EmployeesApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     email[value]=string&email[operator]=strict&firstname[value]=string&firstname[operator]=contains     _______________      {     \"email\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"firstname\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -112,13 +112,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     email[value]&#x3D;string&amp;email[operator]&#x3D;strict&amp;firstname[value]&#x3D;string&amp;firstname[operator]&#x3D;contains     _______________      {     \&quot;email\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;firstname\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Employees**](Employees.md)
+[**EmployeeListResponse**](EmployeeListResponse.md)
 
 ### Authorization
 

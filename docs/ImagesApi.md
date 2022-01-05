@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 <a name="getActorCoverImage"></a>
 # **getActorCoverImage**
-> Image getActorCoverImage(actorId)
+> ImageResponse getActorCoverImage(actorId)
 
 
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryBanner"></a>
 # **getCategoryBanner**
-> Image getCategoryBanner(categoryId)
+> ImageResponse getCategoryBanner(categoryId)
 
 
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 <a name="getDirectorCoverImage"></a>
 # **getDirectorCoverImage**
-> Image getDirectorCoverImage(directorId)
+> ImageResponse getDirectorCoverImage(directorId)
 
 
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductCoverImage"></a>
 # **getProductCoverImage**
-> Image getProductCoverImage(productId)
+> ImageResponse getProductCoverImage(productId)
 
 
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -415,7 +415,7 @@ This endpoint does not need any parameter.
 
 <a name="getProductImages"></a>
 # **getProductImages**
-> CategoryImagesResponse getProductImages(productId, opts)
+> ImageListResponse getProductImages(productId, opts)
 
 
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryImagesResponse**](CategoryImagesResponse.md)
+[**ImageListResponse**](ImageListResponse.md)
 
 ### Authorization
 
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 <a name="getSliderImage"></a>
 # **getSliderImage**
-> [Image] getSliderImage()
+> ImageListResponse getSliderImage()
 
 
 
@@ -572,7 +572,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Image]**](Image.md)
+[**ImageListResponse**](ImageListResponse.md)
 
 ### Authorization
 
@@ -585,7 +585,7 @@ This endpoint does not need any parameter.
 
 <a name="getSubscriptionCoverImage"></a>
 # **getSubscriptionCoverImage**
-> Image getSubscriptionCoverImage(subscriptionId)
+> ImageResponse getSubscriptionCoverImage(subscriptionId)
 
 
 
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideoCover"></a>
 # **getVideoCover**
-> Image getVideoCover(videoId)
+> ImageResponse getVideoCover(videoId)
 
 
 
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -697,7 +697,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadActorCover"></a>
 # **uploadActorCover**
-> Image uploadActorCover(actorId, file, hash, opts)
+> ImageResponse uploadActorCover(body)
 
 
 
@@ -722,16 +722,9 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var actorId = 3.4; // Number | Actor ID to fetch
+var body = new KinowJavascriptSdk.UploadActorCoverRequest(); // UploadActorCoverRequest | 
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
-};
-apiInstance.uploadActorCover(actorId, file, hash, opts).then(function(data) {
+apiInstance.uploadActorCover(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -743,14 +736,11 @@ apiInstance.uploadActorCover(actorId, file, hash, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actorId** | **Number**| Actor ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadActorCoverRequest**](UploadActorCoverRequest.md)|  | 
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -763,7 +753,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadCategoryCover"></a>
 # **uploadCategoryCover**
-> Image uploadCategoryCover(categoryId, file, hash, opts)
+> ImageResponse uploadCategoryCover(body)
 
 
 
@@ -788,16 +778,9 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var categoryId = 3.4; // Number | Category ID to fetch
+var body = new KinowJavascriptSdk.UploadCategoryCoverRequest(); // UploadCategoryCoverRequest | 
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
-};
-apiInstance.uploadCategoryCover(categoryId, file, hash, opts).then(function(data) {
+apiInstance.uploadCategoryCover(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -809,14 +792,11 @@ apiInstance.uploadCategoryCover(categoryId, file, hash, opts).then(function(data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Number**| Category ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadCategoryCoverRequest**](UploadCategoryCoverRequest.md)|  | 
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -898,7 +878,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadDirectorCover"></a>
 # **uploadDirectorCover**
-> Image uploadDirectorCover(directorId, file, hash, opts)
+> Image uploadDirectorCover(body)
 
 
 
@@ -923,16 +903,9 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var directorId = 3.4; // Number | Director ID to fetch
+var body = new KinowJavascriptSdk.UploadDirectorCoverRequest(); // UploadDirectorCoverRequest | 
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
-};
-apiInstance.uploadDirectorCover(directorId, file, hash, opts).then(function(data) {
+apiInstance.uploadDirectorCover(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -944,10 +917,7 @@ apiInstance.uploadDirectorCover(directorId, file, hash, opts).then(function(data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **directorId** | **Number**| Director ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadDirectorCoverRequest**](UploadDirectorCoverRequest.md)|  | 
 
 ### Return type
 
@@ -964,7 +934,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadProductCover"></a>
 # **uploadProductCover**
-> Image uploadProductCover(productId, file, hash, opts)
+> ImageResponse uploadProductCover(body)
 
 
 
@@ -989,16 +959,9 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var productId = 3.4; // Number | Product ID to fetch
+var body = new KinowJavascriptSdk.UploadProductCoverRequest(); // UploadProductCoverRequest | 
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
-};
-apiInstance.uploadProductCover(productId, file, hash, opts).then(function(data) {
+apiInstance.uploadProductCover(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1010,14 +973,11 @@ apiInstance.uploadProductCover(productId, file, hash, opts).then(function(data) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | **Number**| Product ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadProductCoverRequest**](UploadProductCoverRequest.md)|  | 
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -1099,7 +1059,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadSubscriptionCover"></a>
 # **uploadSubscriptionCover**
-> Image uploadSubscriptionCover(subscriptionId, file, hash, opts)
+> ImageResponse uploadSubscriptionCover(body)
 
 
 
@@ -1124,16 +1084,9 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ImagesApi();
 
-var subscriptionId = 3.4; // Number | Subscription ID to fetch
+var body = new KinowJavascriptSdk.UploadSubscriptionCoverRequest(); // UploadSubscriptionCoverRequest | 
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
-};
-apiInstance.uploadSubscriptionCover(subscriptionId, file, hash, opts).then(function(data) {
+apiInstance.uploadSubscriptionCover(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1145,14 +1098,11 @@ apiInstance.uploadSubscriptionCover(subscriptionId, file, hash, opts).then(funct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **Number**| Subscription ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadSubscriptionCoverRequest**](UploadSubscriptionCoverRequest.md)|  | 
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 

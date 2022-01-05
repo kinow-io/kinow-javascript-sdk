@@ -314,7 +314,7 @@ null (empty response body)
 
 <a name="getCategoryFeatures"></a>
 # **getCategoryFeatures**
-> Features getCategoryFeatures(categoryId, opts)
+> FeatureListResponse getCategoryFeatures(categoryId, opts)
 
 
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](Features.md)
+[**FeatureListResponse**](FeatureListResponse.md)
 
 ### Authorization
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeatureValues"></a>
 # **getFeatureValues**
-> Products1 getFeatureValues(opts)
+> Products getFeatureValues(opts)
 
 
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products1**](Products1.md)
+[**Products**](Products.md)
 
 ### Authorization
 
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeatures"></a>
 # **getFeatures**
-> Features getFeatures(opts)
+> FeatureListResponse getFeatures(opts)
 
 
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](Features.md)
+[**FeatureListResponse**](FeatureListResponse.md)
 
 ### Authorization
 
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductFeatures"></a>
 # **getProductFeatures**
-> Features getProductFeatures(productId, opts)
+> FeatureListResponse getProductFeatures(productId, opts)
 
 
 
@@ -605,7 +605,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](Features.md)
+[**FeatureListResponse**](FeatureListResponse.md)
 
 ### Authorization
 

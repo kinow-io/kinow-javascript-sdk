@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getCountries"></a>
 # **getCountries**
-> Countries getCountries(opts)
+> CountryListResponse getCountries(opts)
 
 
 
@@ -36,7 +36,7 @@ var apiInstance = new KinowJavascriptSdk.CountriesApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'bypassPagination': true // Boolean | 
 };
 apiInstance.getCountries(opts).then(function(data) {
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Countries**](Countries.md)
+[**CountryListResponse**](CountryListResponse.md)
 
 ### Authorization
 

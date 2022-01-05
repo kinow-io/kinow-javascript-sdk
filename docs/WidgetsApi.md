@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="getSliderImage"></a>
 # **getSliderImage**
-> [Image] getSliderImage()
+> ImageListResponse getSliderImage()
 
 
 
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Image]**](Image.md)
+[**ImageListResponse**](ImageListResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ This endpoint does not need any parameter.
 
 <a name="getWidgetAnalytics"></a>
 # **getWidgetAnalytics**
-> GoogleAnalytics getWidgetAnalytics()
+> GoogleAnalyticsResponse getWidgetAnalytics()
 
 
 
@@ -103,7 +103,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GoogleAnalytics**](GoogleAnalytics.md)
+[**GoogleAnalyticsResponse**](GoogleAnalyticsResponse.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ This endpoint does not need any parameter.
 
 <a name="getWidgetFooterMenu"></a>
 # **getWidgetFooterMenu**
-> WidgetFooterMenus getWidgetFooterMenu(opts)
+> WidgetFooterMenuListResponse getWidgetFooterMenu(opts)
 
 
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetFooterMenus**](WidgetFooterMenus.md)
+[**WidgetFooterMenuListResponse**](WidgetFooterMenuListResponse.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 <a name="getWidgetHomeRail"></a>
 # **getWidgetHomeRail**
-> WidgetHomeRails getWidgetHomeRail(opts)
+> WidgetHomeRailListResponse getWidgetHomeRail(opts)
 
 
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetHomeRails**](WidgetHomeRails.md)
+[**WidgetHomeRailListResponse**](WidgetHomeRailListResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 <a name="getWidgetHookPhrase"></a>
 # **getWidgetHookPhrase**
-> WidgetHookPhrases getWidgetHookPhrase(opts)
+> WidgetHookPhraseListResponse getWidgetHookPhrase(opts)
 
 
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetHookPhrases**](WidgetHookPhrases.md)
+[**WidgetHookPhraseListResponse**](WidgetHookPhraseListResponse.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 <a name="getWidgetSlider"></a>
 # **getWidgetSlider**
-> WidgetSliders getWidgetSlider(opts)
+> WidgetSliderListResponse getWidgetSlider(opts)
 
 
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetSliders**](WidgetSliders.md)
+[**WidgetSliderListResponse**](WidgetSliderListResponse.md)
 
 ### Authorization
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="getWidgetSliderItem"></a>
 # **getWidgetSliderItem**
-> WidgetSlider getWidgetSliderItem(sliderId)
+> WidgetSliderResponse getWidgetSliderItem(sliderId)
 
 
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetSlider**](WidgetSlider.md)
+[**WidgetSliderResponse**](WidgetSliderResponse.md)
 
 ### Authorization
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 <a name="getWidgetTopMenu"></a>
 # **getWidgetTopMenu**
-> WidgetTopMenus getWidgetTopMenu(opts)
+> WidgetTopMenuListResponse getWidgetTopMenu(opts)
 
 
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetTopMenus**](WidgetTopMenus.md)
+[**WidgetTopMenuListResponse**](WidgetTopMenuListResponse.md)
 
 ### Authorization
 

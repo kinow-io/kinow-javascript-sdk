@@ -135,7 +135,7 @@ null (empty response body)
 
 <a name="getDisabledSubscriptions"></a>
 # **getDisabledSubscriptions**
-> Subscriptions getDisabledSubscriptions(videoId, opts)
+> SubscriptionListResponse getDisabledSubscriptions(videoId, opts)
 
 
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscriptions**](Subscriptions.md)
+[**SubscriptionListResponse**](SubscriptionListResponse.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductSubscription"></a>
 # **getProductSubscription**
-> Subscription getProductSubscription(productId)
+> SubscriptionResponse getProductSubscription(productId)
 
 
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+[**SubscriptionResponse**](SubscriptionResponse.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubscription"></a>
 # **getSubscription**
-> Subscription getSubscription(subscriptionId)
+> SubscriptionResponse getSubscription(subscriptionId)
 
 
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+[**SubscriptionResponse**](SubscriptionResponse.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubscriptionCategories"></a>
 # **getSubscriptionCategories**
-> Categories getSubscriptionCategories(subscriptionId, opts)
+> CategoryListResponse getSubscriptionCategories(subscriptionId, opts)
 
 
 
@@ -338,7 +338,7 @@ var subscriptionId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Categories**](Categories.md)
+[**CategoryListResponse**](CategoryListResponse.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubscriptionCoverImage"></a>
 # **getSubscriptionCoverImage**
-> Image getSubscriptionCoverImage(subscriptionId)
+> ImageResponse getSubscriptionCoverImage(subscriptionId)
 
 
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubscriptions"></a>
 # **getSubscriptions**
-> Subscriptions getSubscriptions(opts)
+> SubscriptionListResponse getSubscriptions(opts)
 
 
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscriptions**](Subscriptions.md)
+[**SubscriptionListResponse**](SubscriptionListResponse.md)
 
 ### Authorization
 
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadSubscriptionCover"></a>
 # **uploadSubscriptionCover**
-> Image uploadSubscriptionCover(subscriptionId, file, hash, opts)
+> ImageResponse uploadSubscriptionCover(body)
 
 
 
@@ -515,16 +515,9 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
 
-var subscriptionId = 3.4; // Number | Subscription ID to fetch
+var body = new KinowJavascriptSdk.UploadSubscriptionCoverRequest(); // UploadSubscriptionCoverRequest | 
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
-};
-apiInstance.uploadSubscriptionCover(subscriptionId, file, hash, opts).then(function(data) {
+apiInstance.uploadSubscriptionCover(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -536,14 +529,11 @@ apiInstance.uploadSubscriptionCover(subscriptionId, file, hash, opts).then(funct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **Number**| Subscription ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadSubscriptionCoverRequest**](UploadSubscriptionCoverRequest.md)|  | 
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 

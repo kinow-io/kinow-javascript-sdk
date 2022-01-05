@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createDevices"></a>
 # **createDevices**
-> Device createDevices(body)
+> DeviceResponse createDevices(body)
 
 
 
@@ -36,7 +36,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.DevicesApi();
 
-var body = new KinowJavascriptSdk.ProductAttributeCreateRequest1(); // ProductAttributeCreateRequest1 | 
+var body = new KinowJavascriptSdk.CreateDeviceRequest(); // CreateDeviceRequest | 
 
 apiInstance.createDevices(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -50,11 +50,11 @@ apiInstance.createDevices(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductAttributeCreateRequest1**](ProductAttributeCreateRequest1.md)|  | 
+ **body** | [**CreateDeviceRequest**](CreateDeviceRequest.md)|  | 
 
 ### Return type
 
-[**Device**](Device.md)
+[**DeviceResponse**](DeviceResponse.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ null (empty response body)
 
 <a name="getCustomerDevices"></a>
 # **getCustomerDevices**
-> DeviceList getCustomerDevices(customerId, opts)
+> DeviceListResponse getCustomerDevices(customerId, opts)
 
 
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceList**](DeviceList.md)
+[**DeviceListResponse**](DeviceListResponse.md)
 
 ### Authorization
 

@@ -139,7 +139,7 @@ null (empty response body)
 
 <a name="createExtract"></a>
 # **createExtract**
-> Extract createExtract(body)
+> ExtractResponse createExtract(body)
 
 
 
@@ -164,7 +164,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
-var body = new KinowJavascriptSdk.Extract(); // Extract | 
+var body = new KinowJavascriptSdk.CreateExtractRequest(); // CreateExtractRequest | 
 
 apiInstance.createExtract(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -178,11 +178,11 @@ apiInstance.createExtract(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Extract**](Extract.md)|  | 
+ **body** | [**CreateExtractRequest**](CreateExtractRequest.md)|  | 
 
 ### Return type
 
-[**Extract**](Extract.md)
+[**ExtractResponse**](ExtractResponse.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 <a name="createExtractSubtitle"></a>
 # **createExtractSubtitle**
-> Subtitle createExtractSubtitle(extractId, body)
+> SubtitleResponse createExtractSubtitle(extractId, body)
 
 
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitle**](Subtitle.md)
+[**SubtitleResponse**](SubtitleResponse.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
-var extractId = 789; // Integer | Extract ID to update
+var extractId = 789; // Integer | Extract ID to delete
 
 apiInstance.deleteExtract(extractId).then(function() {
   console.log('API called successfully.');
@@ -293,7 +293,7 @@ apiInstance.deleteExtract(extractId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extractId** | **Integer**| Extract ID to update | 
+ **extractId** | **Integer**| Extract ID to delete | 
 
 ### Return type
 
@@ -310,7 +310,7 @@ null (empty response body)
 
 <a name="getExtract"></a>
 # **getExtract**
-> Extract getExtract(extractId)
+> ExtractResponse getExtract(extractId)
 
 
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Extract**](Extract.md)
+[**ExtractResponse**](ExtractResponse.md)
 
 ### Authorization
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 <a name="getExtractSubtitles"></a>
 # **getExtractSubtitles**
-> VideoSubtitlesResponse getExtractSubtitles(extractId, opts)
+> ExtractSubtitlesResponse getExtractSubtitles(extractId, opts)
 
 
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
+[**ExtractSubtitlesResponse**](ExtractSubtitlesResponse.md)
 
 ### Authorization
 
@@ -550,7 +550,7 @@ Name | Type | Description  | Notes
 
 <a name="getExtracts"></a>
 # **getExtracts**
-> Videos1 getExtracts(opts)
+> ExtractListResponse getExtracts(opts)
 
 
 
@@ -577,9 +577,9 @@ var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'features': "features_example", // String |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId.
-  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'features': "features_example", // String |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId.
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'ip': "ip_example" // String | Filter by user IP
 };
 apiInstance.getExtracts(opts).then(function(data) {
@@ -596,13 +596,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **features** | **String**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **String**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **ip** | **String**| Filter by user IP | [optional] 
 
 ### Return type
 
-[**Videos1**](Videos1.md)
+[**ExtractListResponse**](ExtractListResponse.md)
 
 ### Authorization
 
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductExtracts"></a>
 # **getProductExtracts**
-> Videos1 getProductExtracts(productId, opts)
+> ExtractListResponse getProductExtracts(productId, opts)
 
 
 
@@ -643,9 +643,9 @@ var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
-  'ip': "ip_example", // String | Filter by user IP
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
+  'ip': "ip_example" // String | Filter by user IP
 };
 apiInstance.getProductExtracts(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -660,13 +660,13 @@ apiInstance.getProductExtracts(productId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
- **ip** | **String**| Filter by user IP | [optional] 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
 
 ### Return type
 
-[**Videos1**](Videos1.md)
+[**ExtractListResponse**](ExtractListResponse.md)
 
 ### Authorization
 
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 
 <a name="updateExtract"></a>
 # **updateExtract**
-> Extract updateExtract(extractId, body)
+> ExtractResponse updateExtract(extractId, body)
 
 
 
@@ -762,7 +762,7 @@ var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 
 var extractId = 789; // Integer | Extract ID to fetch
 
-var body = new KinowJavascriptSdk.Extract(); // Extract | 
+var body = new KinowJavascriptSdk.UpdateExtractRequest(); // UpdateExtractRequest | 
 
 apiInstance.updateExtract(extractId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -777,11 +777,11 @@ apiInstance.updateExtract(extractId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **extractId** | **Integer**| Extract ID to fetch | 
- **body** | [**Extract**](Extract.md)|  | 
+ **body** | [**UpdateExtractRequest**](UpdateExtractRequest.md)|  | 
 
 ### Return type
 
-[**Extract**](Extract.md)
+[**ExtractResponse**](ExtractResponse.md)
 
 ### Authorization
 

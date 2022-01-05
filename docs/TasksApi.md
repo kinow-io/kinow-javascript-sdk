@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createTask"></a>
 # **createTask**
-> Task createTask(body)
+> TaskResponse createTask(body)
 
 
 
@@ -34,7 +34,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.TasksApi();
 
-var body = new KinowJavascriptSdk.TaskCreateRequest(); // TaskCreateRequest | Create task object
+var body = new KinowJavascriptSdk.CreateTaskRequest(); // CreateTaskRequest | Create task object
 
 apiInstance.createTask(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -48,11 +48,11 @@ apiInstance.createTask(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TaskCreateRequest**](TaskCreateRequest.md)| Create task object | 
+ **body** | [**CreateTaskRequest**](CreateTaskRequest.md)| Create task object | 
 
 ### Return type
 
-[**Task**](Task.md)
+[**TaskResponse**](TaskResponse.md)
 
 ### Authorization
 

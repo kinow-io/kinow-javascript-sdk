@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getTaxRules"></a>
 # **getTaxRules**
-> TaxRules getTaxRules(opts)
+> TaxRuleListResponse getTaxRules(opts)
 
 
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxRules**](TaxRules.md)
+[**TaxRuleListResponse**](TaxRuleListResponse.md)
 
 ### Authorization
 

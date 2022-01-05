@@ -309,7 +309,7 @@ null (empty response body)
 
 <a name="getFeatureValues"></a>
 # **getFeatureValues**
-> Products1 getFeatureValues(opts)
+> Products getFeatureValues(opts)
 
 
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products1**](Products1.md)
+[**Products**](Products.md)
 
 ### Authorization
 

@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**[Product]**](Product.md) |  | [optional] 
+**data** | [**[FeatureValue]**](FeatureValue.md) |  | [optional] 
 
 

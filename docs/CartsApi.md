@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**attachCartToCustomer**](CartsApi.md#attachCartToCustomer) | **POST** /customers/{customer_id}/carts | 
 [**createCart**](CartsApi.md#createCart) | **POST** /carts | 
 [**deleteCart**](CartsApi.md#deleteCart) | **DELETE** /carts/{cart_id} | 
-[**deleteProductFromCart**](CartsApi.md#deleteProductFromCart) | **DELETE** /carts/{cart_id}/products | 
 [**detachCartRuleFromCart**](CartsApi.md#detachCartRuleFromCart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
 [**emptyCart**](CartsApi.md#emptyCart) | **POST** /carts/{cart_id}/empty | 
 [**getCart**](CartsApi.md#getCart) | **GET** /carts/{cart_id} | 
@@ -22,6 +21,7 @@ Method | HTTP request | Description
 [**getPrice**](CartsApi.md#getPrice) | **POST** /carts/price | 
 [**preparePayment**](CartsApi.md#preparePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
 [**recurringPayment**](CartsApi.md#recurringPayment) | **POST** /carts/{cart_id}/payments/{payment_name}/recurring | 
+[**removeProductFromCart**](CartsApi.md#removeProductFromCart) | **DELETE** /carts/{cart_id}/products | 
 [**updateCart**](CartsApi.md#updateCart) | **PUT** /carts/{cart_id} | 
 [**validateFreeOrder**](CartsApi.md#validateFreeOrder) | **POST** /carts/{cart_id}/validate-free-order | 
 [**validatePayment**](CartsApi.md#validatePayment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 <a name="addProductToCart"></a>
 # **addProductToCart**
-> Cart addProductToCart(cartId, productId, opts)
+> CartResponse addProductToCart(cartId, body)
 
 
 
@@ -56,16 +56,9 @@ var apiInstance = new KinowJavascriptSdk.CartsApi();
 
 var cartId = 789; // Integer | Cart ID to fetch
 
-var productId = 789; // Integer | Product ID to add to cart
+var body = new KinowJavascriptSdk.AddProductToCartRequest(); // AddProductToCartRequest | Add product to cart request
 
-var opts = { 
-  'productAttributeId': 789, // Integer | ProductAttribute ID, required to add product to cart if product is not a subscription
-  'giftId': 789, // Integer | Gift ID linked to the item in cart
-  'switchSubscriptionId': 789, // Integer | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel
-  'isGift': false, // Boolean | Allows bypass of access check (in case the current user already bought the product and it cannot be reordered)
-  'ipAddress': "ipAddress_example" // String | IP address
-};
-apiInstance.addProductToCart(cartId, productId, opts).then(function(data) {
+apiInstance.addProductToCart(cartId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -78,16 +71,11 @@ apiInstance.addProductToCart(cartId, productId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
- **productId** | **Integer**| Product ID to add to cart | 
- **productAttributeId** | **Integer**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
- **giftId** | **Integer**| Gift ID linked to the item in cart | [optional] 
- **switchSubscriptionId** | **Integer**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
- **isGift** | **Boolean**| Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) | [optional] [default to false]
- **ipAddress** | **String**| IP address | [optional] 
+ **body** | [**AddProductToCartRequest**](AddProductToCartRequest.md)| Add product to cart request | 
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**CartResponse**](CartResponse.md)
 
 ### Authorization
 
@@ -163,7 +151,7 @@ null (empty response body)
 
 <a name="attachCartToCustomer"></a>
 # **attachCartToCustomer**
-> Cart attachCartToCustomer(customerId, cartId)
+> CartResponse attachCartToCustomer(customerId, cartId)
 
 
 
@@ -209,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**CartResponse**](CartResponse.md)
 
 ### Authorization
 
@@ -222,7 +210,7 @@ Name | Type | Description  | Notes
 
 <a name="createCart"></a>
 # **createCart**
-> Cart createCart(body)
+> CartResponse createCart(body)
 
 
 
@@ -247,7 +235,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.CartsApi();
 
-var body = new KinowJavascriptSdk.Cart1(); // Cart1 | Cart settings
+var body = new KinowJavascriptSdk.CreateCartRequest(); // CreateCartRequest | Cart settings
 
 apiInstance.createCart(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -261,11 +249,11 @@ apiInstance.createCart(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Cart1**](Cart1.md)| Cart settings | 
+ **body** | [**CreateCartRequest**](CreateCartRequest.md)| Cart settings | 
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**CartResponse**](CartResponse.md)
 
 ### Authorization
 
@@ -318,71 +306,6 @@ apiInstance.deleteCart(cartId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="deleteProductFromCart"></a>
-# **deleteProductFromCart**
-> deleteProductFromCart(cartId, productId, opts)
-
-
-
-Remove product from cart
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-var defaultClient = KinowJavascriptSdk.ApiClient.instance;
-
-// Configure API key authorization: ApiClientId
-var ApiClientId = defaultClient.authentications['ApiClientId'];
-ApiClientId.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientId.apiKeyPrefix = 'Token';
-
-// Configure API key authorization: ApiClientSecret
-var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
-ApiClientSecret.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientSecret.apiKeyPrefix = 'Token';
-
-var apiInstance = new KinowJavascriptSdk.CartsApi();
-
-var cartId = 789; // Integer | Cart ID to fetch
-
-var productId = 789; // Integer | Product ID to delete from cart
-
-var opts = { 
-  'productAttributeId': 789, // Integer | Product attribute ID, required to add product to cart if product is not a subscription
-  'giftId': 789 // Integer | Gift ID linked to the item in cart
-};
-apiInstance.deleteProductFromCart(cartId, productId, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cartId** | **Integer**| Cart ID to fetch | 
- **productId** | **Integer**| Product ID to delete from cart | 
- **productAttributeId** | **Integer**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
- **giftId** | **Integer**| Gift ID linked to the item in cart | [optional] 
 
 ### Return type
 
@@ -514,7 +437,7 @@ null (empty response body)
 
 <a name="getCart"></a>
 # **getCart**
-> Cart getCart(cartId)
+> CartResponse getCart(cartId)
 
 
 
@@ -557,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**CartResponse**](CartResponse.md)
 
 ### Authorization
 
@@ -659,8 +582,8 @@ var apiInstance = new KinowJavascriptSdk.CartsApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -678,7 +601,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
@@ -697,7 +620,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerCarts"></a>
 # **getCustomerCarts**
-> Carts getCustomerCarts(customerId, opts)
+> CartListResponse getCustomerCarts(customerId, opts)
 
 
 
@@ -726,8 +649,8 @@ var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     date_add[value]=string&date_add[operator]=lt     _______________      {     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -746,13 +669,13 @@ Name | Type | Description  | Notes
  **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Carts**](Carts.md)
+[**CartListResponse**](CartListResponse.md)
 
 ### Authorization
 
@@ -765,7 +688,7 @@ Name | Type | Description  | Notes
 
 <a name="getLastCart"></a>
 # **getLastCart**
-> Cart getLastCart(customerId)
+> CartResponse getLastCart(customerId)
 
 
 
@@ -808,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**CartResponse**](CartResponse.md)
 
 ### Authorization
 
@@ -821,7 +744,7 @@ Name | Type | Description  | Notes
 
 <a name="getLostsCarts"></a>
 # **getLostsCarts**
-> Carts getLostsCarts(opts)
+> CartListResponse getLostsCarts(opts)
 
 
 
@@ -848,8 +771,8 @@ var apiInstance = new KinowJavascriptSdk.CartsApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |  ``` date_add[value]=string&date_add[operator]=lt _______________  {     \"date_add\": {         \"value\": \"string\",         \"operator\": \"lt\"     } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -867,13 +790,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|  &#x60;&#x60;&#x60; date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  {     \&quot;date_add\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;lt\&quot;     } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Carts**](Carts.md)
+[**CartListResponse**](CartListResponse.md)
 
 ### Authorization
 
@@ -886,7 +809,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentUrl"></a>
 # **getPaymentUrl**
-> PaymentUrl getPaymentUrl(cartId, paymentName)
+> PaymentUrlResponse getPaymentUrl(cartId, paymentName)
 
 
 
@@ -932,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentUrl**](PaymentUrl.md)
+[**PaymentUrlResponse**](PaymentUrlResponse.md)
 
 ### Authorization
 
@@ -945,7 +868,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrice"></a>
 # **getPrice**
-> [CartPrice] getPrice(body)
+> [CartPriceResponse] getPrice(body)
 
 
 
@@ -988,7 +911,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CartPrice]**](CartPrice.md)
+[**[CartPriceResponse]**](CartPriceResponse.md)
 
 ### Authorization
 
@@ -1001,7 +924,7 @@ Name | Type | Description  | Notes
 
 <a name="preparePayment"></a>
 # **preparePayment**
-> PaymentDetails1 preparePayment(cartId, paymentName, opts)
+> PaymentDetailsResponse1 preparePayment(cartId, paymentName, opts)
 
 
 
@@ -1051,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetails1**](PaymentDetails1.md)
+[**PaymentDetailsResponse1**](PaymentDetailsResponse1.md)
 
 ### Authorization
 
@@ -1124,9 +1047,74 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="removeProductFromCart"></a>
+# **removeProductFromCart**
+> removeProductFromCart(cartId, productId, opts)
+
+
+
+Remove product from cart
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CartsApi();
+
+var cartId = 789; // Integer | Cart ID to fetch
+
+var productId = 789; // Integer | Product ID to delete from cart
+
+var opts = { 
+  'productAttributeId': 789, // Integer | Product attribute ID, required to add product to cart if product is not a subscription
+  'giftId': 789 // Integer | Gift ID linked to the item in cart
+};
+apiInstance.removeProductFromCart(cartId, productId, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cartId** | **Integer**| Cart ID to fetch | 
+ **productId** | **Integer**| Product ID to delete from cart | 
+ **productAttributeId** | **Integer**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+ **giftId** | **Integer**| Gift ID linked to the item in cart | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="updateCart"></a>
 # **updateCart**
-> Cart updateCart(cartId, body)
+> CartResponse updateCart(cartId, body)
 
 
 
@@ -1153,7 +1141,7 @@ var apiInstance = new KinowJavascriptSdk.CartsApi();
 
 var cartId = 789; // Integer | Cart id
 
-var body = new KinowJavascriptSdk.Cart2(); // Cart2 | Cart settings
+var body = new KinowJavascriptSdk.UpdateCartRequest(); // UpdateCartRequest | Cart settings
 
 apiInstance.updateCart(cartId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1168,11 +1156,11 @@ apiInstance.updateCart(cartId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart id | 
- **body** | [**Cart2**](Cart2.md)| Cart settings | 
+ **body** | [**UpdateCartRequest**](UpdateCartRequest.md)| Cart settings | 
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**CartResponse**](CartResponse.md)
 
 ### Authorization
 
@@ -1270,7 +1258,7 @@ var cartId = 789; // Integer | Cart ID to fetch
 
 var paymentName = "paymentName_example"; // String | Payment gateway name
 
-var paymentArgument = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment argument
+var paymentArgument = new KinowJavascriptSdk.PaymentArgumentsResponse(); // PaymentArgumentsResponse | Payment argument
 
 apiInstance.validatePayment(cartId, paymentName, paymentArgument).then(function() {
   console.log('API called successfully.');
@@ -1286,7 +1274,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment gateway name | 
- **paymentArgument** | [**PaymentArguments**](PaymentArguments.md)| Payment argument | 
+ **paymentArgument** | [**PaymentArgumentsResponse**](PaymentArgumentsResponse.md)| Payment argument | 
 
 ### Return type
 

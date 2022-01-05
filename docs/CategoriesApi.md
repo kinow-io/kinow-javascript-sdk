@@ -211,7 +211,7 @@ null (empty response body)
 
 <a name="createCategory"></a>
 # **createCategory**
-> Category createCategory(body)
+> CategoryResponse createCategory(body)
 
 
 
@@ -236,7 +236,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var body = new KinowJavascriptSdk.Category(); // Category | 
+var body = new KinowJavascriptSdk.CreateCategoryRequest(); // CreateCategoryRequest | 
 
 apiInstance.createCategory(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -250,11 +250,11 @@ apiInstance.createCategory(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Category**](Category.md)|  | 
+ **body** | [**CreateCategoryRequest**](CreateCategoryRequest.md)|  | 
 
 ### Return type
 
-[**Category**](Category.md)
+[**CategoryResponse**](CategoryResponse.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ null (empty response body)
 
 <a name="getAvailableCategory"></a>
 # **getAvailableCategory**
-> Category getAvailableCategory(categoryId, opts)
+> CategoryResponse getAvailableCategory(categoryId, opts)
 
 
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Category**](Category.md)
+[**CategoryResponse**](CategoryResponse.md)
 
 ### Authorization
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategories"></a>
 # **getCategories**
-> Categories getCategories(opts)
+> CategoryListResponse getCategories(opts)
 
 
 
@@ -528,9 +528,9 @@ var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'features': "features_example", // String |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  {     \"*\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"1\": {         \"value\": \"string\",         \"operator\": \"contains\"     } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId.
-  'filters': "filters_example", // String |  ``` name[value]=string&name[operator]=strict&description[value]=string&description[operator]=contains _______________  {     \"name\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"description\": {         \"value\": \"string\",         \"operator\": \"contains\"     } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'features': "features_example", // String |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId.
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -548,14 +548,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **features** | **String**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  {     \&quot;*\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;description[value]&#x3D;string&amp;description[operator]&#x3D;contains _______________  {     \&quot;name\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;description\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **String**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Categories**](Categories.md)
+[**CategoryListResponse**](CategoryListResponse.md)
 
 ### Authorization
 
@@ -568,7 +568,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoriesFromCategory"></a>
 # **getCategoriesFromCategory**
-> Categories getCategoriesFromCategory(categoryId, opts)
+> CategoryListResponse getCategoriesFromCategory(categoryId, opts)
 
 
 
@@ -597,7 +597,7 @@ var categoryId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Categories**](Categories.md)
+[**CategoryListResponse**](CategoryListResponse.md)
 
 ### Authorization
 
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategory"></a>
 # **getCategory**
-> Category getCategory(categoryId)
+> CategoryResponse getCategory(categoryId)
 
 
 
@@ -677,7 +677,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Category**](Category.md)
+[**CategoryResponse**](CategoryResponse.md)
 
 ### Authorization
 
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryActors"></a>
 # **getCategoryActors**
-> Actors getCategoryActors(categoryId, opts)
+> CategoryActorsResponse getCategoryActors(categoryId, opts)
 
 
 
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actors**](Actors.md)
+[**CategoryActorsResponse**](CategoryActorsResponse.md)
 
 ### Authorization
 
@@ -752,7 +752,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryBanner"></a>
 # **getCategoryBanner**
-> Image getCategoryBanner(categoryId)
+> ImageResponse getCategoryBanner(categoryId)
 
 
 
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryFeatures"></a>
 # **getCategoryFeatures**
-> Features getCategoryFeatures(categoryId, opts)
+> FeatureListResponse getCategoryFeatures(categoryId, opts)
 
 
 
@@ -919,7 +919,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](Features.md)
+[**FeatureListResponse**](FeatureListResponse.md)
 
 ### Authorization
 
@@ -996,7 +996,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryProducts"></a>
 # **getCategoryProducts**
-> Products getCategoryProducts(categoryId, opts)
+> ProductListResponse getCategoryProducts(categoryId, opts)
 
 
 
@@ -1025,12 +1025,12 @@ var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
-  'sortDirection': "sortDirection_example", // String | Sorting direction (asc by default)
-  'ip': "ip_example", // String | Filter by user IP
-  'features': "features_example", // String |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId.
-  'filters': "filters_example" // String |      ```     name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+  'ip': "ip_example" // String | Filter by user IP
+  'features': "features_example", // String |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId.
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
 };
 apiInstance.getCategoryProducts(categoryId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1050,12 +1050,12 @@ Name | Type | Description  | Notes
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
  **ip** | **String**| Filter by user IP | [optional] 
- **features** | **String**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **String**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**Products**](Products.md)
+[**ProductListResponse**](ProductListResponse.md)
 
 ### Authorization
 
@@ -1130,7 +1130,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryVideoSubtitles"></a>
 # **getCategoryVideoSubtitles**
-> VideoSubtitlesResponse getCategoryVideoSubtitles(videoId, opts)
+> SubtitleListResponse getCategoryVideoSubtitles(videoId, opts)
 
 
 
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
+[**SubtitleListResponse**](SubtitleListResponse.md)
 
 ### Authorization
 
@@ -1192,7 +1192,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductCategories"></a>
 # **getProductCategories**
-> Categories getProductCategories(productId, opts)
+> CategoryListResponse getProductCategories(productId, opts)
 
 
 
@@ -1221,8 +1221,8 @@ var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -1241,13 +1241,13 @@ Name | Type | Description  | Notes
  **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Categories**](Categories.md)
+[**CategoryListResponse**](CategoryListResponse.md)
 
 ### Authorization
 
@@ -1260,7 +1260,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubscriptionCategories"></a>
 # **getSubscriptionCategories**
-> Categories getSubscriptionCategories(subscriptionId, opts)
+> CategoryListResponse getSubscriptionCategories(subscriptionId, opts)
 
 
 
@@ -1289,7 +1289,7 @@ var subscriptionId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -1313,7 +1313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Categories**](Categories.md)
+[**CategoryListResponse**](CategoryListResponse.md)
 
 ### Authorization
 
@@ -1326,7 +1326,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideosFromCategories"></a>
 # **getVideosFromCategories**
-> Videos getVideosFromCategories(opts)
+> VideoCategoryListResponse getVideosFromCategories(opts)
 
 
 
@@ -1353,7 +1353,7 @@ var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -1376,7 +1376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**VideoCategoryListResponse**](VideoCategoryListResponse.md)
 
 ### Authorization
 
@@ -1389,7 +1389,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideosFromCategory"></a>
 # **getVideosFromCategory**
-> Videos getVideosFromCategory(categoryId, opts)
+> VideoCategoryListResponse getVideosFromCategory(categoryId, opts)
 
 
 
@@ -1418,7 +1418,7 @@ var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -1442,7 +1442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**VideoCategoryListResponse**](VideoCategoryListResponse.md)
 
 ### Authorization
 
@@ -1455,7 +1455,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCategory"></a>
 # **updateCategory**
-> Category updateCategory(categoryId, body)
+> CategoryResponse updateCategory(categoryId, body)
 
 
 
@@ -1482,7 +1482,7 @@ var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
 var categoryId = 789; // Integer | Category ID to update
 
-var body = new KinowJavascriptSdk.Category(); // Category | 
+var body = new KinowJavascriptSdk.UpdateCategoryRequest(); // UpdateCategoryRequest | Update category request
 
 apiInstance.updateCategory(categoryId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1497,11 +1497,11 @@ apiInstance.updateCategory(categoryId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **Integer**| Category ID to update | 
- **body** | [**Category**](Category.md)|  | 
+ **body** | [**UpdateCategoryRequest**](UpdateCategoryRequest.md)| Update category request | 
 
 ### Return type
 
-[**Category**](Category.md)
+[**CategoryResponse**](CategoryResponse.md)
 
 ### Authorization
 
@@ -1514,7 +1514,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadCategoryCover"></a>
 # **uploadCategoryCover**
-> Image uploadCategoryCover(categoryId, file, hash, opts)
+> ImageResponse uploadCategoryCover(body)
 
 
 
@@ -1539,16 +1539,9 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var categoryId = 3.4; // Number | Category ID to fetch
+var body = new KinowJavascriptSdk.UploadCategoryCoverRequest(); // UploadCategoryCoverRequest | 
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
-var opts = { 
-  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
-};
-apiInstance.uploadCategoryCover(categoryId, file, hash, opts).then(function(data) {
+apiInstance.uploadCategoryCover(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1560,14 +1553,11 @@ apiInstance.uploadCategoryCover(categoryId, file, hash, opts).then(function(data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **Number**| Category ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
- **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadCategoryCoverRequest**](UploadCategoryCoverRequest.md)|  | 
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 

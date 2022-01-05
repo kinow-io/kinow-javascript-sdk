@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="createExtractSubtitle"></a>
 # **createExtractSubtitle**
-> Subtitle createExtractSubtitle(extractId, body)
+> SubtitleResponse createExtractSubtitle(extractId, body)
 
 
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitle**](Subtitle.md)
+[**SubtitleResponse**](SubtitleResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 <a name="createVideoSubtitle"></a>
 # **createVideoSubtitle**
-> Subtitle createVideoSubtitle(videoId, body)
+> SubtitleResponse createVideoSubtitle(videoId, body)
 
 
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitle**](Subtitle.md)
+[**SubtitleResponse**](SubtitleResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryVideoSubtitles"></a>
 # **getCategoryVideoSubtitles**
-> VideoSubtitlesResponse getCategoryVideoSubtitles(videoId, opts)
+> SubtitleListResponse getCategoryVideoSubtitles(videoId, opts)
 
 
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
+[**SubtitleListResponse**](SubtitleListResponse.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 <a name="getExtractSubtitles"></a>
 # **getExtractSubtitles**
-> VideoSubtitlesResponse getExtractSubtitles(extractId, opts)
+> ExtractSubtitlesResponse getExtractSubtitles(extractId, opts)
 
 
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
+[**ExtractSubtitlesResponse**](ExtractSubtitlesResponse.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubtitles"></a>
 # **getSubtitles**
-> SubtitleFiles getSubtitles(opts)
+> SubtitleFileListResponse getSubtitles(opts)
 
 
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubtitleFiles**](SubtitleFiles.md)
+[**SubtitleFileListResponse**](SubtitleFileListResponse.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideoSubtitles"></a>
 # **getVideoSubtitles**
-> VideoSubtitlesResponse getVideoSubtitles(videoId, opts)
+> ExtractSubtitlesResponse getVideoSubtitles(videoId, opts)
 
 
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
+[**ExtractSubtitlesResponse**](ExtractSubtitlesResponse.md)
 
 ### Authorization
 

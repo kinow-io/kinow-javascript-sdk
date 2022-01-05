@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="getCustomerGroupTotalWatched"></a>
 # **getCustomerGroupTotalWatched**
-> CustomerGroupVideoStats1 getCustomerGroupTotalWatched(groupId, opts)
+> CustomerGroupVideoStatsListResponse getCustomerGroupTotalWatched(groupId, opts)
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerGroupVideoStats1**](CustomerGroupVideoStats1.md)
+[**CustomerGroupVideoStatsListResponse**](CustomerGroupVideoStatsListResponse.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerSessions"></a>
 # **getCustomerSessions**
-> SessionVideoStats getCustomerSessions(opts)
+> SessionVideoStatListResponse getCustomerSessions(opts)
 
 
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SessionVideoStats**](SessionVideoStats.md)
+[**SessionVideoStatListResponse**](SessionVideoStatListResponse.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerSessionsMultiple"></a>
 # **getCustomerSessionsMultiple**
-> [SessionVideoStat] getCustomerSessionsMultiple(customerId, body)
+> [SessionVideoStatResponse] getCustomerSessionsMultiple(customerId, body)
 
 
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[SessionVideoStat]**](SessionVideoStat.md)
+[**[SessionVideoStatResponse]**](SessionVideoStatResponse.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerVideoStats"></a>
 # **getCustomerVideoStats**
-> CustomerVideoStats1 getCustomerVideoStats(customerId, opts)
+> CustomerVideoStatsListResponse getCustomerVideoStats(customerId, opts)
 
 
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerVideoStats1**](CustomerVideoStats1.md)
+[**CustomerVideoStatsListResponse**](CustomerVideoStatsListResponse.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideoStats"></a>
 # **getVideoStats**
-> VideoStats getVideoStats(opts)
+> VideoStatListResponse getVideoStats(opts)
 
 
 
@@ -302,7 +302,7 @@ var opts = {
   'videoId': 789, // Integer | Video ID to fetch
   'dateFrom': "dateFrom_example", // String | Search entries from this date
   'dateTo': "dateTo_example", // String | Search entries to this date
-  'page': 789 // Integer | 
+  'page': 789, // Integer | 
 };
 apiInstance.getVideoStats(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoStats**](VideoStats.md)
+[**VideoStatListResponse**](VideoStatListResponse.md)
 
 ### Authorization
 

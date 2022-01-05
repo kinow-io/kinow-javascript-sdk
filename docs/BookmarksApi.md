@@ -129,7 +129,7 @@ null (empty response body)
 
 <a name="getCustomerBookmarks"></a>
 # **getCustomerBookmarks**
-> Products getCustomerBookmarks(customerId, opts)
+> ProductListResponse getCustomerBookmarks(customerId, opts)
 
 
 
@@ -158,7 +158,7 @@ var customerId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](Products.md)
+[**ProductListResponse**](ProductListResponse.md)
 
 ### Authorization
 

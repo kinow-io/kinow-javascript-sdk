@@ -82,7 +82,7 @@ null (empty response body)
 
 <a name="createGift"></a>
 # **createGift**
-> Gift createGift(body)
+> GiftResponse createGift(body)
 
 
 
@@ -107,7 +107,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
-var body = new KinowJavascriptSdk.Gift1(); // Gift1 | Gift settings
+var body = new KinowJavascriptSdk.CreateGiftRequest(); // CreateGiftRequest | Gift settings
 
 apiInstance.createGift(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -121,11 +121,11 @@ apiInstance.createGift(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Gift1**](Gift1.md)| Gift settings | 
+ **body** | [**CreateGiftRequest**](CreateGiftRequest.md)| Gift settings | 
 
 ### Return type
 
-[**Gift**](Gift.md)
+[**GiftResponse**](GiftResponse.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ null (empty response body)
 
 <a name="getGift"></a>
 # **getGift**
-> Gift getGift(giftId)
+> GiftResponse getGift(giftId)
 
 
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gift**](Gift.md)
+[**GiftResponse**](GiftResponse.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 <a name="getGiftInCart"></a>
 # **getGiftInCart**
-> Gift getGiftInCart(cartId)
+> GiftResponse getGiftInCart(cartId)
 
 
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gift**](Gift.md)
+[**GiftResponse**](GiftResponse.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 <a name="getGiftToken"></a>
 # **getGiftToken**
-> GiftToken getGiftToken(giftId)
+> GiftTokenResponse getGiftToken(giftId)
 
 
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GiftToken**](GiftToken.md)
+[**GiftTokenResponse**](GiftTokenResponse.md)
 
 ### Authorization
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 <a name="getGifts"></a>
 # **getGifts**
-> Gifts1 getGifts(opts)
+> GiftListResponse getGifts(opts)
 
 
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gifts1**](Gifts1.md)
+[**GiftListResponse**](GiftListResponse.md)
 
 ### Authorization
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 <a name="getGiftsInCart"></a>
 # **getGiftsInCart**
-> [Gift] getGiftsInCart(cartId)
+> GiftListResponse getGiftsInCart(cartId)
 
 
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Gift]**](Gift.md)
+[**GiftListResponse**](GiftListResponse.md)
 
 ### Authorization
 
@@ -593,7 +593,7 @@ null (empty response body)
 
 <a name="updateGift"></a>
 # **updateGift**
-> Gift updateGift(giftId, body)
+> GiftResponse updateGift(giftId, body)
 
 
 
@@ -620,7 +620,7 @@ var apiInstance = new KinowJavascriptSdk.GiftsApi();
 
 var giftId = 789; // Integer | Gift ID to fetch
 
-var body = new KinowJavascriptSdk.Gift2(); // Gift2 | Gift settings
+var body = new KinowJavascriptSdk.UpdateGiftRequest(); // UpdateGiftRequest | Gift settings
 
 apiInstance.updateGift(giftId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -635,11 +635,11 @@ apiInstance.updateGift(giftId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **giftId** | **Integer**| Gift ID to fetch | 
- **body** | [**Gift2**](Gift2.md)| Gift settings | 
+ **body** | [**UpdateGiftRequest**](UpdateGiftRequest.md)| Gift settings | 
 
 ### Return type
 
-[**Gift**](Gift.md)
+[**GiftResponse**](GiftResponse.md)
 
 ### Authorization
 

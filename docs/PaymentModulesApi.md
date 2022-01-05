@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethods"></a>
 # **getPaymentMethods**
-> [PaymentMethods] getPaymentMethods(customerId, paymentName)
+> [PaymentMethodsResponse] getPaymentMethods(customerId, paymentName)
 
 
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethods]**](PaymentMethods.md)
+[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethodsWithIp"></a>
 # **getPaymentMethodsWithIp**
-> [PaymentMethods] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
+> [PaymentMethodsResponse] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
 
 
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethods]**](PaymentMethods.md)
+[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentModules"></a>
 # **getPaymentModules**
-> PaymentModules getPaymentModules(opts)
+> PaymentModuleListResponse getPaymentModules(opts)
 
 
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentModules**](PaymentModules.md)
+[**PaymentModuleListResponse**](PaymentModuleListResponse.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentUrl"></a>
 # **getPaymentUrl**
-> PaymentUrl getPaymentUrl(cartId, paymentName)
+> PaymentUrlResponse getPaymentUrl(cartId, paymentName)
 
 
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentUrl**](PaymentUrl.md)
+[**PaymentUrlResponse**](PaymentUrlResponse.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 <a name="getPendingPayments"></a>
 # **getPendingPayments**
-> [PaymentDetails] getPendingPayments(paymentName, customerId)
+> [PaymentDetailsResponse] getPendingPayments(paymentName, customerId)
 
 
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentDetails]**](PaymentDetails.md)
+[**[PaymentDetailsResponse]**](PaymentDetailsResponse.md)
 
 ### Authorization
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 <a name="getPendingPaymentsWithIp"></a>
 # **getPendingPaymentsWithIp**
-> [PaymentDetails] getPendingPaymentsWithIp(paymentName, customerId, ipAddress)
+> PaymentDetailsListResponse getPendingPaymentsWithIp(paymentName, customerId, ipAddress)
 
 
 
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentDetails]**](PaymentDetails.md)
+[**PaymentDetailsListResponse**](PaymentDetailsListResponse.md)
 
 ### Authorization
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 <a name="preparePayment"></a>
 # **preparePayment**
-> PaymentDetails1 preparePayment(cartId, paymentName, opts)
+> PaymentDetailsResponse1 preparePayment(cartId, paymentName, opts)
 
 
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetails1**](PaymentDetails1.md)
+[**PaymentDetailsResponse1**](PaymentDetailsResponse1.md)
 
 ### Authorization
 
@@ -653,7 +653,7 @@ var customerId = 789; // Integer |
 
 var paymentName = "paymentName_example"; // String | 
 
-var paymentArguments = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment arguments
+var paymentArguments = new KinowJavascriptSdk.UpdatePaymentRequest(); // UpdatePaymentRequest | Payment arguments
 
 var opts = { 
   'ipAddress': "ipAddress_example" // String | Filter by user IP
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**|  | 
  **paymentName** | **String**|  | 
- **paymentArguments** | [**PaymentArguments**](PaymentArguments.md)| Payment arguments | 
+ **paymentArguments** | [**UpdatePaymentRequest**](UpdatePaymentRequest.md)| Payment arguments | 
  **ipAddress** | **String**| Filter by user IP | [optional] 
 
 ### Return type
@@ -775,7 +775,7 @@ var cartId = 789; // Integer | Cart ID to fetch
 
 var paymentName = "paymentName_example"; // String | Payment gateway name
 
-var paymentArgument = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment argument
+var paymentArgument = new KinowJavascriptSdk.PaymentArgumentsResponse(); // PaymentArgumentsResponse | Payment argument
 
 apiInstance.validatePayment(cartId, paymentName, paymentArgument).then(function() {
   console.log('API called successfully.');
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cartId** | **Integer**| Cart ID to fetch | 
  **paymentName** | **String**| Payment gateway name | 
- **paymentArgument** | [**PaymentArguments**](PaymentArguments.md)| Payment argument | 
+ **paymentArgument** | [**PaymentArgumentsResponse**](PaymentArgumentsResponse.md)| Payment argument | 
 
 ### Return type
 

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getGenders"></a>
 # **getGenders**
-> Genders getGenders(opts)
+> GenderListResponse getGenders(opts)
 
 
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Genders**](Genders.md)
+[**GenderListResponse**](GenderListResponse.md)
 
 ### Authorization
 

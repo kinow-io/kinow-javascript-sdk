@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryVideoSubtitles"></a>
 # **getCategoryVideoSubtitles**
-> VideoSubtitlesResponse getCategoryVideoSubtitles(videoId, opts)
+> SubtitleListResponse getCategoryVideoSubtitles(videoId, opts)
 
 
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
+[**SubtitleListResponse**](SubtitleListResponse.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideosFromCategories"></a>
 # **getVideosFromCategories**
-> Videos getVideosFromCategories(opts)
+> VideoCategoryListResponse getVideosFromCategories(opts)
 
 
 
@@ -163,7 +163,7 @@ var apiInstance = new KinowJavascriptSdk.CategoryVideosApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**VideoCategoryListResponse**](VideoCategoryListResponse.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideosFromCategory"></a>
 # **getVideosFromCategory**
-> Videos getVideosFromCategory(categoryId, opts)
+> VideoCategoryListResponse getVideosFromCategory(categoryId, opts)
 
 
 
@@ -228,7 +228,7 @@ var categoryId = 789; // Integer | Category ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](Videos.md)
+[**VideoCategoryListResponse**](VideoCategoryListResponse.md)
 
 ### Authorization
 

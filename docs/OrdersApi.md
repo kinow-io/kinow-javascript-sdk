@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="getCustomerOrders"></a>
 # **getCustomerOrders**
-> Orders getCustomerOrders(customerId, opts)
+> OrderListResponse getCustomerOrders(customerId, opts)
 
 
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Orders**](Orders.md)
+[**OrderListResponse**](OrderListResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrder"></a>
 # **getOrder**
-> Order getOrder(orderId)
+> OrderResponse getOrder(orderId)
 
 
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Order**](Order.md)
+[**OrderResponse**](OrderResponse.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrderHistories"></a>
 # **getOrderHistories**
-> OrderHistories getOrderHistories(orderId, opts)
+> OrderHistoryListResponse getOrderHistories(orderId, opts)
 
 
 
@@ -161,6 +161,8 @@ var orderId = 789; // Integer | Order ID to fetch
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
 apiInstance.getOrderHistories(orderId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -177,10 +179,12 @@ Name | Type | Description  | Notes
  **orderId** | **Integer**| Order ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**OrderHistories**](OrderHistories.md)
+[**OrderHistoryListResponse**](OrderHistoryListResponse.md)
 
 ### Authorization
 
@@ -253,7 +257,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrders"></a>
 # **getOrders**
-> Orders getOrders(opts)
+> OrderListResponse getOrders(opts)
 
 
 
@@ -280,8 +284,8 @@ var apiInstance = new KinowJavascriptSdk.OrdersApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |  email[value]=string&email[operator]=strict&firstname[value]=string&firstname[operator]=contains  ``` {     \"email\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"firstname\": {         \"value\": \"string\",         \"operator\": \"contains\"     },     \"invoice_date\": {         \"value\": [\"Y-m-d\", \"Y-m-d\"],         \"operator\": \"between\"     } }``` Operator can be strict, contains, between, gt or lt.
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -299,13 +303,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|  email[value]&#x3D;string&amp;email[operator]&#x3D;strict&amp;firstname[value]&#x3D;string&amp;firstname[operator]&#x3D;contains  &#x60;&#x60;&#x60; {     \&quot;email\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;firstname\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;invoice_date\&quot;: {         \&quot;value\&quot;: [\&quot;Y-m-d\&quot;, \&quot;Y-m-d\&quot;],         \&quot;operator\&quot;: \&quot;between\&quot;     } }&#x60;&#x60;&#x60; Operator can be strict, contains, between, gt or lt. | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Orders**](Orders.md)
+[**OrderListResponse**](OrderListResponse.md)
 
 ### Authorization
 

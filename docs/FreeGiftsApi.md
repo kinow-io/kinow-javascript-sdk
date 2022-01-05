@@ -103,7 +103,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.FreeGiftsApi();
 
-var body = new KinowJavascriptSdk.FreeGift1(); // FreeGift1 | Free Gift settings
+var body = new KinowJavascriptSdk.CreateFreeGiftRequest(); // CreateFreeGiftRequest | Free Gift settings
 
 apiInstance.createFreeGift(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -117,7 +117,7 @@ apiInstance.createFreeGift(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**FreeGift1**](FreeGift1.md)| Free Gift settings | 
+ **body** | [**CreateFreeGiftRequest**](CreateFreeGiftRequest.md)| Free Gift settings | 
 
 ### Return type
 
@@ -190,7 +190,7 @@ null (empty response body)
 
 <a name="getFreeGift"></a>
 # **getFreeGift**
-> FreeGift getFreeGift(freeGiftId)
+> FreeGiftResponse getFreeGift(freeGiftId)
 
 
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FreeGift**](FreeGift.md)
+[**FreeGiftResponse**](FreeGiftResponse.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 <a name="getFreeGifts"></a>
 # **getFreeGifts**
-> Gifts getFreeGifts(opts)
+> FreeGiftListResponse getFreeGifts(opts)
 
 
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gifts**](Gifts.md)
+[**FreeGiftListResponse**](FreeGiftListResponse.md)
 
 ### Authorization
 

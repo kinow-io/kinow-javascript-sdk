@@ -73,7 +73,7 @@ null (empty response body)
 
 <a name="getBundleProducts"></a>
 # **getBundleProducts**
-> Products getBundleProducts(bundleId, opts)
+> BlogPageProductsResponse getBundleProducts(bundleId, opts)
 
 
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](Products.md)
+[**BlogPageProductsResponse**](BlogPageProductsResponse.md)
 
 ### Authorization
 

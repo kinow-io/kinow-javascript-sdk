@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachBookmarkToCustomer**](CustomersApi.md#attachBookmarkToCustomer) | **POST** /customers/{customer_id}/bookmarks | 
 [**attachCartToCustomer**](CustomersApi.md#attachCartToCustomer) | **POST** /customers/{customer_id}/carts | 
 [**checkAuthenticationToken**](CustomersApi.md#checkAuthenticationToken) | **POST** /customers/check-authentication-token | 
 [**checkCustomerCredentials**](CustomersApi.md#checkCustomerCredentials) | **POST** /customers/check-credentials | 
@@ -11,11 +12,13 @@ Method | HTTP request | Description
 [**createFacebookId**](CustomersApi.md#createFacebookId) | **POST** /customers/facebook | 
 [**createGoogleId**](CustomersApi.md#createGoogleId) | **POST** /customers/google | 
 [**deleteCustomer**](CustomersApi.md#deleteCustomer) | **DELETE** /customers/{customer_id} | 
+[**detachBookmarkFromCustomer**](CustomersApi.md#detachBookmarkFromCustomer) | **DELETE** /customers/{customer_id}/bookmarks/{product_id} | 
 [**generateAuthenticationToken**](CustomersApi.md#generateAuthenticationToken) | **GET** /customers/{customer_id}/authentication-token | 
 [**getCustomer**](CustomersApi.md#getCustomer) | **GET** /customers/{customer_id} | 
 [**getCustomerAccessesSubscriptions**](CustomersApi.md#getCustomerAccessesSubscriptions) | **GET** /customers/{customer_id}/accesses/subscriptions | 
 [**getCustomerAccessesVideos**](CustomersApi.md#getCustomerAccessesVideos) | **GET** /customers/{customer_id}/accesses/videos | 
 [**getCustomerAddress**](CustomersApi.md#getCustomerAddress) | **GET** /customers/{customer_id}/address | 
+[**getCustomerBookmarks**](CustomersApi.md#getCustomerBookmarks) | **GET** /customers/{customer_id}/bookmarks | 
 [**getCustomerCanSeeProduct**](CustomersApi.md#getCustomerCanSeeProduct) | **GET** /customers/{customer_id}/products/{product_id}/can-see | 
 [**getCustomerCarts**](CustomersApi.md#getCustomerCarts) | **GET** /customers/{customer_id}/carts | 
 [**getCustomerCurrentViews**](CustomersApi.md#getCustomerCurrentViews) | **GET** /customers/{customer_id}/current-views | 
@@ -46,9 +49,68 @@ Method | HTTP request | Description
 [**validateCustomerCredentials**](CustomersApi.md#validateCustomerCredentials) | **POST** /customers/validate-credentials | 
 
 
+<a name="attachBookmarkToCustomer"></a>
+# **attachBookmarkToCustomer**
+> attachBookmarkToCustomer(customerId, productId)
+
+
+
+Attach bookmark to customer
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var productId = 789; // Integer | 
+
+apiInstance.attachBookmarkToCustomer(customerId, productId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **productId** | **Integer**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="attachCartToCustomer"></a>
 # **attachCartToCustomer**
-> Cart attachCartToCustomer(customerId, cartId)
+> CartResponse attachCartToCustomer(customerId, cartId)
 
 
 
@@ -94,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cart**](Cart.md)
+[**CartResponse**](CartResponse.md)
 
 ### Authorization
 
@@ -107,7 +169,7 @@ Name | Type | Description  | Notes
 
 <a name="checkAuthenticationToken"></a>
 # **checkAuthenticationToken**
-> Customer checkAuthenticationToken(token)
+> CustomerResponse checkAuthenticationToken(token)
 
 
 
@@ -150,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Customer**](Customer.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 ### Authorization
 
@@ -163,7 +225,7 @@ Name | Type | Description  | Notes
 
 <a name="checkCustomerCredentials"></a>
 # **checkCustomerCredentials**
-> Customer checkCustomerCredentials(email, password)
+> CustomerResponse checkCustomerCredentials(email, password)
 
 
 
@@ -209,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Customer**](Customer.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 ### Authorization
 
@@ -222,7 +284,7 @@ Name | Type | Description  | Notes
 
 <a name="createCustomer"></a>
 # **createCustomer**
-> Customer createCustomer(body)
+> CustomerResponse createCustomer(body)
 
 
 
@@ -247,7 +309,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
-var body = new KinowJavascriptSdk.CustomerCreateRequest(); // CustomerCreateRequest | Customer settings
+var body = new KinowJavascriptSdk.CreateCustomerRequest(); // CreateCustomerRequest | Customer settings
 
 apiInstance.createCustomer(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -261,11 +323,11 @@ apiInstance.createCustomer(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerCreateRequest**](CustomerCreateRequest.md)| Customer settings | 
+ **body** | [**CreateCustomerRequest**](CreateCustomerRequest.md)| Customer settings | 
 
 ### Return type
 
-[**Customer**](Customer.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 ### Authorization
 
@@ -450,6 +512,65 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="detachBookmarkFromCustomer"></a>
+# **detachBookmarkFromCustomer**
+> detachBookmarkFromCustomer(customerId, productId)
+
+
+
+Detach bookmark from customer
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var productId = 789; // Integer | 
+
+apiInstance.detachBookmarkFromCustomer(customerId, productId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **productId** | **Integer**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="generateAuthenticationToken"></a>
 # **generateAuthenticationToken**
 > &#39;String&#39; generateAuthenticationToken(customerId)
@@ -508,7 +629,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomer"></a>
 # **getCustomer**
-> Customer getCustomer(customerId)
+> CustomerResponse getCustomer(customerId)
 
 
 
@@ -551,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Customer**](Customer.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 ### Authorization
 
@@ -564,7 +685,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerAccessesSubscriptions"></a>
 # **getCustomerAccessesSubscriptions**
-> SubscriptionAccesses getCustomerAccessesSubscriptions(customerId, opts)
+> ProductAccessListResponse getCustomerAccessesSubscriptions(customerId, opts)
 
 
 
@@ -593,8 +714,8 @@ var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example" // String |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
 };
 apiInstance.getCustomerAccessesSubscriptions(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -611,11 +732,11 @@ Name | Type | Description  | Notes
  **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**SubscriptionAccesses**](SubscriptionAccesses.md)
+[**ProductAccessListResponse**](ProductAccessListResponse.md)
 
 ### Authorization
 
@@ -628,7 +749,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerAccessesVideos"></a>
 # **getCustomerAccessesVideos**
-> SubscriptionAccesses getCustomerAccessesVideos(customerId, opts)
+> ProductAccessListResponse getCustomerAccessesVideos(customerId, opts)
 
 
 
@@ -677,7 +798,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubscriptionAccesses**](SubscriptionAccesses.md)
+[**ProductAccessListResponse**](ProductAccessListResponse.md)
 
 ### Authorization
 
@@ -690,7 +811,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerAddress"></a>
 # **getCustomerAddress**
-> Address getCustomerAddress(customerId)
+> AddressResponse getCustomerAddress(customerId)
 
 
 
@@ -733,7 +854,73 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Address**](Address.md)
+[**AddressResponse**](AddressResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getCustomerBookmarks"></a>
+# **getCustomerBookmarks**
+> ProductListResponse getCustomerBookmarks(customerId, opts)
+
+
+
+Get customer bookmarks
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CustomersApi();
+
+var customerId = 789; // Integer | 
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+};
+apiInstance.getCustomerBookmarks(customerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**|  | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**ProductListResponse**](ProductListResponse.md)
 
 ### Authorization
 
@@ -805,7 +992,7 @@ null (empty response body)
 
 <a name="getCustomerCarts"></a>
 # **getCustomerCarts**
-> Carts getCustomerCarts(customerId, opts)
+> CartListResponse getCustomerCarts(customerId, opts)
 
 
 
@@ -834,8 +1021,8 @@ var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     date_add[value]=string&date_add[operator]=lt     _______________      {     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -854,13 +1041,13 @@ Name | Type | Description  | Notes
  **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Carts**](Carts.md)
+[**CartListResponse**](CartListResponse.md)
 
 ### Authorization
 
@@ -873,7 +1060,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerCurrentViews"></a>
 # **getCustomerCurrentViews**
-> CustomerCurrentViews getCustomerCurrentViews(customerId)
+> CustomerCurrentViewsResponse getCustomerCurrentViews(customerId)
 
 
 
@@ -916,7 +1103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerCurrentViews**](CustomerCurrentViews.md)
+[**CustomerCurrentViewsResponse**](CustomerCurrentViewsResponse.md)
 
 ### Authorization
 
@@ -929,7 +1116,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerGroups"></a>
 # **getCustomerGroups**
-> Groups getCustomerGroups(customerId, opts)
+> GroupListResponse getCustomerGroups(customerId, opts)
 
 
 
@@ -978,7 +1165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Groups**](Groups.md)
+[**GroupListResponse**](GroupListResponse.md)
 
 ### Authorization
 
@@ -1050,7 +1237,7 @@ null (empty response body)
 
 <a name="getCustomerHasAccessToProducts"></a>
 # **getCustomerHasAccessToProducts**
-> [ProductAccessInfo] getCustomerHasAccessToProducts(customerId, body)
+> [ProductAccessInfoResponse] getCustomerHasAccessToProducts(customerId, body)
 
 
 
@@ -1096,7 +1283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ProductAccessInfo]**](ProductAccessInfo.md)
+[**[ProductAccessInfoResponse]**](ProductAccessInfoResponse.md)
 
 ### Authorization
 
@@ -1168,7 +1355,7 @@ null (empty response body)
 
 <a name="getCustomerHasAccessToVideos"></a>
 # **getCustomerHasAccessToVideos**
-> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, body)
+> [VideoAccessInfoResponse] getCustomerHasAccessToVideos(customerId, body)
 
 
 
@@ -1214,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[VideoAccessInfo]**](VideoAccessInfo.md)
+[**[VideoAccessInfoResponse]**](VideoAccessInfoResponse.md)
 
 ### Authorization
 
@@ -1227,7 +1414,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerOrders"></a>
 # **getCustomerOrders**
-> Orders getCustomerOrders(customerId, opts)
+> OrderListResponse getCustomerOrders(customerId, opts)
 
 
 
@@ -1276,7 +1463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Orders**](Orders.md)
+[**OrderListResponse**](OrderListResponse.md)
 
 ### Authorization
 
@@ -1289,7 +1476,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerPlaylists"></a>
 # **getCustomerPlaylists**
-> Playlists getCustomerPlaylists(customerId, opts)
+> PlaylistListResponse getCustomerPlaylists(customerId, opts)
 
 
 
@@ -1318,7 +1505,7 @@ var customerId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -1342,7 +1529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlists**](Playlists.md)
+[**PlaylistListResponse**](PlaylistListResponse.md)
 
 ### Authorization
 
@@ -1355,7 +1542,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerPrepaymentBalances"></a>
 # **getCustomerPrepaymentBalances**
-> [PrepaymentBalance] getCustomerPrepaymentBalances(customerId, opts)
+> PrepaymentBalanceListResponse getCustomerPrepaymentBalances(customerId, opts)
 
 
 
@@ -1402,7 +1589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PrepaymentBalance]**](PrepaymentBalance.md)
+[**PrepaymentBalanceListResponse**](PrepaymentBalanceListResponse.md)
 
 ### Authorization
 
@@ -1415,7 +1602,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerPrepaymentOperations"></a>
 # **getCustomerPrepaymentOperations**
-> PrepaymentOperations getCustomerPrepaymentOperations(customerId, opts)
+> PrepaymentOperationListResponse getCustomerPrepaymentOperations(customerId, opts)
 
 
 
@@ -1466,7 +1653,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentOperations**](PrepaymentOperations.md)
+[**PrepaymentOperationListResponse**](PrepaymentOperationListResponse.md)
 
 ### Authorization
 
@@ -1479,7 +1666,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomers"></a>
 # **getCustomers**
-> Customers getCustomers(opts)
+> CustomerListResponse getCustomers(opts)
 
 
 
@@ -1506,8 +1693,8 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     email[value]=string&email[operator]=strict&firstname[value]=string&firstname[operator]=contains     _______________      {     \"email\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"firstname\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -1525,13 +1712,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     email[value]&#x3D;string&amp;email[operator]&#x3D;strict&amp;firstname[value]&#x3D;string&amp;firstname[operator]&#x3D;contains     _______________      {     \&quot;email\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;firstname\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Customers**](Customers.md)
+[**CustomerListResponse**](CustomerListResponse.md)
 
 ### Authorization
 
@@ -1656,7 +1843,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethods"></a>
 # **getPaymentMethods**
-> [PaymentMethods] getPaymentMethods(customerId, paymentName)
+> [PaymentMethodsResponse] getPaymentMethods(customerId, paymentName)
 
 
 
@@ -1702,7 +1889,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethods]**](PaymentMethods.md)
+[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
 
 ### Authorization
 
@@ -1715,7 +1902,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethodsWithIp"></a>
 # **getPaymentMethodsWithIp**
-> [PaymentMethods] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
+> [PaymentMethodsResponse] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
 
 
 
@@ -1764,7 +1951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethods]**](PaymentMethods.md)
+[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
 
 ### Authorization
 
@@ -1777,7 +1964,7 @@ Name | Type | Description  | Notes
 
 <a name="getPendingPayments"></a>
 # **getPendingPayments**
-> [PaymentDetails] getPendingPayments(paymentName, customerId)
+> [PaymentDetailsResponse] getPendingPayments(paymentName, customerId)
 
 
 
@@ -1823,7 +2010,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentDetails]**](PaymentDetails.md)
+[**[PaymentDetailsResponse]**](PaymentDetailsResponse.md)
 
 ### Authorization
 
@@ -1836,7 +2023,7 @@ Name | Type | Description  | Notes
 
 <a name="getPendingPaymentsWithIp"></a>
 # **getPendingPaymentsWithIp**
-> [PaymentDetails] getPendingPaymentsWithIp(paymentName, customerId, ipAddress)
+> PaymentDetailsListResponse getPendingPaymentsWithIp(paymentName, customerId, ipAddress)
 
 
 
@@ -1885,7 +2072,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentDetails]**](PaymentDetails.md)
+[**PaymentDetailsListResponse**](PaymentDetailsListResponse.md)
 
 ### Authorization
 
@@ -1898,7 +2085,7 @@ Name | Type | Description  | Notes
 
 <a name="getRegistrationFields"></a>
 # **getRegistrationFields**
-> RegistrationFields getRegistrationFields(opts)
+> RegistrationFieldsResponse getRegistrationFields(opts)
 
 
 
@@ -1944,7 +2131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RegistrationFields**](RegistrationFields.md)
+[**RegistrationFieldsResponse**](RegistrationFieldsResponse.md)
 
 ### Authorization
 
@@ -2076,7 +2263,7 @@ Name | Type | Description  | Notes
 
 <a name="passwordToken"></a>
 # **passwordToken**
-> Token passwordToken(email, opts)
+> TokenResponse passwordToken(email, opts)
 
 
 
@@ -2123,7 +2310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Token**](Token.md)
+[**TokenResponse**](TokenResponse.md)
 
 ### Authorization
 
@@ -2254,7 +2441,7 @@ null (empty response body)
 
 <a name="updateCustomer"></a>
 # **updateCustomer**
-> Customer updateCustomer(customerId, body)
+> CustomerResponse updateCustomer(customerId, body)
 
 
 
@@ -2281,7 +2468,7 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-var body = new KinowJavascriptSdk.Customer(); // Customer | Body of the customer
+var body = new KinowJavascriptSdk.UpdateCustomerRequest(); // UpdateCustomerRequest | Body of the customer
 
 apiInstance.updateCustomer(customerId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -2296,11 +2483,11 @@ apiInstance.updateCustomer(customerId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
- **body** | [**Customer**](Customer.md)| Body of the customer | 
+ **body** | [**UpdateCustomerRequest**](UpdateCustomerRequest.md)| Body of the customer | 
 
 ### Return type
 
-[**Customer**](Customer.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 ### Authorization
 
@@ -2342,7 +2529,7 @@ var customerId = 789; // Integer |
 
 var paymentName = "paymentName_example"; // String | 
 
-var paymentArguments = new KinowJavascriptSdk.PaymentArguments(); // PaymentArguments | Payment arguments
+var paymentArguments = new KinowJavascriptSdk.UpdatePaymentRequest(); // UpdatePaymentRequest | Payment arguments
 
 var opts = { 
   'ipAddress': "ipAddress_example" // String | Filter by user IP
@@ -2361,7 +2548,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**|  | 
  **paymentName** | **String**|  | 
- **paymentArguments** | [**PaymentArguments**](PaymentArguments.md)| Payment arguments | 
+ **paymentArguments** | [**UpdatePaymentRequest**](UpdatePaymentRequest.md)| Payment arguments | 
  **ipAddress** | **String**| Filter by user IP | [optional] 
 
 ### Return type
@@ -2379,7 +2566,7 @@ null (empty response body)
 
 <a name="validateCustomerCredentials"></a>
 # **validateCustomerCredentials**
-> CredentialsValidation validateCustomerCredentials(email, password)
+> CredentialsValidationResponse validateCustomerCredentials(email, password)
 
 
 
@@ -2425,7 +2612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CredentialsValidation**](CredentialsValidation.md)
+[**CredentialsValidationResponse**](CredentialsValidationResponse.md)
 
 ### Authorization
 

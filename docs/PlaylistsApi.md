@@ -76,7 +76,7 @@ null (empty response body)
 
 <a name="createPlaylist"></a>
 # **createPlaylist**
-> Playlist createPlaylist(customerId, name)
+> PlaylistResponse createPlaylist(customerId, name)
 
 
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlist**](Playlist.md)
+[**PlaylistResponse**](PlaylistResponse.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ null (empty response body)
 
 <a name="getCustomerPlaylists"></a>
 # **getCustomerPlaylists**
-> Playlists getCustomerPlaylists(customerId, opts)
+> PlaylistListResponse getCustomerPlaylists(customerId, opts)
 
 
 
@@ -279,7 +279,7 @@ var customerId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlists**](Playlists.md)
+[**PlaylistListResponse**](PlaylistListResponse.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 <a name="getPlaylist"></a>
 # **getPlaylist**
-> Playlist getPlaylist(playlistId)
+> PlaylistResponse getPlaylist(playlistId)
 
 
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlist**](Playlist.md)
+[**PlaylistResponse**](PlaylistResponse.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 <a name="getPlaylistBookmarks"></a>
 # **getPlaylistBookmarks**
-> Products getPlaylistBookmarks(playlistId, opts)
+> ProductListResponse getPlaylistBookmarks(playlistId, opts)
 
 
 
@@ -401,7 +401,7 @@ var playlistId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](Products.md)
+[**ProductListResponse**](ProductListResponse.md)
 
 ### Authorization
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 <a name="getPlaylists"></a>
 # **getPlaylists**
-> Playlists getPlaylists(opts)
+> PlaylistListResponse getPlaylists(opts)
 
 
 
@@ -465,7 +465,7 @@ var apiInstance = new KinowJavascriptSdk.PlaylistsApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlists**](Playlists.md)
+[**PlaylistListResponse**](PlaylistListResponse.md)
 
 ### Authorization
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePlaylist"></a>
 # **updatePlaylist**
-> Playlist updatePlaylist(playlistId, body)
+> PlaylistResponse updatePlaylist(playlistId, body)
 
 
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlist**](Playlist.md)
+[**PlaylistResponse**](PlaylistResponse.md)
 
 ### Authorization
 

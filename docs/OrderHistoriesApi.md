@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getOrderHistories"></a>
 # **getOrderHistories**
-> OrderHistories getOrderHistories(orderId, opts)
+> OrderHistoryListResponse getOrderHistories(orderId, opts)
 
 
 
@@ -39,6 +39,8 @@ var orderId = 789; // Integer | Order ID to fetch
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
 };
 apiInstance.getOrderHistories(orderId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -55,10 +57,12 @@ Name | Type | Description  | Notes
  **orderId** | **Integer**| Order ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**OrderHistories**](OrderHistories.md)
+[**OrderHistoryListResponse**](OrderHistoryListResponse.md)
 
 ### Authorization
 

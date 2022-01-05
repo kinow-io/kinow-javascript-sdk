@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getCustomerRecommendations"></a>
 # **getCustomerRecommendations**
-> Products getCustomerRecommendations(customerId, opts)
+> BlogPageProductsResponse getCustomerRecommendations(customerId, opts)
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](Products.md)
+[**BlogPageProductsResponse**](BlogPageProductsResponse.md)
 
 ### Authorization
 

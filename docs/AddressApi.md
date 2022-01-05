@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getCustomerAddress"></a>
 # **getCustomerAddress**
-> Address getCustomerAddress(customerId)
+> AddressResponse getCustomerAddress(customerId)
 
 
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Address**](Address.md)
+[**AddressResponse**](AddressResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAddress"></a>
 # **updateAddress**
-> Address updateAddress(addressId, body)
+> AddressResponse updateAddress(addressId, body)
 
 
 
@@ -93,7 +93,7 @@ var apiInstance = new KinowJavascriptSdk.AddressApi();
 
 var addressId = 789; // Integer | Address ID to update
 
-var body = new KinowJavascriptSdk.Address1(); // Address1 | Address settings
+var body = new KinowJavascriptSdk.UpdateAddressRequest(); // UpdateAddressRequest | Address settings
 
 apiInstance.updateAddress(addressId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -108,11 +108,11 @@ apiInstance.updateAddress(addressId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **addressId** | **Integer**| Address ID to update | 
- **body** | [**Address1**](Address1.md)| Address settings | 
+ **body** | [**UpdateAddressRequest**](UpdateAddressRequest.md)| Address settings | 
 
 ### Return type
 
-[**Address**](Address.md)
+[**AddressResponse**](AddressResponse.md)
 
 ### Authorization
 

@@ -209,7 +209,7 @@ null (empty response body)
 
 <a name="createVideo"></a>
 # **createVideo**
-> Video createVideo(body)
+> VideoResponse createVideo(body)
 
 
 
@@ -234,7 +234,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.VideosApi();
 
-var body = new KinowJavascriptSdk.Video(); // Video | 
+var body = new KinowJavascriptSdk.CreateVideoRequest(); // CreateVideoRequest | Video parameters
 
 apiInstance.createVideo(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -248,11 +248,11 @@ apiInstance.createVideo(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Video**](Video.md)|  | 
+ **body** | [**CreateVideoRequest**](CreateVideoRequest.md)| Video parameters | 
 
 ### Return type
 
-[**Video**](Video.md)
+[**VideoResponse**](VideoResponse.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 <a name="createVideoSubtitle"></a>
 # **createVideoSubtitle**
-> Subtitle createVideoSubtitle(videoId, body)
+> SubtitleResponse createVideoSubtitle(videoId, body)
 
 
 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitle**](Subtitle.md)
+[**SubtitleResponse**](SubtitleResponse.md)
 
 ### Authorization
 
@@ -439,7 +439,7 @@ null (empty response body)
 
 <a name="getCustomerHasAccessToVideos"></a>
 # **getCustomerHasAccessToVideos**
-> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, body)
+> [VideoAccessInfoResponse] getCustomerHasAccessToVideos(customerId, body)
 
 
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[VideoAccessInfo]**](VideoAccessInfo.md)
+[**[VideoAccessInfoResponse]**](VideoAccessInfoResponse.md)
 
 ### Authorization
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 <a name="getDisabledSubscriptions"></a>
 # **getDisabledSubscriptions**
-> Subscriptions getDisabledSubscriptions(videoId, opts)
+> SubscriptionListResponse getDisabledSubscriptions(videoId, opts)
 
 
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscriptions**](Subscriptions.md)
+[**SubscriptionListResponse**](SubscriptionListResponse.md)
 
 ### Authorization
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideo"></a>
 # **getVideo**
-> Video getVideo(videoId)
+> VideoResponse getVideo(videoId)
 
 
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Video**](Video.md)
+[**VideoResponse**](VideoResponse.md)
 
 ### Authorization
 
@@ -731,7 +731,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideoCover"></a>
 # **getVideoCover**
-> Image getVideoCover(videoId)
+> ImageResponse getVideoCover(videoId)
 
 
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -911,7 +911,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideoGeolocation"></a>
 # **getVideoGeolocation**
-> Geolocs getVideoGeolocation(videoId, opts)
+> GeolocationListResponse getVideoGeolocation(videoId, opts)
 
 
 
@@ -960,7 +960,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Geolocs**](Geolocs.md)
+[**GeolocationListResponse**](GeolocationListResponse.md)
 
 ### Authorization
 
@@ -1102,7 +1102,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideoSubtitles"></a>
 # **getVideoSubtitles**
-> VideoSubtitlesResponse getVideoSubtitles(videoId, opts)
+> ExtractSubtitlesResponse getVideoSubtitles(videoId, opts)
 
 
 
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](VideoSubtitlesResponse.md)
+[**ExtractSubtitlesResponse**](ExtractSubtitlesResponse.md)
 
 ### Authorization
 
@@ -1220,7 +1220,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideos"></a>
 # **getVideos**
-> Videos2 getVideos(opts)
+> VideoListResponse getVideos(opts)
 
 
 
@@ -1247,9 +1247,9 @@ var apiInstance = new KinowJavascriptSdk.VideosApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'features': "features_example", // String |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId.
-  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'features': "features_example", // String |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId.
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'ip': "ip_example" // String | Filter by user IP
 };
 apiInstance.getVideos(opts).then(function(data) {
@@ -1266,13 +1266,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **features** | **String**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **String**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **ip** | **String**| Filter by user IP | [optional] 
 
 ### Return type
 
-[**Videos2**](Videos2.md)
+[**VideoListResponse**](VideoListResponse.md)
 
 ### Authorization
 
@@ -1285,7 +1285,7 @@ Name | Type | Description  | Notes
 
 <a name="getVideosFromProduct"></a>
 # **getVideosFromProduct**
-> Videos2 getVideosFromProduct(productId, opts)
+> ProductVideoListResponse getVideosFromProduct(productId, opts)
 
 
 
@@ -1314,11 +1314,11 @@ var productId = 789; // Integer | Product ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
-  'ip': "ip_example", // String | Filter by user IP
-  'sortBy': "sortBy_example", // String | Sort by this attribute (default is ID)
+  'perPage': 789 // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+  'ip': "ip_example" // String | Filter by user IP
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
 };
 apiInstance.getVideosFromProduct(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1335,14 +1335,14 @@ Name | Type | Description  | Notes
  **productId** | **Integer**| Product ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
- **ip** | **String**| Filter by user IP | [optional] 
- **sortBy** | **String**| Sort by this attribute (default is ID) | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**Videos2**](Videos2.md)
+[**ProductVideoListResponse**](ProductVideoListResponse.md)
 
 ### Authorization
 
@@ -1424,7 +1424,7 @@ null (empty response body)
 
 <a name="updateVideo"></a>
 # **updateVideo**
-> Video updateVideo(videoId, body)
+> VideoResponse updateVideo(videoId, body)
 
 
 
@@ -1451,7 +1451,7 @@ var apiInstance = new KinowJavascriptSdk.VideosApi();
 
 var videoId = 789; // Integer | Video ID to update
 
-var body = new KinowJavascriptSdk.Video(); // Video | 
+var body = new KinowJavascriptSdk.UpdateVideoRequest(); // UpdateVideoRequest | 
 
 apiInstance.updateVideo(videoId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1466,11 +1466,11 @@ apiInstance.updateVideo(videoId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **Integer**| Video ID to update | 
- **body** | [**Video**](Video.md)|  | 
+ **body** | [**UpdateVideoRequest**](UpdateVideoRequest.md)|  | 
 
 ### Return type
 
-[**Video**](Video.md)
+[**VideoResponse**](VideoResponse.md)
 
 ### Authorization
 

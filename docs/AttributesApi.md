@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductAttributes"></a>
 # **getProductAttributes**
-> ProductAttributesResponse getProductAttributes(productId, opts)
+> ProductAttributeListResponse getProductAttributes(productId, opts)
 
 
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductAttributesResponse**](ProductAttributesResponse.md)
+[**ProductAttributeListResponse**](ProductAttributeListResponse.md)
 
 ### Authorization
 

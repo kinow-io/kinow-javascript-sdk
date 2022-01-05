@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="getGeolocSettings"></a>
 # **getGeolocSettings**
-> GeolocSettings getGeolocSettings(type, typeId)
+> GeolocSettingsResponse getGeolocSettings(type, typeId)
 
 
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GeolocSettings**](GeolocSettings.md)
+[**GeolocSettingsResponse**](GeolocSettingsResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 <a name="getIPLocation"></a>
 # **getIPLocation**
-> IPLocation getIPLocation(ipAddress)
+> IPLocationResponse getIPLocation(ipAddress)
 
 
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IPLocation**](IPLocation.md)
+[**IPLocationResponse**](IPLocationResponse.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 <a name="getPlatformAccessInfo"></a>
 # **getPlatformAccessInfo**
-> PlatformAccessInfo getPlatformAccessInfo(ipAddress)
+> PlatformAccessResponse getPlatformAccessInfo(ipAddress)
 
 
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlatformAccessInfo**](PlatformAccessInfo.md)
+[**PlatformAccessResponse**](PlatformAccessResponse.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductGeolocations"></a>
 # **getProductGeolocations**
-> Geolocs getProductGeolocations(productId, opts)
+> GeolocationListResponse getProductGeolocations(productId, opts)
 
 
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Geolocs**](Geolocs.md)
+[**GeolocationListResponse**](GeolocationListResponse.md)
 
 ### Authorization
 

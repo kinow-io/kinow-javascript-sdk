@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getOrderState"></a>
 # **getOrderState**
-> OrderState getOrderState(orderStateId)
+> OrderStateResponse getOrderState(orderStateId)
 
 
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderState**](OrderState.md)
+[**OrderStateResponse**](OrderStateResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrderStates"></a>
 # **getOrderStates**
-> OrderStates getOrderStates(opts)
+> OrderStateListResponse getOrderStates(opts)
 
 
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderStates**](OrderStates.md)
+[**OrderStateListResponse**](OrderStateListResponse.md)
 
 ### Authorization
 

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="getCustomerPrepaymentBalances"></a>
 # **getCustomerPrepaymentBalances**
-> [PrepaymentBalance] getCustomerPrepaymentBalances(customerId, opts)
+> PrepaymentBalanceListResponse getCustomerPrepaymentBalances(customerId, opts)
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PrepaymentBalance]**](PrepaymentBalance.md)
+[**PrepaymentBalanceListResponse**](PrepaymentBalanceListResponse.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerPrepaymentOperations"></a>
 # **getCustomerPrepaymentOperations**
-> PrepaymentOperations getCustomerPrepaymentOperations(customerId, opts)
+> PrepaymentOperationListResponse getCustomerPrepaymentOperations(customerId, opts)
 
 
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentOperations**](PrepaymentOperations.md)
+[**PrepaymentOperationListResponse**](PrepaymentOperationListResponse.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrepaymentBonus"></a>
 # **getPrepaymentBonus**
-> PrepaymentBonus getPrepaymentBonus(prepaymentBonusId)
+> PrepaymentBonusResponse getPrepaymentBonus(prepaymentBonusId)
 
 
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBonus**](PrepaymentBonus.md)
+[**PrepaymentBonusResponse**](PrepaymentBonusResponse.md)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrepaymentBonusList"></a>
 # **getPrepaymentBonusList**
-> PrepaymentBonus1 getPrepaymentBonusList(opts)
+> PrepaymentBonusListResponse getPrepaymentBonusList(opts)
 
 
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBonus1**](PrepaymentBonus1.md)
+[**PrepaymentBonusListResponse**](PrepaymentBonusListResponse.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrepaymentOperation"></a>
 # **getPrepaymentOperation**
-> PrepaymentOperation getPrepaymentOperation(prepaymentOperationId)
+> PrepaymentOperationResponse getPrepaymentOperation(prepaymentOperationId)
 
 
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentOperation**](PrepaymentOperation.md)
+[**PrepaymentOperationResponse**](PrepaymentOperationResponse.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrepaymentOperations"></a>
 # **getPrepaymentOperations**
-> PrepaymentOperations getPrepaymentOperations(opts)
+> PrepaymentOperationListResponse getPrepaymentOperations(opts)
 
 
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentOperations**](PrepaymentOperations.md)
+[**PrepaymentOperationListResponse**](PrepaymentOperationListResponse.md)
 
 ### Authorization
 
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrepaymentRecharge"></a>
 # **getPrepaymentRecharge**
-> PrepaymentRecharge getPrepaymentRecharge(prepaymentRechargeId)
+> PrepaymentRechargeResponse getPrepaymentRecharge(prepaymentRechargeId)
 
 
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentRecharge**](PrepaymentRecharge.md)
+[**PrepaymentRechargeResponse**](PrepaymentRechargeResponse.md)
 
 ### Authorization
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrepaymentRecharges"></a>
 # **getPrepaymentRecharges**
-> PrepaymentRecharges getPrepaymentRecharges(opts)
+> PrepaymentRechargeListResponse getPrepaymentRecharges(opts)
 
 
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentRecharges**](PrepaymentRecharges.md)
+[**PrepaymentRechargeListResponse**](PrepaymentRechargeListResponse.md)
 
 ### Authorization
 

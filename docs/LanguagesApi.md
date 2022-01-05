@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getLanguages"></a>
 # **getLanguages**
-> Languages getLanguages(opts)
+> LanguageListResponse getLanguages(opts)
 
 
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Languages**](Languages.md)
+[**LanguageListResponse**](LanguageListResponse.md)
 
 ### Authorization
 

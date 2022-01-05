@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="createProductAccess"></a>
 # **createProductAccess**
-> ProductAccess createProductAccess(body)
+> ProductAccessResponse createProductAccess(body)
 
 
 
@@ -45,7 +45,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
-var body = new KinowJavascriptSdk.ProductAccess(); // ProductAccess | 
+var body = new KinowJavascriptSdk.CreateProductAccessRequest(); // CreateProductAccessRequest | 
 
 apiInstance.createProductAccess(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -59,11 +59,11 @@ apiInstance.createProductAccess(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductAccess**](ProductAccess.md)|  | 
+ **body** | [**CreateProductAccessRequest**](CreateProductAccessRequest.md)|  | 
 
 ### Return type
 
-[**ProductAccess**](ProductAccess.md)
+[**ProductAccessResponse**](ProductAccessResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ null (empty response body)
 
 <a name="getCustomerAccessesSubscriptions"></a>
 # **getCustomerAccessesSubscriptions**
-> SubscriptionAccesses getCustomerAccessesSubscriptions(customerId, opts)
+> ProductAccessListResponse getCustomerAccessesSubscriptions(customerId, opts)
 
 
 
@@ -161,8 +161,8 @@ var customerId = 789; // Integer | Customer ID to fetch
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example" // String |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
 };
 apiInstance.getCustomerAccessesSubscriptions(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -179,11 +179,11 @@ Name | Type | Description  | Notes
  **customerId** | **Integer**| Customer ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**SubscriptionAccesses**](SubscriptionAccesses.md)
+[**ProductAccessListResponse**](ProductAccessListResponse.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerAccessesVideos"></a>
 # **getCustomerAccessesVideos**
-> SubscriptionAccesses getCustomerAccessesVideos(customerId, opts)
+> ProductAccessListResponse getCustomerAccessesVideos(customerId, opts)
 
 
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubscriptionAccesses**](SubscriptionAccesses.md)
+[**ProductAccessListResponse**](ProductAccessListResponse.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductAccess"></a>
 # **getProductAccess**
-> ProductAccess getProductAccess(productAccessId)
+> ProductAccessResponse getProductAccess(productAccessId)
 
 
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductAccess**](ProductAccess.md)
+[**ProductAccessResponse**](ProductAccessResponse.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductAccesses"></a>
 # **getProductAccesses**
-> SubscriptionAccesses getProductAccesses(opts)
+> ProductAccessListResponse getProductAccesses(opts)
 
 
 
@@ -341,13 +341,13 @@ var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
   'type': "type_example", // String | Filter by access type, available values are: video, sub
   'dateAdd': "dateAdd_example", // String | Filter by creation date
   'dateAddDirection': "dateAddDirection_example", // String | Choose the direction for date_add parameter, default value is after, available values are: before, equal, after
   'dateExp': "dateExp_example", // String | Filter by expiration date
-  'dateExpDirection': "dateExpDirection_example", // String | Choose the direction for date_exp parameter, default value is after, available values are: before, equal, after
-  'filters': "filters_example" // String |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'dateExpDirection': "dateExpDirection_example" // String | Choose the direction for date_exp parameter, default value is after, available values are: before, equal, after
 };
 apiInstance.getProductAccesses(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -363,16 +363,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **type** | **String**| Filter by access type, available values are: video, sub | [optional] 
  **dateAdd** | **String**| Filter by creation date | [optional] 
  **dateAddDirection** | **String**| Choose the direction for date_add parameter, default value is after, available values are: before, equal, after | [optional] 
  **dateExp** | **String**| Filter by expiration date | [optional] 
  **dateExpDirection** | **String**| Choose the direction for date_exp parameter, default value is after, available values are: before, equal, after | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**SubscriptionAccesses**](SubscriptionAccesses.md)
+[**ProductAccessListResponse**](ProductAccessListResponse.md)
 
 ### Authorization
 
@@ -556,7 +556,7 @@ null (empty response body)
 
 <a name="switchSubscriptionPending"></a>
 # **switchSubscriptionPending**
-> Subscription switchSubscriptionPending(productAccessId)
+> SubscriptionResponse switchSubscriptionPending(productAccessId)
 
 
 
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+[**SubscriptionResponse**](SubscriptionResponse.md)
 
 ### Authorization
 
@@ -672,7 +672,7 @@ null (empty response body)
 
 <a name="updateProductAccess"></a>
 # **updateProductAccess**
-> ProductAccess updateProductAccess(productAccessId, body)
+> ProductAccessResponse updateProductAccess(productAccessId, body)
 
 
 
@@ -699,7 +699,7 @@ var apiInstance = new KinowJavascriptSdk.ProductAccessesApi();
 
 var productAccessId = 789; // Integer | Product access ID to update
 
-var body = new KinowJavascriptSdk.ProductAccess(); // ProductAccess | 
+var body = new KinowJavascriptSdk.UpdateProductAccessRequest(); // UpdateProductAccessRequest | 
 
 apiInstance.updateProductAccess(productAccessId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -714,11 +714,11 @@ apiInstance.updateProductAccess(productAccessId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productAccessId** | **Integer**| Product access ID to update | 
- **body** | [**ProductAccess**](ProductAccess.md)|  | 
+ **body** | [**UpdateProductAccessRequest**](UpdateProductAccessRequest.md)|  | 
 
 ### Return type
 
-[**ProductAccess**](ProductAccess.md)
+[**ProductAccessResponse**](ProductAccessResponse.md)
 
 ### Authorization
 

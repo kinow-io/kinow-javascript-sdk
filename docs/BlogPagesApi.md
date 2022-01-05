@@ -131,7 +131,7 @@ null (empty response body)
 
 <a name="getBlogPage"></a>
 # **getBlogPage**
-> BlogPage getBlogPage(blogPageId)
+> BlogPageResponse getBlogPage(blogPageId)
 
 
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlogPage**](BlogPage.md)
+[**BlogPageResponse**](BlogPageResponse.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 <a name="getBlogPageProducts"></a>
 # **getBlogPageProducts**
-> Products getBlogPageProducts(blogPageId, opts)
+> BlogPageProductsResponse getBlogPageProducts(blogPageId, opts)
 
 
 
@@ -217,6 +217,9 @@ var blogPageId = 789; // Integer | Page ID to fetch
 var opts = { 
   'page': 789, // Integer | 
   'perPage': 789 // Integer | 
+  'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
 };
 apiInstance.getBlogPageProducts(blogPageId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -233,10 +236,13 @@ Name | Type | Description  | Notes
  **blogPageId** | **Integer**| Page ID to fetch | 
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
+ **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
+ **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**Products**](Products.md)
+[**BlogPageProductsResponse**](BlogPageProductsResponse.md)
 
 ### Authorization
 
@@ -249,7 +255,7 @@ Name | Type | Description  | Notes
 
 <a name="getBlogPages"></a>
 # **getBlogPages**
-> BlogPageLists getBlogPages(opts)
+> BlogPageListResponse getBlogPages(opts)
 
 
 
@@ -276,10 +282,10 @@ var apiInstance = new KinowJavascriptSdk.BlogPagesApi();
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
-  'filters': "filters_example", // String |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
   'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+  'filters': "filters_example", // String |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).
 };
 apiInstance.getBlogPages(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -295,13 +301,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**|  | [optional] 
  **perPage** | **Integer**|  | [optional] 
- **filters** | **String**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
+ **filters** | **String**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**BlogPageLists**](BlogPageLists.md)
+[**BlogPageListResponse**](BlogPageListResponse.md)
 
 ### Authorization
 
