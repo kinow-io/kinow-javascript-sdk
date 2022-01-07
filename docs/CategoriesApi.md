@@ -1514,7 +1514,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadCategoryCover"></a>
 # **uploadCategoryCover**
-> ImageResponse uploadCategoryCover(body)
+> ImageResponse uploadCategoryCover(categoryId, opts)
 
 
 
@@ -1539,9 +1539,14 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
-var body = new KinowJavascriptSdk.UploadCategoryCoverRequest(); // UploadCategoryCoverRequest | 
+var categoryId = 3.4; // Number | Category ID to fetch
 
-apiInstance.uploadCategoryCover(body).then(function(data) {
+var opts = { 
+  'file': "/path/to/file.txt", // File | 
+  'hash': "hash_example", // String | 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadCategoryCover(categoryId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1553,7 +1558,10 @@ apiInstance.uploadCategoryCover(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadCategoryCoverRequest**](UploadCategoryCoverRequest.md)|  | 
+ **categoryId** | **Number**| Category ID to fetch | 
+ **file** | **File**|  | [optional] 
+ **hash** | **String**|  | [optional] 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -1570,7 +1578,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadCategoryImage"></a>
 # **uploadCategoryImage**
-> Image uploadCategoryImage(categoryId, file, hash, imageTypeName, opts)
+> Image uploadCategoryImage(categoryId, imageTypeName, opts)
 
 
 
@@ -1597,16 +1605,14 @@ var apiInstance = new KinowJavascriptSdk.CategoriesApi();
 
 var categoryId = 3.4; // Number | Category ID to fetch
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
 var imageTypeName = "imageTypeName_example"; // String | Image types name to use to generate image assets
 
 var opts = { 
+  'file': "/path/to/file.txt", // File | 
+  'hash': "hash_example", // String | 
   'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
 };
-apiInstance.uploadCategoryImage(categoryId, file, hash, imageTypeName, opts).then(function(data) {
+apiInstance.uploadCategoryImage(categoryId, imageTypeName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1619,9 +1625,9 @@ apiInstance.uploadCategoryImage(categoryId, file, hash, imageTypeName, opts).the
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **Number**| Category ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
  **imageTypeName** | **String**| Image types name to use to generate image assets | 
+ **file** | **File**|  | [optional] 
+ **hash** | **String**|  | [optional] 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type

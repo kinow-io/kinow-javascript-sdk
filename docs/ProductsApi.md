@@ -2774,7 +2774,7 @@ null (empty response body)
 
 <a name="uploadProductCover"></a>
 # **uploadProductCover**
-> ImageResponse uploadProductCover(body)
+> ImageResponse uploadProductCover(productId, opts)
 
 
 
@@ -2799,9 +2799,14 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
-var body = new KinowJavascriptSdk.UploadProductCoverRequest(); // UploadProductCoverRequest | 
+var productId = 3.4; // Number | Product ID to fetch
 
-apiInstance.uploadProductCover(body).then(function(data) {
+var opts = { 
+  'file': "/path/to/file.txt", // File | 
+  'hash': "hash_example", // String | 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadProductCover(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2813,7 +2818,10 @@ apiInstance.uploadProductCover(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadProductCoverRequest**](UploadProductCoverRequest.md)|  | 
+ **productId** | **Number**| Product ID to fetch | 
+ **file** | **File**|  | [optional] 
+ **hash** | **String**|  | [optional] 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -2830,7 +2838,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadProductImage"></a>
 # **uploadProductImage**
-> Image uploadProductImage(productId, file, hash, imageTypeName, opts)
+> Image uploadProductImage(productId, imageTypeName, opts)
 
 
 
@@ -2857,16 +2865,14 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
 var productId = 3.4; // Number | Product ID to fetch
 
-var file = "/path/to/file.txt"; // File | 
-
-var hash = "hash_example"; // String | 
-
 var imageTypeName = "imageTypeName_example"; // String | Image types name to use to generate image assets
 
 var opts = { 
+  'file': "/path/to/file.txt", // File | 
+  'hash': "hash_example", // String | 
   'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
 };
-apiInstance.uploadProductImage(productId, file, hash, imageTypeName, opts).then(function(data) {
+apiInstance.uploadProductImage(productId, imageTypeName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -2879,9 +2885,9 @@ apiInstance.uploadProductImage(productId, file, hash, imageTypeName, opts).then(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Number**| Product ID to fetch | 
- **file** | **File**|  | 
- **hash** | **String**|  | 
  **imageTypeName** | **String**| Image types name to use to generate image assets | 
+ **file** | **File**|  | [optional] 
+ **hash** | **String**|  | [optional] 
  **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type

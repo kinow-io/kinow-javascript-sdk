@@ -864,7 +864,7 @@ null (empty response body)
 
 <a name="uploadDirectorCover"></a>
 # **uploadDirectorCover**
-> Image uploadDirectorCover(body)
+> Image uploadDirectorCover(directorId, opts)
 
 
 
@@ -889,9 +889,14 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.DirectorsApi();
 
-var body = new KinowJavascriptSdk.UploadDirectorCoverRequest(); // UploadDirectorCoverRequest | 
+var directorId = 3.4; // Number | Director ID to fetch
 
-apiInstance.uploadDirectorCover(body).then(function(data) {
+var opts = { 
+  'file': "/path/to/file.txt", // File | 
+  'hash': "hash_example", // String | 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadDirectorCover(directorId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -903,7 +908,10 @@ apiInstance.uploadDirectorCover(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadDirectorCoverRequest**](UploadDirectorCoverRequest.md)|  | 
+ **directorId** | **Number**| Director ID to fetch | 
+ **file** | **File**|  | [optional] 
+ **hash** | **String**|  | [optional] 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -915,6 +923,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 

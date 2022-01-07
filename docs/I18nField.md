@@ -5,5 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lang** | **Integer** |  | [optional] 
 **value** | **String** |  | [optional] 
+**isoCode** | **String** |  | [optional] 
 
 

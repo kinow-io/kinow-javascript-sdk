@@ -864,7 +864,7 @@ null (empty response body)
 
 <a name="uploadActorCover"></a>
 # **uploadActorCover**
-> ImageResponse uploadActorCover(body)
+> ImageResponse uploadActorCover(actorId, opts)
 
 
 
@@ -889,9 +889,14 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.ActorsApi();
 
-var body = new KinowJavascriptSdk.UploadActorCoverRequest(); // UploadActorCoverRequest | 
+var actorId = 3.4; // Number | Actor ID to fetch
 
-apiInstance.uploadActorCover(body).then(function(data) {
+var opts = { 
+  'file': "/path/to/file.txt", // File | 
+  'hash': "hash_example", // String | 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadActorCover(actorId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -903,7 +908,10 @@ apiInstance.uploadActorCover(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadActorCoverRequest**](UploadActorCoverRequest.md)|  | 
+ **actorId** | **Number**| Actor ID to fetch | 
+ **file** | **File**|  | [optional] 
+ **hash** | **String**|  | [optional] 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 

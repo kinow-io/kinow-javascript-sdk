@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadSubscriptionCover"></a>
 # **uploadSubscriptionCover**
-> ImageResponse uploadSubscriptionCover(body)
+> ImageResponse uploadSubscriptionCover(subscriptionId, opts)
 
 
 
@@ -515,9 +515,14 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.SubscriptionsApi();
 
-var body = new KinowJavascriptSdk.UploadSubscriptionCoverRequest(); // UploadSubscriptionCoverRequest | 
+var subscriptionId = 3.4; // Number | Subscription ID to fetch
 
-apiInstance.uploadSubscriptionCover(body).then(function(data) {
+var opts = { 
+  'file': "/path/to/file.txt", // File | 
+  'hash': "hash_example", // String | 
+  'hashAlgorithm': "hashAlgorithm_example" // String | Hash algorithm to check the hash file (default value is: sha256)
+};
+apiInstance.uploadSubscriptionCover(subscriptionId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -529,7 +534,10 @@ apiInstance.uploadSubscriptionCover(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadSubscriptionCoverRequest**](UploadSubscriptionCoverRequest.md)|  | 
+ **subscriptionId** | **Number**| Subscription ID to fetch | 
+ **file** | **File**|  | [optional] 
+ **hash** | **String**|  | [optional] 
+ **hashAlgorithm** | **String**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
