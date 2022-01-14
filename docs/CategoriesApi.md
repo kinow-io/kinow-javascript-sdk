@@ -1578,7 +1578,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadCategoryImage"></a>
 # **uploadCategoryImage**
-> Image uploadCategoryImage(categoryId, imageTypeName, opts)
+> ImageResponse uploadCategoryImage(categoryId, imageTypeName, opts)
 
 
 
@@ -1632,7 +1632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 

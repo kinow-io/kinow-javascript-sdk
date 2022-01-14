@@ -864,7 +864,7 @@ null (empty response body)
 
 <a name="uploadDirectorCover"></a>
 # **uploadDirectorCover**
-> Image uploadDirectorCover(directorId, opts)
+> ImageResponse uploadDirectorCover(directorId, opts)
 
 
 
@@ -915,7 +915,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -923,6 +923,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 

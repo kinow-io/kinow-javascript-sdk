@@ -2838,7 +2838,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadProductImage"></a>
 # **uploadProductImage**
-> Image uploadProductImage(productId, imageTypeName, opts)
+> ImageResponse uploadProductImage(productId, imageTypeName, opts)
 
 
 
@@ -2892,7 +2892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 

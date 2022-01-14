@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadCategoryImage"></a>
 # **uploadCategoryImage**
-> Image uploadCategoryImage(categoryId, imageTypeName, opts)
+> ImageResponse uploadCategoryImage(categoryId, imageTypeName, opts)
 
 
 
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadDirectorCover"></a>
 # **uploadDirectorCover**
-> Image uploadDirectorCover(directorId, opts)
+> ImageResponse uploadDirectorCover(directorId, opts)
 
 
 
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
 <a name="uploadProductCover"></a>
@@ -1020,7 +1020,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadProductImage"></a>
 # **uploadProductImage**
-> Image uploadProductImage(productId, imageTypeName, opts)
+> ImageResponse uploadProductImage(productId, imageTypeName, opts)
 
 
 
@@ -1074,7 +1074,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](Image.md)
+[**ImageResponse**](ImageResponse.md)
 
 ### Authorization
 
