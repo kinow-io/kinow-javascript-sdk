@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **active** | **Boolean** |  | [optional] 
 **idLang** | **Integer** |  | [optional] 
 **idCountry** | **Integer** |  | 
+**idState** | **Integer** |  | [optional] 
 **city** | **String** |  | [optional] 
 **postcode** | **String** |  | [optional] 
 **address1** | **String** |  | [optional] 

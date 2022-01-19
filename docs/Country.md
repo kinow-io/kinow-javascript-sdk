@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **isoCode** | **String** |  | [optional] 
 **idZone** | **String** |  | [optional] 
 **name** | [**[I18nField]**](I18nField.md) |  | [optional] 
+**states** | [**[State]**](State.md) |  | [optional] 
 
 

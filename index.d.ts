@@ -730,6 +730,7 @@ declare module 'kinow-javascript-sdk' {
     iso_code: string
     id_zone: string
     name: Array<I18nField>
+    states: Array<State>
   }
   interface CountryListResponse {
     data: Array<Country>
@@ -768,7 +769,6 @@ declare module 'kinow-javascript-sdk' {
     custom: string
     password: string
     last_passwd_gen: string
-    id_country: number
   }
   interface ProductAccessInfo {
     id_product: number
@@ -805,6 +805,7 @@ declare module 'kinow-javascript-sdk' {
     active: boolean
     id_lang: number
     id_country: number
+    id_state: number
     city: string
     postcode: string
     address1: string
@@ -855,7 +856,6 @@ declare module 'kinow-javascript-sdk' {
     custom: string
     password: string
     last_passwd_gen: string
-    id_country: number
   }
   interface ProductAccessInfoResponse {
     id_product: number
@@ -1906,6 +1906,16 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_upd: string
   }
+  interface State {
+    id: number
+    id_country: number
+    iso_code: string
+    name: string
+  }
+  interface StateListResponse {
+    data: Array<State>
+    pagination: object
+  }
   interface Subscription {
     id: number
     id_product: number
@@ -2706,7 +2716,8 @@ declare module 'kinow-javascript-sdk' {
   }
   export class CountriesApi {
     constructor(config?: ApiClient)
-    getCountries(opts?: any, callback?: Function): Promise<CountryListResponse>
+    getCountries(callback?: Function): Promise<CountryListResponse>
+    getStates(callback?: Function): Promise<StateListResponse>
   }
   export class CurrenciesApi {
     constructor(config?: ApiClient)
