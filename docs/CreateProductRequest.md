@@ -3,24 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dateAdd** | **String** |  | [optional] 
-**dateUpd** | **String** |  | [optional] 
+**name** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | 
+**descriptionShort** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**description** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**metaTitle** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**metaDescription** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**metaKeywords** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**linkRewrite** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | 
 **active** | **Boolean** |  | [optional] 
-**position** | **Integer** |  | [optional] 
-**images** | [**[Image]**](Image.md) |  | [optional] 
-**metaDescription** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**metaKeywords** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**metaTitle** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**linkRewrite** | [**[I18nField]**](I18nField.md) |  | 
-**name** | [**[I18nField]**](I18nField.md) |  | 
-**description** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**descriptionShort** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **reference** | **String** |  | [optional] 
 **dateFrom** | **String** |  | [optional] 
 **dateTo** | **String** |  | [optional] 
-**visibleBeforePublication** | **Boolean** |  | [optional] 
-**visibleAfterPublication** | **Boolean** |  | [optional] 
-**idCategoryDefault** | **Integer** |  | [optional] 
+**availabilityBefore** | **Integer** | Value can be 0, 1 or 2 | [optional] 
+**availabilityAfter** | **Integer** | Value can be 0, 1 or 2 | [optional] 
+**idCategoryDefault** | **Integer** |  | 
 **tags** | [**[I18nField]**](I18nField.md) |  | [optional] 
 
 

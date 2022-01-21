@@ -4,13 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **idParent** | **Integer** |  | [optional] 
-**name** | [**[I18nField]**](I18nField.md) |  | 
-**descriptionShort** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**description** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**metaTitle** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**metaDescription** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**metaKeywords** | [**[I18nField]**](I18nField.md) |  | [optional] 
-**linkRewrite** | [**[I18nField]**](I18nField.md) |  | 
+**name** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | 
+**descriptionShort** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**description** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**metaTitle** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**metaDescription** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**metaKeywords** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | [optional] 
+**linkRewrite** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | 
 **active** | **Boolean** |  | [optional] 
 
 

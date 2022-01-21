@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | [**[I18nField]**](I18nField.md) |  | 
+**name** | [**[I18nFieldInput]**](I18nFieldInput.md) |  | 
 
 

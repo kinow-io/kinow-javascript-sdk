@@ -4,6 +4,10 @@ declare module 'kinow-javascript-sdk' {
     value: string
     iso_code: string
   }
+  interface I18nFieldInput {
+    lang: number
+    value: string
+  }
   interface VideoFreeAccess {
     hasStreaming: boolean
     hasDownload: boolean
@@ -36,8 +40,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: string
-    date_upd: string
+    date_add: number
+    date_upd: number
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -53,8 +57,6 @@ declare module 'kinow-javascript-sdk' {
     available_in_subscriptions: boolean
     duration: number
     type: string
-    sub: boolean
-    has_group_restriction: boolean
     group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string
@@ -76,8 +78,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: string
-    date_upd: string
+    date_add: number
+    date_upd: number
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -93,8 +95,6 @@ declare module 'kinow-javascript-sdk' {
     available_in_subscriptions: boolean
     duration: number
     type: string
-    sub: boolean
-    has_group_restriction: boolean
     group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string
@@ -120,22 +120,22 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CreateActorRequest {
     name: string
-    description_short: Array<I18nField>
-    description: Array<I18nField>
-    meta_title: Array<I18nField>
-    meta_description: Array<I18nField>
-    meta_keywords: Array<I18nField>
-    link_rewrite: Array<I18nField>
+    description_short: Array<I18nFieldInput>
+    description: Array<I18nFieldInput>
+    meta_title: Array<I18nFieldInput>
+    meta_description: Array<I18nFieldInput>
+    meta_keywords: Array<I18nFieldInput>
+    link_rewrite: Array<I18nFieldInput>
     active: boolean
   }
   interface UpdateActorRequest {
     name: string
-    description_short: Array<I18nField>
-    description: Array<I18nField>
-    meta_title: Array<I18nField>
-    meta_description: Array<I18nField>
-    meta_keywords: Array<I18nField>
-    link_rewrite: Array<I18nField>
+    description_short: Array<I18nFieldInput>
+    description: Array<I18nFieldInput>
+    meta_title: Array<I18nFieldInput>
+    meta_description: Array<I18nFieldInput>
+    meta_keywords: Array<I18nFieldInput>
+    link_rewrite: Array<I18nFieldInput>
     active: boolean
   }
   interface ActorListResponse {
@@ -225,6 +225,19 @@ declare module 'kinow-javascript-sdk' {
     watching_duration: number
     maximum_views: number
     active: number
+  }
+  interface CreateAttributeRequest {
+    product_id: number
+    video_group_id: number
+    video_id: number
+    type: string
+    mode: string
+    quality: string
+    price: number
+    price_mode: number
+    duration: number
+    watching_duration: number
+    maximum_views: number
   }
   interface BlogCategory {
     position: number
@@ -437,8 +450,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: string
-    date_upd: string
+    date_add: number
+    date_upd: number
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -454,8 +467,6 @@ declare module 'kinow-javascript-sdk' {
     available_in_subscriptions: boolean
     duration: number
     type: string
-    sub: boolean
-    has_group_restriction: boolean
     group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string
@@ -663,13 +674,13 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CreateCategoryRequest {
     id_parent: number
-    name: Array<I18nField>
-    description_short: Array<I18nField>
-    description: Array<I18nField>
-    meta_title: Array<I18nField>
-    meta_description: Array<I18nField>
-    meta_keywords: Array<I18nField>
-    link_rewrite: Array<I18nField>
+    name: Array<I18nFieldInput>
+    description_short: Array<I18nFieldInput>
+    description: Array<I18nFieldInput>
+    meta_title: Array<I18nFieldInput>
+    meta_description: Array<I18nFieldInput>
+    meta_keywords: Array<I18nFieldInput>
+    link_rewrite: Array<I18nFieldInput>
     active: boolean
   }
   interface UpdateCategoryRequest {
@@ -941,8 +952,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: string
-    date_upd: string
+    date_add: number
+    date_upd: number
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -958,8 +969,6 @@ declare module 'kinow-javascript-sdk' {
     available_in_subscriptions: boolean
     duration: number
     type: string
-    sub: boolean
-    has_group_restriction: boolean
     group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string
@@ -981,8 +990,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: string
-    date_upd: string
+    date_add: number
+    date_upd: number
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -998,8 +1007,6 @@ declare module 'kinow-javascript-sdk' {
     available_in_subscriptions: boolean
     duration: number
     type: string
-    sub: boolean
-    has_group_restriction: boolean
     group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string
@@ -1025,22 +1032,22 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CreateDirectorRequest {
     name: string
-    description_short: Array<I18nField>
-    description: Array<I18nField>
-    meta_title: Array<I18nField>
-    meta_description: Array<I18nField>
-    meta_keywords: Array<I18nField>
-    link_rewrite: Array<I18nField>
+    description_short: Array<I18nFieldInput>
+    description: Array<I18nFieldInput>
+    meta_title: Array<I18nFieldInput>
+    meta_description: Array<I18nFieldInput>
+    meta_keywords: Array<I18nFieldInput>
+    link_rewrite: Array<I18nFieldInput>
     active: boolean
   }
   interface UpdateDirectorRequest {
     name: string
-    description_short: Array<I18nField>
-    description: Array<I18nField>
-    meta_title: Array<I18nField>
-    meta_description: Array<I18nField>
-    meta_keywords: Array<I18nField>
-    link_rewrite: Array<I18nField>
+    description_short: Array<I18nFieldInput>
+    description: Array<I18nFieldInput>
+    meta_title: Array<I18nFieldInput>
+    meta_description: Array<I18nFieldInput>
+    meta_keywords: Array<I18nFieldInput>
+    link_rewrite: Array<I18nFieldInput>
     active: boolean
   }
   interface DirectorListResponse {
@@ -1353,7 +1360,7 @@ declare module 'kinow-javascript-sdk' {
     date_upd: string
   }
   interface CreateGroupRequest {
-    name: Array<I18nField>
+    name: Array<I18nFieldInput>
   }
   interface GroupListResponse {
     data: Array<Group>
@@ -1710,8 +1717,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: string
-    date_upd: string
+    date_add: number
+    date_upd: number
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -1727,8 +1734,6 @@ declare module 'kinow-javascript-sdk' {
     available_in_subscriptions: boolean
     duration: number
     type: string
-    sub: boolean
-    has_group_restriction: boolean
     group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string
@@ -1751,40 +1756,36 @@ declare module 'kinow-javascript-sdk' {
     name: string
   }
   interface CreateProductRequest {
-    date_add: string
-    date_upd: string
+    name: Array<I18nFieldInput>
+    description_short: Array<I18nFieldInput>
+    description: Array<I18nFieldInput>
+    meta_title: Array<I18nFieldInput>
+    meta_description: Array<I18nFieldInput>
+    meta_keywords: Array<I18nFieldInput>
+    link_rewrite: Array<I18nFieldInput>
     active: boolean
-    position: number
-    images: Array<Image>
-    meta_description: Array<I18nField>
-    meta_keywords: Array<I18nField>
-    meta_title: Array<I18nField>
-    link_rewrite: Array<I18nField>
-    name: Array<I18nField>
-    description: Array<I18nField>
-    description_short: Array<I18nField>
     reference: string
     date_from: string
     date_to: string
-    visible_before_publication: boolean
-    visible_after_publication: boolean
+    availability_before: number
+    availability_after: number
     id_category_default: number
     tags: Array<I18nField>
   }
   interface UpdateProductRequest {
-    name: Array<I18nField>
-    description_short: Array<I18nField>
-    description: Array<I18nField>
-    meta_title: Array<I18nField>
-    meta_description: Array<I18nField>
-    meta_keywords: Array<I18nField>
-    link_rewrite: Array<I18nField>
+    name: Array<I18nFieldInput>
+    description_short: Array<I18nFieldInput>
+    description: Array<I18nFieldInput>
+    meta_title: Array<I18nFieldInput>
+    meta_description: Array<I18nFieldInput>
+    meta_keywords: Array<I18nFieldInput>
+    link_rewrite: Array<I18nFieldInput>
     active: boolean
     reference: string
     date_from: string
     date_to: string
-    visible_before_publication: boolean
-    visible_after_publication: boolean
+    availability_before: number
+    availability_after: number
     id_category_default: number
     tags: Array<I18nField>
   }
@@ -1819,8 +1820,8 @@ declare module 'kinow-javascript-sdk' {
     price_mode: number
     position: number
     available_for_order: boolean
-    date_add: string
-    date_upd: string
+    date_add: number
+    date_upd: number
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -1829,8 +1830,6 @@ declare module 'kinow-javascript-sdk' {
     available_in_subscriptions: boolean
     duration: number
     type: string
-    sub: boolean
-    has_group_restriction: boolean
     group_restriction_behavior: number
     geoloc_enabled: boolean
     behavior_detected_countries: string

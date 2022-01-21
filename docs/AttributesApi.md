@@ -37,7 +37,7 @@ ApiClientSecret.apiKey = 'YOUR API KEY';
 
 var apiInstance = new KinowJavascriptSdk.AttributesApi();
 
-var body = new KinowJavascriptSdk.ProductAttributeCreateRequest(); // ProductAttributeCreateRequest | 
+var body = new KinowJavascriptSdk.CreateAttributeRequest(); // CreateAttributeRequest | Attribute settings
 
 apiInstance.createProductAttribute(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -51,7 +51,7 @@ apiInstance.createProductAttribute(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductAttributeCreateRequest**](ProductAttributeCreateRequest.md)|  | 
+ **body** | [**CreateAttributeRequest**](CreateAttributeRequest.md)| Attribute settings | 
 
 ### Return type
 
