@@ -2393,21 +2393,21 @@ declare module 'kinow-javascript-sdk' {
   }
   export class ActorsApi {
     constructor(config?: ApiClient)
-    getActors(callback?: Function): Promise<ActorListResponse>
+    getActors(opts?: any, callback?: Function): Promise<ActorListResponse>
     createActor(body: any, callback?: Function): Promise<ActorResponse>
     getActor(actorId: number, callback?: Function): Promise<ActorResponse>
     updateActor(actorId: number, body: any, callback?: Function): any
     deleteActor(actorId: number, callback?: Function): any
-    getActorProducts(actorId: number, callback?: Function): Promise<ActorProductListResponse>
-    getActorProductsRole(actorId: number, callback?: Function): Promise<ActorProductRoleListResponse>
+    getActorProducts(actorId: number, opts?: any, callback?: Function): Promise<ActorProductListResponse>
+    getActorProductsRole(actorId: number, opts?: any, callback?: Function): Promise<ActorProductRoleListResponse>
     getCategoryActors(categoryId: number, opts?: any, callback?: Function): any
     attachActorToCategory(categoryId: number, actorId: number, callback?: Function): any
     detachActorFromCategory(categoryId: number, actorId: number, callback?: Function): any
     getActorCoverImage(actorId: number, callback?: Function): Promise<ImageResponse>
-    uploadActorCover(actorId: number, callback?: Function): Promise<ImageResponse>
+    uploadActorCover(actorId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getProductActors(productId: number, opts?: any, callback?: Function): Promise<ActorListResponse>
     attachActorToProduct(productId: number, actorId: number, callback?: Function): any
-    getProductActorsRole(productId: number, callback?: Function): Promise<ActorRoleListResponse>
+    getProductActorsRole(productId: number, opts?: any, callback?: Function): Promise<ActorRoleListResponse>
   }
   export class AddressApi {
     constructor(config?: ApiClient)
@@ -2419,40 +2419,40 @@ declare module 'kinow-javascript-sdk' {
     createProductAttribute(body: any, callback?: Function): Promise<ProductAttribute>
     getAttribute(attributeId: number, callback?: Function): Promise<ProductAttribute>
     deleteAttribute(attributeId: number, callback?: Function): any
-    getProductAttributes(productId: number, callback?: Function): Promise<ProductAttributeListResponse>
+    getProductAttributes(productId: number, opts?: any, callback?: Function): Promise<ProductAttributeListResponse>
   }
   export class BlogCategoriesApi {
     constructor(config?: ApiClient)
-    getBlogCategories(callback?: Function): Promise<BlogCategoryListResponse>
+    getBlogCategories(opts?: any, callback?: Function): Promise<BlogCategoryListResponse>
     getBlogCategory(blogCategoryId: number, callback?: Function): Promise<BlogCategoryResponse>
   }
   export class BlogPagesApi {
     constructor(config?: ApiClient)
-    getBlogPages(callback?: Function): Promise<BlogPageListResponse>
+    getBlogPages(opts?: any, callback?: Function): Promise<BlogPageListResponse>
     getBlogPage(blogPageId: number, callback?: Function): Promise<BlogPageResponse>
-    getBlogPageProducts(blogPageId: number, callback?: Function): any
+    getBlogPageProducts(blogPageId: number, opts?: any, callback?: Function): any
     attachProductToBlogPage(blogPageId: number, productId: number, callback?: Function): any
     detachProductFromBlogPage(blogPageId: number, productId: number, callback?: Function): any
   }
   export class BookmarksApi {
     constructor(config?: ApiClient)
-    getCustomerBookmarks(customerId: number, callback?: Function): Promise<ProductListResponse>
+    getCustomerBookmarks(customerId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
     attachBookmarkToCustomer(customerId: number, productId: number, callback?: Function): any
     detachBookmarkFromCustomer(customerId: number, productId: number, callback?: Function): any
   }
   export class CustomersApi {
     constructor(config?: ApiClient)
-    getCustomerBookmarks(customerId: number, callback?: Function): Promise<ProductListResponse>
+    getCustomerBookmarks(customerId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
     attachBookmarkToCustomer(customerId: number, productId: number, callback?: Function): any
     detachBookmarkFromCustomer(customerId: number, productId: number, callback?: Function): any
-    getCustomerCarts(customerId: number, callback?: Function): Promise<CartListResponse>
+    getCustomerCarts(customerId: number, opts?: any, callback?: Function): Promise<CartListResponse>
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<CartResponse>
-    getCustomers(callback?: Function): Promise<CustomerListResponse>
+    getCustomers(opts?: any, callback?: Function): Promise<CustomerListResponse>
     createCustomer(body: any, callback?: Function): Promise<CustomerResponse>
     getCustomer(customerId: number, callback?: Function): Promise<CustomerResponse>
     updateCustomer(customerId: number, body: any, callback?: Function): Promise<CustomerResponse>
     deleteCustomer(customerId: number, callback?: Function): any
-    getCustomerOrders(customerId: number, callback?: Function): Promise<OrderListResponse>
+    getCustomerOrders(customerId: number, opts?: any, callback?: Function): Promise<OrderListResponse>
     getCustomerHasAccessToVideo(customerId: number, videoId: number, callback?: Function): any
     getCustomerHasAccessToVideos(customerId: number, body: any, callback?: Function): any
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
@@ -2464,7 +2464,7 @@ declare module 'kinow-javascript-sdk' {
     generateAuthenticationToken(customerId: number, callback?: Function): any
     checkAuthenticationToken(token: string, callback?: Function): Promise<CustomerResponse>
     getCustomerCurrentViews(customerId: number, callback?: Function): Promise<CustomerCurrentViewsResponse>
-    getCustomerGroups(customerId: number, callback?: Function): Promise<GroupListResponse>
+    getCustomerGroups(customerId: number, opts?: any, callback?: Function): Promise<GroupListResponse>
     passwordToken(email: string, opts?: any, callback?: Function): Promise<TokenResponse>
     passwordTokenConsume(token: string, password: string, callback?: Function): any
     getRegistrationFields(opts?: any, callback?: Function): Promise<RegistrationFieldsResponse>
@@ -2479,28 +2479,28 @@ declare module 'kinow-javascript-sdk' {
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, opts?: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
     getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): Promise<PaymentDetailsListResponse>
-    getCustomerPlaylists(customerId: number, callback?: Function): Promise<PlaylistListResponse>
+    getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): Promise<PlaylistListResponse>
     getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): Promise<PrepaymentBalanceListResponse>
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): Promise<PrepaymentOperationListResponse>
-    getCustomerAccessesVideos(customerId: number, callback?: Function): Promise<ProductAccessListResponse>
-    getCustomerAccessesSubscriptions(customerId: number, callback?: Function): Promise<ProductAccessListResponse>
+    getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): Promise<ProductAccessListResponse>
+    getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): Promise<ProductAccessListResponse>
     stopSubscription(customerId: number, productAccessId: string, callback?: Function): any
   }
   export class CMSCategoriesApi {
     constructor(config?: ApiClient)
-    getCMSCategories(callback?: Function): any
+    getCMSCategories(opts?: any, callback?: Function): any
     createCMSCategory(body: any, callback?: Function): Promise<CMSCategoryResponse>
     updateCMSCategory(cmsCategoryId: number, body: any, callback?: Function): Promise<CMSCategoryResponse>
   }
   export class CMSPagesApi {
     constructor(config?: ApiClient)
-    getCMSPages(callback?: Function): Promise<CMSPageListResponse>
+    getCMSPages(opts?: any, callback?: Function): Promise<CMSPageListResponse>
     createCMSPage(body: any, callback?: Function): Promise<CMSPageResponse>
     updateCMSPage(cmsPageId: number, body: any, callback?: Function): Promise<CMSPageResponse>
   }
   export class CartsApi {
     constructor(config?: ApiClient)
-    getCarts(callback?: Function): any
+    getCarts(opts?: any, callback?: Function): any
     createCart(body: any, callback?: Function): Promise<CartResponse>
     getCart(cartId: number, callback?: Function): Promise<CartResponse>
     updateCart(cartId: number, body: any, callback?: Function): Promise<CartResponse>
@@ -2510,11 +2510,11 @@ declare module 'kinow-javascript-sdk' {
     addProductToCart(cartId: number, body: any, callback?: Function): Promise<CartResponse>
     removeProductFromCart(cartId: number, productId: number, opts?: any, callback?: Function): any
     validateFreeOrder(cartId: number, callback?: Function): any
-    getCustomerCarts(customerId: number, callback?: Function): Promise<CartListResponse>
+    getCustomerCarts(customerId: number, opts?: any, callback?: Function): Promise<CartListResponse>
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<CartResponse>
     getLastCart(customerId: number, callback?: Function): Promise<CartResponse>
     emptyCart(cartId: number, callback?: Function): any
-    getLostsCarts(callback?: Function): Promise<CartListResponse>
+    getLostsCarts(opts?: any, callback?: Function): Promise<CartListResponse>
     getPrice(body: any, callback?: Function): any
     getCartPaymentModules(cartId: number, opts?: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
@@ -2526,7 +2526,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     attachCartRuleToCart(cartId: number, code: string, opts?: any, callback?: Function): any
     detachCartRuleFromCart(cartId: number, cartRuleId: number, callback?: Function): any
-    getCartRules(callback?: Function): Promise<CartRuleListResponse>
+    getCartRules(opts?: any, callback?: Function): Promise<CartRuleListResponse>
     createCartRule(body: any, callback?: Function): any
     getCartRule(cartRuleId: number, callback?: Function): Promise<CartRuleResponse>
     updateCartRule(cartRuleId: number, body: any, callback?: Function): any
@@ -2535,7 +2535,7 @@ declare module 'kinow-javascript-sdk' {
   export class PaymentModulesApi {
     constructor(config?: ApiClient)
     validateFreeOrder(cartId: number, callback?: Function): any
-    getPaymentModules(callback?: Function): Promise<PaymentModuleListResponse>
+    getPaymentModules(opts?: any, callback?: Function): Promise<PaymentModuleListResponse>
     getPaymentToken(token: number, callback?: Function): any
     getCartPaymentModules(cartId: number, opts?: any, callback?: Function): any
     getPaymentUrl(cartId: number, paymentName: string, callback?: Function): any
@@ -2550,20 +2550,20 @@ declare module 'kinow-javascript-sdk' {
   }
   export class CategoriesApi {
     constructor(config?: ApiClient)
-    getCategories(callback?: Function): Promise<CategoryListResponse>
+    getCategories(opts?: any, callback?: Function): Promise<CategoryListResponse>
     createCategory(body: any, callback?: Function): Promise<CategoryResponse>
     getCategory(categoryId: number, callback?: Function): Promise<CategoryResponse>
     updateCategory(categoryId: number, body: any, callback?: Function): Promise<CategoryResponse>
     deleteCategory(categoryId: number, callback?: Function): any
-    getCategoryProducts(categoryId: number, callback?: Function): Promise<ProductListResponse>
-    getCategoryFeatures(categoryId: number, callback?: Function): Promise<FeatureListResponse>
+    getCategoryProducts(categoryId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
+    getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
     attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
     getAvailableCategory(categoryId: number, opts?: any, callback?: Function): Promise<CategoryResponse>
-    getCategoriesFromCategory(categoryId: number, callback?: Function): Promise<CategoryListResponse>
-    getVideosFromCategory(categoryId: number, callback?: Function): Promise<VideoCategoryListResponse>
-    getVideosFromCategories(callback?: Function): Promise<VideoCategoryListResponse>
+    getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): Promise<CategoryListResponse>
+    getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
+    getVideosFromCategories(opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
     getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
-    getCategoryVideoSubtitles(videoId: number, callback?: Function): Promise<SubtitleListResponse>
+    getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): Promise<SubtitleListResponse>
     getCategoryImages(categoryId: number, opts?: any, callback?: Function): any
     getCategoryActors(categoryId: number, opts?: any, callback?: Function): any
     attachActorToCategory(categoryId: number, actorId: number, callback?: Function): any
@@ -2572,151 +2572,151 @@ declare module 'kinow-javascript-sdk' {
     attachDirectorToCategory(categoryId: number, directorId: number, callback?: Function): any
     detachDirectorFromCategory(categoryId: number, directorId: number, callback?: Function): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<ImageResponse>
-    getProductCategories(productId: number, callback?: Function): Promise<CategoryListResponse>
-    getSubscriptionCategories(subscriptionId: number, callback?: Function): Promise<CategoryListResponse>
-    uploadCategoryCover(categoryId: number, callback?: Function): Promise<ImageResponse>
-    uploadCategoryImage(categoryId: number, imageTypeName: string, callback?: Function): Promise<ImageResponse>
+    getProductCategories(productId: number, opts?: any, callback?: Function): Promise<CategoryListResponse>
+    getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): Promise<CategoryListResponse>
+    uploadCategoryCover(categoryId: number, opts?: any, callback?: Function): Promise<ImageResponse>
+    uploadCategoryImage(categoryId: number, imageTypeName: string, opts?: any, callback?: Function): Promise<ImageResponse>
   }
   export class ProductsApi {
     constructor(config?: ApiClient)
-    getCategoryProducts(categoryId: number, callback?: Function): Promise<ProductListResponse>
+    getCategoryProducts(categoryId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerHasAccessToProducts(customerId: number, body: any, callback?: Function): any
     getProductCoverImage(productId: number, callback?: Function): Promise<ImageResponse>
-    uploadProductCover(productId: number, callback?: Function): Promise<ImageResponse>
+    uploadProductCover(productId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getProductScreenshots(productId: number, callback?: Function): any
     getProducts(opts?: any, callback?: Function): Promise<ProductListResponse>
     createProduct(body: any, callback?: Function): Promise<ProductResponse>
     getProduct(productId: number, callback?: Function): Promise<ProductResponse>
     updateProduct(productId: number, body: any, callback?: Function): Promise<ProductResponse>
     deleteProduct(productId: number, callback?: Function): any
-    getVideosFromProduct(productId: number, callback?: Function): Promise<ProductVideoListResponse>
+    getVideosFromProduct(productId: number, opts?: any, callback?: Function): Promise<ProductVideoListResponse>
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any
-    getVideoGroupsFromProduct(productId: number, callback?: Function): Promise<VideoGroupListResponse>
-    getProductFeatures(productId: number, callback?: Function): Promise<FeatureListResponse>
+    getVideoGroupsFromProduct(productId: number, opts?: any, callback?: Function): Promise<VideoGroupListResponse>
+    getProductFeatures(productId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
     attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
-    getProductGeolocations(productId: number, callback?: Function): Promise<GeolocationListResponse>
+    getProductGeolocations(productId: number, opts?: any, callback?: Function): Promise<GeolocationListResponse>
     setProductGeolocation(productId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
-    getProductGeolocationsByIp(productId: number, ipAddress: string, callback?: Function): any
-    getProductAttributes(productId: number, callback?: Function): Promise<ProductAttributeListResponse>
+    getProductGeolocationsByIp(productId: number, ipAddress: string, opts?: any, callback?: Function): any
+    getProductAttributes(productId: number, opts?: any, callback?: Function): Promise<ProductAttributeListResponse>
     getProductImages(productId: number, opts?: any, callback?: Function): Promise<ImageListResponse>
     getProductAvailability(productId: number, callback?: Function): any
     getProductDirectors(productId: number, opts?: any, callback?: Function): Promise<DirectorListResponse>
     attachDirectorToProduct(productId: number, directorId: number, callback?: Function): any
-    getProductDirectorsRole(productId: number, callback?: Function): Promise<DirectorRoleListResponse>
+    getProductDirectorsRole(productId: number, opts?: any, callback?: Function): Promise<DirectorRoleListResponse>
     getProductActors(productId: number, opts?: any, callback?: Function): Promise<ActorListResponse>
     attachActorToProduct(productId: number, actorId: number, callback?: Function): any
-    getProductActorsRole(productId: number, callback?: Function): Promise<ActorRoleListResponse>
-    getProductExtracts(productId: number, callback?: Function): Promise<ExtractListResponse>
+    getProductActorsRole(productId: number, opts?: any, callback?: Function): Promise<ActorRoleListResponse>
+    getProductExtracts(productId: number, opts?: any, callback?: Function): Promise<ExtractListResponse>
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
     searchProducts(searchQuery: string, opts?: any, callback?: Function): Promise<ProductListResponse>
-    getProductCategories(productId: number, callback?: Function): Promise<CategoryListResponse>
+    getProductCategories(productId: number, opts?: any, callback?: Function): Promise<CategoryListResponse>
     attachProductToCategory(productId: number, categoryId: number, callback?: Function): any
     detachProductFromCategory(productId: number, categoryId: number, callback?: Function): any
-    getProductsFromProduct(productId: number, callback?: Function): Promise<ProductListResponse>
+    getProductsFromProduct(productId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
     associateProducts(productId: number, associatedProductIds: string, callback?: Function): any
-    getProductGroups(productId: number, callback?: Function): Promise<GroupListResponse>
+    getProductGroups(productId: number, opts?: any, callback?: Function): Promise<GroupListResponse>
     attachProductToGroup(productId: number, groupId: number, callback?: Function): any
     detachProductFromGroup(productId: number, groupId: number, callback?: Function): any
     updateProductGroupRestrictionBehavior(productId: number, behavior: number, callback?: Function): any
     getProductSubscription(productId: number, callback?: Function): Promise<SubscriptionResponse>
     getBestSales(opts?: any, callback?: Function): Promise<ProductListResponse>
     getPrice(body: any, callback?: Function): any
-    getNewProducts(callback?: Function): Promise<ProductListResponse>
+    getNewProducts(opts?: any, callback?: Function): Promise<ProductListResponse>
     getMostWatched(opts?: any, callback?: Function): any
-    uploadProductImage(productId: number, imageTypeName: string, callback?: Function): Promise<ImageResponse>
+    uploadProductImage(productId: number, imageTypeName: string, opts?: any, callback?: Function): Promise<ImageResponse>
   }
   export class FeaturesApi {
     constructor(config?: ApiClient)
-    getCategoryFeatures(categoryId: number, callback?: Function): Promise<FeatureListResponse>
+    getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
     attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
-    getExtractFeatures(extractId: number, callback?: Function): any
+    getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
     attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
-    getFeatures(callback?: Function): Promise<FeatureListResponse>
-    getFeatureValues(callback?: Function): any
-    getProductFeatures(productId: number, callback?: Function): Promise<FeatureListResponse>
+    getFeatures(opts?: any, callback?: Function): Promise<FeatureListResponse>
+    getFeatureValues(opts?: any, callback?: Function): any
+    getProductFeatures(productId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
     attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
-    getVideoFeatures(videoId: number, callback?: Function): any
+    getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
   export class FeatureValuesApi {
     constructor(config?: ApiClient)
     attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
     attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
-    getFeatureValues(callback?: Function): any
+    getFeatureValues(opts?: any, callback?: Function): any
     attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
   export class CategoryVideosApi {
     constructor(config?: ApiClient)
-    getVideosFromCategory(categoryId: number, callback?: Function): Promise<VideoCategoryListResponse>
-    getVideosFromCategories(callback?: Function): Promise<VideoCategoryListResponse>
+    getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
+    getVideosFromCategories(opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
     getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
-    getCategoryVideoSubtitles(videoId: number, callback?: Function): Promise<SubtitleListResponse>
+    getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): Promise<SubtitleListResponse>
   }
   export class SubtitlesApi {
     constructor(config?: ApiClient)
-    getCategoryVideoSubtitles(videoId: number, callback?: Function): Promise<SubtitleListResponse>
+    getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): Promise<SubtitleListResponse>
     getExtractSubtitles(extractId: number, opts?: any, callback?: Function): any
-    getSubtitles(callback?: Function): Promise<SubtitleFileListResponse>
+    getSubtitles(opts?: any, callback?: Function): Promise<SubtitleFileListResponse>
     createVideoSubtitle(videoId: number, body: any, callback?: Function): Promise<SubtitleResponse>
     createExtractSubtitle(extractId: number, body: any, callback?: Function): Promise<SubtitleResponse>
-    getVideoSubtitles(videoId: number, callback?: Function): any
+    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
   }
   export class ImagesApi {
     constructor(config?: ApiClient)
     getCategoryImages(categoryId: number, opts?: any, callback?: Function): any
     getSubscriptionCoverImage(subscriptionId: number, callback?: Function): Promise<ImageResponse>
-    uploadSubscriptionCover(subscriptionId: number, callback?: Function): Promise<ImageResponse>
+    uploadSubscriptionCover(subscriptionId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getProductImageTypes(): any
     getProductCoverImage(productId: number, callback?: Function): Promise<ImageResponse>
-    uploadProductCover(productId: number, callback?: Function): Promise<ImageResponse>
+    uploadProductCover(productId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getProductScreenshots(productId: number, callback?: Function): any
     getDirectorCoverImage(directorId: number, callback?: Function): Promise<ImageResponse>
-    uploadDirectorCover(directorId: number, callback?: Function): Promise<ImageResponse>
+    uploadDirectorCover(directorId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getActorCoverImage(actorId: number, callback?: Function): Promise<ImageResponse>
-    uploadActorCover(actorId: number, callback?: Function): Promise<ImageResponse>
+    uploadActorCover(actorId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getCategoryImageTypes(): any
     getCategoryBanner(categoryId: number, callback?: Function): Promise<ImageResponse>
     getSliderImage(): Promise<ImageListResponse>
     getVideoCover(videoId: number, callback?: Function): Promise<ImageResponse>
     getProductImages(productId: number, opts?: any, callback?: Function): Promise<ImageListResponse>
-    uploadProductImage(productId: number, imageTypeName: string, callback?: Function): Promise<ImageResponse>
-    uploadCategoryCover(categoryId: number, callback?: Function): Promise<ImageResponse>
-    uploadCategoryImage(categoryId: number, imageTypeName: string, callback?: Function): Promise<ImageResponse>
+    uploadProductImage(productId: number, imageTypeName: string, opts?: any, callback?: Function): Promise<ImageResponse>
+    uploadCategoryCover(categoryId: number, opts?: any, callback?: Function): Promise<ImageResponse>
+    uploadCategoryImage(categoryId: number, imageTypeName: string, opts?: any, callback?: Function): Promise<ImageResponse>
   }
   export class DirectorsApi {
     constructor(config?: ApiClient)
     getCategoryDirectors(categoryId: number, opts?: any, callback?: Function): any
     attachDirectorToCategory(categoryId: number, directorId: number, callback?: Function): any
     detachDirectorFromCategory(categoryId: number, directorId: number, callback?: Function): any
-    getDirectors(callback?: Function): Promise<DirectorListResponse>
+    getDirectors(opts?: any, callback?: Function): Promise<DirectorListResponse>
     createDirector(body: any, callback?: Function): Promise<Director>
     getDirector(directorId: number, callback?: Function): Promise<DirectorResponse>
     updateDirector(directorId: number, body: any, callback?: Function): any
     deleteDirector(directorId: number, callback?: Function): any
-    getDirectorProducts(directorId: number, callback?: Function): Promise<DirectorProductListResponse>
-    getDirectorProductsRole(directorId: number, callback?: Function): Promise<DirectorProductRoleListResponse>
+    getDirectorProducts(directorId: number, opts?: any, callback?: Function): Promise<DirectorProductListResponse>
+    getDirectorProductsRole(directorId: number, opts?: any, callback?: Function): Promise<DirectorProductRoleListResponse>
     getDirectorCoverImage(directorId: number, callback?: Function): Promise<ImageResponse>
-    uploadDirectorCover(directorId: number, callback?: Function): Promise<ImageResponse>
+    uploadDirectorCover(directorId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getProductDirectors(productId: number, opts?: any, callback?: Function): Promise<DirectorListResponse>
     attachDirectorToProduct(productId: number, directorId: number, callback?: Function): any
-    getProductDirectorsRole(productId: number, callback?: Function): Promise<DirectorRoleListResponse>
+    getProductDirectorsRole(productId: number, opts?: any, callback?: Function): Promise<DirectorRoleListResponse>
   }
   export class ConfigurationApi {
     constructor(config?: ApiClient)
-    getConfiguration(callback?: Function): Promise<ConfigurationListResponse>
+    getConfiguration(opts?: any, callback?: Function): Promise<ConfigurationListResponse>
     getConfigurationByName(configurationName: string, callback?: Function): Promise<ConfigurationResponse>
     getConfigurationSocial(): any
     getConfigurationLogo(): any
-    getConfigurationAnalytics(callback?: Function): Promise<AnalyticListResponse>
+    getConfigurationAnalytics(opts?: any, callback?: Function): Promise<AnalyticListResponse>
   }
   export class CountriesApi {
     constructor(config?: ApiClient)
-    getCountries(callback?: Function): Promise<CountryListResponse>
-    getStates(callback?: Function): Promise<StateListResponse>
+    getCountries(opts?: any, callback?: Function): Promise<CountryListResponse>
+    getStates(opts?: any, callback?: Function): Promise<StateListResponse>
   }
   export class CurrenciesApi {
     constructor(config?: ApiClient)
@@ -2724,11 +2724,11 @@ declare module 'kinow-javascript-sdk' {
   }
   export class OrdersApi {
     constructor(config?: ApiClient)
-    getCustomerOrders(customerId: number, callback?: Function): Promise<OrderListResponse>
-    getOrders(callback?: Function): Promise<OrderListResponse>
+    getCustomerOrders(customerId: number, opts?: any, callback?: Function): Promise<OrderListResponse>
+    getOrders(opts?: any, callback?: Function): Promise<OrderListResponse>
     getOrder(orderId: number, callback?: Function): Promise<OrderResponse>
     getOrderInvoice(orderId: number, opts?: any, callback?: Function): any
-    getOrderHistories(orderId: number, callback?: Function): Promise<OrderHistoryListResponse>
+    getOrderHistories(orderId: number, opts?: any, callback?: Function): Promise<OrderHistoryListResponse>
   }
   export class VideosApi {
     constructor(config?: ApiClient)
@@ -2736,41 +2736,41 @@ declare module 'kinow-javascript-sdk' {
     getCustomerHasAccessToVideos(customerId: number, body: any, callback?: Function): any
     getVideoCover(videoId: number, callback?: Function): Promise<ImageResponse>
     attachCoverToVideo(videoId: number, idImage: number, callback?: Function): any
-    getVideosFromProduct(productId: number, callback?: Function): Promise<ProductVideoListResponse>
+    getVideosFromProduct(productId: number, opts?: any, callback?: Function): Promise<ProductVideoListResponse>
     attachVideoToProduct(productId: number, videoId: number, callback?: Function): any
     createVideoSubtitle(videoId: number, body: any, callback?: Function): Promise<SubtitleResponse>
-    getVideos(callback?: Function): Promise<VideoListResponse>
+    getVideos(opts?: any, callback?: Function): Promise<VideoListResponse>
     createVideo(body: any, callback?: Function): Promise<VideoResponse>
     getVideo(videoId: number, callback?: Function): Promise<VideoResponse>
     updateVideo(videoId: number, body: any, callback?: Function): Promise<VideoResponse>
     deleteVideo(videoId: number, callback?: Function): any
-    getDisabledSubscriptions(videoId: number, callback?: Function): Promise<SubscriptionListResponse>
+    getDisabledSubscriptions(videoId: number, opts?: any, callback?: Function): Promise<SubscriptionListResponse>
     getVideoViews(videoId: number, callback?: Function): any
     getVideoAccess(videoId: number, customerId: number, callback?: Function): any
     getVideoPlayer(videoId: number, opts?: any, callback?: Function): any
     getVideoDownloadUrl(videoId: number, opts?: any, callback?: Function): any
-    getVideoGeolocation(videoId: number, callback?: Function): Promise<GeolocationListResponse>
-    getVideoGeolocationByIp(videoId: number, ipAddress: string, callback?: Function): any
+    getVideoGeolocation(videoId: number, opts?: any, callback?: Function): Promise<GeolocationListResponse>
+    getVideoGeolocationByIp(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
     setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
-    getVideoSubtitles(videoId: number, callback?: Function): any
-    getVideoFeatures(videoId: number, callback?: Function): any
+    getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
+    getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
     attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
     getVideoBonus(videoId: number, callback?: Function): any
   }
   export class DevicesApi {
     constructor(config?: ApiClient)
-    getCustomerDevices(customerId: number, callback?: Function): Promise<DeviceListResponse>
+    getCustomerDevices(customerId: number, opts?: any, callback?: Function): Promise<DeviceListResponse>
     createDevices(body: any, callback?: Function): Promise<DeviceResponse>
     deleteDevice(deviceId: number, callback?: Function): any
   }
   export class EmployeesApi {
     constructor(config?: ApiClient)
-    getEmployees(callback?: Function): Promise<EmployeeListResponse>
+    getEmployees(opts?: any, callback?: Function): Promise<EmployeeListResponse>
     getEmployee(employeeId: number, callback?: Function): Promise<EmployeeResponse>
   }
   export class ExtractsApi {
     constructor(config?: ApiClient)
-    getExtracts(callback?: Function): Promise<ExtractListResponse>
+    getExtracts(opts?: any, callback?: Function): Promise<ExtractListResponse>
     createExtract(body: any, callback?: Function): Promise<ExtractResponse>
     getExtract(extractId: number, callback?: Function): Promise<ExtractResponse>
     updateExtract(extractId: number, body: any, callback?: Function): Promise<ExtractResponse>
@@ -2778,10 +2778,10 @@ declare module 'kinow-javascript-sdk' {
     hasAccessToExtracts(body: any, callback?: Function): any
     getExtractPlayer(extractId: number, opts?: any, callback?: Function): any
     getExtractSubtitles(extractId: number, opts?: any, callback?: Function): any
-    getExtractFeatures(extractId: number, callback?: Function): any
+    getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
     attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
     attachCoverToExtract(extractId: number, idImage: number, callback?: Function): any
-    getProductExtracts(productId: number, callback?: Function): Promise<ExtractListResponse>
+    getProductExtracts(productId: number, opts?: any, callback?: Function): Promise<ExtractListResponse>
     createExtractSubtitle(extractId: number, body: any, callback?: Function): Promise<SubtitleResponse>
   }
   export class FreeGiftsApi {
@@ -2796,17 +2796,17 @@ declare module 'kinow-javascript-sdk' {
   }
   export class GendersApi {
     constructor(config?: ApiClient)
-    getGenders(callback?: Function): Promise<GenderListResponse>
+    getGenders(opts?: any, callback?: Function): Promise<GenderListResponse>
   }
   export class GeolocationsApi {
     constructor(config?: ApiClient)
     getPlatformAccessInfo(ipAddress: string, callback?: Function): Promise<PlatformAccessResponse>
     getIPLocation(ipAddress: string, callback?: Function): Promise<IPLocationResponse>
     getGeolocSettings(type: string, typeId: number, callback?: Function): Promise<GeolocSettingsResponse>
-    getProductGeolocations(productId: number, callback?: Function): Promise<GeolocationListResponse>
+    getProductGeolocations(productId: number, opts?: any, callback?: Function): Promise<GeolocationListResponse>
     setProductGeolocation(productId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
-    getProductGeolocationsByIp(productId: number, ipAddress: string, callback?: Function): any
-    getVideoGeolocationByIp(videoId: number, ipAddress: string, callback?: Function): any
+    getProductGeolocationsByIp(productId: number, ipAddress: string, opts?: any, callback?: Function): any
+    getVideoGeolocationByIp(videoId: number, ipAddress: string, opts?: any, callback?: Function): any
     setVideoGeolocation(videoId: number, enabled: number, behaviorDetectedCountries: string, behaviorNonDetectedCountries: string, opts?: any, callback?: Function): any
   }
   export class GiftsApi {
@@ -2825,76 +2825,76 @@ declare module 'kinow-javascript-sdk' {
   }
   export class GroupsApi {
     constructor(config?: ApiClient)
-    getGroups(callback?: Function): Promise<GroupListResponse>
+    getGroups(opts?: any, callback?: Function): Promise<GroupListResponse>
     createGroup(body: any, callback?: Function): Promise<GroupResponse>
     getGroup(groupId: number, callback?: Function): Promise<GroupResponse>
     attachCustomerToGroup(groupId: number, customerId: number, callback?: Function): any
     detachCustomerFromGroup(groupId: number, customerId: number, callback?: Function): any
-    getProductGroups(productId: number, callback?: Function): Promise<GroupListResponse>
+    getProductGroups(productId: number, opts?: any, callback?: Function): Promise<GroupListResponse>
   }
   export class SubscriptionsApi {
     constructor(config?: ApiClient)
     getSubscriptionCoverImage(subscriptionId: number, callback?: Function): Promise<ImageResponse>
-    uploadSubscriptionCover(subscriptionId: number, callback?: Function): Promise<ImageResponse>
+    uploadSubscriptionCover(subscriptionId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getProductSubscription(productId: number, callback?: Function): Promise<SubscriptionResponse>
-    getSubscriptions(callback?: Function): Promise<SubscriptionListResponse>
+    getSubscriptions(opts?: any, callback?: Function): Promise<SubscriptionListResponse>
     getSubscription(subscriptionId: number, callback?: Function): Promise<SubscriptionResponse>
-    getSubscriptionCategories(subscriptionId: number, callback?: Function): Promise<CategoryListResponse>
+    getSubscriptionCategories(subscriptionId: number, opts?: any, callback?: Function): Promise<CategoryListResponse>
     attachCategoriesToSubscription(subscriptionId: number, categoryIds: string, callback?: Function): any
     detachCategoryFromSubscription(subscriptionId: number, categoryId: number, callback?: Function): any
-    getDisabledSubscriptions(videoId: number, callback?: Function): Promise<SubscriptionListResponse>
+    getDisabledSubscriptions(videoId: number, opts?: any, callback?: Function): Promise<SubscriptionListResponse>
   }
   export class WidgetsApi {
     constructor(config?: ApiClient)
     getSliderImage(): Promise<ImageListResponse>
-    getWidgetTopMenu(callback?: Function): Promise<WidgetTopMenuListResponse>
-    getWidgetFooterMenu(callback?: Function): Promise<WidgetFooterMenuListResponse>
-    getWidgetSlider(callback?: Function): Promise<WidgetSliderListResponse>
+    getWidgetTopMenu(opts?: any, callback?: Function): Promise<WidgetTopMenuListResponse>
+    getWidgetFooterMenu(opts?: any, callback?: Function): Promise<WidgetFooterMenuListResponse>
+    getWidgetSlider(opts?: any, callback?: Function): Promise<WidgetSliderListResponse>
     getWidgetSliderItem(sliderId: number, callback?: Function): Promise<WidgetSliderResponse>
     getWidgetAnalytics(): any
-    getWidgetHookPhrase(callback?: Function): Promise<WidgetHookPhraseListResponse>
-    getWidgetHomeRail(callback?: Function): Promise<WidgetHomeRailListResponse>
+    getWidgetHookPhrase(opts?: any, callback?: Function): Promise<WidgetHookPhraseListResponse>
+    getWidgetHomeRail(opts?: any, callback?: Function): Promise<WidgetHomeRailListResponse>
   }
   export class LanguagesApi {
     constructor(config?: ApiClient)
-    getLanguages(callback?: Function): Promise<LanguageListResponse>
+    getLanguages(opts?: any, callback?: Function): Promise<LanguageListResponse>
   }
   export class MediaFilesApi {
     constructor(config?: ApiClient)
     getMediaFile(mediaFileId: number, callback?: Function): Promise<MediaFileResponse>
-    getMediaSourceFiles(sourceId: number, callback?: Function): Promise<MediaFileListResponse>
+    getMediaSourceFiles(sourceId: number, opts?: any, callback?: Function): Promise<MediaFileListResponse>
     postMediaSourceFiles(sourceId: number, body: any, callback?: Function): Promise<MediaFileResponse>
   }
   export class MediaSourcesApi {
     constructor(config?: ApiClient)
-    getMediaSources(callback?: Function): Promise<MediaSourceListResponse>
+    getMediaSources(opts?: any, callback?: Function): Promise<MediaSourceListResponse>
     getMediaSource(sourceId: number, callback?: Function): Promise<MediaSourceResponse>
-    getMediaSourceFiles(sourceId: number, callback?: Function): Promise<MediaFileListResponse>
+    getMediaSourceFiles(sourceId: number, opts?: any, callback?: Function): Promise<MediaFileListResponse>
     postMediaSourceFiles(sourceId: number, body: any, callback?: Function): Promise<MediaFileResponse>
   }
   export class OrderHistoriesApi {
     constructor(config?: ApiClient)
-    getOrderHistories(orderId: number, callback?: Function): Promise<OrderHistoryListResponse>
+    getOrderHistories(orderId: number, opts?: any, callback?: Function): Promise<OrderHistoryListResponse>
   }
   export class OrderStatesApi {
     constructor(config?: ApiClient)
-    getOrderStates(callback?: Function): Promise<OrderStateListResponse>
+    getOrderStates(opts?: any, callback?: Function): Promise<OrderStateListResponse>
     getOrderState(orderStateId: number, callback?: Function): Promise<OrderStateResponse>
   }
   export class PagesApi {
     constructor(config?: ApiClient)
-    getPages(callback?: Function): Promise<PageListResponse>
+    getPages(opts?: any, callback?: Function): Promise<PageListResponse>
     getPage(pageId: number, callback?: Function): Promise<PageResponse>
   }
   export class PlaylistsApi {
     constructor(config?: ApiClient)
-    getPlaylists(callback?: Function): Promise<PlaylistListResponse>
+    getPlaylists(opts?: any, callback?: Function): Promise<PlaylistListResponse>
     createPlaylist(customerId: number, name: string, callback?: Function): Promise<PlaylistResponse>
-    getCustomerPlaylists(customerId: number, callback?: Function): Promise<PlaylistListResponse>
+    getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): Promise<PlaylistListResponse>
     getPlaylist(playlistId: number, callback?: Function): Promise<PlaylistResponse>
     updatePlaylist(playlistId: number, body: any, callback?: Function): Promise<PlaylistResponse>
     deletePlaylist(playlistId: number, callback?: Function): any
-    getPlaylistBookmarks(playlistId: number, callback?: Function): Promise<ProductListResponse>
+    getPlaylistBookmarks(playlistId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
     attachBookmarkToPlaylist(playlistId: number, productId: number, callback?: Function): any
     detachBookmarkFromPlaylist(playlistId: number, productId: number, callback?: Function): any
   }
@@ -2905,23 +2905,23 @@ declare module 'kinow-javascript-sdk' {
     getPrepaymentOperations(opts?: any, callback?: Function): Promise<PrepaymentOperationListResponse>
     getPrepaymentOperationsAmount(body: any, callback?: Function): any
     getPrepaymentOperation(prepaymentOperationId: number, callback?: Function): Promise<PrepaymentOperationResponse>
-    getPrepaymentBonusList(callback?: Function): Promise<PrepaymentBonusListResponse>
+    getPrepaymentBonusList(opts?: any, callback?: Function): Promise<PrepaymentBonusListResponse>
     getPrepaymentBonusAmount(body: any, callback?: Function): any
     getPrepaymentBonus(prepaymentBonusId: number, callback?: Function): Promise<PrepaymentBonusResponse>
-    getPrepaymentRecharges(callback?: Function): Promise<PrepaymentRechargeListResponse>
+    getPrepaymentRecharges(opts?: any, callback?: Function): Promise<PrepaymentRechargeListResponse>
     getPrepaymentRecharge(prepaymentRechargeId: number, callback?: Function): Promise<PrepaymentRechargeResponse>
   }
   export class VideoGroupsApi {
     constructor(config?: ApiClient)
-    getVideoGroupsFromProduct(productId: number, callback?: Function): Promise<VideoGroupListResponse>
-    getVideoGroups(callback?: Function): Promise<VideoGroupListResponse>
+    getVideoGroupsFromProduct(productId: number, opts?: any, callback?: Function): Promise<VideoGroupListResponse>
+    getVideoGroups(opts?: any, callback?: Function): Promise<VideoGroupListResponse>
     getVideoGroup(videoGroupId: number, callback?: Function): Promise<VideoGroupResponse>
   }
   export class BundlesApi {
     constructor(config?: ApiClient)
     addProductToBundle(bundleId: number, productId: number, position: number, callback?: Function): any
     removeProductFromBundle(bundleId: number, productId: number, callback?: Function): any
-    getBundleProducts(bundleId: number, callback?: Function): any
+    getBundleProducts(bundleId: number, opts?: any, callback?: Function): any
   }
   export class ProductAccessesApi {
     constructor(config?: ApiClient)
@@ -2930,8 +2930,8 @@ declare module 'kinow-javascript-sdk' {
     getProductAccess(productAccessId: number, callback?: Function): Promise<ProductAccessResponse>
     updateProductAccess(productAccessId: number, body: any, callback?: Function): Promise<ProductAccessResponse>
     deleteProductAccess(productAccessId: number, callback?: Function): any
-    getCustomerAccessesVideos(customerId: number, callback?: Function): Promise<ProductAccessListResponse>
-    getCustomerAccessesSubscriptions(customerId: number, callback?: Function): Promise<ProductAccessListResponse>
+    getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): Promise<ProductAccessListResponse>
+    getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): Promise<ProductAccessListResponse>
     unsubscribe(productAccessId: number, opts?: any, callback?: Function): any
     subscribe(productAccessId: number, callback?: Function): any
     switchSubscriptionPending(productAccessId: string, callback?: Function): Promise<SubscriptionResponse>
@@ -2945,7 +2945,7 @@ declare module 'kinow-javascript-sdk' {
   export class SupportApi {
     constructor(config?: ApiClient)
     createMessage(body: any, callback?: Function): Promise<SupportResponse>
-    getContacts(callback?: Function): Promise<ContactListResponse>
+    getContacts(opts?: any, callback?: Function): Promise<ContactListResponse>
   }
   export class TasksApi {
     constructor(config?: ApiClient)
@@ -2953,7 +2953,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class TaxRulesApi {
     constructor(config?: ApiClient)
-    getTaxRules(callback?: Function): Promise<TaxRuleListResponse>
+    getTaxRules(opts?: any, callback?: Function): Promise<TaxRuleListResponse>
   }
   export class StatsApi {
     constructor(config?: ApiClient)
