@@ -1133,7 +1133,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrice"></a>
 # **getPrice**
-> [CartPriceResponse] getPrice(body)
+> [ProductPrice] getPrice(body)
 
 
 
@@ -1176,7 +1176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CartPriceResponse]**](CartPriceResponse.md)
+[**[ProductPrice]**](ProductPrice.md)
 
 ### Authorization
 

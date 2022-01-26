@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getCurrencies"></a>
 # **getCurrencies**
-> Currencies getCurrencies(opts)
+> CurrencyListResponse1 getCurrencies(opts)
 
 
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Currencies**](Currencies.md)
+[**CurrencyListResponse1**](CurrencyListResponse1.md)
 
 ### Authorization
 

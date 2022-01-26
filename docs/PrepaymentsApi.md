@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="getCustomerPrepaymentBalances"></a>
 # **getCustomerPrepaymentBalances**
-> PrepaymentBalanceListResponse getCustomerPrepaymentBalances(customerId, opts)
+> [PrepaymentBalance] getCustomerPrepaymentBalances(customerId, opts)
 
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBalanceListResponse**](PrepaymentBalanceListResponse.md)
+[**[PrepaymentBalance]**](PrepaymentBalance.md)
 
 ### Authorization
 

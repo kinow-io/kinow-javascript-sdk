@@ -312,7 +312,7 @@ null (empty response body)
 
 <a name="getCategoryDirectors"></a>
 # **getCategoryDirectors**
-> CategoryDirectorsResponse getCategoryDirectors(categoryId, opts)
+> CategoryDirectorsListResponse getCategoryDirectors(categoryId, opts)
 
 
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
+[**CategoryDirectorsListResponse**](CategoryDirectorsListResponse.md)
 
 ### Authorization
 

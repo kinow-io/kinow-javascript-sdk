@@ -189,7 +189,7 @@ This endpoint does not need any parameter.
 
 <a name="getCategoryImages"></a>
 # **getCategoryImages**
-> CategoryImagesResponse getCategoryImages(categoryId, opts)
+> CategoryImagesListResponse getCategoryImages(categoryId, opts)
 
 
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryImagesResponse**](CategoryImagesResponse.md)
+[**CategoryImagesListResponse**](CategoryImagesListResponse.md)
 
 ### Authorization
 

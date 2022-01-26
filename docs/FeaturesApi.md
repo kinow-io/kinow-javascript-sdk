@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeatureValues"></a>
 # **getFeatureValues**
-> Products getFeatureValues(opts)
+> FeatureValueListResponse1 getFeatureValues(opts)
 
 
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](Products.md)
+[**FeatureValueListResponse1**](FeatureValueListResponse1.md)
 
 ### Authorization
 

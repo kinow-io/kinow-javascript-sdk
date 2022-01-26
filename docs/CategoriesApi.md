@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryActors"></a>
 # **getCategoryActors**
-> CategoryActorsResponse getCategoryActors(categoryId, opts)
+> CategoryActorsListResponse getCategoryActors(categoryId, opts)
 
 
 
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryActorsResponse**](CategoryActorsResponse.md)
+[**CategoryActorsListResponse**](CategoryActorsListResponse.md)
 
 ### Authorization
 
@@ -808,7 +808,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryDirectors"></a>
 # **getCategoryDirectors**
-> CategoryDirectorsResponse getCategoryDirectors(categoryId, opts)
+> CategoryDirectorsListResponse getCategoryDirectors(categoryId, opts)
 
 
 
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryDirectorsResponse**](CategoryDirectorsResponse.md)
+[**CategoryDirectorsListResponse**](CategoryDirectorsListResponse.md)
 
 ### Authorization
 
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryImages"></a>
 # **getCategoryImages**
-> CategoryImagesResponse getCategoryImages(categoryId, opts)
+> CategoryImagesListResponse getCategoryImages(categoryId, opts)
 
 
 
@@ -983,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryImagesResponse**](CategoryImagesResponse.md)
+[**CategoryImagesListResponse**](CategoryImagesListResponse.md)
 
 ### Authorization
 

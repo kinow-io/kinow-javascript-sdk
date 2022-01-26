@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 <a name="getCategoryActors"></a>
 # **getCategoryActors**
-> CategoryActorsResponse getCategoryActors(categoryId, opts)
+> CategoryActorsListResponse getCategoryActors(categoryId, opts)
 
 
 
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryActorsResponse**](CategoryActorsResponse.md)
+[**CategoryActorsListResponse**](CategoryActorsListResponse.md)
 
 ### Authorization
 

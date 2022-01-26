@@ -1355,7 +1355,7 @@ null (empty response body)
 
 <a name="getCustomerHasAccessToVideos"></a>
 # **getCustomerHasAccessToVideos**
-> [VideoAccessInfoResponse] getCustomerHasAccessToVideos(customerId, body)
+> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, body)
 
 
 
@@ -1401,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[VideoAccessInfoResponse]**](VideoAccessInfoResponse.md)
+[**[VideoAccessInfo]**](VideoAccessInfo.md)
 
 ### Authorization
 
@@ -1542,7 +1542,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerPrepaymentBalances"></a>
 # **getCustomerPrepaymentBalances**
-> PrepaymentBalanceListResponse getCustomerPrepaymentBalances(customerId, opts)
+> [PrepaymentBalance] getCustomerPrepaymentBalances(customerId, opts)
 
 
 
@@ -1589,7 +1589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBalanceListResponse**](PrepaymentBalanceListResponse.md)
+[**[PrepaymentBalance]**](PrepaymentBalance.md)
 
 ### Authorization
 
@@ -1843,7 +1843,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethods"></a>
 # **getPaymentMethods**
-> [PaymentMethodsResponse] getPaymentMethods(customerId, paymentName)
+> [PaymentMethods] getPaymentMethods(customerId, paymentName)
 
 
 
@@ -1889,7 +1889,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
+[**[PaymentMethods]**](PaymentMethods.md)
 
 ### Authorization
 
@@ -1902,7 +1902,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethodsWithIp"></a>
 # **getPaymentMethodsWithIp**
-> [PaymentMethodsResponse] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
+> [PaymentMethods] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
 
 
 
@@ -1951,7 +1951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
+[**[PaymentMethods]**](PaymentMethods.md)
 
 ### Authorization
 
@@ -1964,7 +1964,7 @@ Name | Type | Description  | Notes
 
 <a name="getPendingPayments"></a>
 # **getPendingPayments**
-> [PaymentDetailsResponse] getPendingPayments(paymentName, customerId)
+> [PaymentDetails] getPendingPayments(paymentName, customerId)
 
 
 
@@ -2010,7 +2010,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentDetailsResponse]**](PaymentDetailsResponse.md)
+[**[PaymentDetails]**](PaymentDetails.md)
 
 ### Authorization
 

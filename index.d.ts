@@ -511,20 +511,6 @@ declare module 'kinow-javascript-sdk' {
     data: Array<Cart>
     pagination: object
   }
-  interface CartPriceResponse {
-    cart_id: number
-    total_without_tax: number
-    total_tax: number
-    total_discount: number
-    total_trial: number
-    total: number
-    total_without_tax_formatted: string
-    total_tax_formatted: string
-    total_discount_formatted: string
-    total_trial_formatted: string
-    total_formatted: string
-    taxes: Array<TaxPrice>
-  }
   interface CartResponse {
     id: number
     date_add: string
@@ -1590,16 +1576,6 @@ declare module 'kinow-javascript-sdk' {
     data: Array<PaymentDetails>
     pagination: object
   }
-  interface PaymentDetailsResponse {
-    identifier: string
-    metadata: string
-    id_order: number
-    id_customer: number
-  }
-  interface PaymentMethodsResponse {
-    identifier: string
-    metadata: string
-  }
   interface PaymentModuleListResponse {
     data: Array<PaymentModule>
     pagination: object
@@ -1660,10 +1636,6 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_upd: string
     active: boolean
-  }
-  interface PrepaymentBalanceListResponse {
-    data: Array<PrepaymentBalance>
-    pagination: object
   }
   interface PrepaymentBonusListResponse {
     data: Array<PrepaymentBonus>
@@ -1748,7 +1720,19 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ProductPrice {
     id_product: number
-    attributes: Array<any>
+    attributes: Array<ProductPriceAttribute>
+  }
+  interface ProductPriceAttribute {
+    attribute_id: number
+    price: number
+    reduction: number
+    price_without_taxes: number
+    price_without_reduction: number
+    price_formatted: string
+    reduction_formatted: string
+    price_without_taxes_formatted: string
+    price_without_reduction_formatted: string
+    active: boolean
   }
   interface Tag {
     id: number
@@ -2280,15 +2264,6 @@ declare module 'kinow-javascript-sdk' {
     data: Array<SessionVideoStat>
     pagination: object
   }
-  interface SessionVideoStatResponse {
-    customer_id: number
-    video_id: number
-    date: string
-    iso_code: string
-    watched_time: number
-    watched_number: number
-    played_number: number
-  }
   interface VideoStatListResponse {
     data: Array<VideoStat>
     pagination: object
@@ -2480,7 +2455,7 @@ declare module 'kinow-javascript-sdk' {
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
     getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): Promise<PaymentDetailsListResponse>
     getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): Promise<PlaylistListResponse>
-    getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): Promise<PrepaymentBalanceListResponse>
+    getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): any
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): Promise<PrepaymentOperationListResponse>
     getCustomerAccessesVideos(customerId: number, opts?: any, callback?: Function): Promise<ProductAccessListResponse>
     getCustomerAccessesSubscriptions(customerId: number, opts?: any, callback?: Function): Promise<ProductAccessListResponse>
@@ -2900,7 +2875,7 @@ declare module 'kinow-javascript-sdk' {
   }
   export class PrepaymentsApi {
     constructor(config?: ApiClient)
-    getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): Promise<PrepaymentBalanceListResponse>
+    getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): any
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): Promise<PrepaymentOperationListResponse>
     getPrepaymentOperations(opts?: any, callback?: Function): Promise<PrepaymentOperationListResponse>
     getPrepaymentOperationsAmount(body: any, callback?: Function): any

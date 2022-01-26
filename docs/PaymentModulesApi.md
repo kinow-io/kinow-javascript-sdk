@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="getCartPaymentModules"></a>
 # **getCartPaymentModules**
-> PaymentModules getCartPaymentModules(cartId, opts)
+> PaymentModuleListResponse1 getCartPaymentModules(cartId, opts)
 
 
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentModules**](PaymentModules.md)
+[**PaymentModuleListResponse1**](PaymentModuleListResponse1.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethods"></a>
 # **getPaymentMethods**
-> [PaymentMethodsResponse] getPaymentMethods(customerId, paymentName)
+> [PaymentMethods] getPaymentMethods(customerId, paymentName)
 
 
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
+[**[PaymentMethods]**](PaymentMethods.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethodsWithIp"></a>
 # **getPaymentMethodsWithIp**
-> [PaymentMethodsResponse] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
+> [PaymentMethods] getPaymentMethodsWithIp(customerId, paymentName, ipAddress)
 
 
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentMethodsResponse]**](PaymentMethodsResponse.md)
+[**[PaymentMethods]**](PaymentMethods.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 <a name="getPendingPayments"></a>
 # **getPendingPayments**
-> [PaymentDetailsResponse] getPendingPayments(paymentName, customerId)
+> [PaymentDetails] getPendingPayments(paymentName, customerId)
 
 
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[PaymentDetailsResponse]**](PaymentDetailsResponse.md)
+[**[PaymentDetails]**](PaymentDetails.md)
 
 ### Authorization
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 <a name="preparePayment"></a>
 # **preparePayment**
-> PaymentDetailsResponse1 preparePayment(cartId, paymentName, opts)
+> PaymentDetailsResponse preparePayment(cartId, paymentName, opts)
 
 
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetailsResponse1**](PaymentDetailsResponse1.md)
+[**PaymentDetailsResponse**](PaymentDetailsResponse.md)
 
 ### Authorization
 

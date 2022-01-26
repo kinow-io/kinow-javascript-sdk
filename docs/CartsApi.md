@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 <a name="getCartPaymentModules"></a>
 # **getCartPaymentModules**
-> PaymentModules getCartPaymentModules(cartId, opts)
+> PaymentModuleListResponse1 getCartPaymentModules(cartId, opts)
 
 
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentModules**](PaymentModules.md)
+[**PaymentModuleListResponse1**](PaymentModuleListResponse1.md)
 
 ### Authorization
 
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 
 <a name="getCarts"></a>
 # **getCarts**
-> Carts getCarts(opts)
+> CartListResponse1 getCarts(opts)
 
 
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Carts**](Carts.md)
+[**CartListResponse1**](CartListResponse1.md)
 
 ### Authorization
 
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 <a name="getPrice"></a>
 # **getPrice**
-> [CartPriceResponse] getPrice(body)
+> [CartPrice] getPrice(body)
 
 
 
@@ -911,7 +911,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CartPriceResponse]**](CartPriceResponse.md)
+[**[CartPrice]**](CartPrice.md)
 
 ### Authorization
 
@@ -924,7 +924,7 @@ Name | Type | Description  | Notes
 
 <a name="preparePayment"></a>
 # **preparePayment**
-> PaymentDetailsResponse1 preparePayment(cartId, paymentName, opts)
+> PaymentDetailsResponse preparePayment(cartId, paymentName, opts)
 
 
 
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetailsResponse1**](PaymentDetailsResponse1.md)
+[**PaymentDetailsResponse**](PaymentDetailsResponse.md)
 
 ### Authorization
 

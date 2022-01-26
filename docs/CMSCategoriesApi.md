@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="getCMSCategories"></a>
 # **getCMSCategories**
-> CMSCategoriesLists getCMSCategories(opts)
+> CMSCategoriesListResponse getCMSCategories(opts)
 
 
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CMSCategoriesLists**](CMSCategoriesLists.md)
+[**CMSCategoriesListResponse**](CMSCategoriesListResponse.md)
 
 ### Authorization
 

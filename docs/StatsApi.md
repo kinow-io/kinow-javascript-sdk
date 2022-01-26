@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerSessionsMultiple"></a>
 # **getCustomerSessionsMultiple**
-> [SessionVideoStatResponse] getCustomerSessionsMultiple(customerId, body)
+> [SessionVideoStat] getCustomerSessionsMultiple(customerId, body)
 
 
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[SessionVideoStatResponse]**](SessionVideoStatResponse.md)
+[**[SessionVideoStat]**](SessionVideoStat.md)
 
 ### Authorization
 

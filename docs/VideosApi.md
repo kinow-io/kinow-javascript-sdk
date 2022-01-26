@@ -439,7 +439,7 @@ null (empty response body)
 
 <a name="getCustomerHasAccessToVideos"></a>
 # **getCustomerHasAccessToVideos**
-> [VideoAccessInfoResponse] getCustomerHasAccessToVideos(customerId, body)
+> [VideoAccessInfo] getCustomerHasAccessToVideos(customerId, body)
 
 
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[VideoAccessInfoResponse]**](VideoAccessInfoResponse.md)
+[**[VideoAccessInfo]**](VideoAccessInfo.md)
 
 ### Authorization
 
