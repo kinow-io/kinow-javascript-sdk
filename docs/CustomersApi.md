@@ -2023,7 +2023,7 @@ Name | Type | Description  | Notes
 
 <a name="getPendingPaymentsWithIp"></a>
 # **getPendingPaymentsWithIp**
-> PaymentDetailsListResponse getPendingPaymentsWithIp(paymentName, customerId, ipAddress)
+> [PaymentDetails] getPendingPaymentsWithIp(paymentName, customerId, ipAddress)
 
 
 
@@ -2072,7 +2072,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetailsListResponse**](PaymentDetailsListResponse.md)
+[**[PaymentDetails]**](PaymentDetails.md)
 
 ### Authorization
 

@@ -1572,10 +1572,6 @@ declare module 'kinow-javascript-sdk' {
     token: string
     type: string
   }
-  interface PaymentDetailsListResponse {
-    data: Array<PaymentDetails>
-    pagination: object
-  }
   interface PaymentModuleListResponse {
     data: Array<PaymentModule>
     pagination: object
@@ -2453,7 +2449,7 @@ declare module 'kinow-javascript-sdk' {
     getPaymentMethodsWithIp(customerId: number, paymentName: string, ipAddress: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, opts?: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
-    getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): Promise<PaymentDetailsListResponse>
+    getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): any
     getCustomerPlaylists(customerId: number, opts?: any, callback?: Function): Promise<PlaylistListResponse>
     getCustomerPrepaymentBalances(customerId: number, opts?: any, callback?: Function): any
     getCustomerPrepaymentOperations(customerId: number, opts?: any, callback?: Function): Promise<PrepaymentOperationListResponse>
@@ -2521,7 +2517,7 @@ declare module 'kinow-javascript-sdk' {
     getPaymentMethodsWithIp(customerId: number, paymentName: string, ipAddress: string, callback?: Function): any
     updatePaymentMethod(customerId: number, paymentName: string, paymentArguments: any, opts?: any, callback?: Function): any
     getPendingPayments(paymentName: string, customerId: number, callback?: Function): any
-    getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): Promise<PaymentDetailsListResponse>
+    getPendingPaymentsWithIp(paymentName: string, customerId: number, ipAddress: string, callback?: Function): any
   }
   export class CategoriesApi {
     constructor(config?: ApiClient)
