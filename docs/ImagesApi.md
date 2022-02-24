@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteImage**](ImagesApi.md#deleteImage) | **DELETE** /images/{image_id} | 
 [**getActorCoverImage**](ImagesApi.md#getActorCoverImage) | **GET** /actors/{actor_id}/cover | 
 [**getCategoryBanner**](ImagesApi.md#getCategoryBanner) | **GET** /categories/{category_id}/banner | 
 [**getCategoryImageTypes**](ImagesApi.md#getCategoryImageTypes) | **GET** /categories/image-types | 
@@ -24,6 +25,62 @@ Method | HTTP request | Description
 [**uploadProductImage**](ImagesApi.md#uploadProductImage) | **POST** /products/{product_id}/image | 
 [**uploadSubscriptionCover**](ImagesApi.md#uploadSubscriptionCover) | **POST** /subscriptions/{subscription_id}/cover | 
 
+
+<a name="deleteImage"></a>
+# **deleteImage**
+> deleteImage(imageId)
+
+
+
+Delete image
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ImagesApi();
+
+var imageId = 789; // Integer | Image ID to delete
+
+apiInstance.deleteImage(imageId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageId** | **Integer**| Image ID to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getActorCoverImage"></a>
 # **getActorCoverImage**

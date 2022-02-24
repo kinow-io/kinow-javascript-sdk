@@ -40,8 +40,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: number
-    date_upd: number
+    date_add: string
+    date_upd: string
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -78,8 +78,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: number
-    date_upd: number
+    date_add: string
+    date_upd: string
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -450,8 +450,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: number
-    date_upd: number
+    date_add: string
+    date_upd: string
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -938,8 +938,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: number
-    date_upd: number
+    date_add: string
+    date_upd: string
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -976,8 +976,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: number
-    date_upd: number
+    date_add: string
+    date_upd: string
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -1685,8 +1685,8 @@ declare module 'kinow-javascript-sdk' {
     position: number
     active: boolean
     available_for_order: boolean
-    date_add: number
-    date_upd: number
+    date_add: string
+    date_upd: string
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -1800,8 +1800,8 @@ declare module 'kinow-javascript-sdk' {
     price_mode: number
     position: number
     available_for_order: boolean
-    date_add: number
-    date_upd: number
+    date_add: string
+    date_upd: string
     id_category_default: number
     images: Array<Image>
     attributes: Array<ProductAttribute>
@@ -2273,6 +2273,7 @@ declare module 'kinow-javascript-sdk' {
     type_id: number
     blank: number
     position: number
+    visibility: string
   }
   interface WidgetHomeRail {
     id: number
@@ -2653,6 +2654,7 @@ declare module 'kinow-javascript-sdk' {
     getCategoryBanner(categoryId: number, callback?: Function): Promise<ImageResponse>
     getSliderImage(): Promise<ImageListResponse>
     getVideoCover(videoId: number, callback?: Function): Promise<ImageResponse>
+    deleteImage(imageId: number, callback?: Function): any
     getProductImages(productId: number, opts?: any, callback?: Function): Promise<ImageListResponse>
     uploadProductImage(productId: number, imageTypeName: string, opts?: any, callback?: Function): Promise<ImageResponse>
     uploadCategoryCover(categoryId: number, opts?: any, callback?: Function): Promise<ImageResponse>
