@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**getCustomerSessions**](StatsApi.md#getCustomerSessions) | **GET** /video-stats/sessions | 
 [**getCustomerSessionsMultiple**](StatsApi.md#getCustomerSessionsMultiple) | **POST** /video-stats/{customer_id}/sessions | 
 [**getCustomerVideoStats**](StatsApi.md#getCustomerVideoStats) | **GET** /video-stats/customers | 
+[**getCustomerVideosViewInformations**](StatsApi.md#getCustomerVideosViewInformations) | **POST** /video-stats/views/{customer_id} | 
 [**getVideoStats**](StatsApi.md#getVideoStats) | **GET** /video-stats/videos | 
+[**setCustomerVideoViewInformations**](StatsApi.md#setCustomerVideoViewInformations) | **PUT** /video-stats/views/{customer_id}/{video_id} | 
 
 
 <a name="getCustomerGroupTotalWatched"></a>
@@ -175,7 +177,7 @@ var apiInstance = new KinowJavascriptSdk.StatsApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-var body = new KinowJavascriptSdk.VideoIDList1(); // VideoIDList1 | List of Video IDs separated by comma, eg. '42,21,84'
+var body = new KinowJavascriptSdk.VideoIDList2(); // VideoIDList2 | List of Video IDs separated by comma, eg. '42,21,84'
 
 apiInstance.getCustomerSessionsMultiple(customerId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -190,7 +192,7 @@ apiInstance.getCustomerSessionsMultiple(customerId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
- **body** | [**VideoIDList1**](VideoIDList1.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+ **body** | [**VideoIDList2**](VideoIDList2.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
 
 ### Return type
 
@@ -271,6 +273,65 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getCustomerVideosViewInformations"></a>
+# **getCustomerVideosViewInformations**
+> [VideoViewInformations] getCustomerVideosViewInformations(customerId, body)
+
+
+
+Get a list of videos view informations for a customer
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.StatsApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var body = new KinowJavascriptSdk.VideoIDList1(); // VideoIDList1 | List of Video IDs separated by comma, eg. '42,21,84'
+
+apiInstance.getCustomerVideosViewInformations(customerId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **body** | [**VideoIDList1**](VideoIDList1.md)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**[VideoViewInformations]**](VideoViewInformations.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getVideoStats"></a>
 # **getVideoStats**
 > VideoStatListResponse getVideoStats(opts)
@@ -324,6 +385,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VideoStatListResponse**](VideoStatListResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="setCustomerVideoViewInformations"></a>
+# **setCustomerVideoViewInformations**
+> setCustomerVideoViewInformations(customerId, videoId, body)
+
+
+
+Set a video view informations for a customer
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.StatsApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var videoId = 789; // Integer | Video ID to fetch
+
+var body = new KinowJavascriptSdk.View(); // View | Boolean view
+
+apiInstance.setCustomerVideoViewInformations(customerId, videoId, body).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **videoId** | **Integer**| Video ID to fetch | 
+ **body** | [**View**](View.md)| Boolean view | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

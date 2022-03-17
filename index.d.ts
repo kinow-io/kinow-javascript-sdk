@@ -436,6 +436,7 @@ declare module 'kinow-javascript-sdk' {
     total_trial_formatted: string
     total_formatted: string
     taxes: Array<TaxPrice>
+    cart_rules: Array<CartRulePrice>
   }
   interface CartProduct {
     id_gift: number
@@ -474,6 +475,12 @@ declare module 'kinow-javascript-sdk' {
     id_product_attribute: number
     roles: string
     categories: Array<ProductCategories>
+  }
+  interface CartRulePrice {
+    id: number
+    name: Array<I18nField>
+    amount: number
+    amount_formatted: string
   }
   interface TaxPrice {
     name: string
@@ -2248,6 +2255,10 @@ declare module 'kinow-javascript-sdk' {
     duration: number
     views: number
   }
+  interface VideoViewInformations {
+    id_product_video: number
+    view: boolean
+  }
   interface CustomerGroupVideoStatsListResponse {
     data: Array<CustomerGroupVideoStats>
     pagination: object
@@ -2935,6 +2946,8 @@ declare module 'kinow-javascript-sdk' {
     getCustomerVideoStats(customerId: number, opts?: any, callback?: Function): Promise<CustomerVideoStatsListResponse>
     getCustomerGroupTotalWatched(groupId: number, opts?: any, callback?: Function): Promise<CustomerGroupVideoStatsListResponse>
     getVideoStats(opts?: any, callback?: Function): Promise<VideoStatListResponse>
+    getCustomerVideosViewInformations(customerId: number, body: any, callback?: Function): any
+    setCustomerVideoViewInformations(customerId: number, videoId: number, body: any, callback?: Function): any
   }
   export class ApiClient {
     defaultHeaders: any

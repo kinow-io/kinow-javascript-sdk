@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **totalTrialFormatted** | **String** |  | [optional] 
 **totalFormatted** | **String** |  | [optional] 
 **taxes** | [**[TaxPrice]**](TaxPrice.md) |  | [optional] 
+**cartRules** | [**[CartRulePrice]**](CartRulePrice.md) |  | [optional] 
 
 
