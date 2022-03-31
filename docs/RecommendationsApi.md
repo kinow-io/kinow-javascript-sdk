@@ -38,10 +38,10 @@ var customerId = 789; // Integer |
 
 var opts = { 
   'page': 789, // Integer | 
-  'perPage': 789, // Integer | 
+  'perPage': 789 // Integer | 
   'sortBy': "sortBy_example", // String | Sort by this attribute (id by default)
-  'sortDirection': "sortDirection_example", // String | Sorting direction (asc by default)
-  'ip': "ip_example", // String | Filter by Customer IP
+  'sortDirection': "sortDirection_example" // String | Sorting direction (asc by default)
+  'ip': "ip_example" // String | Filter by user IP
   'isoCode': "isoCode_example" // String | Filter by ISO Code
 };
 apiInstance.getCustomerRecommendations(customerId, opts).then(function(data) {
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
  **perPage** | **Integer**|  | [optional] 
  **sortBy** | **String**| Sort by this attribute (id by default) | [optional] 
  **sortDirection** | **String**| Sorting direction (asc by default) | [optional] 
- **ip** | **String**| Filter by Customer IP | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
  **isoCode** | **String**| Filter by ISO Code | [optional] 
 
 ### Return type

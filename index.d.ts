@@ -808,6 +808,9 @@ declare module 'kinow-javascript-sdk' {
     optin: boolean
     active: boolean
     id_lang: number
+    notification: boolean
+    max_viewing: number
+    custom: string
     id_country: number
     id_state: number
     city: string
@@ -2948,6 +2951,8 @@ declare module 'kinow-javascript-sdk' {
     getVideoStats(opts?: any, callback?: Function): Promise<VideoStatListResponse>
     getCustomerVideosViewInformations(customerId: number, body: any, callback?: Function): any
     setCustomerVideoViewInformations(customerId: number, videoId: number, body: any, callback?: Function): any
+    getProductsWatched(customerId: number, opts?: any, callback?: Function): any
+    getVideosWatching(customerId: number, opts?: any, callback?: Function): any
   }
   export class ApiClient {
     defaultHeaders: any

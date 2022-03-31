@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**getCustomerSessionsMultiple**](StatsApi.md#getCustomerSessionsMultiple) | **POST** /video-stats/{customer_id}/sessions | 
 [**getCustomerVideoStats**](StatsApi.md#getCustomerVideoStats) | **GET** /video-stats/customers | 
 [**getCustomerVideosViewInformations**](StatsApi.md#getCustomerVideosViewInformations) | **POST** /video-stats/views/{customer_id} | 
+[**getProductsWatched**](StatsApi.md#getProductsWatched) | **GET** /video-stats/products-watched | 
 [**getVideoStats**](StatsApi.md#getVideoStats) | **GET** /video-stats/videos | 
+[**getVideosWatching**](StatsApi.md#getVideosWatching) | **GET** /video-stats/videos-watching | 
 [**setCustomerVideoViewInformations**](StatsApi.md#setCustomerVideoViewInformations) | **PUT** /video-stats/views/{customer_id}/{video_id} | 
 
 
@@ -332,6 +334,72 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getProductsWatched"></a>
+# **getProductsWatched**
+> BlogPageProductsResponse getProductsWatched(customerId, opts)
+
+
+
+Get products watched
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.StatsApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+  'ip': "ip_example" // String | Filter by user IP
+  'isoCode': "isoCode_example" // String | Filter by ISO Code
+};
+apiInstance.getProductsWatched(customerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
+ **isoCode** | **String**| Filter by ISO Code | [optional] 
+
+### Return type
+
+[**BlogPageProductsResponse**](BlogPageProductsResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getVideoStats"></a>
 # **getVideoStats**
 > VideoStatListResponse getVideoStats(opts)
@@ -385,6 +453,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VideoStatListResponse**](VideoStatListResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getVideosWatching"></a>
+# **getVideosWatching**
+> VideoStatsVideosWatchingResponse getVideosWatching(customerId, opts)
+
+
+
+Get videos watching
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.StatsApi();
+
+var customerId = 789; // Integer | Customer ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+  'ip': "ip_example" // String | Filter by user IP
+  'isoCode': "isoCode_example" // String | Filter by ISO Code
+};
+apiInstance.getVideosWatching(customerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **Integer**| Customer ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+ **ip** | **String**| Filter by user IP | [optional] 
+ **isoCode** | **String**| Filter by ISO Code | [optional] 
+
+### Return type
+
+[**VideoStatsVideosWatchingResponse**](VideoStatsVideosWatchingResponse.md)
 
 ### Authorization
 

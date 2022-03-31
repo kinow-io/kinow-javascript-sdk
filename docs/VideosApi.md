@@ -1224,7 +1224,7 @@ Name | Type | Description  | Notes
 
 
 
-Get video list
+Get videos list
 
 ### Example
 ```javascript

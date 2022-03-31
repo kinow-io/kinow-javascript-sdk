@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **optin** | **Boolean** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **idLang** | **Integer** |  | [optional] 
+**notification** | **Boolean** |  | [optional] 
+**maxViewing** | **Integer** |  | [optional] 
+**custom** | **String** |  | [optional] 
 **idCountry** | **Integer** |  | 
 **idState** | **Integer** |  | [optional] 
 **city** | **String** |  | [optional] 
