@@ -416,6 +416,7 @@ declare module 'kinow-javascript-sdk' {
     id_customer: number
     id_currency: number
     id_lang: number
+    affiliate: string
     total: number
     total_without_tax: number
     total_trial: number
@@ -503,6 +504,7 @@ declare module 'kinow-javascript-sdk' {
     id_customer: number
     id_currency: number
     id_lang: number
+    affiliate: number
   }
   interface RemoveProductFromCartRequest {
     product_id: number
@@ -513,6 +515,7 @@ declare module 'kinow-javascript-sdk' {
     id_customer: number
     id_currency: number
     id_lang: number
+    affiliate: number
   }
   interface CartListResponse {
     data: Array<Cart>
@@ -525,6 +528,7 @@ declare module 'kinow-javascript-sdk' {
     id_customer: number
     id_currency: number
     id_lang: number
+    affiliate: string
     total: number
     total_without_tax: number
     total_trial: number
@@ -2262,6 +2266,30 @@ declare module 'kinow-javascript-sdk' {
     id_product_video: number
     view: boolean
   }
+  interface CreateVideoStatSessionRequest {
+    customer_id: number
+    video_id: number
+    date: string
+    watched_time: number
+    user_agent: string
+    iso_code: string
+    group_id: number
+    access_id: number
+    device_id: number
+    seek: number
+  }
+  interface CreateVideoStatSessionResponse {
+    customer_id: number
+    video_id: number
+    date: string
+    watched_time: number
+    user_agent: string
+    iso_code: string
+    group_id: number
+    access_id: number
+    device_id: number
+    seek: number
+  }
   interface CustomerGroupVideoStatsListResponse {
     data: Array<CustomerGroupVideoStats>
     pagination: object
@@ -2320,6 +2348,11 @@ declare module 'kinow-javascript-sdk' {
     opacity: number
     image: string
     position: number
+  }
+  interface WidgetSliderVideo {
+    id: number
+    id_media_source: number
+    filename: string
   }
   interface WidgetTopMenu {
     id: number
@@ -2841,6 +2874,7 @@ declare module 'kinow-javascript-sdk' {
     getWidgetAnalytics(): any
     getWidgetHookPhrase(opts?: any, callback?: Function): Promise<WidgetHookPhraseListResponse>
     getWidgetHomeRail(opts?: any, callback?: Function): Promise<WidgetHomeRailListResponse>
+    getWidgetSliderVideoPlayer(sliderId: number, opts?: any, callback?: Function): any
   }
   export class LanguagesApi {
     constructor(config?: ApiClient)
@@ -2945,6 +2979,7 @@ declare module 'kinow-javascript-sdk' {
   export class StatsApi {
     constructor(config?: ApiClient)
     getCustomerSessions(opts?: any, callback?: Function): Promise<SessionVideoStatListResponse>
+    createVideoStatSession(body: any, callback?: Function): Promise<CreateVideoStatSessionResponse>
     getCustomerSessionsMultiple(customerId: number, body: any, callback?: Function): any
     getCustomerVideoStats(customerId: number, opts?: any, callback?: Function): Promise<CustomerVideoStatsListResponse>
     getCustomerGroupTotalWatched(groupId: number, opts?: any, callback?: Function): Promise<CustomerGroupVideoStatsListResponse>

@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **opacity** | **Number** |  | [optional] 
 **image** | **String** |  | [optional] 
 **position** | **Integer** |  | [optional] 
+**video** | [**WidgetSliderVideo**](WidgetSliderVideo.md) |  | [optional] 
 
 

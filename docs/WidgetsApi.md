@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getWidgetHookPhrase**](WidgetsApi.md#getWidgetHookPhrase) | **GET** /widgets/hook-phrase | 
 [**getWidgetSlider**](WidgetsApi.md#getWidgetSlider) | **GET** /widgets/slider | 
 [**getWidgetSliderItem**](WidgetsApi.md#getWidgetSliderItem) | **GET** /widgets/slider/{slider_id} | 
+[**getWidgetSliderVideoPlayer**](WidgetsApi.md#getWidgetSliderVideoPlayer) | **GET** /widgets/slider/{slider_id}/player | 
 [**getWidgetTopMenu**](WidgetsApi.md#getWidgetTopMenu) | **GET** /widgets/top-menu | 
 
 
@@ -396,6 +397,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WidgetSliderResponse**](WidgetSliderResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getWidgetSliderVideoPlayer"></a>
+# **getWidgetSliderVideoPlayer**
+> Player getWidgetSliderVideoPlayer(sliderId, opts)
+
+
+
+Get video player
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.WidgetsApi();
+
+var sliderId = 789; // Integer | Slider ID to fetch
+
+var opts = { 
+  'customerId': 789, // Integer | Customer ID to fetch
+  'countryId': 789 // Integer | Country ID to use in video analytics
+};
+apiInstance.getWidgetSliderVideoPlayer(sliderId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sliderId** | **Integer**| Slider ID to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | [optional] 
+ **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
+
+### Return type
+
+[**Player**](Player.md)
 
 ### Authorization
 

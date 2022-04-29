@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createVideoStatSession**](StatsApi.md#createVideoStatSession) | **POST** /video-stats/sessions | 
 [**getCustomerGroupTotalWatched**](StatsApi.md#getCustomerGroupTotalWatched) | **GET** /video-stats/customer-group | 
 [**getCustomerSessions**](StatsApi.md#getCustomerSessions) | **GET** /video-stats/sessions | 
 [**getCustomerSessionsMultiple**](StatsApi.md#getCustomerSessionsMultiple) | **POST** /video-stats/{customer_id}/sessions | 
@@ -14,6 +15,62 @@ Method | HTTP request | Description
 [**getVideosWatching**](StatsApi.md#getVideosWatching) | **GET** /video-stats/videos-watching | 
 [**setCustomerVideoViewInformations**](StatsApi.md#setCustomerVideoViewInformations) | **PUT** /video-stats/views/{customer_id}/{video_id} | 
 
+
+<a name="createVideoStatSession"></a>
+# **createVideoStatSession**
+> CreateVideoStatSessionResponse createVideoStatSession(body)
+
+
+
+Create a video stat session for a customer
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.StatsApi();
+
+var body = new KinowJavascriptSdk.CreateVideoStatSessionRequest(); // CreateVideoStatSessionRequest | Video stat session parameters
+
+apiInstance.createVideoStatSession(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateVideoStatSessionRequest**](CreateVideoStatSessionRequest.md)| Video stat session parameters | 
+
+### Return type
+
+[**CreateVideoStatSessionResponse**](CreateVideoStatSessionResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getCustomerGroupTotalWatched"></a>
 # **getCustomerGroupTotalWatched**
