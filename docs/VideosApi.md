@@ -1068,7 +1068,8 @@ var videoId = 789; // Integer | Video ID to fetch
 var opts = { 
   'customerId': 789, // Integer | Customer ID to fetch
   'countryId': 789, // Integer | Country ID to use in video analytics
-  'ipAddress': "ipAddress_example" // String | IP address
+  'ipAddress': "ipAddress_example", // String | IP address
+  'forceReload': "forceReload_example" // String | Force seekbar to the begining and ignore viewing resume
 };
 apiInstance.getVideoPlayer(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1086,6 +1087,7 @@ Name | Type | Description  | Notes
  **customerId** | **Integer**| Customer ID to fetch | [optional] 
  **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
  **ipAddress** | **String**| IP address | [optional] 
+ **forceReload** | **String**| Force seekbar to the begining and ignore viewing resume | [optional] 
 
 ### Return type
 

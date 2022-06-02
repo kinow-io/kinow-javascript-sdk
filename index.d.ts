@@ -2427,6 +2427,7 @@ declare module 'kinow-javascript-sdk' {
     getProductActors(productId: number, opts?: any, callback?: Function): Promise<ActorListResponse>
     attachActorToProduct(productId: number, actorId: number, callback?: Function): any
     getProductActorsRole(productId: number, opts?: any, callback?: Function): Promise<ActorRoleListResponse>
+    detachActorFromProduct(productId: number, actorId: number, callback?: Function): any
   }
   export class AddressApi {
     constructor(config?: ApiClient)
@@ -2623,9 +2624,11 @@ declare module 'kinow-javascript-sdk' {
     getProductDirectors(productId: number, opts?: any, callback?: Function): Promise<DirectorListResponse>
     attachDirectorToProduct(productId: number, directorId: number, callback?: Function): any
     getProductDirectorsRole(productId: number, opts?: any, callback?: Function): Promise<DirectorRoleListResponse>
+    detachDirectorFromProduct(productId: number, directorId: number, callback?: Function): any
     getProductActors(productId: number, opts?: any, callback?: Function): Promise<ActorListResponse>
     attachActorToProduct(productId: number, actorId: number, callback?: Function): any
     getProductActorsRole(productId: number, opts?: any, callback?: Function): Promise<ActorRoleListResponse>
+    detachActorFromProduct(productId: number, actorId: number, callback?: Function): any
     getProductExtracts(productId: number, opts?: any, callback?: Function): Promise<ExtractListResponse>
     detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
     searchProducts(searchQuery: string, opts?: any, callback?: Function): Promise<ProductListResponse>
@@ -2724,6 +2727,7 @@ declare module 'kinow-javascript-sdk' {
     getProductDirectors(productId: number, opts?: any, callback?: Function): Promise<DirectorListResponse>
     attachDirectorToProduct(productId: number, directorId: number, callback?: Function): any
     getProductDirectorsRole(productId: number, opts?: any, callback?: Function): Promise<DirectorRoleListResponse>
+    detachDirectorFromProduct(productId: number, directorId: number, callback?: Function): any
   }
   export class ConfigurationApi {
     constructor(config?: ApiClient)

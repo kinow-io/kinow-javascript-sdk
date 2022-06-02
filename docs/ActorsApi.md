@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**createActor**](ActorsApi.md#createActor) | **POST** /actors | 
 [**deleteActor**](ActorsApi.md#deleteActor) | **DELETE** /actors/{actor_id} | 
 [**detachActorFromCategory**](ActorsApi.md#detachActorFromCategory) | **DELETE** /categories/{category_id}/actors/{actor_id} | 
+[**detachActorFromProduct**](ActorsApi.md#detachActorFromProduct) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**getActor**](ActorsApi.md#getActor) | **GET** /actors/{actor_id} | 
 [**getActorCoverImage**](ActorsApi.md#getActorCoverImage) | **GET** /actors/{actor_id}/cover | 
 [**getActorProducts**](ActorsApi.md#getActorProducts) | **GET** /actors/{actor_id}/products | 
@@ -295,6 +296,65 @@ apiInstance.detachActorFromCategory(categoryId, actorId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **Integer**| Category ID to fetch | 
+ **actorId** | **Integer**| Actor ID to detach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachActorFromProduct"></a>
+# **detachActorFromProduct**
+> detachActorFromProduct(productId, actorId)
+
+
+
+Detach actor from product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ActorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var actorId = 789; // Integer | Actor ID to detach
+
+apiInstance.detachActorFromProduct(productId, actorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
  **actorId** | **Integer**| Actor ID to detach | 
 
 ### Return type

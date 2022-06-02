@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**createDirector**](DirectorsApi.md#createDirector) | **POST** /directors | 
 [**deleteDirector**](DirectorsApi.md#deleteDirector) | **DELETE** /directors/{director_id} | 
 [**detachDirectorFromCategory**](DirectorsApi.md#detachDirectorFromCategory) | **DELETE** /categories/{category_id}/directors/{director_id} | 
+[**detachDirectorFromProduct**](DirectorsApi.md#detachDirectorFromProduct) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**getCategoryDirectors**](DirectorsApi.md#getCategoryDirectors) | **GET** /categories/{category_id}/directors | 
 [**getDirector**](DirectorsApi.md#getDirector) | **GET** /directors/{director_id} | 
 [**getDirectorCoverImage**](DirectorsApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
@@ -295,6 +296,65 @@ apiInstance.detachDirectorFromCategory(categoryId, directorId).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **Integer**| Category ID to fetch | 
+ **directorId** | **Integer**| Director ID to detach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="detachDirectorFromProduct"></a>
+# **detachDirectorFromProduct**
+> detachDirectorFromProduct(productId, directorId)
+
+
+
+Detach director from product
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var directorId = 789; // Integer | Director ID to detach
+
+apiInstance.detachDirectorFromProduct(productId, directorId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
  **directorId** | **Integer**| Director ID to detach | 
 
 ### Return type
