@@ -140,15 +140,15 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ActorListResponse {
     data: Array<Actor>
-    pagination: object
+    pagination: Pagination
   }
   interface ActorProductListResponse {
     data: Array<ActorProduct>
-    pagination: object
+    pagination: Pagination
   }
   interface ActorProductRoleListResponse {
     data: Array<ActorProductRole>
-    pagination: object
+    pagination: Pagination
   }
   interface ActorResponse {
     id: number
@@ -168,7 +168,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ActorRoleListResponse {
     data: Array<ActorRole>
-    pagination: object
+    pagination: Pagination
   }
   interface Address {
     id: number
@@ -208,7 +208,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface AnalyticListResponse {
     data: Array<Analytic>
-    pagination: object
+    pagination: Pagination
   }
   interface ProductAttribute {
     id: number
@@ -253,7 +253,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface BlogCategoryListResponse {
     data: Array<BlogCategory>
-    pagination: object
+    pagination: Pagination
   }
   interface BlogCategoryResponse {
     position: number
@@ -286,7 +286,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface BlogPageListResponse {
     data: Array<BlogPage>
-    pagination: object
+    pagination: Pagination
   }
   interface BlogPageResponse {
     id_lang: number
@@ -346,7 +346,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CMSCategoryListResponse {
     data: Array<CMSCategory>
-    pagination: object
+    pagination: Pagination
   }
   interface CMSCategoryResponse {
     id_parent: number
@@ -396,7 +396,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CMSPageListResponse {
     data: Array<CMSPage>
-    pagination: object
+    pagination: Pagination
   }
   interface CMSPageResponse {
     id: number
@@ -519,7 +519,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CartListResponse {
     data: Array<Cart>
-    pagination: object
+    pagination: Pagination
   }
   interface CartResponse {
     id: number
@@ -615,7 +615,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CartRuleListResponse {
     data: Array<CartRule>
-    pagination: object
+    pagination: Pagination
   }
   interface CartRuleResponse {
     id: number
@@ -698,7 +698,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CategoryListResponse {
     data: Array<Category>
-    pagination: object
+    pagination: Pagination
   }
   interface CategoryResponse {
     id: number
@@ -719,7 +719,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface VideoCategoryListResponse {
     data: Array<VideoCategory>
-    pagination: object
+    pagination: Pagination
   }
   interface Configuration {
     name: string
@@ -727,7 +727,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ConfigurationListResponse {
     data: Array<Configuration>
-    pagination: object
+    pagination: Pagination
   }
   interface ConfigurationResponse {
     name: string
@@ -742,7 +742,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CountryListResponse {
     data: Array<Country>
-    pagination: object
+    pagination: Pagination
   }
   interface Currency {
     id: number
@@ -757,7 +757,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CurrencyListResponse {
     data: Array<Currency>
-    pagination: object
+    pagination: Pagination
   }
   interface Customer {
     id: number
@@ -847,7 +847,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CustomerListResponse {
     data: Array<Customer>
-    pagination: object
+    pagination: Pagination
   }
   interface CustomerResponse {
     id: number
@@ -876,7 +876,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface RegistrationFieldsResponse {
     data: Array<RegistrationField>
-    pagination: object
+    pagination: Pagination
   }
   interface TokenResponse {
     token: string
@@ -912,7 +912,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface DeviceListResponse {
     data: Array<Device>
-    pagination: object
+    pagination: Pagination
   }
   interface DeviceResponse {
     id: number
@@ -1052,15 +1052,15 @@ declare module 'kinow-javascript-sdk' {
   }
   interface DirectorListResponse {
     data: Array<Director>
-    pagination: object
+    pagination: Pagination
   }
   interface DirectorProductListResponse {
     data: Array<DirectorProduct>
-    pagination: object
+    pagination: Pagination
   }
   interface DirectorProductRoleListResponse {
     data: Array<DirectorProductRole>
-    pagination: object
+    pagination: Pagination
   }
   interface DirectorResponse {
     id: number
@@ -1080,7 +1080,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface DirectorRoleListResponse {
     data: Array<DirectorRole>
-    pagination: object
+    pagination: Pagination
   }
   interface Employee {
     id: number
@@ -1091,7 +1091,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface EmployeeListResponse {
     data: Array<Employee>
-    pagination: object
+    pagination: Pagination
   }
   interface EmployeeResponse {
     id: number
@@ -1159,7 +1159,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ExtractListResponse {
     data: Array<Extract>
-    pagination: object
+    pagination: Pagination
   }
   interface ExtractResponse {
     id: number
@@ -1193,11 +1193,11 @@ declare module 'kinow-javascript-sdk' {
   }
   interface FeatureListResponse {
     data: Array<Feature>
-    pagination: object
+    pagination: Pagination
   }
   interface FeatureValueListResponse {
     data: Array<FeatureValue>
-    pagination: object
+    pagination: Pagination
   }
   interface FreeGift {
     id: number
@@ -1228,7 +1228,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface FreeGiftListResponse {
     data: Array<FreeGift>
-    pagination: object
+    pagination: Pagination
   }
   interface FreeGiftResponse {
     id: number
@@ -1248,7 +1248,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface GenderListResponse {
     data: Array<Gender>
-    pagination: object
+    pagination: Pagination
   }
   interface Geoloc {
     id: number
@@ -1284,7 +1284,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface GeolocationListResponse {
     data: Array<Geoloc>
-    pagination: object
+    pagination: Pagination
   }
   interface IPLocationResponse {
     ip: string
@@ -1335,7 +1335,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface GiftListResponse {
     data: Array<Gift>
-    pagination: object
+    pagination: Pagination
   }
   interface GiftResponse {
     id: number
@@ -1364,7 +1364,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface GroupListResponse {
     data: Array<Group>
-    pagination: object
+    pagination: Pagination
   }
   interface GroupResponse {
     id: number
@@ -1385,7 +1385,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ImageListResponse {
     data: Array<Image>
-    pagination: object
+    pagination: Pagination
   }
   interface ImageResponse {
     id: number
@@ -1401,7 +1401,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface LanguageListResponse {
     data: Array<Language>
-    pagination: object
+    pagination: Pagination
   }
   interface MediaFile {
     id: number
@@ -1422,7 +1422,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface MediaFileListResponse {
     data: Array<MediaFile>
-    pagination: object
+    pagination: Pagination
   }
   interface MediaFileResponse {
     id: number
@@ -1442,7 +1442,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface MediaSourceListResponse {
     data: Array<MediaSource>
-    pagination: object
+    pagination: Pagination
   }
   interface MediaSourceResponse {
     id: number
@@ -1484,11 +1484,11 @@ declare module 'kinow-javascript-sdk' {
   }
   interface OrderHistoryListResponse {
     data: Array<OrderHistory>
-    pagination: object
+    pagination: Pagination
   }
   interface OrderListResponse {
     data: Array<Order>
-    pagination: object
+    pagination: Pagination
   }
   interface OrderResponse {
     id: number
@@ -1524,7 +1524,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface OrderStateListResponse {
     data: Array<OrderState>
-    pagination: object
+    pagination: Pagination
   }
   interface OrderStateResponse {
     id: number
@@ -1543,7 +1543,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PageListResponse {
     data: Array<Page>
-    pagination: object
+    pagination: Pagination
   }
   interface PageResponse {
     id: number
@@ -1588,7 +1588,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PaymentModuleListResponse {
     data: Array<PaymentModule>
-    pagination: object
+    pagination: Pagination
   }
   interface Playlist {
     id: number
@@ -1597,7 +1597,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PlaylistListResponse {
     data: Array<Playlist>
-    pagination: object
+    pagination: Pagination
   }
   interface PlaylistResponse {
     id: number
@@ -1649,7 +1649,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PrepaymentBonusListResponse {
     data: Array<PrepaymentBonus>
-    pagination: object
+    pagination: Pagination
   }
   interface PrepaymentBonusResponse {
     id: number
@@ -1663,7 +1663,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PrepaymentOperationListResponse {
     data: Array<PrepaymentOperation>
-    pagination: object
+    pagination: Pagination
   }
   interface PrepaymentOperationResponse {
     id: number
@@ -1676,7 +1676,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface PrepaymentRechargeListResponse {
     data: Array<PrepaymentRecharge>
-    pagination: object
+    pagination: Pagination
   }
   interface PrepaymentRechargeResponse {
     id: number
@@ -1785,15 +1785,15 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ProductAttributeListResponse {
     data: Array<ProductAttribute>
-    pagination: object
+    pagination: Pagination
   }
   interface ProductImageListResponse {
     data: Array<Image>
-    pagination: object
+    pagination: Pagination
   }
   interface ProductListResponse {
     data: Array<Product>
-    pagination: object
+    pagination: Pagination
   }
   interface ProductResponse {
     name: Array<I18nField>
@@ -1834,7 +1834,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ProductVideoListResponse {
     data: Array<Video>
-    pagination: object
+    pagination: Pagination
   }
   interface ProductAccess {
     id: number
@@ -1871,7 +1871,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ProductAccessListResponse {
     data: Array<ProductAccess>
-    pagination: object
+    pagination: Pagination
   }
   interface ProductAccessResponse {
     id: number
@@ -1907,7 +1907,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface StateListResponse {
     data: Array<State>
-    pagination: object
+    pagination: Pagination
   }
   interface Subscription {
     id: number
@@ -1926,7 +1926,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface SubscriptionListResponse {
     data: Array<Subscription>
-    pagination: object
+    pagination: Pagination
   }
   interface SubscriptionResponse {
     id: number
@@ -1981,11 +1981,11 @@ declare module 'kinow-javascript-sdk' {
   }
   interface SubtitleFileListResponse {
     data: Array<SubtitleFile>
-    pagination: object
+    pagination: Pagination
   }
   interface SubtitleListResponse {
     data: Array<Subtitle>
-    pagination: object
+    pagination: Pagination
   }
   interface SubtitleResponse {
     id: number
@@ -2038,7 +2038,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface ContactListResponse {
     data: Array<Contact>
-    pagination: object
+    pagination: Pagination
   }
   interface SupportResponse {
     id: number
@@ -2080,7 +2080,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface TaxRuleListResponse {
     data: Array<TaxRule>
-    pagination: object
+    pagination: Pagination
   }
   interface Attachment {
     id: number
@@ -2123,7 +2123,7 @@ declare module 'kinow-javascript-sdk' {
     geoloc_enabled: boolean
     behavior_detected_countries: string
     behavior_non_detected_countries: string
-    has_free_access: object
+    has_free_access: VideoFreeAccess
     advertising_url: string
   }
   interface CreateVideoRequest {
@@ -2150,7 +2150,7 @@ declare module 'kinow-javascript-sdk' {
     geoloc_enabled: boolean
     behavior_detected_countries: string
     behavior_non_detected_countries: string
-    has_free_access: object
+    has_free_access: VideoFreeAccess
     advertising_url: string
   }
   interface UpdateVideoRequest {
@@ -2177,12 +2177,12 @@ declare module 'kinow-javascript-sdk' {
     geoloc_enabled: boolean
     behavior_detected_countries: string
     behavior_non_detected_countries: string
-    has_free_access: object
+    has_free_access: VideoFreeAccess
     advertising_url: string
   }
   interface VideoListResponse {
     data: Array<Video>
-    pagination: object
+    pagination: Pagination
   }
   interface VideoResponse {
     id: number
@@ -2209,7 +2209,7 @@ declare module 'kinow-javascript-sdk' {
     geoloc_enabled: boolean
     behavior_detected_countries: string
     behavior_non_detected_countries: string
-    has_free_access: object
+    has_free_access: VideoFreeAccess
     advertising_url: string
   }
   interface VideoGroup {
@@ -2223,7 +2223,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface VideoGroupListResponse {
     data: Array<VideoGroup>
-    pagination: object
+    pagination: Pagination
   }
   interface VideoGroupResponse {
     id: number
@@ -2266,6 +2266,36 @@ declare module 'kinow-javascript-sdk' {
     id_product_video: number
     view: boolean
   }
+  interface VideoWatching {
+    watching_date: string
+    watching_seek: number
+    id: number
+    id_product: number
+    id_video_group: number
+    id_product_image: number
+    id_language: number
+    language_filter: number
+    id_media_source: number
+    name: Array<I18nField>
+    description: Array<I18nField>
+    duration: number
+    filename: string
+    position: number
+    subscription: number
+    free: number
+    download: number
+    active: boolean
+    date_add: string
+    date_upd: string
+    can_watch: boolean
+    cover: string
+    thumbnail: string
+    geoloc_enabled: boolean
+    behavior_detected_countries: string
+    behavior_non_detected_countries: string
+    has_free_access: VideoFreeAccess
+    advertising_url: string
+  }
   interface CreateVideoStatSessionRequest {
     customer_id: number
     video_id: number
@@ -2292,19 +2322,19 @@ declare module 'kinow-javascript-sdk' {
   }
   interface CustomerGroupVideoStatsListResponse {
     data: Array<CustomerGroupVideoStats>
-    pagination: object
+    pagination: Pagination
   }
   interface CustomerVideoStatsListResponse {
     data: Array<CustomerVideoStats>
-    pagination: object
+    pagination: Pagination
   }
   interface SessionVideoStatListResponse {
     data: Array<SessionVideoStat>
-    pagination: object
+    pagination: Pagination
   }
   interface VideoStatListResponse {
     data: Array<VideoStat>
-    pagination: object
+    pagination: Pagination
   }
   interface WidgetFooterMenu {
     id: number
@@ -2368,19 +2398,19 @@ declare module 'kinow-javascript-sdk' {
   }
   interface WidgetFooterMenuListResponse {
     data: Array<WidgetFooterMenu>
-    pagination: object
+    pagination: Pagination
   }
   interface WidgetHomeRailListResponse {
     data: Array<WidgetHomeRail>
-    pagination: object
+    pagination: Pagination
   }
   interface WidgetHookPhraseListResponse {
     data: Array<WidgetHookPhrase>
-    pagination: object
+    pagination: Pagination
   }
   interface WidgetSliderListResponse {
     data: Array<WidgetSlider>
-    pagination: object
+    pagination: Pagination
   }
   interface WidgetSliderResponse {
     id: number
@@ -2398,7 +2428,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface WidgetTopMenuListResponse {
     data: Array<WidgetTopMenu>
-    pagination: object
+    pagination: Pagination
   }
   interface Pagination {
     total: number
@@ -2852,6 +2882,7 @@ declare module 'kinow-javascript-sdk' {
     getGroups(opts?: any, callback?: Function): Promise<GroupListResponse>
     createGroup(body: any, callback?: Function): Promise<GroupResponse>
     getGroup(groupId: number, callback?: Function): Promise<GroupResponse>
+    getGroupCustomers(groupId: number, opts?: any, callback?: Function): Promise<CustomerListResponse>
     attachCustomerToGroup(groupId: number, customerId: number, callback?: Function): any
     detachCustomerFromGroup(groupId: number, customerId: number, callback?: Function): any
     getProductGroups(productId: number, opts?: any, callback?: Function): Promise<GroupListResponse>
