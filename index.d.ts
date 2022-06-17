@@ -2612,7 +2612,7 @@ declare module 'kinow-javascript-sdk' {
     getCategoriesFromCategory(categoryId: number, opts?: any, callback?: Function): Promise<CategoryListResponse>
     getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
     getVideosFromCategories(opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
-    getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
+    getCategoryPlayer(videoId: number, opts?: any, callback?: Function): any
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): Promise<SubtitleListResponse>
     getCategoryImages(categoryId: number, opts?: any, callback?: Function): any
     getCategoryActors(categoryId: number, opts?: any, callback?: Function): any
@@ -2705,7 +2705,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
     getVideosFromCategories(opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
-    getCategoryVideoPlayer(videoId: number, opts?: any, callback?: Function): any
+    getCategoryPlayer(videoId: number, opts?: any, callback?: Function): any
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): Promise<SubtitleListResponse>
   }
   export class SubtitlesApi {

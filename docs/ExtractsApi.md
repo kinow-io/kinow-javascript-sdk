@@ -456,7 +456,8 @@ var apiInstance = new KinowJavascriptSdk.ExtractsApi();
 var extractId = 789; // Integer | Extract ID to fetch
 
 var opts = { 
-  'ipAddress': "ipAddress_example" // String | IP address
+  'ipAddress': "ipAddress_example", // String | IP address
+  'isoCode': "isoCode_example" // String | Define the player UI language. If not providen, fallback on platform default language.
 };
 apiInstance.getExtractPlayer(extractId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -472,6 +473,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **extractId** | **Integer**| Extract ID to fetch | 
  **ipAddress** | **String**| IP address | [optional] 
+ **isoCode** | **String**| Define the player UI language. If not providen, fallback on platform default language. | [optional] 
 
 ### Return type
 

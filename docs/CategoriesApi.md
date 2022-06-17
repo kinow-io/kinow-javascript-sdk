@@ -20,8 +20,8 @@ Method | HTTP request | Description
 [**getCategoryDirectors**](CategoriesApi.md#getCategoryDirectors) | **GET** /categories/{category_id}/directors | 
 [**getCategoryFeatures**](CategoriesApi.md#getCategoryFeatures) | **GET** /categories/{category_id}/features | 
 [**getCategoryImages**](CategoriesApi.md#getCategoryImages) | **GET** /categories/{category_id}/images | 
+[**getCategoryPlayer**](CategoriesApi.md#getCategoryPlayer) | **GET** /categories/videos/{video_id}/player | 
 [**getCategoryProducts**](CategoriesApi.md#getCategoryProducts) | **GET** /categories/{category_id}/products | 
-[**getCategoryVideoPlayer**](CategoriesApi.md#getCategoryVideoPlayer) | **GET** /categories/videos/{video_id}/player | 
 [**getCategoryVideoSubtitles**](CategoriesApi.md#getCategoryVideoSubtitles) | **GET** /categories/videos/{video_id}/subtitles | 
 [**getProductCategories**](CategoriesApi.md#getProductCategories) | **GET** /products/{product_id}/categories | 
 [**getSubscriptionCategories**](CategoriesApi.md#getSubscriptionCategories) | **GET** /subscriptions/{subscription_id}/categories | 
@@ -994,6 +994,70 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<a name="getCategoryPlayer"></a>
+# **getCategoryPlayer**
+> Player getCategoryPlayer(videoId, opts)
+
+
+
+Get category player
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.CategoriesApi();
+
+var videoId = 789; // Integer | Video ID to fetch
+
+var opts = { 
+  'customerId': 789, // Integer | Customer ID to fetch
+  'countryId': 789, // Integer | Country ID to use in video analytics
+  'isoCode': "isoCode_example" // String | Define the player UI language. If not providen, fallback on platform default language.
+};
+apiInstance.getCategoryPlayer(videoId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoId** | **Integer**| Video ID to fetch | 
+ **customerId** | **Integer**| Customer ID to fetch | [optional] 
+ **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
+ **isoCode** | **String**| Define the player UI language. If not providen, fallback on platform default language. | [optional] 
+
+### Return type
+
+[**Player**](Player.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="getCategoryProducts"></a>
 # **getCategoryProducts**
 > ProductListResponse getCategoryProducts(categoryId, opts)
@@ -1056,68 +1120,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductListResponse**](ProductListResponse.md)
-
-### Authorization
-
-[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getCategoryVideoPlayer"></a>
-# **getCategoryVideoPlayer**
-> Player getCategoryVideoPlayer(videoId, opts)
-
-
-
-Get video player
-
-### Example
-```javascript
-var KinowJavascriptSdk = require('kinow-javascript-sdk');
-var defaultClient = KinowJavascriptSdk.ApiClient.instance;
-
-// Configure API key authorization: ApiClientId
-var ApiClientId = defaultClient.authentications['ApiClientId'];
-ApiClientId.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientId.apiKeyPrefix = 'Token';
-
-// Configure API key authorization: ApiClientSecret
-var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
-ApiClientSecret.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiClientSecret.apiKeyPrefix = 'Token';
-
-var apiInstance = new KinowJavascriptSdk.CategoriesApi();
-
-var videoId = 789; // Integer | Video ID to fetch
-
-var opts = { 
-  'customerId': 789, // Integer | Customer ID to fetch
-  'countryId': 789 // Integer | Country ID to use in video analytics
-};
-apiInstance.getCategoryVideoPlayer(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **videoId** | **Integer**| Video ID to fetch | 
- **customerId** | **Integer**| Customer ID to fetch | [optional] 
- **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
-
-### Return type
-
-[**Player**](Player.md)
 
 ### Authorization
 

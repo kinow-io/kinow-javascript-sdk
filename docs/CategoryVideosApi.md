@@ -4,19 +4,19 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCategoryVideoPlayer**](CategoryVideosApi.md#getCategoryVideoPlayer) | **GET** /categories/videos/{video_id}/player | 
+[**getCategoryPlayer**](CategoryVideosApi.md#getCategoryPlayer) | **GET** /categories/videos/{video_id}/player | 
 [**getCategoryVideoSubtitles**](CategoryVideosApi.md#getCategoryVideoSubtitles) | **GET** /categories/videos/{video_id}/subtitles | 
 [**getVideosFromCategories**](CategoryVideosApi.md#getVideosFromCategories) | **GET** /categories/videos | 
 [**getVideosFromCategory**](CategoryVideosApi.md#getVideosFromCategory) | **GET** /categories/{category_id}/videos | 
 
 
-<a name="getCategoryVideoPlayer"></a>
-# **getCategoryVideoPlayer**
-> Player getCategoryVideoPlayer(videoId, opts)
+<a name="getCategoryPlayer"></a>
+# **getCategoryPlayer**
+> Player getCategoryPlayer(videoId, opts)
 
 
 
-Get video player
+Get category player
 
 ### Example
 ```javascript
@@ -41,9 +41,10 @@ var videoId = 789; // Integer | Video ID to fetch
 
 var opts = { 
   'customerId': 789, // Integer | Customer ID to fetch
-  'countryId': 789 // Integer | Country ID to use in video analytics
+  'countryId': 789, // Integer | Country ID to use in video analytics
+  'isoCode': "isoCode_example" // String | Define the player UI language. If not providen, fallback on platform default language.
 };
-apiInstance.getCategoryVideoPlayer(videoId, opts).then(function(data) {
+apiInstance.getCategoryPlayer(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -58,6 +59,7 @@ Name | Type | Description  | Notes
  **videoId** | **Integer**| Video ID to fetch | 
  **customerId** | **Integer**| Customer ID to fetch | [optional] 
  **countryId** | **Integer**| Country ID to use in video analytics | [optional] 
+ **isoCode** | **String**| Define the player UI language. If not providen, fallback on platform default language. | [optional] 
 
 ### Return type
 
