@@ -1956,9 +1956,6 @@ declare module 'kinow-javascript-sdk' {
     opacity: number
     italic_color: boolean
   }
-  interface SubtitleFile {
-    filename: string
-  }
   interface CreateExtractSubtitleRequest {
     filename: string
     name: string
@@ -1978,10 +1975,6 @@ declare module 'kinow-javascript-sdk' {
     size: number
     color: string
     text_shadow: string
-  }
-  interface SubtitleFileListResponse {
-    data: Array<SubtitleFile>
-    pagination: Pagination
   }
   interface SubtitleListResponse {
     data: Array<Subtitle>
@@ -2712,7 +2705,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): Promise<SubtitleListResponse>
     getExtractSubtitles(extractId: number, opts?: any, callback?: Function): any
-    getSubtitles(opts?: any, callback?: Function): Promise<SubtitleFileListResponse>
+    getSubtitles(opts?: any, callback?: Function): Promise<>
     createVideoSubtitle(videoId: number, body: any, callback?: Function): Promise<SubtitleResponse>
     createExtractSubtitle(extractId: number, body: any, callback?: Function): Promise<SubtitleResponse>
     getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
