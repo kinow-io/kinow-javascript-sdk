@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubtitles"></a>
 # **getSubtitles**
-> SubtitleFileListResponse getSubtitles(opts)
+> SubtitleListResponse getSubtitles(opts)
 
 
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubtitleFileListResponse**](SubtitleFileListResponse.md)
+[**SubtitleListResponse**](SubtitleListResponse.md)
 
 ### Authorization
 

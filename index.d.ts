@@ -2705,7 +2705,7 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getCategoryVideoSubtitles(videoId: number, opts?: any, callback?: Function): Promise<SubtitleListResponse>
     getExtractSubtitles(extractId: number, opts?: any, callback?: Function): any
-    getSubtitles(opts?: any, callback?: Function): Promise<>
+    getSubtitles(opts?: any, callback?: Function): Promise<SubtitleListResponse>
     createVideoSubtitle(videoId: number, body: any, callback?: Function): Promise<SubtitleResponse>
     createExtractSubtitle(extractId: number, body: any, callback?: Function): Promise<SubtitleResponse>
     getVideoSubtitles(videoId: number, opts?: any, callback?: Function): any
