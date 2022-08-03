@@ -1413,6 +1413,13 @@ declare module 'kinow-javascript-sdk' {
     thumbnail: string
     details: string
   }
+  interface MediaFileStream {
+    id: number
+    status: string
+    convertible: boolean
+    date_add: string
+    date_end: string
+  }
   interface CreateMediaFileRequest {
     filename: string
     title: string
@@ -1434,11 +1441,21 @@ declare module 'kinow-javascript-sdk' {
     thumbnail: string
     details: string
   }
+  interface MediaFileStreamListResponse {
+    data: Array<MediaFileStream>
+    pagination: Pagination
+  }
   interface MediaSource {
     id: number
     name: string
     active: boolean
     external_player: number
+  }
+  interface ConvertMediaLiveRequest {
+    stream_id: string
+  }
+  interface CreateMediaLiveRequest {
+    name: string
   }
   interface MediaSourceListResponse {
     data: Array<MediaSource>
@@ -2102,6 +2119,8 @@ declare module 'kinow-javascript-sdk' {
     name: Array<I18nField>
     description: Array<I18nField>
     duration: number
+    date_from: string
+    date_to: string
     filename: string
     position: number
     subscription: number
@@ -2188,6 +2207,8 @@ declare module 'kinow-javascript-sdk' {
     name: Array<I18nField>
     description: Array<I18nField>
     duration: number
+    date_from: string
+    date_to: string
     filename: string
     position: number
     subscription: number
@@ -2272,6 +2293,8 @@ declare module 'kinow-javascript-sdk' {
     name: Array<I18nField>
     description: Array<I18nField>
     duration: number
+    date_from: string
+    date_to: string
     filename: string
     position: number
     subscription: number
@@ -2911,8 +2934,11 @@ declare module 'kinow-javascript-sdk' {
   export class MediaFilesApi {
     constructor(config?: ApiClient)
     getMediaFile(mediaFileId: number, callback?: Function): Promise<MediaFileResponse>
+    getLiveStreams(mediaFileId: number, callback?: Function): Promise<MediaFileStreamListResponse>
     getMediaSourceFiles(sourceId: number, opts?: any, callback?: Function): Promise<MediaFileListResponse>
     postMediaSourceFiles(sourceId: number, body: any, callback?: Function): Promise<MediaFileResponse>
+    createLive(sourceId: number, body: any, callback?: Function): any
+    convertLiveToVod(sourceId: number, body: any, callback?: Function): any
   }
   export class MediaSourcesApi {
     constructor(config?: ApiClient)
@@ -2920,6 +2946,8 @@ declare module 'kinow-javascript-sdk' {
     getMediaSource(sourceId: number, callback?: Function): Promise<MediaSourceResponse>
     getMediaSourceFiles(sourceId: number, opts?: any, callback?: Function): Promise<MediaFileListResponse>
     postMediaSourceFiles(sourceId: number, body: any, callback?: Function): Promise<MediaFileResponse>
+    createLive(sourceId: number, body: any, callback?: Function): any
+    convertLiveToVod(sourceId: number, body: any, callback?: Function): any
   }
   export class OrderHistoriesApi {
     constructor(config?: ApiClient)

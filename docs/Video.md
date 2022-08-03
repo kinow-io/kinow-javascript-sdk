@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **name** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **duration** | **Integer** |  | [optional] 
+**dateFrom** | **String** |  | [optional] 
+**dateTo** | **String** |  | [optional] 
 **filename** | **String** |  | [optional] 
 **position** | **Integer** |  | [optional] 
 **subscription** | **Integer** |  | [optional] 

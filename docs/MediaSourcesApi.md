@@ -4,11 +4,131 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**convertLiveToVod**](MediaSourcesApi.md#convertLiveToVod) | **POST** /media-sources/{source_id}/live2vod | 
+[**createLive**](MediaSourcesApi.md#createLive) | **POST** /media-sources/{source_id}/live | 
 [**getMediaSource**](MediaSourcesApi.md#getMediaSource) | **GET** /media-sources/{source_id} | 
 [**getMediaSourceFiles**](MediaSourcesApi.md#getMediaSourceFiles) | **GET** /media-sources/{source_id}/files | 
 [**getMediaSources**](MediaSourcesApi.md#getMediaSources) | **GET** /media-sources | 
 [**postMediaSourceFiles**](MediaSourcesApi.md#postMediaSourceFiles) | **POST** /media-sources/{source_id}/files | 
 
+
+<a name="convertLiveToVod"></a>
+# **convertLiveToVod**
+> convertLiveToVod(sourceId, body)
+
+
+
+Convert Live to VOD
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.MediaSourcesApi();
+
+var sourceId = 789; // Integer | Media source ID to fetch
+
+var body = new KinowJavascriptSdk.ConvertMediaLiveRequest(); // ConvertMediaLiveRequest | Convert MediaLive object
+
+apiInstance.convertLiveToVod(sourceId, body).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceId** | **Integer**| Media source ID to fetch | 
+ **body** | [**ConvertMediaLiveRequest**](ConvertMediaLiveRequest.md)| Convert MediaLive object | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createLive"></a>
+# **createLive**
+> createLive(sourceId, body)
+
+
+
+Create a live
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.MediaSourcesApi();
+
+var sourceId = 789; // Integer | Media source ID to fetch
+
+var body = new KinowJavascriptSdk.CreateMediaLiveRequest(); // CreateMediaLiveRequest | Create MediaFile object
+
+apiInstance.createLive(sourceId, body).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceId** | **Integer**| Media source ID to fetch | 
+ **body** | [**CreateMediaLiveRequest**](CreateMediaLiveRequest.md)| Create MediaFile object | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getMediaSource"></a>
 # **getMediaSource**
