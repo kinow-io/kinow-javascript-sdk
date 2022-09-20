@@ -573,7 +573,7 @@ null (empty response body)
 
 <a name="generateAuthenticationToken"></a>
 # **generateAuthenticationToken**
-> &#39;String&#39; generateAuthenticationToken(customerId)
+> &#39;String&#39; generateAuthenticationToken(customerId, opts)
 
 
 
@@ -600,7 +600,11 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var customerId = 789; // Integer | Customer ID to authenticate
 
-apiInstance.generateAuthenticationToken(customerId).then(function(data) {
+var opts = { 
+  'forceClientApiRefresh': true, // Boolean | Return Client API refresh token
+  'forceClientApiAccess': true // Boolean | Return Client API access token
+};
+apiInstance.generateAuthenticationToken(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -613,6 +617,8 @@ apiInstance.generateAuthenticationToken(customerId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to authenticate | 
+ **forceClientApiRefresh** | **Boolean**| Return Client API refresh token | [optional] 
+ **forceClientApiAccess** | **Boolean**| Return Client API access token | [optional] 
 
 ### Return type
 

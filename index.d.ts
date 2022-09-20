@@ -721,6 +721,45 @@ declare module 'kinow-javascript-sdk' {
     data: Array<VideoCategory>
     pagination: Pagination
   }
+  interface Comment {
+    id: number
+    type: string
+    id_item: number
+    id_customer: number
+    content: string
+    active: boolean
+    date_add: string
+    date_upd: string
+  }
+  interface CreateCommentRequest {
+    id_customer: number
+    content: string
+  }
+  interface CustomerCommentListResponse {
+    data: Array<CustomerCommentResponse>
+    pagination: Pagination
+  }
+  interface CustomerCommentResponse {
+    id_comment: number
+    id_product: number
+    content: string
+    active: boolean
+    date_add: string
+    date_upd: string
+  }
+  interface ProductCommentListResponse {
+    data: Array<ProductCommentResponse>
+    pagination: Pagination
+  }
+  interface ProductCommentResponse {
+    id_comment: number
+    id_customer: number
+    content: string
+    author: string
+    active: boolean
+    date_add: string
+    date_upd: string
+  }
   interface Configuration {
     name: string
     value: object
@@ -2527,7 +2566,7 @@ declare module 'kinow-javascript-sdk' {
     getCustomerAddress(customerId: number, callback?: Function): Promise<AddressResponse>
     checkCustomerCredentials(email: string, password: string, callback?: Function): Promise<CustomerResponse>
     validateCustomerCredentials(email: string, password: string, callback?: Function): Promise<CredentialsValidationResponse>
-    generateAuthenticationToken(customerId: number, callback?: Function): any
+    generateAuthenticationToken(customerId: number, opts?: any, callback?: Function): any
     checkAuthenticationToken(token: string, callback?: Function): Promise<CustomerResponse>
     getCustomerCurrentViews(customerId: number, callback?: Function): Promise<CustomerCurrentViewsResponse>
     getCustomerGroups(customerId: number, opts?: any, callback?: Function): Promise<GroupListResponse>
@@ -2774,6 +2813,12 @@ declare module 'kinow-javascript-sdk' {
     attachDirectorToProduct(productId: number, directorId: number, callback?: Function): any
     getProductDirectorsRole(productId: number, opts?: any, callback?: Function): Promise<DirectorRoleListResponse>
     detachDirectorFromProduct(productId: number, directorId: number, callback?: Function): any
+  }
+  export class CommentsApi {
+    constructor(config?: ApiClient)
+    getProductComments(productId: number, callback?: Function): Promise<ProductCommentListResponse>
+    createProductComment(productId: number, body: any, callback?: Function): Promise<ProductCommentResponse>
+    getCustomerComments(customerId: number, callback?: Function): Promise<CustomerCommentListResponse>
   }
   export class ConfigurationApi {
     constructor(config?: ApiClient)

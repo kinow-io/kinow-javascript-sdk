@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 **idProduct** | **Integer** |  | 
 **idVideoGroup** | **Integer** |  | [optional] 
 **idProductImage** | **Integer** |  | [optional] 
-**idLanguage** | **Integer** |  | [optional] 
+**idLanguage** | **Integer** |  | 
 **languageFilter** | **Integer** |  | [optional] 
-**idMediaSource** | **Integer** |  | [optional] 
+**idMediaSource** | **Integer** |  | 
 **name** | [**[I18nField]**](I18nField.md) |  | 
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **duration** | **Integer** |  | [optional] 
-**filename** | **String** |  | [optional] 
+**filename** | **String** |  | 
 **position** | **Integer** |  | [optional] 
 **subscription** | **Integer** |  | [optional] 
 **free** | **Integer** |  | [optional] 
