@@ -2409,6 +2409,7 @@ declare module 'kinow-javascript-sdk' {
     type_id: number
     visibility: string
     position: number
+    video_focus: number
   }
   interface WidgetHookPhrase {
     id: number
@@ -2457,6 +2458,10 @@ declare module 'kinow-javascript-sdk' {
   }
   interface WidgetHomeRailListResponse {
     data: Array<WidgetHomeRail>
+    pagination: Pagination
+  }
+  interface WidgetHomeRailVideoListResponse {
+    data: Array<Video>
     pagination: Pagination
   }
   interface WidgetHookPhraseListResponse {
@@ -2970,6 +2975,7 @@ declare module 'kinow-javascript-sdk' {
     getWidgetAnalytics(): any
     getWidgetHookPhrase(opts?: any, callback?: Function): Promise<WidgetHookPhraseListResponse>
     getWidgetHomeRail(opts?: any, callback?: Function): Promise<WidgetHomeRailListResponse>
+    getWidgetHomeRailVideo(homerailId: number, opts?: any, callback?: Function): Promise<WidgetHomeRailVideoListResponse>
     getWidgetSliderVideoPlayer(sliderId: number, opts?: any, callback?: Function): any
   }
   export class LanguagesApi {

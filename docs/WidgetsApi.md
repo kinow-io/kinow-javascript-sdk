@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getWidgetAnalytics**](WidgetsApi.md#getWidgetAnalytics) | **GET** /widgets/analytics | 
 [**getWidgetFooterMenu**](WidgetsApi.md#getWidgetFooterMenu) | **GET** /widgets/footer-menu | 
 [**getWidgetHomeRail**](WidgetsApi.md#getWidgetHomeRail) | **GET** /widgets/home-rail | 
+[**getWidgetHomeRailVideo**](WidgetsApi.md#getWidgetHomeRailVideo) | **GET** /widgets/home-rail/{homerail_id}/videos | 
 [**getWidgetHookPhrase**](WidgetsApi.md#getWidgetHookPhrase) | **GET** /widgets/hook-phrase | 
 [**getWidgetSlider**](WidgetsApi.md#getWidgetSlider) | **GET** /widgets/slider | 
 [**getWidgetSliderItem**](WidgetsApi.md#getWidgetSliderItem) | **GET** /widgets/slider/{slider_id} | 
@@ -223,6 +224,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WidgetHomeRailListResponse**](WidgetHomeRailListResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getWidgetHomeRailVideo"></a>
+# **getWidgetHomeRailVideo**
+> WidgetHomeRailVideoListResponse getWidgetHomeRailVideo(homerailId, opts)
+
+
+
+Get home rails list
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.WidgetsApi();
+
+var homerailId = 789; // Integer | Homerail ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getWidgetHomeRailVideo(homerailId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **homerailId** | **Integer**| Homerail ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**WidgetHomeRailVideoListResponse**](WidgetHomeRailVideoListResponse.md)
 
 ### Authorization
 

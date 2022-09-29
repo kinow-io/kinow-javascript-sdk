@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **typeId** | **Integer** |  | [optional] 
 **visibility** | **String** |  | [optional] 
 **position** | **Integer** |  | [optional] 
+**videoFocus** | **Integer** |  | [optional] 
 
 
