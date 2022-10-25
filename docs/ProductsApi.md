@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**attachProductToGroup**](ProductsApi.md#attachProductToGroup) | **POST** /products/{product_id}/groups | 
 [**attachVideoToProduct**](ProductsApi.md#attachVideoToProduct) | **POST** /products/{product_id}/videos | 
 [**createProduct**](ProductsApi.md#createProduct) | **POST** /products | 
+[**createProductComment**](ProductsApi.md#createProductComment) | **POST** /products/{product_id}/comments | 
 [**deleteProduct**](ProductsApi.md#deleteProduct) | **DELETE** /products/{product_id} | 
 [**detachActorFromProduct**](ProductsApi.md#detachActorFromProduct) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**detachDirectorFromProduct**](ProductsApi.md#detachDirectorFromProduct) | **DELETE** /products/{product_id}/directors/{director_id} | 
@@ -31,6 +32,7 @@ Method | HTTP request | Description
 [**getProductAttributes**](ProductsApi.md#getProductAttributes) | **GET** /products/{product_id}/attributes | 
 [**getProductAvailability**](ProductsApi.md#getProductAvailability) | **GET** /products/{product_id}/access | 
 [**getProductCategories**](ProductsApi.md#getProductCategories) | **GET** /products/{product_id}/categories | 
+[**getProductComments**](ProductsApi.md#getProductComments) | **GET** /products/{product_id}/comments | 
 [**getProductCoverImage**](ProductsApi.md#getProductCoverImage) | **GET** /products/{product_id}/cover | 
 [**getProductDirectors**](ProductsApi.md#getProductDirectors) | **GET** /products/{product_id}/directors | 
 [**getProductDirectorsRole**](ProductsApi.md#getProductDirectorsRole) | **GET** /products/{product_id}/directors-role | 
@@ -513,6 +515,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductResponse**](ProductResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="createProductComment"></a>
+# **createProductComment**
+> ProductCommentResponse createProductComment(productId, body)
+
+
+
+Create product comment
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+var body = new KinowJavascriptSdk.CreateCommentRequest(); // CreateCommentRequest | Create a comment
+
+apiInstance.createProductComment(productId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+ **body** | [**CreateCommentRequest**](CreateCommentRequest.md)| Create a comment | 
+
+### Return type
+
+[**ProductCommentResponse**](ProductCommentResponse.md)
 
 ### Authorization
 
@@ -1665,6 +1726,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CategoryListResponse**](CategoryListResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getProductComments"></a>
+# **getProductComments**
+> ProductCommentListResponse1 getProductComments(productId)
+
+
+
+Get product comments
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.ProductsApi();
+
+var productId = 789; // Integer | Product ID to fetch
+
+apiInstance.getProductComments(productId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **Integer**| Product ID to fetch | 
+
+### Return type
+
+[**ProductCommentListResponse1**](ProductCommentListResponse1.md)
 
 ### Authorization
 

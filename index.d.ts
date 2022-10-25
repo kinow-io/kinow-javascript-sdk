@@ -735,6 +735,16 @@ declare module 'kinow-javascript-sdk' {
     id_customer: number
     content: string
   }
+  interface CommentResponse {
+    id: number
+    type: string
+    id_item: number
+    id_customer: number
+    content: string
+    active: boolean
+    date_add: string
+    date_upd: string
+  }
   interface CustomerCommentListResponse {
     data: Array<CustomerCommentResponse>
     pagination: Pagination
@@ -2557,6 +2567,7 @@ declare module 'kinow-javascript-sdk' {
     detachBookmarkFromCustomer(customerId: number, productId: number, callback?: Function): any
     getCustomerCarts(customerId: number, opts?: any, callback?: Function): Promise<CartListResponse>
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<CartResponse>
+    getCustomerComments(customerId: number, callback?: Function): any
     getCustomers(opts?: any, callback?: Function): Promise<CustomerListResponse>
     createCustomer(body: any, callback?: Function): Promise<CustomerResponse>
     getCustomer(customerId: number, callback?: Function): Promise<CustomerResponse>
@@ -2690,6 +2701,8 @@ declare module 'kinow-javascript-sdk' {
   export class ProductsApi {
     constructor(config?: ApiClient)
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
+    getProductComments(productId: number, callback?: Function): any
+    createProductComment(productId: number, body: any, callback?: Function): Promise<ProductCommentResponse>
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerHasAccessToProducts(customerId: number, body: any, callback?: Function): any
     getProductCoverImage(productId: number, callback?: Function): Promise<ImageResponse>
@@ -2821,9 +2834,11 @@ declare module 'kinow-javascript-sdk' {
   }
   export class CommentsApi {
     constructor(config?: ApiClient)
-    getProductComments(productId: number, callback?: Function): Promise<ProductCommentListResponse>
+    getComments(opts?: any, callback?: Function): any
+    getComment(commentId: number, callback?: Function): Promise<CommentResponse>
+    getProductComments(productId: number, callback?: Function): any
     createProductComment(productId: number, body: any, callback?: Function): Promise<ProductCommentResponse>
-    getCustomerComments(customerId: number, callback?: Function): Promise<CustomerCommentListResponse>
+    getCustomerComments(customerId: number, callback?: Function): any
   }
   export class ConfigurationApi {
     constructor(config?: ApiClient)
