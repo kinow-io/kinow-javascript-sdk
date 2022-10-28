@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomerComments"></a>
 # **getCustomerComments**
-> CustomerCommentListResponse1 getCustomerComments(customerId)
+> CustomerCommentListResponse1 getCustomerComments(customerId, opts)
 
 
 
@@ -1094,7 +1094,11 @@ var apiInstance = new KinowJavascriptSdk.CustomersApi();
 
 var customerId = 789; // Integer | Customer ID to fetch
 
-apiInstance.getCustomerComments(customerId).then(function(data) {
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getCustomerComments(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1107,6 +1111,8 @@ apiInstance.getCustomerComments(customerId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **Integer**| Customer ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
 
 ### Return type
 

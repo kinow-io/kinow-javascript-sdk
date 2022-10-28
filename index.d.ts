@@ -2567,7 +2567,7 @@ declare module 'kinow-javascript-sdk' {
     detachBookmarkFromCustomer(customerId: number, productId: number, callback?: Function): any
     getCustomerCarts(customerId: number, opts?: any, callback?: Function): Promise<CartListResponse>
     attachCartToCustomer(customerId: number, cartId: number, callback?: Function): Promise<CartResponse>
-    getCustomerComments(customerId: number, callback?: Function): any
+    getCustomerComments(customerId: number, opts?: any, callback?: Function): any
     getCustomers(opts?: any, callback?: Function): Promise<CustomerListResponse>
     createCustomer(body: any, callback?: Function): Promise<CustomerResponse>
     getCustomer(customerId: number, callback?: Function): Promise<CustomerResponse>
@@ -2701,7 +2701,7 @@ declare module 'kinow-javascript-sdk' {
   export class ProductsApi {
     constructor(config?: ApiClient)
     getCategoryProducts(categoryId: number, opts?: any, callback?: Function): Promise<ProductListResponse>
-    getProductComments(productId: number, callback?: Function): any
+    getProductComments(productId: number, opts?: any, callback?: Function): any
     createProductComment(productId: number, body: any, callback?: Function): Promise<ProductCommentResponse>
     getCustomerHasAccessToProduct(customerId: number, productId: number, callback?: Function): any
     getCustomerHasAccessToProducts(customerId: number, body: any, callback?: Function): any
@@ -2836,9 +2836,9 @@ declare module 'kinow-javascript-sdk' {
     constructor(config?: ApiClient)
     getComments(opts?: any, callback?: Function): any
     getComment(commentId: number, callback?: Function): Promise<CommentResponse>
-    getProductComments(productId: number, callback?: Function): any
+    getProductComments(productId: number, opts?: any, callback?: Function): any
     createProductComment(productId: number, body: any, callback?: Function): Promise<ProductCommentResponse>
-    getCustomerComments(customerId: number, callback?: Function): any
+    getCustomerComments(customerId: number, opts?: any, callback?: Function): any
   }
   export class ConfigurationApi {
     constructor(config?: ApiClient)

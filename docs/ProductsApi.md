@@ -1738,7 +1738,7 @@ Name | Type | Description  | Notes
 
 <a name="getProductComments"></a>
 # **getProductComments**
-> ProductCommentListResponse1 getProductComments(productId)
+> ProductCommentListResponse1 getProductComments(productId, opts)
 
 
 
@@ -1765,7 +1765,11 @@ var apiInstance = new KinowJavascriptSdk.ProductsApi();
 
 var productId = 789; // Integer | Product ID to fetch
 
-apiInstance.getProductComments(productId).then(function(data) {
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getProductComments(productId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1778,6 +1782,8 @@ apiInstance.getProductComments(productId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
 
 ### Return type
 
