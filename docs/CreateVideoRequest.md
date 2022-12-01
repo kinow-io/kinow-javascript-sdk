@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **idMediaSource** | **Integer** |  | 
 **name** | [**[I18nField]**](I18nField.md) |  | 
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
+**descriptionShort** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **duration** | **Integer** |  | [optional] 
 **filename** | **String** |  | 
 **position** | **Integer** |  | [optional] 

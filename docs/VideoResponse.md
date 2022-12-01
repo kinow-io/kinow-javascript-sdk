@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **idMediaSource** | **Integer** |  | [optional] 
 **name** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **description** | [**[I18nField]**](I18nField.md) |  | [optional] 
+**descriptionShort** | [**[I18nField]**](I18nField.md) |  | [optional] 
 **duration** | **Integer** |  | [optional] 
 **dateFrom** | **String** |  | [optional] 
 **dateTo** | **String** |  | [optional] 

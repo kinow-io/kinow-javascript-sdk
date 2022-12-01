@@ -2167,6 +2167,7 @@ declare module 'kinow-javascript-sdk' {
     id_media_source: number
     name: Array<I18nField>
     description: Array<I18nField>
+    description_short: Array<I18nField>
     duration: number
     date_from: string
     date_to: string
@@ -2196,6 +2197,7 @@ declare module 'kinow-javascript-sdk' {
     id_media_source: number
     name: Array<I18nField>
     description: Array<I18nField>
+    description_short: Array<I18nField>
     duration: number
     filename: string
     position: number
@@ -2223,6 +2225,7 @@ declare module 'kinow-javascript-sdk' {
     id_media_source: number
     name: Array<I18nField>
     description: Array<I18nField>
+    description_short: Array<I18nField>
     duration: number
     filename: string
     position: number
@@ -2255,6 +2258,7 @@ declare module 'kinow-javascript-sdk' {
     id_media_source: number
     name: Array<I18nField>
     description: Array<I18nField>
+    description_short: Array<I18nField>
     duration: number
     date_from: string
     date_to: string
@@ -2341,6 +2345,7 @@ declare module 'kinow-javascript-sdk' {
     id_media_source: number
     name: Array<I18nField>
     description: Array<I18nField>
+    description_short: Array<I18nField>
     duration: number
     date_from: string
     date_to: string
