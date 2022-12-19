@@ -1,6 +1,6 @@
 {
   "name": "kinow-javascript-sdk",
-  "version": "2.0.22",
+  "version": "2.0.23",
   "description": "Reference_for_Server_API__RESTJson",
   "license": "",
   "main": "src/index.js",

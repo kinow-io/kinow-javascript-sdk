@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 <a name="getComments"></a>
 # **getComments**
-> CommentListResponse getComments(opts)
+> CommentListResponse1 getComments(opts)
 
 
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommentListResponse**](CommentListResponse.md)
+[**CommentListResponse1**](CommentListResponse1.md)
 
 ### Authorization
 

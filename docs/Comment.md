@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **idItem** | **Integer** |  | [optional] 
 **idCustomer** | **Integer** |  | [optional] 
+**author** | **String** |  | [optional] 
 **content** | **String** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **dateAdd** | **String** |  | [optional] 

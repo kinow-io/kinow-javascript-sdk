@@ -726,6 +726,7 @@ declare module 'kinow-javascript-sdk' {
     type: string
     id_item: number
     id_customer: number
+    author: string
     content: string
     active: boolean
     date_add: string
@@ -735,11 +736,16 @@ declare module 'kinow-javascript-sdk' {
     id_customer: number
     content: string
   }
+  interface CommentListResponse {
+    data: Array<CommentResponse>
+    pagination: Pagination
+  }
   interface CommentResponse {
-    id: number
+    id_comment: number
     type: string
     id_item: number
     id_customer: number
+    author: string
     content: string
     active: boolean
     date_add: string

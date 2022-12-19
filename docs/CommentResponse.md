@@ -3,10 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
+**idComment** | **Integer** |  | [optional] 
 **type** | **String** |  | [optional] 
 **idItem** | **Integer** |  | [optional] 
 **idCustomer** | **Integer** |  | [optional] 
+**author** | **String** |  | [optional] 
 **content** | **String** |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **dateAdd** | **String** |  | [optional] 
