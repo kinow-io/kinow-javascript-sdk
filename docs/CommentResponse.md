@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**idComment** | **Integer** |  | [optional] 
+**id** | **Integer** |  | [optional] 
 **type** | **String** |  | [optional] 
 **idItem** | **Integer** |  | [optional] 
 **idCustomer** | **Integer** |  | [optional] 

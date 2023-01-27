@@ -741,7 +741,7 @@ declare module 'kinow-javascript-sdk' {
     pagination: Pagination
   }
   interface CommentResponse {
-    id_comment: number
+    id: number
     type: string
     id_item: number
     id_customer: number
@@ -756,7 +756,7 @@ declare module 'kinow-javascript-sdk' {
     pagination: Pagination
   }
   interface CustomerCommentResponse {
-    id_comment: number
+    id: number
     id_product: number
     content: string
     active: boolean
@@ -768,7 +768,7 @@ declare module 'kinow-javascript-sdk' {
     pagination: Pagination
   }
   interface ProductCommentResponse {
-    id_comment: number
+    id: number
     id_customer: number
     content: string
     author: string
@@ -1507,7 +1507,11 @@ declare module 'kinow-javascript-sdk' {
     external_player: number
   }
   interface ConvertMediaLiveRequest {
+    name: string
     stream_id: string
+    live_id: string
+    date_from: string
+    date_to: string
   }
   interface CreateMediaLiveRequest {
     name: string
@@ -2530,6 +2534,8 @@ declare module 'kinow-javascript-sdk' {
     deleteActor(actorId: number, callback?: Function): any
     getActorProducts(actorId: number, opts?: any, callback?: Function): Promise<ActorProductListResponse>
     getActorProductsRole(actorId: number, opts?: any, callback?: Function): Promise<ActorProductRoleListResponse>
+    getActorFeatures(actorId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToActor(actorId: number, features: string, callback?: Function): any
     getCategoryActors(categoryId: number, opts?: any, callback?: Function): any
     attachActorToCategory(categoryId: number, actorId: number, callback?: Function): any
     detachActorFromCategory(categoryId: number, actorId: number, callback?: Function): any
@@ -2539,6 +2545,38 @@ declare module 'kinow-javascript-sdk' {
     attachActorToProduct(productId: number, actorId: number, callback?: Function): any
     getProductActorsRole(productId: number, opts?: any, callback?: Function): Promise<ActorRoleListResponse>
     detachActorFromProduct(productId: number, actorId: number, callback?: Function): any
+  }
+  export class FeaturesApi {
+    constructor(config?: ApiClient)
+    getActorFeatures(actorId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToActor(actorId: number, features: string, callback?: Function): any
+    getBlogPageFeatures(blogPageId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToBlogPage(blogPageId: number, features: string, callback?: Function): any
+    getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
+    getDirectorFeatures(directorId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToDirector(directorId: number, features: string, callback?: Function): any
+    getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
+    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
+    getFeatures(opts?: any, callback?: Function): Promise<FeatureListResponse>
+    getFeatureValues(opts?: any, callback?: Function): any
+    getProductFeatures(productId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
+    detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
+    getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
+    attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
+  }
+  export class FeatureValuesApi {
+    constructor(config?: ApiClient)
+    attachFeaturesToActor(actorId: number, features: string, callback?: Function): any
+    attachFeaturesToBlogPage(blogPageId: number, features: string, callback?: Function): any
+    attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
+    attachFeaturesToDirector(directorId: number, features: string, callback?: Function): any
+    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
+    getFeatureValues(opts?: any, callback?: Function): any
+    attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
+    detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
+    attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
   }
   export class AddressApi {
     constructor(config?: ApiClient)
@@ -2564,6 +2602,8 @@ declare module 'kinow-javascript-sdk' {
     getBlogPageProducts(blogPageId: number, opts?: any, callback?: Function): any
     attachProductToBlogPage(blogPageId: number, productId: number, callback?: Function): any
     detachProductFromBlogPage(blogPageId: number, productId: number, callback?: Function): any
+    getBlogPageFeatures(blogPageId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToBlogPage(blogPageId: number, features: string, callback?: Function): any
   }
   export class BookmarksApi {
     constructor(config?: ApiClient)
@@ -2762,29 +2802,6 @@ declare module 'kinow-javascript-sdk' {
     getMostWatched(opts?: any, callback?: Function): any
     uploadProductImage(productId: number, imageTypeName: string, opts?: any, callback?: Function): Promise<ImageResponse>
   }
-  export class FeaturesApi {
-    constructor(config?: ApiClient)
-    getCategoryFeatures(categoryId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
-    attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
-    getExtractFeatures(extractId: number, opts?: any, callback?: Function): any
-    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
-    getFeatures(opts?: any, callback?: Function): Promise<FeatureListResponse>
-    getFeatureValues(opts?: any, callback?: Function): any
-    getProductFeatures(productId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
-    attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
-    detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
-    getVideoFeatures(videoId: number, opts?: any, callback?: Function): any
-    attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
-  }
-  export class FeatureValuesApi {
-    constructor(config?: ApiClient)
-    attachFeaturesToCategory(categoryId: number, features: string, callback?: Function): any
-    attachFeaturesToExtract(extractId: number, features: string, callback?: Function): any
-    getFeatureValues(opts?: any, callback?: Function): any
-    attachFeaturesToProduct(productId: number, features: string, callback?: Function): any
-    detachFeatureToProduct(productId: number, featureId: number, callback?: Function): any
-    attachFeaturesToVideo(videoId: number, features: string, callback?: Function): any
-  }
   export class CategoryVideosApi {
     constructor(config?: ApiClient)
     getVideosFromCategory(categoryId: number, opts?: any, callback?: Function): Promise<VideoCategoryListResponse>
@@ -2836,6 +2853,8 @@ declare module 'kinow-javascript-sdk' {
     deleteDirector(directorId: number, callback?: Function): any
     getDirectorProducts(directorId: number, opts?: any, callback?: Function): Promise<DirectorProductListResponse>
     getDirectorProductsRole(directorId: number, opts?: any, callback?: Function): Promise<DirectorProductRoleListResponse>
+    getDirectorFeatures(directorId: number, opts?: any, callback?: Function): Promise<FeatureListResponse>
+    attachFeaturesToDirector(directorId: number, features: string, callback?: Function): any
     getDirectorCoverImage(directorId: number, callback?: Function): Promise<ImageResponse>
     uploadDirectorCover(directorId: number, opts?: any, callback?: Function): Promise<ImageResponse>
     getProductDirectors(productId: number, opts?: any, callback?: Function): Promise<DirectorListResponse>

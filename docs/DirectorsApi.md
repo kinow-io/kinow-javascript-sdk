@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attachDirectorToCategory**](DirectorsApi.md#attachDirectorToCategory) | **POST** /categories/{category_id}/directors | 
 [**attachDirectorToProduct**](DirectorsApi.md#attachDirectorToProduct) | **POST** /products/{product_id}/directors | 
+[**attachFeaturesToDirector**](DirectorsApi.md#attachFeaturesToDirector) | **POST** /directors/{director_id}/features | 
 [**createDirector**](DirectorsApi.md#createDirector) | **POST** /directors | 
 [**deleteDirector**](DirectorsApi.md#deleteDirector) | **DELETE** /directors/{director_id} | 
 [**detachDirectorFromCategory**](DirectorsApi.md#detachDirectorFromCategory) | **DELETE** /categories/{category_id}/directors/{director_id} | 
@@ -13,6 +14,7 @@ Method | HTTP request | Description
 [**getCategoryDirectors**](DirectorsApi.md#getCategoryDirectors) | **GET** /categories/{category_id}/directors | 
 [**getDirector**](DirectorsApi.md#getDirector) | **GET** /directors/{director_id} | 
 [**getDirectorCoverImage**](DirectorsApi.md#getDirectorCoverImage) | **GET** /directors/{director_id}/cover | 
+[**getDirectorFeatures**](DirectorsApi.md#getDirectorFeatures) | **GET** /directors/{director_id}/features | 
 [**getDirectorProducts**](DirectorsApi.md#getDirectorProducts) | **GET** /directors/{director_id}/products | 
 [**getDirectorProductsRole**](DirectorsApi.md#getDirectorProductsRole) | **GET** /directors/{director_id}/products-role | 
 [**getDirectors**](DirectorsApi.md#getDirectors) | **GET** /directors | 
@@ -126,6 +128,65 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **Integer**| Product ID to fetch | 
  **directorId** | **Integer**| Director ID to attach | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="attachFeaturesToDirector"></a>
+# **attachFeaturesToDirector**
+> attachFeaturesToDirector(directorId, features)
+
+
+
+Attach feature to director
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var directorId = 789; // Integer | 
+
+var features = "features_example"; // String |      To attach existing FeatureValue to director:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]     ```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]     ```
+
+apiInstance.attachFeaturesToDirector(directorId, features).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **directorId** | **Integer**|  | 
+ **features** | **String**|      To attach existing FeatureValue to director:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5     }]     &#x60;&#x60;&#x60;      To create a custom FeatureValue:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;custom_value\&quot;:[{     \&quot;lang\&quot;: 1,     \&quot;value\&quot;: \&quot;string\&quot;     }]     }]     &#x60;&#x60;&#x60; | 
 
 ### Return type
 
@@ -534,6 +595,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImageResponse**](ImageResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getDirectorFeatures"></a>
+# **getDirectorFeatures**
+> FeatureListResponse getDirectorFeatures(directorId, opts)
+
+
+
+Get director features
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.DirectorsApi();
+
+var directorId = 789; // Integer | Director ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getDirectorFeatures(directorId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **directorId** | **Integer**| Director ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**FeatureListResponse**](FeatureListResponse.md)
 
 ### Authorization
 

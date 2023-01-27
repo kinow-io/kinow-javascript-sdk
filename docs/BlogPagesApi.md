@@ -4,12 +4,73 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attachFeaturesToBlogPage**](BlogPagesApi.md#attachFeaturesToBlogPage) | **POST** /blog-pages/{blog_page_id}/features | 
 [**attachProductToBlogPage**](BlogPagesApi.md#attachProductToBlogPage) | **POST** /blog-pages/{blog_page_id}/products | 
 [**detachProductFromBlogPage**](BlogPagesApi.md#detachProductFromBlogPage) | **DELETE** /blog-pages/{blog_page_id}/products/{product_id} | 
 [**getBlogPage**](BlogPagesApi.md#getBlogPage) | **GET** /blog-pages/{blog_page_id} | 
+[**getBlogPageFeatures**](BlogPagesApi.md#getBlogPageFeatures) | **GET** /blog-pages/{blog_page_id}/features | 
 [**getBlogPageProducts**](BlogPagesApi.md#getBlogPageProducts) | **GET** /blog-pages/{blog_page_id}/products | 
 [**getBlogPages**](BlogPagesApi.md#getBlogPages) | **GET** /blog-pages | 
 
+
+<a name="attachFeaturesToBlogPage"></a>
+# **attachFeaturesToBlogPage**
+> attachFeaturesToBlogPage(blogPageId, features)
+
+
+
+Attach feature to blog page
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.BlogPagesApi();
+
+var blogPageId = 789; // Integer | 
+
+var features = "features_example"; // String |      To attach existing FeatureValue to blog page:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]     ```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]     ```
+
+apiInstance.attachFeaturesToBlogPage(blogPageId, features).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blogPageId** | **Integer**|  | 
+ **features** | **String**|      To attach existing FeatureValue to blog page:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5     }]     &#x60;&#x60;&#x60;      To create a custom FeatureValue:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;custom_value\&quot;:[{     \&quot;lang\&quot;: 1,     \&quot;value\&quot;: \&quot;string\&quot;     }]     }]     &#x60;&#x60;&#x60; | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="attachProductToBlogPage"></a>
 # **attachProductToBlogPage**
@@ -175,6 +236,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BlogPageResponse**](BlogPageResponse.md)
+
+### Authorization
+
+[ApiClientId](../README.md#ApiClientId), [ApiClientSecret](../README.md#ApiClientSecret)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getBlogPageFeatures"></a>
+# **getBlogPageFeatures**
+> FeatureListResponse getBlogPageFeatures(blogPageId, opts)
+
+
+
+Get blog page features
+
+### Example
+```javascript
+var KinowJavascriptSdk = require('kinow-javascript-sdk');
+var defaultClient = KinowJavascriptSdk.ApiClient.instance;
+
+// Configure API key authorization: ApiClientId
+var ApiClientId = defaultClient.authentications['ApiClientId'];
+ApiClientId.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientId.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: ApiClientSecret
+var ApiClientSecret = defaultClient.authentications['ApiClientSecret'];
+ApiClientSecret.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiClientSecret.apiKeyPrefix = 'Token';
+
+var apiInstance = new KinowJavascriptSdk.BlogPagesApi();
+
+var blogPageId = 789; // Integer | Blog page ID to fetch
+
+var opts = { 
+  'page': 789, // Integer | 
+  'perPage': 789 // Integer | 
+};
+apiInstance.getBlogPageFeatures(blogPageId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blogPageId** | **Integer**| Blog page ID to fetch | 
+ **page** | **Integer**|  | [optional] 
+ **perPage** | **Integer**|  | [optional] 
+
+### Return type
+
+[**FeatureListResponse**](FeatureListResponse.md)
 
 ### Authorization
 
