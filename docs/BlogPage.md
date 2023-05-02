@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **dateAdd** | **String** |  | [optional] 
 **dateIssue** | **String** |  | [optional] 
 **dateUpd** | **String** |  | [optional] 
-**active** | **Integer** |  | [optional] 
+**active** | **Boolean** |  | [optional] 
 **idBlogCategory** | **Integer** |  | [optional] 
 **cover** | **String** |  | [optional] 
 **id** | **Integer** |  | [optional] 

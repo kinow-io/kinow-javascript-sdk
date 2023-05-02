@@ -241,7 +241,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface BlogCategory {
     position: number
-    active: number
+    active: boolean
     date_add: string
     date_upd: string
     name: Array<I18nField>
@@ -257,7 +257,7 @@ declare module 'kinow-javascript-sdk' {
   }
   interface BlogCategoryResponse {
     position: number
-    active: number
+    active: boolean
     date_add: string
     date_upd: string
     name: Array<I18nField>
@@ -279,7 +279,7 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_issue: string
     date_upd: string
-    active: number
+    active: boolean
     id_blog_category: number
     cover: string
     id: number
@@ -300,7 +300,7 @@ declare module 'kinow-javascript-sdk' {
     date_add: string
     date_issue: string
     date_upd: string
-    active: number
+    active: boolean
     id_blog_category: number
     cover: string
     id: number

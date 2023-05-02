@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **position** | **Integer** |  | [optional] 
-**active** | **Integer** |  | [optional] 
+**active** | **Boolean** |  | [optional] 
 **dateAdd** | **String** |  | [optional] 
 **dateUpd** | **String** |  | [optional] 
 **name** | [**[I18nField]**](I18nField.md) |  | [optional] 
